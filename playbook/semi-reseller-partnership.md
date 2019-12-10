@@ -14,7 +14,11 @@ The following document contains the guiding principles for a SeMI Reseller Partn
 ## SRP Location and Branch definitions
 
 - An SRP operates in a fixed country or territory (e.g., Benelux or North America).
+<<<<<<< HEAD
 - An SRP operates in one (1) or more industries based on the [International Standard Industrial Classification (ISIC)](https://unstats.un.org/unsd/classifications/Econ/Download/In%20Text/ISIC_Rev_4_publication_English.pdf) ([wiki](https://en.wikipedia.org/wiki/International_Standard_Industrial_Classification#ISIC_Revision_4_broad_structure)).
+=======
+- An SRP operates in one (1) or more industries based on the International Standard Industrial Classification (ISIC).
+>>>>>>> HOTFIX: rename partnerships
 - An SRP gets exclusivity in a branch of the selected territory and branches.
 - An SRP can represent multiple branches.
 - An SRP can represent multiple countries.
@@ -29,6 +33,7 @@ The following document contains the guiding principles for a SeMI Reseller Partn
 
 ## SRP commission & pricing
 
+<<<<<<< HEAD
 - A sales commission via an SRP is X% based on any license structure (except for cloud costs regarding a Weaviate Cluster Platform (WCP) i.e., Weaviate’s managed service.) or lump sum price for e.g. training and certification.
 - An SRP may offer secondary training to Weaviate.
 - An SRP may not offer secondary certification to Weaviate.
@@ -44,6 +49,14 @@ Example calculation
 | Germany | SRP-A sells in an industry owned by SRP-B | 60% of X | 40% of X |
 | Germany | SRP-B sells in an unclaimed industry | 0% of X | 100% of X |
 
+=======
+- A sales commission via an SRP is 25% based on any license structure (except for cloud costs regarding a Weaviate Cluster Platform (WCP) i.e., Weaviate’s managed service.) or lump sum price for e.g. training and certification.
+- An SRP may offer secondary training to Weaviate.
+- An SRP may not offer secondary certification to Weaviate.
+- A sales commission in the territory and branch of an SRP through another referral is 10%  based on any license structure (except for cloud costs regarding a Weaviate Cluster Platform (WCP) i.e., Weaviate’s managed service.) or lump sum price for e.g. training and certification.
+- Weaviate pricing is determined by SeMI.
+
+>>>>>>> HOTFIX: rename partnerships
 ## SeMI services towards an SRP
 
 - Exclusive contact to the SeMI team.
