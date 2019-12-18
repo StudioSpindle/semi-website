@@ -4,7 +4,11 @@ product: weaviate
 sub-menu: Datasets
 product-order: 1
 title: News publications
+<<<<<<< HEAD
 description: Weaviate dataset with news publications.
+=======
+description: Datasets.
+>>>>>>> gh-416: General updates to the docs
 tags: ['Datasets', 'News publications', 'Help']
 menu-order: 1
 open-graph-type: article
@@ -13,6 +17,7 @@ og-img: documentation.jpg
 
 # Dataset News Publications
 
+<<<<<<< HEAD
 {% include badges.html %}
 
 This dataset contains +/- 1000 random news articles from; Financial Times, New York Times, Guardian, Wallstreet Journal, CNN, Fox News, The Economist, New Yorker, Wired, Vogue, Game Informer.
@@ -46,6 +51,15 @@ Weaviate will be available and preloaded with the newsarticle demo dataset on:
 ### Run manually
 
 If you have your own version of Weaviate running on an **external** host or localhost **without** Docker Compose;
+=======
+### News publications
+
+This dataset contains 1234 random news articles from; Financial Times, New York Times, Guardian, Wallstreet Journal, CNN, Fox News, The Economist, New Yorker, Wired, Vogue, Game Informer.
+
+This dataset can be used to easily demo all Weaviate's features.
+
+Usage with Docker on **external** host or localhost **without** Docker Compose;
+>>>>>>> gh-416: General updates to the docs
 
 ```bash
 # WEAVIATE HOST (e.g., https://foobar.semi.network), note paragraph basics for setting the local IP
@@ -56,7 +70,11 @@ $ docker run -i -e weaviate_host=$WEAVIATE_HOST semitechnologies/weaviate-demo-n
 
 Usage with Docker on **local** host **with** Docker Compose;
 
+<<<<<<< HEAD
 _Note: run this from the same directory where the Weaviate Docker Compose files are located_
+=======
+_Note: run this from the same directory where the Weaviate Docker-compose files are located_
+>>>>>>> gh-416: General updates to the docs
 
 {% raw %}
 ```bash
@@ -67,8 +85,12 @@ $ export WEAVIATE_NETWORK=$(docker inspect -f '{{range .NetworkSettings.Networks
 # Run docker
 $ docker run -i --network=$WEAVIATE_NETWORK -e weaviate_host=$WEAVIATE_HOST semitechnologies/weaviate-demo-newspublications:latest
 ```
+<<<<<<< HEAD
 {% endraw %}
 
 ## More Resources
 
 {% include support-links.html %}
+=======
+{% endraw %}
+>>>>>>> gh-416: General updates to the docs

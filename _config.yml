@@ -1,5 +1,10 @@
+<<<<<<< HEAD
 weaviate_version: 0.22.9
 helm_version: 10.0.0
+=======
+weaviate_version: 0.21.6
+helm_version: 8.2.0
+>>>>>>> gh-416: General updates to the docs
 markdown: kramdown
 kramdown:
     parse_block_html: false
@@ -39,9 +44,13 @@ docs:
         - Setup
         - Add data
         - Query data
+<<<<<<< HEAD
         - Classification
         - Transfer learning
         - Additional Features
+=======
+        - Features
+>>>>>>> gh-416: General updates to the docs
         - Datasets
         - Client libs
         - Weaviate Cluster Service

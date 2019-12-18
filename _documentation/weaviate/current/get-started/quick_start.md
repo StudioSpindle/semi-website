@@ -158,6 +158,7 @@ The output will look something like this but significantly longer:
 
 ## Query the dataset with GraphQL
 
+<<<<<<< HEAD
 When querying Weaviate, you will always be using the GraphQL API. Weaviate has a publicly available graphical user interface (GUI) called [The Playground](http://playground.semi.technology), which you can use to query.
 
 ### Accessing the Playground
@@ -447,6 +448,291 @@ $ curl -k https://{YOUR WEAVIATE HOST}/v1/things/{CLASSIFICATION ID}?meta=true |
 This was a sneak peek of Weaviate. In the documentation, you can find more videos and guides on how to work with Weaviate in depth.
 
 Have fun building your own search graph with Weaviate!
+=======
+When querying Weaviate, you will always be using the GraphQL API. Weaviate has a publicly available graphical user interface (GUI) called the playground, which you can use to query.
+
+### Accessing the Playground
+
+Go to: playground.semi.technology
+Fill in the following URL: `https://{YOUR WEAVIATE HOST}/v1/graphql` as the endpoint.
+Click on the "GraphQL Querying" in the right top.
+
+### Your First Query
+
+Let's first get all news publications out.
+
+```graphql
+# GraphQL
+{
+  Get {
+    Things {
+      Publication {
+        name
+      }
+    }
+  }
+}
+```
+
+You can also find which articles are related to these publications.
+
+```graphql
+# GraphQL
+{
+  Get {
+    Things {
+      Publication {
+        name
+        HasArticles{
+          ... on Article{
+            title
+          }
+        }
+      }
+    }
+  }
+}
+```
+
+And you can even go deeper, to find which authors are related to these publiations.
+
+```graphql
+# GraphQL
+{
+  Get {
+    Things {
+      Publication {
+        name
+        HasArticles{
+          ... on Article{
+            title
+            HasAuthors {
+              ... on Author{
+                name
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+```
+
+When querying for articles, you can also add classic filters to narrow down your search.
+
+```graphql
+# GraphQL
+{
+  Get {
+    Things {
+      Article(
+        where:{
+          operator: GreaterThanEqual
+          path: ["wordCount"]
+          valueInt:1000
+        }
+        limit: 10
+      ) {
+        title
+        summary
+        wordCount
+      }
+    }
+  }
+}
+```
+
+Do you want to know how many articles, authors and publications there are? This is something you can find using the Aggregate{} function.
+
+```graphql
+# GraphQL
+{
+  Aggregate{
+    Things{
+      Publication{
+        meta{
+          count
+        }
+      }
+      Author{
+        meta{
+          count
+        }
+      }
+      Article{
+        meta{
+          count
+        }
+        wordCount {
+          count
+          maximum
+          mean
+          median
+          minimum
+          mode
+          sum
+          type
+        }
+      }
+    }
+  }
+}
+```
+
+### Explore the smart graph
+
+In Weaviate, you can also semantically explore your datasets. Let's search for articles related to money.
+
+```graphql
+# GraphQL
+{
+  Get {
+    Things {
+      Article(
+        explore: {
+          concepts: ["money"]
+        }
+        limit: 10
+      ) {
+        title
+        summary
+        wordCount
+        HasAuthors {
+          ... on Author{
+            name
+          }
+        }
+      }
+    }
+  }
+}
+```
+
+You can also combine filters!
+
+```graphql
+# GraphQL
+{
+  Get {
+    Things {
+      Article(
+        explore: {
+          concepts: ["rideSharing"]
+        }
+        where:{ 
+          operator:And
+          operands: [{
+            operator: GreaterThan
+            path: ["wordCount"]
+            valueInt: 200
+          }, {
+            operator:Like
+            path:["title"]
+            valueString:"*tax*"
+          }]
+        }
+        limit: 10
+      ) {
+        title
+        summary
+        wordCount
+      }
+    }
+  }
+}
+```
+
+Or publications related to fashion.
+
+```graphql
+# GraphQL
+{
+  Get {
+    Things {
+      Publication(
+        explore: {
+          concepts: ["fashion"]
+          certainty: 0.725
+        }
+      ) {
+        name
+      }
+    }
+  }
+}
+```
+
+### Your First Classification
+
+If you run the following query, you might notice that there are no categories classified for new articles.
+
+```graphql
+# GraphQL
+{
+  Get {
+    Things {
+      Article {
+        title
+        OfCategory {
+          ... on Category {
+            name
+          }
+        }
+      }
+    }
+  }
+}
+```
+
+Here we can use Weaviate's auto-classification function to let Weaviate decide which categories to attach to news publications.
+
+To do this, we will use the RESTful API.
+
+```bash
+$ curl https://{YOUR WEAVIATE HOST}/v1/classifications -X POST -H 'Content-type: application/json' -d \
+'{
+    "class": "Article",
+    "type": "contextual",
+    "basedOnProperties": [
+        "summary"
+    ],
+    "classifyProperties": [
+        "ofCategory"
+    ]
+}' | jq .
+```
+
+When Weaviate is done with the classification, you can rerun the previous query and see how Weaviate classified all articles.
+
+```graphql
+# GraphQL
+{
+  Get {
+    Things {
+      Article {
+        title
+        OfCategory {
+          ... on Category {
+            name
+          }
+        }
+      }
+    }
+  }
+}
+```
+
+By using the RESTful API, you can even get statistics related to the classification.
+
+```bash
+$ curl -k https://wcjswuxctfvlxuxl.semi.network/v1/things/b8977d2e-a026-36dc-bc34-f21a35188010?meta=true | jq .
+```
+
+This was a sneak peek of Weaviate. In the documentation, you can find more videos and guides on how to work with Weaviate in depth.
+
+Have fun building your own smart graph or knowledge graph with Weaviate!
+>>>>>>> gh-416: General updates to the docs
 
 ## More Resources
 
