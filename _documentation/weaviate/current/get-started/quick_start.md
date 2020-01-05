@@ -731,8 +731,12 @@ $ curl -k https://wcjswuxctfvlxuxl.semi.network/v1/things/b8977d2e-a026-36dc-bc3
 
 This was a sneak peek of Weaviate. In the documentation, you can find more videos and guides on how to work with Weaviate in depth.
 
+<<<<<<< HEAD
 Have fun building your own smart graph or knowledge graph with Weaviate!
 >>>>>>> gh-416: General updates to the docs
+=======
+Have fun building your own smart graph or smart graph with Weaviate!
+>>>>>>> gh-423: updates to product pages
 
 ## More Resources
 

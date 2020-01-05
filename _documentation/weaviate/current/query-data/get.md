@@ -15,7 +15,13 @@ og-img: documentation.jpg
 
 {% include badges.html %}
 
+<<<<<<< HEAD
 The `Get{}` function is Weaviate's bread and butter. It is the most direct way to access data.
+=======
+You can directly query the Weaviate smart graph. Finding concepts in the smart graph based on the Contextionary can be done through [exploring](explore.html).
+
+_Note: You can mix [explore](explore.html) functions with regular query functions._
+>>>>>>> gh-423: updates to product pages
 
 ## Index
 

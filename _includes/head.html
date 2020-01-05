@@ -10,6 +10,7 @@
 	<meta name="author" content="SeMI Technologies" />
 	<meta name="description" content="{{ page.description }}" />
 	{% include og.html %}
+<<<<<<< HEAD
 
 	{% if page.layout == 'layout-blog-article' %}
 		<link rel="alternate" type="application/rss+xml" title="SeMI Technology and Weaviate RSS newsfeed" href="https://semi.technology/news.xml" />
@@ -22,6 +23,9 @@
 	{% else %}
 		<title>{{ page.title }} - SeMI Technologies</title>
 	{% endif %}
+=======
+	<title>{{ page.title }}</title>
+>>>>>>> gh-423: updates to product pages
 	<link rel="canonical" href="https://www.semi.technology{{ page.url | replace:'index.html','/' | replace: '/index', '/'}}" />
     <link href="https://fonts.googleapis.com/css?family=Alegreya+Sans:300,300i,400,400i,500,500i,700,700i|Alegreya:400,400i,500,500i|IBM+Plex+Mono:400,600" rel="stylesheet">
 	<link rel="shortcut icon" href="/favicon.ico" />

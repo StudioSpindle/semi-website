@@ -1,17 +1,31 @@
 
+<<<<<<< HEAD
 - title: "Weaviate search graph (<a href='/documentation/weaviate/current/'>tech features</a>)"
+=======
+- title: "Scalable smart graph (<a href='/documentation/weaviate/current/'>tech features</a>)"
+>>>>>>> gh-423: updates to product pages
   note: ""
   startup: true
   scaleup: true
   prof: true
   enterprise: true
+<<<<<<< HEAD
 
 - title: "Weaviate Cluster Service"
+=======
+  enterpriseplus: true
+
+- title: "Helm and Kubernetes charts"
+>>>>>>> gh-423: updates to product pages
   note: ""
   startup: true
   scaleup: true
   prof: true
   enterprise: true
+<<<<<<< HEAD
+=======
+  enterpriseplus: true
+>>>>>>> gh-423: updates to product pages
 
 - title: "Community support"
   note: ""
@@ -19,6 +33,7 @@
   scaleup: true
   prof: true
   enterprise: true
+<<<<<<< HEAD
 
 - title: "Email support"
   note: ""
@@ -61,6 +76,9 @@
   scaleup: false
   prof: false
   enterprise: true
+=======
+  enterpriseplus: true
+>>>>>>> gh-423: updates to product pages
 
 - title: "Enterprise service-level agreement (SLA)"
   note: ""
@@ -68,6 +86,10 @@
   scaleup: false
   prof: false
   enterprise: true
+<<<<<<< HEAD
+=======
+  enterpriseplus: true
+>>>>>>> gh-423: updates to product pages
 
 - title: "Enterprise Terms of Service (ToS)"
   note: ""
@@ -75,6 +97,10 @@
   scaleup: false
   prof: false
   enterprise: true
+<<<<<<< HEAD
+=======
+  enterpriseplus: true
+>>>>>>> gh-423: updates to product pages
 
 - title: "Enterprise End-User Licence Agreement (EULA)"
   note: ""
@@ -82,20 +108,51 @@
   scaleup: false
   prof: false
   enterprise: true
+<<<<<<< HEAD
 
 - title: "Access to our core engineers (<a href='#dagger'>†</a>)"
+=======
+  enterpriseplus: true
+
+- title: "Global Weaviate as a Service (WaaS)"
+  note: ""
+  opensource: false
+  enterprise: true
+  enterpriseplus: true
+
+- title: "Feature requests"
+  note: ""
+  opensource: false
+  enterprise: true
+  enterpriseplus: true
+
+- title: "Dedicated Weaviate support"
+  note: ""
+  opensource: false
+  enterprise: true
+  enterpriseplus: true
+
+- title: "Last-come-first-served Silver (<a href='#asterisk'>*</a>)"
+>>>>>>> gh-423: updates to product pages
   note: ""
   startup: false
   scaleup: false
   prof: false
   enterprise: true
+<<<<<<< HEAD
 
 - title: "Last-come-first-served Gold (<a href='#double-dagger'>‡</a>)"
+=======
+  enterpriseplus: true
+
+- title: "Access to our solution engineers (<a href='#dagger'>†</a>)"
+>>>>>>> gh-423: updates to product pages
   note: ""
   startup: false
   scaleup: false
   prof: true
   enterprise: true
+<<<<<<< HEAD
 
 - title: "Dedicated implementation support"
   note: ""
@@ -103,3 +160,24 @@
   scaleup: false
   prof: false
   enterprise: true
+=======
+  enterpriseplus: true
+
+- title: "Dedicated implemantation support"
+  note: ""
+  opensource: false
+  enterprise: false
+  enterpriseplus: true
+
+- title: "Last-come-first-served Gold (<a href='#double-dagger'>‡</a>)"
+  note: ""
+  opensource: false
+  enterprise: false
+  enterpriseplus: true
+
+- title: "Access to our core engineers (<a href='#section-sign'>§</a>)"
+  note: ""
+  opensource: false
+  enterprise: false
+  enterpriseplus: true
+>>>>>>> gh-423: updates to product pages

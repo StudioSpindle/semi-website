@@ -6,7 +6,11 @@ layout: none
     <channel>
         <title>SeMI Technolgies News Feed</title>
         <link>https://www.semi.technology/news/</link>
+<<<<<<< HEAD
         <description>Weaviate open source search graph</description>
+=======
+        <description>Knowledge management SaaS solutions // open source smart graph Weaviate</description>
+>>>>>>> gh-423: updates to product pages
         {% for page in site.news %}
             {% if page.url != "/news/index" %}
             <item>

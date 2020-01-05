@@ -17,12 +17,14 @@
                 <th class="{% if include.highlightOpenSource == true %}table__cell--highlight{% endif %}">Weaviate <br />Scaleup</th>
                 <th class="{% if include.highlightOpenSource == true %}table__cell--highlight{% endif %}">Weaviate <br />Professional</th>
                 <th class="{% if include.highlightEnterprise == true %}table__cell--highlight{% endif %}">Weaviate <br />Enterprise</th>
+                <th class="{% if include.highlightEnterprise == true %}table__cell--highlight{% endif %}">Weaviate <br />Enterprise Plus</th>
             </tr>
             </thead>
             <tbody>
             {% for feature in site.data.weaviateFeatures %}
             <tr>
                 <td>{{ feature.title }}</td>
+<<<<<<< HEAD
                 <td
                     class="table__cell--vertically-middle {% if include.highlightEnterprise == true %}table__cell--highlight{% endif %}">
                     {% include molecule-hasFeature.html hasFeature=feature.startup %}</td>
@@ -33,6 +35,11 @@
                         class="table__cell--vertically-middle {% if include.highlightEnterprise == true %}table__cell--highlight{% endif %}">
                         {% include molecule-hasFeature.html hasFeature=feature.prof %}</td>
                 <td class="table__cell--vertically-middle {% if include.highlightEnterprise == true %}table__cell--highlight{% endif %}">{% include molecule-hasFeature.html hasFeature=feature.enterprise %}</td>
+=======
+                <td class="table__cell--vertically-middle {% if include.highlightOpenSource == true %}table__cell--highlight{% endif %}">{% include molecule-hasFeature.html hasFeature=feature.opensource %}</td>
+                <td class="table__cell--vertically-middle {% if include.highlightEnterprise == true %}table__cell--highlight{% endif %}">{% include molecule-hasFeature.html hasFeature=feature.enterprise %}</td>
+                <td class="table__cell--vertically-middle {% if include.highlightEnterprise == true %}table__cell--highlight{% endif %}">{% include molecule-hasFeature.html hasFeature=feature.enterpriseplus %}</td>
+>>>>>>> gh-423: updates to product pages
             </tr>
             {% endfor %}
             </tbody>
