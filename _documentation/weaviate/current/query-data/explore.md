@@ -35,7 +35,12 @@ You can explore the smart graph based on the semantic meaning of the data concep
 
 ## Basics
 
+<<<<<<< HEAD:_documentation/weaviate/current/query-data/explore.md
 - With the `Explore{}` query function, you can fuzzy search for data objects in Weaviate (in contrast to the [`explore filter`](./filters.html#explore-filter) in the Get{} function).
+=======
+- With the `explore{}` filter in `Get{}` queries you can filter to find concepts.
+- With the `Explore{}` query function, you can fuzzy search for data objects in Weaviate.
+>>>>>>> gh-423: general doc updates:_documentation/weaviate/current/query-data/explore.md
 - Search results are based on given data, meta data and the `Contextionary` used in Weaviate.
 - Some functions have (semantic) [filters](./filters.html) available.
 
@@ -74,10 +79,76 @@ Weaviate splits words based on CamelCase. For example, if a user wants to explor
 ### Moving
 
 Because pagination is not possible in multidimensional storage, you can improve your results with additional explore functions which can move away from semantic concepts or towards semantic concepts. E.g., if you look for the concept 'New York Times' but don't want to find the city New York, you can use the  `moveAway{}` function by using the words 'New York'.
+<<<<<<< HEAD:_documentation/weaviate/current/query-data/explore.md
 
 ## Explore{} function
 
 The Explore function can be used if a user doesn't know what to look for at all. For example, you might not be familiar with the exact class names of the concept you are looking for. The explore function will return everything it finds around a particular set of given concepts.
+=======
+
+## Explore{} filter
+
+You can extend a Get{} function can with an explore{} filter to find concepts in your dataset. This function is used to find _concepts_ inside your Weaviate.
+
+The `Explore{}` filter is structured as follows:
+
+```json
+{
+  Get{
+    <SematicKind>{
+      <Class>(
+        explore: {
+          concepts: [<String>]!   # Required; an array of concepts.
+          moveAwayFrom: {         # Concepts the user wants to move away from.
+            concepts: [<String>]! # Required; an array of concepts.
+            force: <Float>!       # Required; a force between 0 and 1.0 that moves away from the core concept.
+          },
+          moveTo: {               # Concepts the user wants to move towards.
+            concepts: [<String>]! # Required; an array of concepts.
+            force: <Float>!       # Required; a force between 0 and 1.0 that moves away from the core concept.
+          }
+        }
+      ){
+        <property>
+      }
+    }
+  }
+}
+```
+
+Note that all words in the `concepts` argument array should be present in the Contextionary.
+
+An example query:
+
+```graphql
+{
+  Get{
+    Things{
+      Article(
+        explore: {
+          concepts: ["Joker"],
+          moveAwayFrom: {
+            concepts: ["cardgame"],
+            force: 0.9
+          },
+          moveTo: {
+            concepts: ["movie"],
+            force: 0.85
+          }
+        }
+      ){
+        name
+      }
+    }
+  }
+}
+```
+{% include molecule-gql-demo.html %}
+
+## Explore{} function
+
+The Explore function can be used if a user doesn't know what to look for at all. For example, you might not be familiar with the exact class names of the concept you are looking for. The explore function will return everything it found around a particular set of given concepts.
+>>>>>>> gh-423: general doc updates:_documentation/weaviate/current/query-data/explore.md
 
 The `Explore{}` function is structured as follows:
 
@@ -118,8 +189,13 @@ An example query:
       force: 0.5
     },
     moveAwayFrom: {
+<<<<<<< HEAD:_documentation/weaviate/current/query-data/explore.md
       concepts: ["fashion", "shop"],
       force: 0.2
+=======
+      concepts: ["city", "fashion", "shop"],
+      force: 0.5
+>>>>>>> gh-423: general doc updates:_documentation/weaviate/current/query-data/explore.md
     }
   ) {
     beacon
@@ -128,6 +204,7 @@ An example query:
   }
 }
 ```
+<<<<<<< HEAD:_documentation/weaviate/current/query-data/explore.md
 {% include molecule-gql-demo.html encoded_query='%7B%0D%0A++Explore+%28%0D%0A++++concepts%3A+%5B%22New+Yorker%22%5D%2C%0D%0A++++certainty%3A+0.95%2C%0D%0A++++moveTo%3A+%7B%0D%0A++++++concepts%3A+%5B%22publisher%22%2C+%22articles%22%5D%2C%0D%0A++++++force%3A+0.5%0D%0A++++%7D%2C%0D%0A++++moveAwayFrom%3A+%7B%0D%0A++++++concepts%3A+%5B%22fashion%22%2C+%22shop%22%5D%2C%0D%0A++++++force%3A+0.2%0D%0A++++%7D%0D%0A++%29+%7B%0D%0A++++beacon%0D%0A++++certainty%0D%0A++++className%0D%0A++%7D%0D%0A%7D' %}
 
 ### Concepts array function
@@ -139,6 +216,9 @@ There are three ways to define the `concepts` array argument in the Explore filt
 - `["New York", "Times"]` = a combination of the two above.
 
 Practical example: `concepts: ["beatles", "John Lennon"]`
+=======
+{% include molecule-gql-demo.html %}
+>>>>>>> gh-423: general doc updates:_documentation/weaviate/current/query-data/explore.md
 
 ## More Resources
 

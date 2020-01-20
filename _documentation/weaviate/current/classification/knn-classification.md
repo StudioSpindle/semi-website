@@ -206,7 +206,11 @@ We can now send `POST` request with the following body to `/v1/classification`:
 
 ```json
 {
+<<<<<<< HEAD:_documentation/weaviate/current/classification/knn-classification.md
   "class": "Country",
+=======
+  "class": "Aricle",
+>>>>>>> gh-423: general doc updates:_documentation/weaviate/current/features/classification.md
   "classifyProperties": ["inCountry"],
   "basedOnProperties": ["description"],
   "type": "knn",

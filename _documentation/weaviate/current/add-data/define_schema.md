@@ -113,7 +113,11 @@ keywords:
 
 ### Weaviate Schema versus Ontology
 
+<<<<<<< HEAD
 Because Weaviate uses the [Contextionary](../about/philosophy.html#about-the-contextionary) to index data, the use of the schema becomes fuzzy. This means that a reference formatted like this: `{Class} {property} {value}` (e.g., `a Publication with the name New Yorker`) is semantically similar to `a Magazine with the label New Yorker`.
+=======
+Because Weaviate uses the [Contextionary](../about/philosophy#about-the-contextionary) to index data, the use of the schema becomes fuzzy. This means that a reference formatted like this: `{Class} {property} {value}` (e.g., `a Publication with the name New Yorker`) is semantically similar to `a Magazine with the label New Yorker`.
+>>>>>>> gh-423: general doc updates
 
 Within Weaviate, the schema is _only_ used to define the query and explore syntax.
 
@@ -383,10 +387,16 @@ Adding a schema can be done by POSTing a [schema object](#schema-object) to the 
 
 An example of creating a schema item of the semantic kind _Thing_ might look like this:
 
+<<<<<<< HEAD
 ```js
 POST /v1/schema/things
 
 {
+=======
+```bash
+$ curl http://localhost:8080/v1/schema/things -X POST -H 'Content-type: application/json' -d \
+'{
+>>>>>>> gh-423: general doc updates
   "class": "Publication",
   "description": "A publication with an online source",
   "vectorizeClassName": false,

@@ -34,7 +34,11 @@ Weaviate is an open-source, GraphQL and RESTful API-enabled, smart graph based o
 
 ## Core developer features
 
+<<<<<<< HEAD
 0. **Contextionary** - the core graph embedding mechanism (i.e., ML-model) that indexes all data objects.
+=======
+0. **Contextionary** - the core graph embedding mechanism that indexes all data objects.
+>>>>>>> gh-423: general doc updates
 0. **GraphQL API** - an easy to use interface to query a Weaviate.
 0. **RESTful API** - an easy to use interface to populate a Weaviate.
 0. **Containerized** - to run it efficiently.

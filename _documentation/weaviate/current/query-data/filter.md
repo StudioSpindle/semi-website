@@ -11,7 +11,7 @@ open-graph-type: article
 og-img: documentation.jpg
 ---
 
-# Filter Guide
+# Where filter
 
 {% include badges.html %}
 
@@ -28,9 +28,14 @@ _Note: You can mix [explore](explore.html) functions with regular query function
 - [Multiple filters](#multiple-filters)
 - [Beacon filter](#beacon-filter)
 - [Multiple filters and beacon filter](#multiple-filters-and-beacon-filter)
+<<<<<<< HEAD:_documentation/weaviate/current/query-data/filter.md
 - [Geo coordinates](#geo-coordinates-filter)
 - [Group filter](#group-filter)
 - [Explore filter](#explore-filter)
+=======
+- [Geo coordinates filter](#geo-coordinates-filter)
+- [Limit filter](#limit-filter)
+>>>>>>> gh-423: general doc updates:_documentation/weaviate/current/query-data/where-filter.md
 - [FAQ](#frequently-asked-questions)
 
 
@@ -63,11 +68,11 @@ Weaviate comes with a variety of available filters. The `where` filter is an alg
   - `Like`
 - `Operands`: Is a list of filter objects of this same structure.
 - `Path`: Is a list of strings indicating the property name of the class. If the property is a beacon (i.e., cross-reference), the path should be followed to the property of the beacon which should be specified as a list of strings.
-- `ValueInt`: The integer value where the `Path`'s last property name should be compared to.
-- `ValueBoolean`: The boolean value that the `Path`'s last property name should be compared to.
-- `ValueString`: The string value that the `Path`'s last property name should be compared to.
-- `ValueNumber`: The number (float) value that the `Path`'s last property name should be compared to.
-- `ValueDate`: The date (ISO 8601 timestamp) value that the `Path`'s last property name should be compared to.
+- `valueInt`: The integer value where the `Path`'s last property name should be compared to.
+- `valueBoolean`: The boolean value that the `Path`'s last property name should be compared to.
+- `valueString`: The string value that the `Path`'s last property name should be compared to.
+- `valueNumber`: The number (float) value that the `Path`'s last property name should be compared to.
+- `valueDate`: The date (ISO 8601 timestamp) value that the `Path`'s last property name should be compared to.
 
 ```graphql
 {
@@ -105,10 +110,10 @@ As mentioned in the list of possible `operator` values, `Like` is one of them. U
 {
   Get {
     Things {
-      Company(where: {
+      Publication(where: {
             path: ["name"],
             operator: Like,
-            valueString: "Ap*e"
+            valueString: "New *"
         }) {
         name
       }
@@ -117,51 +122,53 @@ As mentioned in the list of possible `operator` values, `Like` is one of them. U
 }
 ```
 
-This query would return both the companies with the name `Apple` and `Apache` if they are present in the Weaviate instance.
+{% include molecule-gql-demo.html %}
+
+This query would return both the publications with the name `New Yorker` and `New York Times` if they are present in the Weaviate instance.
 
 ## Simple filter
 
 You can create simple filters by setting the `where` key. You always need to include the GraphQL property path, the operator type, and the valueType plus a value. You can read more about the type definitions [here](#where-filter).
 
-For example, this filter selects the class Company with a higher revenue than 10.000.000.
+For example, this filter selects articles from the class Article with a wordcount higher than 1000.
 
 ```graphql
 {
   Get {
     Things {
-      Company(where: {
-            path: ["revenue"],
+      Article(where: {
+            path: ["wordCount"],
             operator: GreaterThan,
-            valueInt: 10000000
+            valueInt: 1000
         }) {
         name
-        revenue
       }
     }
   }
 }
 ```
+{% include molecule-gql-demo.html %}
 
 ## Multiple filters
 
 You can set multiple operands by providing an array.
 
-For example, these filters select based on the class Company with a revenue higher than 10.000.000 and who have less than 20.000 employees.
+For example, these filters select based on the class Article with a wordCount higher than 1000 and who are published before January 1st 2020. Note that you can filter a date and time just similar to numbers, with the `valueDate` given as `string`. 
 
 ```graphql
 {
   Get {
     Things {
-      Company(where: {
+      Article(where: {
         operator: And,
         operands: [{
-            path: ["population"],
+            path: ["wordCount"],
             operator: GreaterThan
-            valueInt: 1000000
+            valueInt: 1000
           }, {
-            path: ["employees"],
+            path: ["publicationDate"],
             operator: LessThan,
-            valueInt: 20000
+            valueDate: "2020-01-01T00:00:00"
           }]
         }) {
         name
@@ -170,25 +177,26 @@ For example, these filters select based on the class Company with a revenue high
   }
 }
 ```
+{% include molecule-gql-demo.html %}
 
 ## Beacon filter
 
 You can also search for the value of the property of a beacon.
 
-For example, these filters select based on the class Company but who have `inCountry` set to The Netherlands.
+For example, these filters select based on the class Article but who have `inPublication` set to The New Yorker.
 
 ```graphql
 {
   Get {
     Things {
-      Company(where: {
-          path: ["inCountry", "Country", "name"],
+      Article(where: {
+          path: ["inPublication", "Publication", "name"],
           operator: Equal,
-          valueString: "The Netherlands"
+          valueString: "The New Yorker"
         }) {
         name
-        inCountry{
-          ... on Country{
+        inPublication{
+          ... on Publication{
             name
           }
         }
@@ -197,36 +205,37 @@ For example, these filters select based on the class Company but who have `inCou
   }
 }
 ```
+{% include molecule-gql-demo.html %}
 
 ## Multiple filters and beacon filter
 
 You can also combine all filters into one request.
 
-For example, these filters select based on the class Company with a higher revenue then 10.000.000, who have more than 20.000 employees and who have `inCountry` set to The Netherlands.
+For example, these filters select based on the class Article with a wordcount higher then 1000, published before January 1st 2020 and who have `inPublication` set to The New Yorker.
 
 ```graphql
 {
   Get {
     Things {
-      Company(where: {
-        operator: GreaterThan,
+      Article(where: {
+        operator: And,
         operands: [{
-            path: ["population"],
+            path: ["wordCount"],
             operator: GreaterThan
-            valueInt: 1000000
+            valueInt: 1000
           }, {
-            path: ["employees"],
+            path: ["publicationDate"],
             operator: LessThan,
-            valueInt: 20000
-          }, {
-            path: ["inCountry", "Country", "name"],
+            valueDate: "2020-01-01T00:00:00"
+          },{
+            path: ["inPublication", "Publication", "name"],
             operator: Equal,
-            valueString: "The Netherlands"
+            valueString: "The New Yorker"
           }]
         }) {
         name
-        inCountry{
-          ... on Country{
+        inPublication{
+          ... on Publication{
             name
           }
         }
@@ -235,6 +244,7 @@ For example, these filters select based on the class Company with a higher reven
   }
 }
 ```
+{% include molecule-gql-demo.html %}
 
 ## Geo Coordinates filter
 
@@ -246,7 +256,7 @@ For example, this curious returns all in a radius of 2KM around a specific geo-l
 {
   Get {
     Things {
-      Company(where: {
+      Publication(where: {
         operator: WithinGeoRange,
         valueGeoRange: {
           geoCoordinates: {
@@ -257,10 +267,10 @@ For example, this curious returns all in a radius of 2KM around a specific geo-l
             max: 2000           # distance in meters
           }
         },
-        path: ["geoLocation"] # property needs to be of geoLocation type.
+        path: ["headquartersGeoLocation"] # property needs to be of geoLocation type.
       }) {
         name
-        geoLocation {
+        headquartersGeoLocation {
           latitude
           longitude 
         }
@@ -269,6 +279,7 @@ For example, this curious returns all in a radius of 2KM around a specific geo-l
   }
 }
 ```
+{% include molecule-gql-demo.html %}
 
 ## Limit filter
 
@@ -280,7 +291,7 @@ An example of a stand-alone limit filter:
 {
   Get {
     Things {
-      Company(limit:5) {
+      Article(limit:5) {
         name
       }
     }
@@ -294,7 +305,7 @@ An example of a combination of filters and a limit filter:
 {
   Get {
     Things {
-      Company(where: {
+      Article(where: {
         operator: WithinGeoRange,
         valueGeoRange: {
           geoCoordinates: {
@@ -304,7 +315,7 @@ An example of a combination of filters and a limit filter:
             max:2.0
           }
         },
-        path: ["geolocation"]
+        path: ["headquartersGeoLocation"]
       },
       limit: 5) { # limit to max 5 results
         name
@@ -317,6 +328,7 @@ An example of a combination of filters and a limit filter:
   }
 }
 ```
+{% include molecule-gql-demo.html %}
 
 ## Group filter
 

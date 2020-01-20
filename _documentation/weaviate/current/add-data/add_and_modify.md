@@ -36,7 +36,11 @@ When a Weaviate [schema](./define_schema.html) is created, you can populate this
 ## Basics
 
 - Data is added through the RESTful API.
+<<<<<<< HEAD
 - Individual [semantic kinds](.././about/philosophy.html#basic-terminology) can be collected or listed. However, there are seperate documentation pages for [querying](.././query-data/get.html) and [exploring](.././query-data/explore.html).
+=======
+- Individual [semantic kinds](.././about/philosophy#basic-terminology) can be collected or listed. However, there are seperate documentation pages for [querying](.././query-data/get.html) and [exploring](.././query-data/explore.html).
+>>>>>>> gh-423: general doc updates
 - The examples assume that Weaviate runs on port 80 on the localhost without authentication.
 - The entry point to a Weaviate is always `/v1`.
 
