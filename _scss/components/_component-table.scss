@@ -56,6 +56,7 @@ td {
 .table-prices {
     width: 100%;
     td, th {
+<<<<<<< HEAD
         font-size: 1rem;
         padding: 0.5rem;
     }
@@ -75,6 +76,13 @@ td {
     }
     @media screen and (min-width: 48em) {
         td, th {
+=======
+        font-size: 0.65rem;
+        padding: 0.025rem;
+    }
+    @media screen and (min-width: 48em) {
+        td, th {
+>>>>>>> gh-423: general updates
             font-size: 0.65rem;
             padding: 0.025rem;
         }

@@ -26,8 +26,13 @@ og-img: products.jpg
                     productLogoSrc="/img/logo-weaviate-emblem-color.svg"
                     productLogoAlt='Weaviate logo'
                     title='Weaviate'
+<<<<<<< HEAD
                     payoff='A core engine for AI-first architectures.'
                     intro='<a href="#core-features">Core Features</a> &bull; <a href="#customers-&-partners">Customers &amp; Partners</a><br><a href="">Runs Everywhere (SaaS)</a> &bull; <a href="">Weaviate Cluster Service (PaaS)</a><br><a href="#product-feature-comparison">Product Feature Comparison</a> &bull; <a href="#pricing">Pricing</a>'
+=======
+                    payoff='A core engine for AI-first architectures'
+                    intro='<a href="#core-features">Core Features</a> &bull; <a href="#customers-&-partners">Customers &amp; Partners</a><br><a href="#weaviate-cluster-service">Weaviate Cluster Service</a><br><a href="#product-feature-comparison">Product Feature Comparison</a> &bull; <a href="#pricing">Pricing</a>'
+>>>>>>> gh-423: general updates
                 %}
 
                 <div class="page-fadein--third">
@@ -39,19 +44,19 @@ og-img: products.jpg
                     <section class="layout layout--double">
                         <div class="layout__column">
                             <h3 class="space-header-column title-column">Semantic Search</h3>
-                            <p>Weaviate's Contextionary (the core machine learning-powered engine) is not only able to find the data your looking for
-                            fast and reliable but also to index it based on its meaning.</p>
+                            Weaviate's Contextionary (the core machine learning-powered engine) is not only able to find the data your looking for
+                            fast and reliable but also to index it based on its meaning.
                         </div>
                         <div class="layout__column">
                                 <img class="section--img-weaviate-clouds" src="/img/semantic-search.svg" alt="Weaviate semantic search" />
                         </div>
                     </section>
 
-                    <section class="layout layout--double layout--double-reverse">
+                    <section class="layout layout--double-reverse">
                         <div class="layout__column">
                             <h3 class="space-header-column title-column">Automatic Classification</h3>
-                            <p>Weaviate helps to automatically classify data together based on the meaning of the data, even if your data contains
-                            complex branch-specific language! Weaviate can organize it according to your wishes, 100% automated.</p>
+                            Weaviate helps to automatically classify data together based on the meaning of the data, even if your data contains
+                            complex branch-specific language! Weaviate can organize it according to your wishes, 100% automated.
                         </div>
                         <div class="layout__column">
                                 <img class="section--img-weaviate-clouds" src="/img/automatic-classification.svg"  alt="Weaviate automatic classification" />
@@ -61,30 +66,28 @@ og-img: products.jpg
                     <section class="layout layout--double">
                         <div class="layout__column">
                             <h3 class="space-header-column title-column">Knowledge Representation</h3>
-                            <p>Weaviate allows you to represent your data in a large graph format based on the GraphQL query language. Regardless, if
-                            you need straight ahead search engine capabilities or want a full-fledged knowledge graph, Weaviate is here to help.</p>
+                            Weaviate allows you to represent your data in a large graph format based on the GraphQL query language. Regardless, if
+                            you need straight ahead search engine capabilities or want a full-fledged knowledge graph, Weaviate is here to help.
                         </div>
                         <div class="layout__column">
                                 <img class="section--img-weaviate-clouds" src="/img/knowledge-representation.svg" alt="Weaviate Knowledge Representation" />
                         </div>
                     </section>
 
-                    <section class="layout layout--single">
-                        <div class="layout__column">
+                    <section class="layout__column">
                             <h3 class="space-header-column title-column">Software features</h3>
                             Want to know more about how Weaviate works or see an overview of developer features? Click <a href="/documentation/weaviate/current/about/philosophy.html" title="Weaviate's philosophy">here</a> to learn more about the
                             philosophy behind the software architecture or <a href="/documentation/weaviate/current/index.html" title="Weaviate's developer features">here</a> for an overview of developer features.
-                        </div>
                     </section>
 
                     {% include molecule-section-heading.html
                         title='Customers &amp; Partners'
                     %}
 
-                    <section class="layout layout--double layout--double-reverse">
+                    <section class="layout layout--double-reverse">
                         <div class="layout__column">
                             <h3 class="space-header-column title-column">Customers</h3>
-                            <p>A selection of our customers using SeMI's Weaviate to enhance or create new AI-first data and analytics capabilities.</p>
+                            A selection of our customers using SeMI's Weaviate to enhance or create new AI-first data and analytics capabilities.
                         </div>
                         <div class="layout__column">
                             <img class="section--img-weaviate-clouds" src="/img/customers.png"
@@ -95,10 +98,10 @@ og-img: products.jpg
                     <section class="layout layout--double">
                         <div class="layout__column">
                             <h3 class="space-header-column title-column">Partners</h3>
-                            <p>
+                            
                                 Our ecosystem of SeMI partners consists of experts who know how your organisation can leverage Weaviate the best.
                                 Regardless if you need C-level AI consultancy or hands on implementation support, our partners can help.
-                            </p>
+                            
                             <p></p>
                                 Interested in joining our partner ecosystem? Click <a href="/playbook/#partner-program">here</a> to learn more.
                             </p>
@@ -127,6 +130,26 @@ og-img: products.jpg
                                     GmbH</a></cite></div>
                     </section>
 
+                    {% include molecule-section-heading.html
+                        title='Weaviate Cluster Service'
+                    %}
+
+                    <section class="layout layout--double">
+                        <div class="layout__column">
+                            The Weaviate Cluster Service (WCS) is SeMI's Weaviate as a service offering served globally over the <a href="https://peering.google.com/#/infrastructure" target="_blank">Google Cloud
+                            network</a>. We offer services suited for small startups all the way to large scale enterprises.
+                        </div>
+                        <div class="layout__column">
+                            <b>Join our beta
+                                program and get 25% discount!</b><br>
+                            Our WCS is currently in beta. If you want to join, you will get a 25% discount
+                            on the service of your choosing (click <a href="#pricing">here</a> for a pricing overview).
+                            <br><br>
+                            <a class="button" style="width:100%" href="./weaviate/get-started/"
+                                title="get started with Weaviate today!">Get Started now and receive a <b>25%</b> discount!</a>
+                        </div>
+                    </section>
+
                     {% include section-feature-table.html highlightEnterprise = false %}
 
                     <section class="layout layout--double">
@@ -150,7 +173,7 @@ og-img: products.jpg
                                         <th>&nbsp;</th>
                                         <th style="text-align:left">Product</th>
                                         <th style="text-align:left">Price in USD</th>
-                                        <th style="text-align:left">Price in EUR</th>
+                                        <th style="text-align:left">Features</th>
                                         <th>&nbsp;</th>
                                     </tr>
                                 </thead>
@@ -172,15 +195,8 @@ og-img: products.jpg
                                             <meta itemprop="availability" content="https://schema.org/InStock" />
                                             <meta itemprop="url" content="/products/weaviate.html" />
                                         </td>
-                                        <td itemprop="offers" itemtype="http://schema.org/Offer" itemscope>
-                                            <meta itemprop="offeredBy" content="SeMI Technologies B.V." />
-                                            <span itemprop="priceSpecification" itemscope itemtype="http://schema.org/UnitPriceSpecification">
-                                                <meta itemprop="priceCurrency" content="EUR">
-                                                </meta>
-                                                <span itemprop="price" content="0">free</span>
-                                            </span>
-                                            <meta itemprop="availability" content="https://schema.org/InStock" />
-                                            <meta itemprop="url" content="/products/weaviate.html" />
+                                        <td style="font-size:0.75rem">
+                                            n.a.
                                         </td>
                                         <meta itemprop="brand" itemtype="http://schema.org/Thing" itemscope>
                                             <meta itemprop="name" content="SeMI Technologies B.V." />
@@ -192,94 +208,137 @@ og-img: products.jpg
                                     <tr itemtype="http://schema.org/Product" itemscope>
                                         <td>
                                             <img style="width:1.5rem" itemprop="image" src="https://www.semi.technology/img/logo-weaviate-enterprise-emblem-color.svg" />
-                                            <meta itemprop="sku" content="WEOP" />
-                                            <meta itemprop="mpn" content="WEOP" />
-                                            <meta itemprop="description" content="Weaviate Enterprise on-prem contains everything the enterprise user needs including an enterprise SLA, ToS and EULA." />
+                                            <meta itemprop="sku" content="WEStU" />
+                                            <meta itemprop="mpn" content="WEStU" />
+                                            <meta itemprop="description" content="Weaviate Startup contains everything your startup needs, offered through the Weaviate Cluster Service." />
                                         </td>
-                                        <td itemprop="name"><b>Weaviate Enterprise</b><br>on-prem</td>
+                                        <td itemprop="name"><b>Weaviate Startup</b><br><small style="font-size:0.75rem">Weaviate Cluster Service</small></td>
                                         <td itemprop="offers" itemtype="http://schema.org/Offer" itemscope>
                                             <meta itemprop="offeredBy" content="SeMI Technologies B.V." />
                                             <span itemprop="priceSpecification" itemscope itemtype="http://schema.org/UnitPriceSpecification">
                                                 <span itemprop="priceCurrency" content="USD">$</span>
-                                                <span itemprop="price" content="5450.00">5,450</span><br>
-                                                <meta itemprop="unitCode" content="MON">(p/month p/use case)
+                                                <span itemprop="price" content="49.00">49</span><br>
+                                                <meta itemprop="unitCode" content="MON">(p/month p/cluster)
                                             </span>
                                             <meta itemprop="availability" content="https://schema.org/InStock" />
                                             <meta itemprop="url" content="/products/weaviate.html" />
                                         </td>
-                                        <td itemprop="offers" itemtype="http://schema.org/Offer" itemscope>
-                                            <meta itemprop="offeredBy" content="SeMI Technologies B.V." />
-                                            <span itemprop="priceSpecification" itemscope itemtype="http://schema.org/UnitPriceSpecification">
-                                                <span itemprop="priceCurrency" content="EUR">&euro;</span>
-                                                <span itemprop="price" content="4950.00">4.950</span><br>
-                                                <meta itemprop="unitCode" content="MON">(p/month p/use case)
-                                            </span>
-                                            <meta itemprop="availability" content="https://schema.org/InStock" />
-                                            <meta itemprop="url" content="/products/weaviate.html" />
+                                        <td style="font-size:0.75rem">
+                                            1 CPU<br>4 Gig memory<br>64 Gig disk<br>users: 1<br>no auto-scaling<br>no backup<br>high availability: 1x<br><a href="#product-feature-comparison">more features</a>
                                         </td>
                                         <meta itemprop="brand" itemtype="http://schema.org/Thing" itemscope>
                                             <meta itemprop="name" content="SeMI Technologies B.V." />
                                         </meta>
                                         <td>
-                                            <a class="button--small" href="javascript:void(Tawk_API.toggle())" title="contact us to get started with Weaviate today!">contact us</a>
-                                        </td>
-                                    </tr>
-                                    <tr itemtype="http://schema.org/Product" itemscope>
-                                        <td>
-                                            <img style="width:1.5rem" itemprop="image" src="https://www.semi.technology/img/logo-weaviate-whitelabel-emblem-color.svg" />
-                                            <meta itemprop="sku" content="WEP" />
-                                            <meta itemprop="mpn" content="WEP" />
-                                            <meta itemprop="description" content="Weaviate Enterprise+ on-prem contains everything the regular enterprise offers but with dedicated integration support." />
-                                        </td>
-                                        <td itemprop="name"><b>Weaviate Enterprise+</b><br>on-prem</td>
-                                        <td itemprop="offers" itemtype="http://schema.org/Offer" itemscope>
-                                            <meta itemprop="offeredBy" content="SeMI Technologies B.V." />
-                                            <span itemprop="priceSpecification" itemscope itemtype="http://schema.org/UnitPriceSpecification">
-                                                <span itemprop="priceCurrency" content="USD">$</span>
-                                                <span itemprop="price" content="6850.00">6,850</span><br>
-                                                <meta itemprop="unitCode" content="MON">(p/month p/use case)
-                                            </span>
-                                            <meta itemprop="availability" content="https://schema.org/InStock" />
-                                            <meta itemprop="url" content="/products/weaviate.html" />
-                                        </td>
-                                        <td itemprop="offers" itemtype="http://schema.org/Offer" itemscope>
-                                            <meta itemprop="offeredBy" content="SeMI Technologies B.V." />
-                                            <span itemprop="priceSpecification" itemscope itemtype="http://schema.org/UnitPriceSpecification">
-                                                <span itemprop="priceCurrency" content="EUR">&euro;</span>
-                                                <span itemprop="price" content="6250.00">6.250</span><br>
-                                                <meta itemprop="unitCode" content="MON">(p/month p/use case)
-                                            </span>
-                                            <meta itemprop="availability" content="https://schema.org/InStock" />
-                                            <meta itemprop="url" content="/products/weaviate.html" />
-                                        </td>
-                                        <meta itemprop="brand" itemtype="http://schema.org/Thing" itemscope>
-                                            <meta itemprop="name" content="SeMI Technologies B.V." />
-                                        </meta>
-                                        <td>
-                                            <a class="button--small" href="javascript:void(Tawk_API.toggle())"
-                                                title="contact us to get started with Weaviate today!">contact us</a>
+                                            <a class="button--small" href="./weaviate/get-started/?product=WEStU" title="get started with Weaviate today!">get started!</a>
                                         </td>
                                     </tr>
                                     <tr itemtype="http://schema.org/Product" itemscope>
                                         <td>
                                             <img style="width:1.5rem" itemprop="image" src="https://www.semi.technology/img/logo-weaviate-enterprise-emblem-color.svg" />
-                                            <meta itemprop="sku" content="WE-MNGD" />
-                                            <meta itemprop="mpn" content="WE-MNGD" />
-                                            <meta itemprop="description" content="Weaviate Enterprise managed service contains everything the enterprise user needs including an
-                                            enterprise SLA, ToS and EULA." />
+                                            <meta itemprop="sku" content="WEScU" />
+                                            <meta itemprop="mpn" content="WEScU" />
+                                            <meta itemprop="description" content="Weaviate Scaleup contains everything your scaleup needsWeaviate Startup contains everything your startup needs, offered through the Weaviate Cluster Service." />
                                         </td>
-                                        <td itemprop="name"><b>Weaviate Enterprise</b><br>managed service</td>
+                                        <td itemprop="name"><b>Weaviate Scaleup</b><br><small style="font-size:0.75rem">Weaviate Cluster Service</small></td>
                                         <td itemprop="offers" itemtype="http://schema.org/Offer" itemscope>
                                             <meta itemprop="offeredBy" content="SeMI Technologies B.V." />
                                             <span itemprop="priceSpecification" itemscope itemtype="http://schema.org/UnitPriceSpecification">
-                                                starting from 
                                                 <span itemprop="priceCurrency" content="USD">$</span>
-                                                <span itemprop="price" content="7.82">7.82</span><br>
-                                                <meta itemprop="unitCode" content="HOU">(p/hour p/use case)
+                                                <span itemprop="price" content="199.00">199</span><br>
+                                                <meta itemprop="unitCode" content="MON">(p/month p/cluster)
                                             </span>
                                             <meta itemprop="availability" content="https://schema.org/InStock" />
                                             <meta itemprop="url" content="/products/weaviate.html" />
                                         </td>
+                                        <td style="font-size:0.75rem">
+                                            2 CPU<br>8 Gig memory<br>128 Gig disk<br>users: 1<br>no auto-scaling<br>no backup<br>high availability: 1x<br><a href="#product-feature-comparison">more features</a>
+                                        </td>
+                                        <meta itemprop="brand" itemtype="http://schema.org/Thing" itemscope>
+                                            <meta itemprop="name" content="SeMI Technologies B.V." />
+                                        </meta>
+                                        <td>
+                                            <a class="button--small" href="./weaviate/get-started/?product=WEScU" title="get started with Weaviate today!">get started!</a>
+                                        </td>
+                                    </tr>
+                                    <tr itemtype="http://schema.org/Product" itemscope>
+                                        <td>
+                                            <img style="width:1.5rem" itemprop="image" src="https://www.semi.technology/img/logo-weaviate-enterprise-emblem-color.svg" />
+                                            <meta itemprop="sku" content="WEPRO" />
+                                            <meta itemprop="mpn" content="WEPRO" />
+                                            <meta itemprop="description" content="Weaviate Professional contains everything you need for large scale deploymentsWeaviate Startup contains everything your startup needs, offered through the Weaviate Cluster Service." />
+                                        </td>
+                                        <td itemprop="name"><b>Weaviate Professional</b><br><small style="font-size:0.75rem">Weaviate Cluster Service</small></td>
+                                        <td itemprop="offers" itemtype="http://schema.org/Offer" itemscope>
+                                            <meta itemprop="offeredBy" content="SeMI Technologies B.V." />
+                                            <span itemprop="priceSpecification" itemscope itemtype="http://schema.org/UnitPriceSpecification">
+                                                <span itemprop="priceCurrency" content="USD">$</span>
+                                                <span itemprop="price" content="899">899</span><br>
+                                                <meta itemprop="unitCode" content="MON">(p/month p/cluster)
+                                            </span>
+                                            <meta itemprop="availability" content="https://schema.org/InStock" />
+                                            <meta itemprop="url" content="/products/weaviate.html?product=WEPRO" />
+                                        </td>
+                                        <td style="font-size:0.75rem">
+                                            8 CPU<br>32 Gig memory<br>512 Gig disk<br>users: 2<br>no auto-scaling<br>backup: 1x p/month<br>high availability: 2x<br><a href="#product-feature-comparison">more features</a>
+                                        </td>
+                                        <meta itemprop="brand" itemtype="http://schema.org/Thing" itemscope>
+                                            <meta itemprop="name" content="SeMI Technologies B.V." />
+                                        </meta>
+                                        <td>
+                                            <a class="button--small" href="./weaviate/get-started/" title="get started with Weaviate today!">get started!</a>
+                                        </td>
+                                    </tr>
+                                    <tr itemtype="http://schema.org/Product" itemscope>
+                                        <td>
+                                            <img style="width:1.5rem" itemprop="image" src="https://www.semi.technology/img/logo-weaviate-enterprise-emblem-color.svg" />
+                                            <meta itemprop="sku" content="WEPROPL" />
+                                            <meta itemprop="mpn" content="WEPROPL" />
+                                            <meta itemprop="description" content="Weaviate Professional Plus is a large scale cluster for large companiesWeaviate Startup contains everything your startup needs, offered through the Weaviate Cluster Service." />
+                                        </td>
+                                        <td itemprop="name"><b>Weaviate Professional Plus</b><br><small style="font-size:0.75rem">Weaviate Cluster Service</small></td>
+                                        <td itemprop="offers" itemtype="http://schema.org/Offer" itemscope>
+                                            <meta itemprop="offeredBy" content="SeMI Technologies B.V." />
+                                            <span itemprop="priceSpecification" itemscope itemtype="http://schema.org/UnitPriceSpecification">
+                                                <span itemprop="priceCurrency" content="USD">$</span>
+                                                <span itemprop="price" content="1999">1,999</span><br>
+                                                <meta itemprop="unitCode" content="MON">(p/month p/cluster)
+                                            </span>
+                                            <meta itemprop="availability" content="https://schema.org/InStock" />
+                                            <meta itemprop="url" content="/products/weaviate.html?product=WEPROPL" />
+                                        </td>
+                                        <td style="font-size:0.75rem">
+                                            16 CPU<br>64 Gig memory<br>2048 Gig disk<br>users: 10<br>no auto-scaling<br>backup: 1x p/week<br>high availability: 4x<br><a href="#product-feature-comparison">more features</a>
+                                        </td>
+                                        <meta itemprop="brand" itemtype="http://schema.org/Thing" itemscope>
+                                            <meta itemprop="name" content="SeMI Technologies B.V." />
+                                        </meta>
+                                        <td>
+                                            <a class="button--small" href="./weaviate/get-started/" title="get started with Weaviate today!">get started!</a>
+                                        </td>
+                                    </tr>
+                                    <tr itemtype="http://schema.org/Product" itemscope>
+                                        <td>
+                                            <img style="width:1.5rem" itemprop="image"
+                                                src="https://www.semi.technology/img/logo-weaviate-enterprise-emblem-color.svg" />
+                                            <meta itemprop="sku" content="WE-MNGD" />
+                                            <meta itemprop="mpn" content="WE-MNGD" />
+                                            <meta itemprop="description" content="Weaviate Enterprise Plus managed service contains everything the regular enterprise offers but with
+                                                                                dedicated integration support." />
+                                        </td>
+                                        <td itemprop="name"><b>Weaviate Enterprise</b><br><small style="font-size:0.75rem">Weaviate Cluster Service<br>Private Cloud<br>On Prem<br></small></td>
+                                        <td itemprop="offers" itemtype="http://schema.org/Offer" itemscope>
+                                            <meta itemprop="offeredBy" content="SeMI Technologies B.V." />
+                                            <span itemprop="priceSpecification" itemscope itemtype="http://schema.org/UnitPriceSpecification">
+                                                starting from
+                                                <span itemprop="priceCurrency" content="USD">$</span>
+                                                <span itemprop="price" content="5499">5,499</span><br>
+                                                <meta itemprop="unitCode" content="MON">(p/month p/use case)
+                                            </span>
+                                            <meta itemprop="availability" content="https://schema.org/InStock" />
+                                            <meta itemprop="url" content="/products/weaviate.html?product=WE-MNGD" />
+                                        </td>
+<<<<<<< HEAD
                                         <td itemprop="offers" itemtype="http://schema.org/Offer" itemscope>
                                             <meta itemprop="offeredBy" content="SeMI Technologies B.V." />
                                             <span itemprop="priceSpecification" itemscope itemtype="http://schema.org/UnitPriceSpecification">
@@ -290,35 +349,40 @@ og-img: products.jpg
                                             </span>
                                             <meta itemprop="availability" content="https://schema.org/InStock" />
                                             <meta itemprop="url" content="/products/weaviate.html" />
+=======
+                                        <td style="font-size:0.75rem">
+                                            all unlimited<br><a href="#product-feature-comparison">more features</a>
+>>>>>>> gh-423: general updates
                                         </td>
                                         <meta itemprop="brand" itemtype="http://schema.org/Thing" itemscope>
-                                            <meta itemprop="name" content="SeMI Technologies B.V." />
+                                        <meta itemprop="name" content="SeMI Technologies B.V." />
                                         </meta>
                                         <td>
-                                            <a class="button--small" href="javascript:void(Tawk_API.toggle())"
-                                                title="contact us to get started with Weaviate today!">contact us</a>
+                                            <a class="button--small" href="./weaviate/get-started/" title="get started with Weaviate today!">contact us</a>
                                         </td>
                                     </tr>
                                     <tr itemtype="http://schema.org/Product" itemscope>
                                         <td>
-                                            <img style="width:1.5rem" itemprop="image" src="https://www.semi.technology/img/logo-weaviate-whitelabel-emblem-color.svg" />
+                                            <img style="width:1.5rem" itemprop="image"
+                                                src="https://www.semi.technology/img/logo-weaviate-enterprise-emblem-color.svg" />
                                             <meta itemprop="sku" content="WEP-MNGD" />
                                             <meta itemprop="mpn" content="WEP-MNGD" />
-                                            <meta itemprop="description" content="Weaviate Enterprise+ managed service contains everything the regular enterprise offers but with
-                                            dedicated integration support." />
+                                            <meta itemprop="description" content="Weaviate Enterprise Plus managed service contains everything the regular enterprise offers but with
+                                                                                dedicated integration support." />
                                         </td>
-                                        <td itemprop="name"><b>Weaviate Enterprise+</b><br>managed service</td>
+                                        <td itemprop="name"><b>Weaviate Enterprise Plus</b><br><small style="font-size:0.75rem">Weaviate Cluster Service<br>Private Cloud<br>On Prem</small></td>
                                         <td itemprop="offers" itemtype="http://schema.org/Offer" itemscope>
                                             <meta itemprop="offeredBy" content="SeMI Technologies B.V." />
                                             <span itemprop="priceSpecification" itemscope itemtype="http://schema.org/UnitPriceSpecification">
                                                 starting from
                                                 <span itemprop="priceCurrency" content="USD">$</span>
-                                                <span itemprop="price" content="9.76">9.76</span><br>
-                                                <meta itemprop="unitCode" content="HOU">(p/hour p/use case)
+                                                <span itemprop="price" content="6999">6,999</span><br>
+                                                <meta itemprop="unitCode" content="MON">(p/month p/use case)
                                             </span>
                                             <meta itemprop="availability" content="https://schema.org/InStock" />
-                                            <meta itemprop="url" content="/products/weaviate.html" />
+                                            <meta itemprop="url" content="/products/weaviate.html?product=WEP-MNGD" />
                                         </td>
+<<<<<<< HEAD
                                         <td itemprop="offers" itemtype="http://schema.org/Offer" itemscope>
                                             <meta itemprop="offeredBy" content="SeMI Technologies B.V." />
                                             <span itemprop="priceSpecification" itemscope itemtype="http://schema.org/UnitPriceSpecification">
@@ -329,13 +393,16 @@ og-img: products.jpg
                                             </span>
                                             <meta itemprop="availability" content="https://schema.org/InStock" />
                                             <meta itemprop="url" content="/products/weaviate.html" />
+=======
+                                        <td style="font-size:0.75rem">
+                                            all unlimited<br><a href="#product-feature-comparison">more features</a>
+>>>>>>> gh-423: general updates
                                         </td>
                                         <meta itemprop="brand" itemtype="http://schema.org/Thing" itemscope>
-                                            <meta itemprop="name" content="SeMI Technologies B.V." />
+                                        <meta itemprop="name" content="SeMI Technologies B.V." />
                                         </meta>
                                         <td>
-                                            <a class="button--small" href="javascript:void(Tawk_API.toggle())"
-                                                title="contact us to get started with Weaviate today!">contact us</a>
+                                            <a class="button--small" href="./weaviate/get-started/" title="get started with Weaviate today!">contact us</a>
                                         </td>
                                     </tr>
                                 </tbody>
@@ -347,7 +414,7 @@ og-img: products.jpg
                         <div class="layout__column">
                             <p style="font-size:1rem">&bull; Prices are excluding 21% VAT.</p>
                             <p style="font-size:1rem">&bull; Discounts are available for annual payments.</p>
-                            <p style="font-size:1rem">&bull; Discounts are available for multiple use cases.</p>
+                            <p style="font-size:1rem">&bull; Discounts are available for multiple use cases or clusters.</p>
                             <p style="font-size:1rem">&bull; Software licenses can be found <a href="/playbook/#licenses">here</a>.</p>
                             <p style="font-size:1rem">&bull; For on-prem installations (which include public and private cloud) a licenses comes with unlimited scaling.</p>
                         </div>

@@ -1,5 +1,6 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 weaviate_version: 0.22.9
 helm_version: 10.0.0
 =======
@@ -8,6 +9,9 @@ helm_version: 8.2.0
 >>>>>>> gh-416: General updates to the docs
 =======
 weaviate_version: 0.21.12
+=======
+weaviate_version: 0.22.0
+>>>>>>> gh-423: general updates
 helm_version: 8.2.1
 >>>>>>> gh-423: product page updates
 markdown: kramdown
