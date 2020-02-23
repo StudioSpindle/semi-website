@@ -15,10 +15,14 @@ The following document contains the guiding principles for a SeMI Reseller Partn
 
 - An SRP operates in a fixed country or territory (e.g., Benelux or North America).
 <<<<<<< HEAD
+<<<<<<< HEAD
 - An SRP operates in one (1) or more industries based on the [International Standard Industrial Classification (ISIC)](https://unstats.un.org/unsd/classifications/Econ/Download/In%20Text/ISIC_Rev_4_publication_English.pdf) ([wiki](https://en.wikipedia.org/wiki/International_Standard_Industrial_Classification#ISIC_Revision_4_broad_structure)).
 =======
 - An SRP operates in one (1) or more industries based on the International Standard Industrial Classification (ISIC).
 >>>>>>> HOTFIX: rename partnerships
+=======
+- An SRP operates in one (1) or more industries based on the [International Standard Industrial Classification (SIC)](https://en.wikipedia.org/wiki/Standard_Industrial_Classification).
+>>>>>>> gh-xxx: update to partnership
 - An SRP gets exclusivity in a branch of the selected territory and branches.
 - An SRP can represent multiple branches.
 - An SRP can represent multiple countries.
@@ -45,6 +49,7 @@ Example calculation
 
 | Region | Situation | Commision SRP-A | Commision SRP-B |
 | ------ | --------- | --------------- | --------------- |
+<<<<<<< HEAD
 | Germany | SRP-A sells in own industry | 100% of X | 0% of X |
 | Germany | SRP-A sells in an industry owned by SRP-B | 60% of X | 40% of X |
 | Germany | SRP-B sells in an unclaimed industry | 0% of X | 100% of X |
@@ -57,6 +62,12 @@ Example calculation
 - Weaviate pricing is determined by SeMI.
 
 >>>>>>> HOTFIX: rename partnerships
+=======
+| Germany | SRP-A sells in own industrieus | 100% of X | 0% of X |
+| Germany | SRP-A sells in industry owned by SRP-B | 60% of X | 40% of X |
+| Germany | SRP-B sells in an unclaimed industry | 0% of X | 100% of X |
+
+>>>>>>> gh-xxx: update to partnership
 ## SeMI services towards an SRP
 
 - Exclusive contact to the SeMI team.
