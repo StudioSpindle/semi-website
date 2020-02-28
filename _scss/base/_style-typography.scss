@@ -45,6 +45,11 @@ p {
 }
 p, li {
 	font-size: $font-size-body;
+<<<<<<< HEAD
+=======
+	margin: 0;
+	padding-bottom: 1rem;
+>>>>>>> gh-469: update CSS. Closes #469
 	max-width: 32em;
 }
 
