@@ -65,7 +65,7 @@ Note that in the above example email ids are used to identify the user. This is 
 
 ## RBAC
 
-More fine-grained Role-Based Access Control (RBAC) coming soon. As of know the
+More fine-grained Role-Based Access Control (RBAC) coming soon. As of now the
 only possible distinction is between Admins (CRUD), Read-Only Users and
 entirely unauthorized users.
 
