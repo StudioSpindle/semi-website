@@ -20,7 +20,6 @@ Weaviate is an open-source, GraphQL and RESTful API-enabled, smart graph based o
 
 ## Index
 
-- [Video tutorial](#video-tutorial)
 - [Why Weaviate?](#why-weaviate)
 - [Features](#features)
   - [Core features](#core-features)
