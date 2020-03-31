@@ -359,5 +359,23 @@ title: 'Software Engineering: Development and Architecture at SeMI'
       This prevents merge-hell, leads to frequent and confident releases and very short feedback
       cycles.
     </p>
+    <h3>Naming conventions</h3>
+    <p>
+      Our repositories are held in the SeMI technologies GitHub account github.com/semi-technologies. 
+      SeMI projects are directly named since they are scoped within the semi-technologies namespace anyways.
+      Customers are prefixed with <code>CUSTOMER-&lt;project-name&gt;</code>. Similarly packages are prefixed 
+      <code>PACKAGE-&lt;package-name&gt;</code>.
+    </p>
+    <p>
+      Google projects are named semi-customer-&lt;customer-name&gt;-&lt;project&gt;. When creating a google 
+      project the default behavior is to set the project ID equal to the project name. To protect the information
+      of our customers we use randomly generated IDs. Please make sure that the ID is randomly genereated, google 
+      provides a button for this. The project ID can not be changed after the creation.
+      For bucket names the same rules apply. Since bucket names are globally scoped they should not reveal any 
+      sensitive information.
+    </p>
+    <p>
+      What source base is connected to what cloud project is collected in an internal document.
+    </p>
   </div>
 </article>

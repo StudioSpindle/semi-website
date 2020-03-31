@@ -12,7 +12,7 @@ open-graph-type: article
 og-img: documentation.jpg
 ---
 
-# Introduction to Weaviate
+# Philosophy behind Weaviate
 
 {% include badges.html %}
 
@@ -20,7 +20,6 @@ Weaviate is an open-source, GraphQL and RESTful API-enabled, smart graph based o
 
 ## Index
 
-- [Video tutorial](#video-tutorial)
 - [Why Weaviate?](#why-weaviate)
 - [Features](#features)
   - [Core features](#core-features)
@@ -32,11 +31,11 @@ Weaviate is an open-source, GraphQL and RESTful API-enabled, smart graph based o
 - [Miscellaneous](#miscellaneous)
 - [More resources](#more-resources)
 
-## Video Tutorial
+## Demo and Overview
 
-This guide in video format.
+Concept and demo presented at FOSDEM 2020;
 
-<p><iframe width="560" height="315" src="https://www.youtube.com/embed/ImuofO5V0Cc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></p>
+<p><iframe width="560" height="315" src="https://www.youtube.com/embed/3NfcAF4qm2k" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></p>
 
 ## Why Weaviate?
 

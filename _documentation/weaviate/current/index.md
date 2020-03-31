@@ -18,10 +18,6 @@ og-img: documentation.jpg
 
 Weaviate is an open-source, GraphQL and RESTful API-enabled, smart graph based on a graph embedding mechanism called the Contextionary.
 
-## Weaviate in a Nutshell
-
-<p><iframe width="560" height="315" src="https://www.youtube.com/embed/ImuofO5V0Cc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></p>
-
 ## Core use cases
 
 0. **Semantic Search** to find on both concepts and keywords.
