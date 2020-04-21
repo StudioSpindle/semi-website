@@ -4,132 +4,102 @@
   startup: true
   scaleup: true
   prof: true
-  profplus: true
   enterprise: true
-  enterpriseplus: true
 
 - title: "Weaviate Cluster Service"
   note: ""
   startup: true
   scaleup: true
   prof: true
-  profplus: true
   enterprise: true
-  enterpriseplus: true
 
 - title: "Community support"
   note: ""
   startup: true
   scaleup: true
   prof: true
-  profplus: true
   enterprise: true
-  enterpriseplus: true
 
 - title: "Email support"
   note: ""
-  startup: false
+  startup: true
   scaleup: true
   prof: true
-  profplus: true
   enterprise: true
-  enterpriseplus: true
 
 - title: "Slack support"
   note: ""
   startup: false
-  scaleup: false
+  scaleup: true
   prof: true
-  profplus: true
   enterprise: true
-  enterpriseplus: true
 
 - title: "Account manager support (SPOC)"
   note: ""
   startup: false
-  scaleup: false
+  scaleup: true
   prof: true
-  profplus: true
   enterprise: true
-  enterpriseplus: true
 
 - title: "Last-come-first-served Silver (<a href='#asterisk'>*</a>)"
   note: ""
   startup: false
-  scaleup: false
+  scaleup: true
   prof: true
-  profplus: true
   enterprise: true
-  enterpriseplus: true
 
 - title: "Access to our solution engineers (<a href='#dagger'>†</a>)"
   note: ""
   startup: false
-  scaleup: false
+  scaleup: true
   prof: true
-  profplus: true
   enterprise: true
-  enterpriseplus: true
 
 - title: "Private cloud or on premise"
   note: ""
   startup: false
   scaleup: false
   prof: false
-  profplus: false
   enterprise: true
-  enterpriseplus: true
 
 - title: "Enterprise service-level agreement (SLA)"
   note: ""
   startup: false
   scaleup: false
   prof: false
-  profplus: false
   enterprise: true
-  enterpriseplus: true
 
 - title: "Enterprise Terms of Service (ToS)"
   note: ""
   startup: false
   scaleup: false
   prof: false
-  profplus: false
   enterprise: true
-  enterpriseplus: true
 
 - title: "Enterprise End-User Licence Agreement (EULA)"
   note: ""
   startup: false
   scaleup: false
   prof: false
-  profplus: false
   enterprise: true
-  enterpriseplus: true
 
 - title: "Access to our core engineers (<a href='#dagger'>†</a>)"
   note: ""
   startup: false
   scaleup: false
   prof: false
-  profplus: false
   enterprise: true
-  enterpriseplus: true
 
 - title: "Last-come-first-served Gold (<a href='#double-dagger'>‡</a>)"
   note: ""
   startup: false
   scaleup: false
-  prof: false
-  profplus: true
+  prof: true
   enterprise: true
-  enterpriseplus: true
 
 - title: "Dedicated implementation support"
   note: ""
   startup: false
   scaleup: false
   prof: false
-  profplus: false
-  enterprise: false
-  enterpriseplus: true
+  enterprise: true

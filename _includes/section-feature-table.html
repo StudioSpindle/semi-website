@@ -16,9 +16,7 @@
                 <th class="{% if include.highlightOpenSource == true %}table__cell--highlight{% endif %}">Weaviate <br />Startup</th>
                 <th class="{% if include.highlightOpenSource == true %}table__cell--highlight{% endif %}">Weaviate <br />Scaleup</th>
                 <th class="{% if include.highlightOpenSource == true %}table__cell--highlight{% endif %}">Weaviate <br />Professional</th>
-                <th class="{% if include.highlightOpenSource == true %}table__cell--highlight{% endif %}">Weaviate <br />Professional Plus</th>
                 <th class="{% if include.highlightEnterprise == true %}table__cell--highlight{% endif %}">Weaviate <br />Enterprise</th>
-                <th class="{% if include.highlightEnterprise == true %}table__cell--highlight{% endif %}">Weaviate <br />Enterprise Plus</th>
             </tr>
             </thead>
             <tbody>
@@ -31,14 +29,10 @@
                 <td
                     class="table__cell--vertically-middle {% if include.highlightEnterprise == true %}table__cell--highlight{% endif %}">
                     {% include molecule-hasFeature.html hasFeature=feature.scaleup %}</td>
-                    <td
+                <td
                         class="table__cell--vertically-middle {% if include.highlightEnterprise == true %}table__cell--highlight{% endif %}">
                         {% include molecule-hasFeature.html hasFeature=feature.prof %}</td>
-                    <td
-                        class="table__cell--vertically-middle {% if include.highlightEnterprise == true %}table__cell--highlight{% endif %}">
-                        {% include molecule-hasFeature.html hasFeature=feature.profplus %}</td>
                 <td class="table__cell--vertically-middle {% if include.highlightEnterprise == true %}table__cell--highlight{% endif %}">{% include molecule-hasFeature.html hasFeature=feature.enterprise %}</td>
-                <td class="table__cell--vertically-middle {% if include.highlightEnterprise == true %}table__cell--highlight{% endif %}">{% include molecule-hasFeature.html hasFeature=feature.enterpriseplus %}</td>
             </tr>
             {% endfor %}
             </tbody>
