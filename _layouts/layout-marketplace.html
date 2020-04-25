@@ -1,4 +1,4 @@
-{% assign sorted_use_cases = site.use_cases | sort:"order" %}
+{% assign sorted_plugins = site.marketplace | sort:"order" %}
 
 {% include head.html %}
 
@@ -46,7 +46,7 @@
                 </div>
             </div>
             <ul class="cards">
-                {% for item in sorted_use_cases limit:4 %}
+                {% for item in sorted_plugins limit:4 %}
                 {% unless item.exclude %}
                 {% include components/card/card.html
                     title=item.title

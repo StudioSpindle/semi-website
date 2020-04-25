@@ -11,9 +11,9 @@ collections:
     documentation:
         output: true
         permalink: /documentation/:path
-    use_cases:
+    marketplace:
         output: true
-        permalink: /use-cases/:path
+        permalink: /marketplace/:path
     authors:
         output: true
 exclude:

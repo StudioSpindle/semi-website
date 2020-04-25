@@ -1,10 +1,10 @@
 ---
 published: true
 bodyclass: page--use-cases
-layout: layout-use-case
-title: Cost saving through predictive maintenance
+layout: layout-marketplace
+title: AllegroGraph Sematic Search
 description: Enhance customer satisfaction and lowering cost by replacing parts, maintaining assets preemptively and optimizing maintenance schedules
-tags: ['energy & utility']
+tags: ['plugin', 'third party']
 order: 1
 image: /img/illustrations/EnergyUtility.svg
 imageCard: /img/decoration/use-case-energy@2x.jpg
@@ -12,6 +12,8 @@ imageMobile: /img/decoration/use-case-1.jpg
 imageAlt: Cost saving through predictive maintenance
 inRnD: false
 og-img: energy-and-utility.jpg
+thirdParty: true
+linkText: Get this plugin on our partner's website
 ---
 
 ## The challenge

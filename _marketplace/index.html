@@ -1,12 +1,12 @@
 ---
 bodyclass: page--use-cases
 layout: layout-default
-title: Use Cases
-description: Explore a selection of use cases that SeMI can help with.
+title: Marketplace
+description: Explore Weaviate plugins, solutions and cloud offerings.
 exclude: true
 ---
 
-{% assign sorted_use_cases = site.use_cases | sort:"order" %}
+{% assign sorted_plugins = site.marketplace | sort:"order" %}
 
 <article>
     <div class="container background-hexagon">
@@ -20,7 +20,7 @@ exclude: true
         </section>
         <section class="wrapper--wide">
             <ul class="cards cards--load-fade-in">
-                {% for item in sorted_use_cases %}
+                {% for item in sorted_plugins %}
                     {% unless item.published != true %}
                         {% include components/card/card.html
                             title=item.title
@@ -30,8 +30,8 @@ exclude: true
                             imgAlt=""
                             backgroundImgUrl=item.imageCard
                             linkUrl=item.url
-                            linkExternal=false
-                            ctaText=""
+                            linkExternal=item.thirdParty
+                            ctaText=item.linkText
                             bodycopy=item.description
                             inRnD=item.inRnD
                             tags=item.tags
