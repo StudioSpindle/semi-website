@@ -20,6 +20,13 @@ main {
     }
 }
 
+.button__homepage a {
+    color: $color-white !important;
+}
+.button__homepage a:hover {
+    color: $color-black !important;
+}
+
 .wrapper {
     margin: 0 auto;
     max-width: $component-primary-max-width;

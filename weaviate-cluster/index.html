@@ -12,103 +12,62 @@ og-img: services.jpg
         <section class="layout layout--single section-page-intro">
             <div class="section-standout__text--left space-header-page">
                 <h1 class="title-page header--centered">Create a free Weaviate Cluster!</h1>
-                <div class="section-standout__text--left">
+                <div class="section-standout__text--left" id="request">
                     <p>
-                        We are beta-ing our new Weaviate Cluster Service (WCS), and you can try it out for free!
-                    </p>
-                    <p>
-                        By filling in your details below, we will create a WCS that you can start using within a few minutes.
+                        We are beta-ing our new Weaviate Cluster Service (WCS), and you can try it out for free on the SeMI Knowledge Network! Fill in your details below and we will create a Weaviate Smart Graph that you can start using within a few minutes.
                     </p>
                     <p>
                         How it works:<br>
                         1. Create a free weaviate cluster below.<br>
-                        2. Go to our documentation <a href="/documentation/weaviate/current/">here</a> to get started.
+                        2. Optionally, select a dataset.<br>
+                        3. We will email you the access details.<br>
+                        4. Go to our documentation <a href="/documentation/weaviate/current/">here</a> to get started.
                     </p>
                     <p id="collectEmail">
-                        <label for="input-email">Your email address:</label>
-                        <input id="input-email" placeholder="Your email" type="email" />
-
-                        <br><br>
-
-                        <label for="demo-dataset">Demo dataset</label>
-                        <section>
-                            <select id="demo-dataset">
-                                <option>Just an empty Weaviate</option>
-                            </select>
-                        </section>
-
-                        <br><br>
-                        <input class="button--small" type="button" value="Create my free Weaviate Cluster!" onclick="createACluster()" style="width:100%" />
+                        <p>
+                            <label for="input-email">Your email address:</label>
+                            <input id="input-email" placeholder="Your email" type="email" />
+                        </p>
+                        <p>
+                            <label for="demo-dataset">Demo dataset</label>
+                            <section>
+                                <select id="demo-dataset">
+                                    <option value="empty">Just an empty Weaviate</option>
+                                </select>
+                            </section>
+                        </p>
+                        <p>
+                            <label for="ontextionary">Contextionary</label>
+                            <section>
+                                <select id="demo-dataset">
+                                    <option value="en" selected>English</option>
+                                </select>
+                            </section>
+                        </p>
+                        <input class="button--small" type="button" value="Create my free Weaviate Cluster!" onclick="createCluster()" style="width:100%" />
                     </p>
                     <p>
                         <small>
-                            By accepting, you allow us to send occasional updates regarding your Weaviate Cluster or Weaviate. You can always opt-out of these.
+                            - By accepting, you allow us to send occasional updates regarding your Weaviate Cluster or Weaviate.<br>
+                            - Your cluster will be available for 2 weeks.<br>
+                            - The Weaviate Cluster Service is currently only for demo purposes. Do not upload any sensitive data.
                         </small>
                     </p>
-                    <p id="showProgress">
-                        
-                    </p>
+                </div>
+                <div class="section-standout__text--left" id="showProgress" style="display: none;">
+                    <p>We will email you when the Weaviate is available on the SeMI Knowledge Network.</p>
+                    <p>Status:</p>
+                    <div class="language-bash highlighter-rouge">
+                        <div class="highlight">
+                            <div class="code-toolbar">
+                                <pre class="highlight language-bash"><code id="status-overview" class="language-bash"></code></pre>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
     </div>
 </article>
 
-<script>
-
-var WCSURL = 'https://wcs.api.semi.technology/v1';
-
-function validateEmail(emailAddress){
-  var sQtext = '[^\\x0d\\x22\\x5c\\x80-\\xff]';
-  var sDtext = '[^\\x0d\\x5b-\\x5d\\x80-\\xff]';
-  var sAtom = '[^\\x00-\\x20\\x22\\x28\\x29\\x2c\\x2e\\x3a-\\x3c\\x3e\\x40\\x5b-\\x5d\\x7f-\\xff]+';
-  var sQuotedPair = '\\x5c[\\x00-\\x7f]';
-  var sDomainLiteral = '\\x5b(' + sDtext + '|' + sQuotedPair + ')*\\x5d';
-  var sQuotedString = '\\x22(' + sQtext + '|' + sQuotedPair + ')*\\x22';
-  var sDomain_ref = sAtom;
-  var sSubDomain = '(' + sDomain_ref + '|' + sDomainLiteral + ')';
-  var sWord = '(' + sAtom + '|' + sQuotedString + ')';
-  var sDomain = sSubDomain + '(\\x2e' + sSubDomain + ')*';
-  var sLocalPart = sWord + '(\\x2e' + sWord + ')*';
-  var sAddrSpec = sLocalPart + '\\x40' + sDomain; // complete RFC822 email address spec
-  var sValidEmail = '^' + sAddrSpec + '$'; // as whole string
-
-  var reValidEmail = new RegExp(sValidEmail);
-
-  return reValidEmail.test(emailAddress);
-}
-
-$().getJSON('https://wcs.api.semi.technology/v1/demodatasets', function(result){
-    console.log(result)
-})
-
-
-function loadJSON(url, method, body, cb) {
-    var xmlhttp = new XMLHttpRequest();
-    var url = url;
-    xmlhttp.onload = function () {
-        if (xmlhttp.readyState == 4 && xmlhttp.status == "200") {
-            cb(this.responseText)
-        }
-    }
-    xmlhttp.open(method, url, true);
-    xmlhttp.send();
-}
-
-function createACluster(){
-    var email = document.getElementById('input-email').value
-    
-    if(validateEmail(email) === false){
-        console.log('wtf email')
-    } else {
-        createCluster(email)
-    }
-
-}
-
-function populateDemodatasets(){
-    loadJSON(WCSURL + '/demodatasets', 'GET', {}, function(result){
-        console.log(result)
-    })
-}
-</script>
+<script src="/js/wcs.sml.js?build={{ 'now' | date: '%Y%m%d%H%M' }}"></script>

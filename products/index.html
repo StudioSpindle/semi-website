@@ -1,9 +1,8 @@
 ---
 bodyclass: ["page--products", " ", "page--products-index"]
 layout: layout-default
-title: Products
-description: An overview of SeMI's products.
-open-graph-type: product
+title: Discover our products
+description: Weaviate products and knowledge network offerings
 og-img: products.jpg
 ---
 
@@ -14,7 +13,7 @@ og-img: products.jpg
                 <!-- <h1 class="title-page header--centered">Core products</h1> -->
                 <h1 class="title-page header--centered">Discover our products</h1>
                 <div class="section-standout__text--centered">
-                    <p>Our core product suite consists of the Weaviate knowledge graph and Knowledge Networks based on Weaviate. To help you integrate our solutions in your organization, we offer the help of Solution Engineers. You can also check out our page with <a href="/use-cases/">use cases</a>.</p>
+                    <p>Our core product suite consists of the Weaviate Smart Graph and Knowledge Networks based on Weaviate.</p>
                 </div>
             </div>
         </section>
@@ -22,18 +21,18 @@ og-img: products.jpg
             <ul class="cards cards--load-fade-in">
                 {% capture carOneContent %}
                     <div class="card__intro">
-                        <p><b>Learn more about our offerings of the Weaviate knowledge graph from open source to enterprise.</b></p>
+                        <p><b>Learn more about our offerings of the Weaviate Smart Graph from open source to enterprise.</b></p>
                     </div>
                 {% endcapture %}
 
                 {% include components/card/card.html
                     title="Weaviate"
                     themeClass="card-white card--pilar card--theme-weaviate"
-                    imgUrl="/img/logo-icon-weaviate-enterprise.svg"
-                    imgAlt="Weaviate for the Enterprise logo"
-                    linkUrl="/products/weaviate.html"
+                    imgUrl="/img/logo-weaviate-emblem-color.svg"
+                    imgAlt="Weaviate for the logo"
+                    linkUrl="/products/weaviate/"
                     linkExternal=false
-                    ctaText="Explore Weaviate"
+                    ctaText="Click to learn more about Weaviate Enterprise"
                     content=carOneContent
                 %}
                 {% capture carTwoContent %}
@@ -49,42 +48,11 @@ og-img: products.jpg
                     imgAlt="Knowledge Network logo"
                     linkUrl="/newsletter"
                     linkExternal=false
-                    ctaText="coming soon"
+                    ctaText="Soon to be released, click to stay in the know"
                     content=carTwoContent
-                %}
-
-                {% capture carThreeContent %}
-                    <div class="card__intro">
-                        <p><b>Our solution engineers can help to integrate Weaviate and Weaviate Knowledge Networks into your business.</b></p>
-                    </div>
-                {% endcapture %}
-
-                {% include components/card/card.html
-                    title="Solution Engineers"
-                    themeClass="card--pilar card--theme-weaviate-enterprise"
-                    inverted=true
-                    imgUrl="/img/logo-solution-engineering-logomark-color.svg"
-                    imgAlt="SeMI Solution Engineers"
-                    linkUrl="/products/solution-engineers.html"
-                    linkExternal=false
-                    ctaText="Explore Solution Engineering"
-                    content=carThreeContent
                 %}
                 
             </ul>
         </section>
     </div>
-    <section class="space-layout--bottom container">
-        <div class="wrapper">
-            <div class="layout layout--single">
-                <div class="space-header-section header--centered">
-                    <h1 class="title-page header--centered">Add-ons &amp; Point Solutions</h1>
-                    <div class="section-standout__text--centered">
-                        <p>Our every growing market place of add-ons and points solutions for Weaviate.</p>
-                    </div>
-                </div>
-            </div>
-            {% include organism-cards-products-point-solutions.html %}
-        </div>
-    </section>
 </article>

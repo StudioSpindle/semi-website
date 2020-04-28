@@ -21,6 +21,9 @@ h1, h2, h3, h4, h5, h6 {
 	margin-bottom: .25em;
 	max-width: $component-primary-max-width;
 }
+.article h2, .article h3, .article h4, .article h5, .article h6 {
+    padding-top: 1.5rem;
+}
 h2 {
 	font-size: 1.75rem;
 }
@@ -40,7 +43,8 @@ h6 {
 
 p, li {
 	font-size: $font-size-body;
-	margin: 1.25rem 0 0 1.25rem;
+	margin-top: 1rem;
+	// padding-bottom: 1rem;
 	max-width: 32em;
 }
 
@@ -77,7 +81,7 @@ hr {
 		font-size: 1.25rem;
 	}
 	p, li {
-		margin: 1.25rem 0 0 1.25rem;
+		margin-top: 1rem;
 		font-size: 1.25rem;
 	}
 	p.intro {
@@ -86,7 +90,7 @@ hr {
 }
 
 li {
-	margin-bottom: $scale--1;
+	margin: $scale--1;
 }
 
 a {

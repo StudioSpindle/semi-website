@@ -1,7 +1,7 @@
 ---
 bodyclass: ["page--guides", " "]
 layout: layout-default
-title: About
+title: About our company
 description: An overview of the SeMI team.
 ---
 
@@ -9,54 +9,24 @@ description: An overview of the SeMI team.
     <div class="container background-hexagon">
         <section class="layout layout--single section-page-intro">
             <div class="section-standout__text--centered space-header-page">
-                <h1 class="title-page header--centered">About SeMI</h1>
+                <h1 class="title-page header--centered">About SeMI Technologies</h1>
                 <div class="section-standout__text--centered">
-                    <p>Hi there! We are the SeMI (semantic machine insights) team. If you are interested in working with us, you can reach out to us on <a href="mailto:hello@semi.technology">hello@semi.technology</a>. If you would like to learn how we work, check out the <a href="/playbook/#HR">SeMI Playbook</a>.</p>
+                    <p>SeMI Technologies was <a href="https://twitter.com/bobvanluijt/status/1144577375453286400?s=20">founded</a> in 2019 on June 26th. It is the company around the open-source smart graph Weaviate which
+                    <a href="https://github.com/semi-technologies/weaviate/commit/4d94274315f28433aa9bf2abe7f75be1f4cdbca3">saw</a> the light of day in 2016 on March 3rd.
+                    </p>
+                    <p>Currently, our core distributed team consists of five people and we are
+                    always looking for more talent, so make sure to reach out if you are interested in working together with us.</p>
                 </div>
             </div>
         </section>
         <section class="wrapper--wide">
+            <h1 class="header--centered">Core Team</h1>
             <ul class="cards cards--load-fade-in">
-                {% capture carOneContent %}
-                <div class="card__intro">
-                    <p>Sales Partner USA</p>
-                    <p>New York, USA</p>
-                </div>
-                {% endcapture %}
-
-                {% include components/card/card.html
-                    title="Oliver Christie"
-                    themeClass="card-white card--pilar card--theme-weaviate-oss"
-                    imgUrl="/img/people/oliver.jpg"
-                    imgAlt="Oliver Christie"
-                    linkUrl='https://www.linkedin.com/in/oliverchristie/'
-                    linkExternal=true
-                    ctaText="Contact me on LinkedIn"
-                    content=carOneContent
-                %}
-
-                {% capture carOneContent %}
-                <div class="card__intro">
-                    <p>Sales Partner Europe</p>
-                    <p>Amsterdam, The Netherlands</p>
-                </div>
-                {% endcapture %}
-
-                {% include components/card/card.html
-                    title="David van Damme"
-                    themeClass="card-white card--pilar card--theme-weaviate-oss"
-                    imgUrl="/img/people/david.jpg"
-                    imgAlt="David van Damme"
-                    linkUrl='https://www.linkedin.com/in/davidvandamme/'
-                    linkExternal=true
-                    ctaText="Contact me on LinkedIn"
-                    content=carOneContent
-                %}
 
                 {% capture carTwoContent %}
                 <div class="card__intro">
-                    <p>Technology Lead &amp; Co-Founder</p>
-                    <p>Mannheim, Germany</p>
+                    <p>CTO &amp; Co-Founder</p>
+                    <p>Mannheim area, Germany</p>
                 </div>
                 {% endcapture %}
 
@@ -91,23 +61,6 @@ description: An overview of the SeMI team.
                     content=carThreeContent
                 %}
             
-                {% capture carOneContent %}
-                <div class="card__intro">
-                    <p>Sales Partner Europe</p>
-                    <p>Amsterdam, The Netherlands</p>
-                </div>
-                {% endcapture %}
-
-                {% include components/card/card.html
-                    title="Edwin Gierstberg"
-                    themeClass="card-white card--pilar card--theme-weaviate-oss"
-                    imgUrl="/img/people/edwin.jpg"
-                    imgAlt="Edwin Gierstberg"
-                    linkUrl='https://www.linkedin.com/in/edwingierstberg/'
-                    linkExternal=true
-                    ctaText="Contact me on LinkedIn"
-                    content=carOneContent
-                %}
                 {% capture carTwoContent %}
 
                 <div class="card__intro">
@@ -130,7 +83,7 @@ description: An overview of the SeMI team.
 
                 {% capture carThreeContent %}
                 <div class="card__intro">
-                    <p>Product, Commercial, and Community Lead &amp; Co-Founder</p>
+                    <p>CEO &amp; Co-Founder</p>
                     <p>Amsterdam, The Netherlands</p>
                 </div>
                 {% endcapture %}
@@ -149,7 +102,7 @@ description: An overview of the SeMI team.
 
                 {% capture carOneContent %}
                 <div class="card__intro">
-                    <p>Finance and Operations Lead &amp; Co-Founder</p>
+                    <p>COO, CFO &amp; Co-Founder</p>
                     <p>Amsterdam, The Netherlands</p>
                 </div>
                 {% endcapture %}
@@ -168,7 +121,7 @@ description: An overview of the SeMI team.
                 {% capture carOneContent %}
                 <div class="card__intro">
                     <p>Let us know how you can help!</p>
-                    <p>Wherever you want</p>
+                    <p>&nbsp;</p>
                 </div>
                 {% endcapture %}
 
@@ -183,6 +136,48 @@ description: An overview of the SeMI team.
                     content=carOneContent
                 %}
                 
+            </ul>
+        </section>
+
+        <section class="wrapper--wide">
+            <h1 class="header--centered">Sales Partners</h1>
+            <ul class="cards cards--load-fade-in">
+                {% capture carOneContent %}
+                <div class="card__intro">
+                    <p>Sales Partner USA</p>
+                    <p>New York, USA</p>
+                </div>
+                {% endcapture %}
+        
+                {% include components/card/card.html
+                                    title="Oliver Christie"
+                                    themeClass="card-white card--pilar card--theme-weaviate-oss"
+                                    imgUrl="/img/people/oliver.jpg"
+                                    imgAlt="Oliver Christie"
+                                    linkUrl='https://www.linkedin.com/in/oliverchristie/'
+                                    linkExternal=true
+                                    ctaText="Contact me on LinkedIn"
+                                    content=carOneContent
+                                %}
+        
+                {% capture carOneContent %}
+                <div class="card__intro">
+                    <p>Sales Partner Europe</p>
+                    <p>Amsterdam, The Netherlands</p>
+                </div>
+                {% endcapture %}
+        
+                {% include components/card/card.html
+                                    title="David van Damme"
+                                    themeClass="card-white card--pilar card--theme-weaviate-oss"
+                                    imgUrl="/img/people/david.jpg"
+                                    imgAlt="David van Damme"
+                                    linkUrl='https://www.linkedin.com/in/davidvandamme/'
+                                    linkExternal=true
+                                    ctaText="Contact me on LinkedIn"
+                                    content=carOneContent
+                                %}
+        
             </ul>
         </section>
     </div>

@@ -3,11 +3,11 @@
     <dl class="article-toc">
         <dd>
             <ul class="list-ui article-toc__list-pages">
-            {% assign sorted_articles = site.news | sort: 'menu-order' %}
+            {% assign sorted_articles = site.news | sort: 'pubdate' | reverse %}
             {% for item in sorted_articles %}
                 {% unless item.title == 'News' %}
                     <li>
-                        <a href="{{item.url}}" class="{% if item.title == page.title %}current{% endif %}">{{item.title}}</a>
+                        - <a href="{{item.url}}" class="{% if item.title == page.title %}current{% endif %}">{{item.title}}</a>
                     </li>
                 {% endunless %}
             {% endfor %}

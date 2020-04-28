@@ -4,12 +4,12 @@ RUN gem install bundler:2.0.2
 RUN curl -sL https://deb.nodesource.com/setup_12.x | bash - && \
   apt-get install -y nodejs
 
-COPY Gemfile Gemfile.lock ./
+ADD Gemfile Gemfile.lock ./
 RUN bundle install
 
-COPY package.json package-lock.json ./
+ADD package.json package-lock.json ./
 RUN npm install
-COPY . . 
+ADD . . 
 
 RUN npm run build
 

@@ -1,4 +1,5 @@
-weaviate_version: 0.21.1
+weaviate_version: 0.22.5
+helm_version: 9.1.0
 markdown: kramdown
 kramdown:
     parse_block_html: false
@@ -10,9 +11,9 @@ collections:
     documentation:
         output: true
         permalink: /documentation/:path
-    use_cases:
+    marketplace:
         output: true
-        permalink: /use-cases/:path
+        permalink: /marketplace/:path
     authors:
         output: true
 exclude:
@@ -32,9 +33,17 @@ whitelist:
 docs:
     weaviate:
         - Get started
+        - Setup
         - Add data
         - Query data
         - Features
+        - Datasets
         - Client libs
-        - FAQ
+        - Weaviate Cluster Service
+        - More resources
         - About
+    weaviate-cli:
+        - Get started
+        - Cluster
+        - Schema
+        - Misc

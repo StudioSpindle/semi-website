@@ -15,7 +15,7 @@
             {% endfor %}
         {% endif  %}
         {% if page.pubdate %}
-            <p>{{ page.pubdate }}</p>
+            <p>{{ page.pubdate | date_to_long_string }}</p>
         {% endif %}
     </div>
     {% endif %}

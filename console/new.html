@@ -26,9 +26,6 @@ description: Console
                         <span class="tmp-tab__label tmp-tab__label--active">Dashboard</span>
                     </div>
                     <div class="tmp-tab">
-                        <span class="tmp-tab__label">Alerts</span>
-                    </div>
-                    <div class="tmp-tab">
                         <span class="tmp-tab__label">Invoices</span>
                     </div>
                     <div class="tmp-tab tmp-tab--pull-right">
@@ -53,55 +50,45 @@ description: Console
                     </select>
                 </div>
                 <section class="tmp-section-page">
-                    <h2 class="tmp-typography-heading-3">API consumption overview</h2>
-                    <div class="layout">
-                        <div class="tmp-layout-aside">
-                            <div class="tmp-card-paper tmp-card-data-summary">
-                                <p class="tmp-text-jumbo">15,023 USD</p>
-                                <p><small>Total revenue from API requests</small></p>
-                            </div>
-                            <div class="tmp-card-paper tmp-card-data-summary">
-                                <p class="tmp-text-jumbo">4,220 USD</p>
-                                <p><small>Total costs of API consumption</small></p>
-                            </div>
-                        </div>
-                        <div class="tmp-layout-main">
-                            <div class="tmp-card-paper">
-                                <p>Place graph here</p>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-                <section class="tmp-section-page">
-                    <h2 class="tmp-typography-heading-3">Earnings — Data valuation</h2>
+                    <h2 class="tmp-typography-heading-3">Weaviate Clusters</h2>
                     <div class="tmp-card-paper">
                         <div class="tmp-table-container">
                             <table class="tmp-table-data">
                                 <thead>
                                     <tr>
-                                        <th>Data type name</th>
-                                        <th>Data identifier</th>
-                                        <th class="tmp-table-data__cell--align-right">Earnings this period (USD)</th>
-                                        <th class="tmp-table-data__cell--align-right">Earnings this period (USD)</th>
+                                        <th>Cluster Name</th>
+                                        <th>Cluster Type</th>
+                                        <th>Network Name</th>
+                                        <th>Plugins</th>
+                                        <th></th>
                                         <th></th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    {% for item in site.data.earnings %}
-                                        <tr>
-                                            <th>{{ item.name }}</th>
-                                            <td>{{ item.identifier }}</td>
-                                            <td class="tmp-table-data__cell--align-right">{{ item.earnings }}</td>
-                                            <td class="tmp-table-data__cell--align-right">{{ item.value }}</td>
-                                            <td class="tmp-table-data__cell--align-center tmp-table-data__cell-with-img">
-                                                {% include molecule-ui-icon-options.html %}
-                                            </td>
-                                        </tr>
+                                    {% for item in site.data.console %}
+                                    <tr>
+                                        <th>{{ item.cluster_name }}</th>
+                                        <td>{{ item.cluster_type }}</td>
+                                        <td>{{ item.network_name }}</td>
+                                        <td>
+                
+                                            {% for plugin in item.plugins %}
+                                            <div class="tmp-label">{{ plugin }}</div>
+                                            {% endfor %}
+                
+                                        </td>
+                                        <td class="tmp-table-data__cell-with-img">
+                                            {% include molecule-ui-icon-edit.html %}
+                                        </td>
+                                        <td class="tmp-table-data__cell-with-img">
+                                            {% include molecule-ui-icon-options.html %}
+                                        </td>
+                                    </tr>
                                     {% endfor %}
                                 </tbody>
                                 <tfoot>
                                     <td colspan="2">
-                                        <button class="button--small">Create new</button>
+                                        <button class="button--small">Create New Weaviate Cluster</button>
                                     </td>
                                     <td colspan="3" class="tmp-table-data__cell--align-right">
                                         <span class="tmp-table-data__pagination">1-10 of 100</span>
@@ -118,48 +105,22 @@ description: Console
                     </div>
                 </section>
                 <section class="tmp-section-page">
-                    <h2 class="tmp-typography-heading-3">Spending — Billing per function</h2>
-                    <div class="tmp-card-paper">
-                        <div class="tmp-table-container">
-                            <table class="tmp-table-data">
-                                <thead>
-                                <tr>
-                                    <th>Function</th>
-                                    <th class="tmp-table-data__cell--align-right">Number of calls</th>
-                                    <th class="tmp-table-data__cell--align-right">Cost per call (USD)</th>
-                                    <th class="tmp-table-data__cell--align-right">Ext. data costs (USD)</th>
-                                    <th class="tmp-table-data__cell--align-right">Total costs (USD)</th>
-                                    <th class="tmp-table-data__cell--align-right">Consumption limit  (USD)</th>
-                                    <th></th>
-                                </tr>
-                                </thead>
-                                <tbody>
-                                {% for item in site.data.spending %}
-                                    <tr>
-                                        <th>{{ item.function }}</th>
-                                        <td class="tmp-table-data__cell--align-right">{{ item.calls }}</td>
-                                        <td class="tmp-table-data__cell--align-right">{{ item.costsCall }}</td>
-                                        <td class="tmp-table-data__cell--align-right">{{ item.costsData }}</td>
-                                        <td class="tmp-table-data__cell--align-right">{{ item.costsTotal }}</td>
-                                        <td class="tmp-table-data__cell--align-right">{{ item.costsLimit }}</td>
-                                        <td class="tmp-table-data__cell--align-center tmp-table-data__cell-with-img">
-                                            {% include molecule-ui-icon-edit.html %}
-                                        </td>
-                                    </tr>
-                                {% endfor %}
-                                </tbody>
-                                <tfoot>
-                                <td colspan="7" class="tmp-table-data__cell--align-right">
-                                    <span class="tmp-table-data__pagination">11-20 of 100</span>
-                                    <span class="tmp-table-data__prev-next">
-                                        {% include molecule-ui-icon-left.html %}
-                                    </span>
-                                    <span class="tmp-table-data__prev-next">
-                                        {% include molecule-ui-icon-right.html %}
-                                    </span>
-                                </td>
-                                </tfoot>
-                            </table>
+                    <h2 class="tmp-typography-heading-3">Spending</h2>
+                    <div class="layout">
+                        <div class="tmp-layout-aside">
+                            <div class="tmp-card-paper tmp-card-data-summary">
+                                <p class="tmp-text-jumbo">$ 15,023</p>
+                                <p><small>[invoice text]</small></p>
+                            </div>
+                            <!-- <div class="tmp-card-paper tmp-card-data-summary">
+                                <p class="tmp-text-jumbo">4,220 USD</p>
+                                <p><small>Total costs of API consumption</small></p>
+                            </div> -->
+                        </div>
+                        <div class="tmp-layout-main">
+                            <div class="tmp-card-paper">
+                                <p>Place uptime graph here</p>
+                            </div>
                         </div>
                     </div>
                 </section>

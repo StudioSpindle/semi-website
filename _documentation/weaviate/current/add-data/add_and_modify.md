@@ -22,22 +22,21 @@ When a Weaviate [schema](./define_schema.html) is created, you can populate this
 - [Basics](#basics)
 - [Introduction](#introduction)
 - [Data Object](#data-object)
-- [Add a data object](#add-a-data-object)
-- [Update a data object](#update-a-data-object)
-- [Get a data object](#get-a-data-object)
-- [Delete a data object](#delete-a-data-object)
+  - [Add a data object](#add-a-data-object)
+    - [Influence Vector Weights](#influence-vector-weights)
+  - [Update a data object](#update-a-data-object)
+  - [Get a data object](#get-a-data-object)
+  - [Delete a data object](#delete-a-data-object)
 - [References guide](#references-guide)
-- [Add individual references](#add-individual-references)
-- [Replace all references](#replace-all-references)
-- [Delete individual references](#delete-individual-references)
-- [Batching](#batching)
-- [FAQ](#frequently-asked-questions)
-
+  - [Add individual references](#add-individual-references)
+  - [Replace all references](#replace-all-references)
+  - [Delete individual references](#delete-individual-references)
+- [More resources](#more-resources)
 
 ## Basics
 
 - Data is added through the RESTful API.
-- Individual [semantic kinds](.././about/philosophy#basic-terminology) can be collected or listed. However, there are seperate documentation pages for [querying](.././query-data/get.html) and [exploring](.././query-data/explore.html).
+- Individual [semantic kinds](.././about/philosophy.html#basic-terminology) can be collected or listed. However, there are seperate documentation pages for [querying](.././query-data/get.html) and [exploring](.././query-data/explore.html).
 - The examples assume that Weaviate runs on port 80 on the localhost without authentication.
 - The entry point to a Weaviate is always `/v1`.
 
@@ -46,8 +45,7 @@ When a Weaviate [schema](./define_schema.html) is created, you can populate this
 Adding data to Weaviate is very similar to filling traditional graph databases with data. The two differentiating factors within Weaviate are:
 
 1. The ability to make direct and indirect references to nodes in the graph.
-2. Realtime semantic indexing in the [Contextionary](.././about/philosophy#about-the-contextionary).
-
+2. Realtime semantic indexing in the [Contextionary](.././about/philosophy.html#about-the-contextionary).
 
 ## Data Object
 
@@ -55,8 +53,8 @@ A data object syntax is defined as follows:
 
 ```js
 {
-  "class": "string", // as defined during schema creation
-  "id": "{UUID}", // optional, should be in UUID format.
+  "class": "string",  // as defined during schema creation
+  "id": "{UUID}",     // optional, should be in UUID format.
   "schema": {
     "property": "defined as datatypes", // defined as datatypes # as defined during schema creation
   }
@@ -67,32 +65,38 @@ A data object syntax is defined as follows:
 
 A concept data object can be added to a Weaviate via the following endpoint:
 
-```bash
-$ curl http://localhost:8080/v1/{semanticKind} -X POST -H '{contentType}' -d '{data}'
+```js
+POST /v1/{semanticKind}
+
+{
+  DATA
+}
 ```
 
-- `{semanticKind}` = _things_ or _actions_ ([more info](.././about/philosophy#basic-terminology)).
+- `{semanticKind}` = _things_ or _actions_ ([more info](.././about/philosophy.html#basic-terminology)).
 - `{contentType}` = JSON or YAML.
 - `{data}` = [data object](#data-object).
 
 Example of adding a _Thing_:
 
-```bash
-$ curl http://localhost:8080/v1/things -X POST -H 'Content-type: application/json' -d \
-'{
-  "class": "Company",
+```js
+POST /v1/things
+
+{
+  "class": "Publication",
   "id": "f81bfe5e-16ba-4615-a516-46c2ae2e5a80",
   "schema": {
-    "name": "Apple"
+    "name": "New York Times"
   }
-}'
+}
 ```
 
 Example of adding an _Action_, with a [direct](#direct-references) reference:
 
-```bash
-$ curl http://localhost:8080/v1/actions -X POST -H 'Content-type: application/json' -d \
-'{
+```js
+POST /v1/actions
+
+{
   "class": "Payment",
   "id": "22cc3380-ef73-48f8-9e3c-c603fae0f4b0",
   "schema": {
@@ -103,10 +107,59 @@ $ curl http://localhost:8080/v1/actions -X POST -H 'Content-type: application/js
       }
     ]
   }
-}'
+}
 ```
 
-- _Note, it is assumed that the CREF f81bfe5e-16ba-4615-a516-46c2ae2e5a80 exsists_
+- _Note, it is assumed that the beacon f81bfe5e-16ba-4615-a516-46c2ae2e5a80 exsists_
+
+
+### Influence Vector Weights
+
+When adding objects, a vector is created based on the words in the object. The algorithm of the [Contextionary](../about/contextionary.html) gives weights to words based on their general occurence of the word in its original training data. The underlying assumption is that a rare word should take more precedence over a very common word, similar to [tf-idf](https://en.wikipedia.org/wiki/Tf%E2%80%93idf).
+
+This works well in most cases, but in some use-case specific domain languages common words get a new meaning and therefore their importance should change. Imagine the words "far" and "near". They are quite common in overall language, so - especially when mixed with rarer words - they wouldn't get a great weight. However, now assume you're in the domain of optometry or manufacturing glasses. In the terms "far-sighted" and "near-sighted", the words "near" and "far" make a very important distinction. If you want to successfully classify objects based on these terms, more relative importance should be given to them. You can influence, or completely override, the weights of individual words in objects when creating vectors.
+
+To do so, the field `vectorWeights` was introduced to the `Thing` and `Action` objects. The field is a key-value map where both the keys and the values must be strings. The keys are the words you want to influence and the value is a mathematical expression to set the new weight. You can use additions, subtractions, multiplications, divisions or simply overwrite the weight with a fixed number. To reference the original weights, use the single-letter variable `w`. Some examples:
+
+- `"vectorWeights": {"far": "10 * w"}`.
+Give the word "far" 10 times its original weight.
+
+- `"vectorWeights": {"far": "w + 0.5", "near": "w - 0.5"}`.
+Give the word "far" an absolute boost of 0.5, while penalizing the word "near" by 0.5.
+
+- `"vectorWeights": {"sighted": "0.7", "glasses": "2 - 4 * w"}`.
+Let the word "sighted" have a fixed weight of 0.7 whereas the word "glasses" is calculated by subtracting 4 times the original weight from the number 2.
+
+#### Important notes to keep in mind 
+
+- For this feature to work you need a Contextionary version of at least `...v0.4.7`.
+- Spaces in math expressions have no meaning.
+- A word that is not referenced in `"vectorWeights"` will simply use its original weight as returned by the Contextionary.
+- Custom `vectorWeights` only affect the object which they are set on, there is no option to globally manipulate a specific word. If the same vectorWeights are required for multiple objects, simply attach them to all objects where needed.
+- Whenever the mathematical expression is not a fixed number (such as `"17"`) an operator must be present. It is not valid to use implicit operators, such as `"2w"` which would mean "two times the original weight". In this case explicitly use the multiplication operator, e.g. `"2 * w"` or `"w*2"`.
+- The weights can be modified when creating the object, or with a `PUT` or `PATCH` update.
+
+#### Full example
+
+Here's a full example for importing a `Thing` object.
+
+`POST /v1/things`
+
+``` jsos
+{
+ "class": "Glasses",
+ "schema": {
+   "description": "These glasses are meant for far-sighted people"
+ },
+ "vectorWeights": {
+   "far": "5 * w",
+   "near": "5 * w"
+ }
+}
+```
+
+The above example will boost the words "far" or "near" by a factor of 5. Note that the object does not contain the word "near", so only the word "far" is boosted. The other unreferenced words maintain their original weights.
+
 
 ## Update a data object
 
@@ -114,26 +167,31 @@ $ curl http://localhost:8080/v1/actions -X POST -H 'Content-type: application/js
 
 A concept data object can be updated inside a Weaviate via the following endpoint:
 
-```bash
-$ curl http://localhost:8080/v1/{semanticKind}/{semanticKindUUID} -X PUT -H '{contentType}' -d '{data}'
+```js
+PUT /v1/{semanticKind}/{semanticKindUUID}
+
+{
+  DATA
+}
 ```
 
-- `{semanticKind}` = _things_ or _actions_ ([more info](.././about/philosophy#basic-terminology)).
+- `{semanticKind}` = _things_ or _actions_ ([more info](.././about/philosophy.html#basic-terminology)).
 - `{semanticKindUUID}` = the UUID that points to a concept.
 - `{contentType}` = JSON or YAML.
 - `{data}` = [data object](#data-object).
 
 Example of updating a _Thing_.
 
-```bash
-$ curl http://localhost:8080/v1/things/f81bfe5e-16ba-4615-a516-46c2ae2e5a80 -X PUT -H 'Content-type: application/json' -d 
-'{
-  "class": "Company",
+```js
+PUT /v1/things/f81bfe5e-16ba-4615-a516-46c2ae2e5a80
+
+{
+  "class": "Publication",
   "schema": {
-    "name": "Apple Inc."
+    "name": "New York Times Corporation"
   },
   "id": "f81bfe5e-16ba-4615-a516-46c2ae2e5a80"
-}'
+}
 ```
 
 ### PATCH
@@ -150,38 +208,43 @@ Alternatively to the `PUT` request, a `PATCH` request can be made to update a `T
 
 The request can be used like this:
 
-```bash
-$ curl http://localhost:8080/v1/{semanticKind}/{semanticKindUUID} -X PATCH -H '{contentType}' -d '{data}'
+```js
+PATCH /v1/{semanticKind}/{semanticKindUUID}
+
+{
+  DATA
+}
 ```
 
 For example with the (`{data}`) object filled, the request can look something this:
 
 ```bash
-$ curl http://localhost:8080/v1/things/f81bfe5e-16ba-4615-a516-46c2ae2e5a80 -X PATCH -H 'Content-type: application/json' -d 
-'{
-  "class": "Company",
+PATCH /v1/things/f81bfe5e-16ba-4615-a516-46c2ae2e5a80 
+
+{
+  "class": "Publication",
   "schema": {
-    "name": "Apple Inc."
+    "name": ""New York Times Corporation""
   },
   "id": "f81bfe5e-16ba-4615-a516-46c2ae2e5a80"
-}'
+}
 ```
 
 ## Get a data object
 
 A concept data object can be retrieved from a Weaviate directly via the following endpoint:
 
-```bash
-$ curl http://localhost:8080/v1/{semanticKind}/{semanticKindUUID}
+```js
+GET /v1/{semanticKind}/{semanticKindUUID}
 ```
 
-- `{semanticKind}` = _things_ or _actions_ ([more info](.././about/philosophy#basic-terminology)).
+- `{semanticKind}` = _things_ or _actions_ ([more info](.././about/philosophy.html#basic-terminology)).
 - `{semanticKindUUID}` = the UUID that points to a concept.
 
 Example of requesting a _thing_.
 
-```bash
-$ curl http://localhost:8080/v1/things/f81bfe5e-16ba-4615-a516-46c2ae2e5a80
+```js
+GET /v1/things/f81bfe5e-16ba-4615-a516-46c2ae2e5a80
 ```
 
 - _Note, the result will be in the form of a [data object](#data-object)._
@@ -191,17 +254,17 @@ $ curl http://localhost:8080/v1/things/f81bfe5e-16ba-4615-a516-46c2ae2e5a80
 
 A concept data object can be deleted from a Weaviate directly via the following endpoint;
 
-```bash
-$ curl http://localhost:8080/v1/{semanticKind}/{semanticKindUUID} -X DELETE
+```js
+DELETE /v1/{semanticKind}/{semanticKindUUID}
 ```
 
-- `{semanticKind}` = _things_ or _actions_ ([more info](.././about/philosophy#basic-terminology)).
+- `{semanticKind}` = _things_ or _actions_ ([more info](.././about/philosophy.html#basic-terminology)).
 - `{semanticKindUUID}` = the UUID that points to a concept.
 
 Example of deleting a _thing_.
 
-```bash
-$ curl http://localhost:8080/v1/things/f81bfe5e-16ba-4615-a516-46c2ae2e5a80 -X DELETE
+```js
+DELET /v1/things/f81bfe5e-16ba-4615-a516-46c2ae2e5a80
 ```
 
 ## References guide
@@ -219,9 +282,9 @@ Direct references are always set like this:
 
 ```json
 {
-  "class": "Company",
+  "class": "Publication",
   "schema": {
-    "name": "Apple",
+    "name": "New York Times",
     "hasCeo": {
       "beacon": "weaviate://localhost/things/{concept ID}"
     }
@@ -241,9 +304,9 @@ Concider the following two entries that might be in you database:
 ```json
 {
   "Company": {
-    "name": "Apple",
+    "name": "New York Times",
     "hasCeo": {
-      "name": "Tim Cook"
+      "name": "Mark Thompson"
     }
   }
 }
@@ -254,7 +317,7 @@ and
 ```json
 {
   "Person": {
-    "name": "Timmothy Cook"
+    "name": "Mark Thompson"
   }
 }
 ```
@@ -265,12 +328,12 @@ Indirect references are always set like this:
 
 ```json
 {
-  "class": "Company",
+  "class": "Publication",
   "schema": {
-    "name": "Apple",
+    "name": "New York Times",
     "hasCeo": {
       "Person": {
-        "name": "Tim Cook"
+        "name": "Mark Thompson"
       }
     }
   }
@@ -297,11 +360,15 @@ Requests can be done to individual references if the cardinality of this propert
 
 An individual reference can be added to a concept data object as follows:
 
-```bash
-$ curl http://localhost:8080/v1/{semanticKind}/{semanticKindUUID}/references/{propertyName} -X POST -H '{contentType}' -d '{data}'
+```js
+POST /v1/{semanticKind}/{semanticKindUUID}/references/{propertyName}
+
+{
+  DATA
+}
 ```
 
-- `{semanticKind}` = _things_ or _actions_ ([more info](.././about/philosophy#basic-terminology)).
+- `{semanticKind}` = _things_ or _actions_ ([more info](.././about/philosophy.html#basic-terminology)).
 - `{semanticKindUUID}` = the UUID that points to a concept.
 - `{propertyName}` = the name of the property related to this class.
 - `{contentType}` = JSON or YAML.
@@ -309,20 +376,25 @@ $ curl http://localhost:8080/v1/{semanticKind}/{semanticKindUUID}/references/{pr
 
 Example of adding a direct reference:
 
-```bash
-$ curl http://localhost:8080/v1/actions/f81bfe5e-16ba-4615-a516-46c2ae2e5a80/references/toCompany -X POST -H 'Content-type: application/json' -d 'beacon: weaviate://localhost/things/22cc3380-ef73-48f8-9e3c-c609bae0b4b0'
+```js
+POST /v1/actions/f81bfe5e-16ba-4615-a516-46c2ae2e5a80/references/toPublication
+
+{
+  "beacon": "weaviate://localhost/things/22cc3380-ef73-48f8-9e3c-c609bae0b4b0"
+}
 ```
 
 Example of adding an indirect reference _(coming soon)_:
 
-```bash
-$ curl http://localhost:8080/v1/things/f81bfe5e-16ba-4615-a516-46c2ae2e5a80/references/hasCeo -X POST -H 'Content-type: application/json' -d \
-'{
-  "name": "Steve Jobs",
+```js
+POST /v1/things/f81bfe5e-16ba-4615-a516-46c2ae2e5a80/references/hasCeo
+
+{
+  "name": "Mark Thompson",
   "bornIn": {
     "beacon": "weaviate://localhost/things/lo9...b2c"
   }
-}'
+}
 ```
 
 - _Note, you can only add multiple references if [the `cardinality` of the schema id set to `many`](.././add-data/define_schema.html#create-a-schema-item)_
@@ -331,11 +403,15 @@ $ curl http://localhost:8080/v1/things/f81bfe5e-16ba-4615-a516-46c2ae2e5a80/refe
 
 All references related to a property can be updated as follows:
 
-```bash
-$ curl http://localhost:8080/v1/{semanticKind}/{semanticKindUUID}/references/{propertyName} -X PUT -H '{contentType}' -d '{data}'
+```js
+PUT /v1/{semanticKind}/{semanticKindUUID}/references/{propertyName}
+
+{
+  DATA
+}
 ```
 
-- `{semanticKind}` = _things_ or _actions_ ([more info](.././about/philosophy#basic-terminology)).
+- `{semanticKind}` = _things_ or _actions_ ([more info](.././about/philosophy.html#basic-terminology)).
 - `{semanticKindUUID}` = the UUID that points to a concept.
 - `{propertyName}` = the name of the property related to this class.
 - `{contentType}` = JSON or YAML.
@@ -343,16 +419,17 @@ $ curl http://localhost:8080/v1/{semanticKind}/{semanticKindUUID}/references/{pr
 
 Example of replacing a direct reference:
 
-```bash
-$ curl http://localhost:8080/v1/things/f81bfe5e-16ba-4615-a516-46c2ae2e5a80/references/hasCustomers -X POST -H 'Content-type: application/json' -d \
-'[
+```js
+POST /v1/things/f81bfe5e-16ba-4615-a516-46c2ae2e5a80/references/hasCustomers
+
+[
   {
     "beacon": "weaviate://localhost/things/lo9...b2c"
   },
   {
     "beacon": "weaviate://localhost/things/kjd...d8s"
   }
-]'
+]
 ```
 
 - _Note, you can only update multiple references if [the `cardinality` of the schema is set to `many`](.././add-data/define_schema.html#create-a-schema-item)_
@@ -361,40 +438,14 @@ $ curl http://localhost:8080/v1/things/f81bfe5e-16ba-4615-a516-46c2ae2e5a80/refe
 
 You can delete a single reference that is given in the body from the list of references that this property has.
 
-```bash
-$ curl http://localhost:8080/v1/{semanticKind}/{semanticKindUUID}/references/{propertyName} -X DELETE -H '{contentType}' -d '{data}'
+```js
+DELETE /v1/{semanticKind}/{semanticKindUUID}/references/{propertyName}
+
+{
+  DATA
+}
 ```
 
-## Batching
-
-A bulk of objects can be added to Weaviate by using a batch POST. A seperate request should be done for the semantic kinds (`Things` or `Actions`).
-
-```bash
-$ curl http://localhost:8080/v1/batching/things -X POST -H 'Content-type: application/json' -d \
-'{
-  "fields": [
-    "ALL"
-  ],
-  "things": [
-    {
-      "class": "Company",
-      "schema": {
-        "name": "Apple Inc."
-      },
-      "id": "0a85f1db-fbf3-4343-b45b-25c794c5419d"
-    },
-    {
-      "class": "Company",
-      "schema": {
-        "name": "Google LLC"
-      },
-      "id": "b0c18f80-d7c1-44bf-a745-14b9df5b1055"
-    }
-  ]
-}'
-```
-
-
-## Frequently Asked Questions
+## More Resources
 
 {% include support-links.html %}

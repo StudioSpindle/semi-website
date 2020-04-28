@@ -1,8 +1,6 @@
 <!DOCTYPE html>
 {% if page.open-graph-type == "article" %}
 	<html itemscope itemtype="http://schema.org/Article" lang="en">
-{% elsif page.open-graph-type == "product" %}
-	<html itemscope itemtype="http://schema.org/Product" lang="en">
 {% else %}
 	<html lang="en">
 {% endif %}
@@ -12,7 +10,18 @@
 	<meta name="author" content="SeMI Technologies" />
 	<meta name="description" content="{{ page.description }}" />
 	{% include og.html %}
-	<title>SeMI Technologies // {{ page.title }}</title>
+
+	{% if page.layout == 'layout-blog-article' %}
+		<link rel="alternate" type="application/rss+xml" title="SeMI Technology and Weaviate RSS newsfeed" href="https://semi.technology/news.xml" />
+	{% endif %}
+
+	{% if page.url == "/" %}
+		<title>{{ page.title }}</title>
+	{% elsif page.layout == "layout-documentation" %}
+		<title>{{ page.title }} - {{ page.product }} documentation</title>
+	{% else %}
+		<title>{{ page.title }} - SeMI Technologies</title>
+	{% endif %}
 	<link rel="canonical" href="https://www.semi.technology{{ page.url | replace:'index.html','/' | replace: '/index', '/'}}" />
     <link href="https://fonts.googleapis.com/css?family=Alegreya+Sans:300,300i,400,400i,500,500i,700,700i|Alegreya:400,400i,500,500i|IBM+Plex+Mono:400,600" rel="stylesheet">
 	<link rel="shortcut icon" href="/favicon.ico" />

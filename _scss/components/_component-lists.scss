@@ -37,6 +37,7 @@ li.list-bullet--disabled {
     }
     .sub-menu-item {
         margin: 0 0 0 1.75rem;
+        padding-bottom: 0;
     }
 }
 
@@ -73,6 +74,8 @@ li.list-bullet--disabled {
         margin-left: 1em;
     }
     ol, .list-ordered {
+        padding-top: 1rem;
+        padding-bottom: 1rem;
     	counter-reset: li;
     	list-style: none;
     	> li {
@@ -89,10 +92,6 @@ li.list-bullet--disabled {
             }
         }
     }
-}
-
-.style-sm-overview {
-  margin-bottom: 2em;
 }
 
 dt {

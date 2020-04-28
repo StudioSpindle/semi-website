@@ -1,0 +1,20 @@
+- name: English
+  short: en
+  title: an English
+  experimental: False
+- name: Dutch
+  short: nl
+  title: a Dutch
+  experimental: True
+- name: German
+  short: de
+  title: a German
+  experimental: True
+- name: Italian
+  short: it
+  title: an Italian
+  experimental: True
+- name: Czech
+  short: cz
+  title: a Czech
+  experimental: True

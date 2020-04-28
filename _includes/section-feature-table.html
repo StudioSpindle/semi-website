@@ -1,7 +1,7 @@
 <section class="layout layout--single space-layout-top--large">
-    <div class="space-header-section">
-        <h2 class="title-section header--centered title-column">Features</h2>
-    </div>
+    {% include molecule-section-heading.html
+        title='Product Feature Comparison'
+    %}
 
     {% comment %}
     Note: To edit this table, look for the file './_data/weaviateFeatures.yml'
@@ -13,7 +13,9 @@
             <thead>
             <tr>
                 <th>Feature</th>
-                <th class="{% if include.highlightOpenSource == true %}table__cell--highlight{% endif %}">Weaviate <br />Open Source</th>
+                <th class="{% if include.highlightOpenSource == true %}table__cell--highlight{% endif %}">Weaviate <br />Startup</th>
+                <th class="{% if include.highlightOpenSource == true %}table__cell--highlight{% endif %}">Weaviate <br />Scaleup</th>
+                <th class="{% if include.highlightOpenSource == true %}table__cell--highlight{% endif %}">Weaviate <br />Professional</th>
                 <th class="{% if include.highlightEnterprise == true %}table__cell--highlight{% endif %}">Weaviate <br />Enterprise</th>
             </tr>
             </thead>
@@ -21,8 +23,16 @@
             {% for feature in site.data.weaviateFeatures %}
             <tr>
                 <td>{{ feature.title }}</td>
-                <td class="table__cell--vertically-middle {% if include.highlightOpenSource == true %}table__cell--highlight{% endif %}">{% include molecule-hasFeature.html hasFeature=feature.opensource %}</td>
-                <td class="table__cell--vertically-middle {% if include.highlightEnterprise == true %}table__cell--highlight{% endif %}">{% include molecule-hasFeature.html hasFeature=feature.whitelabel %}</td>
+                <td
+                    class="table__cell--vertically-middle {% if include.highlightEnterprise == true %}table__cell--highlight{% endif %}">
+                    {% include molecule-hasFeature.html hasFeature=feature.startup %}</td>
+                <td
+                    class="table__cell--vertically-middle {% if include.highlightEnterprise == true %}table__cell--highlight{% endif %}">
+                    {% include molecule-hasFeature.html hasFeature=feature.scaleup %}</td>
+                <td
+                        class="table__cell--vertically-middle {% if include.highlightEnterprise == true %}table__cell--highlight{% endif %}">
+                        {% include molecule-hasFeature.html hasFeature=feature.prof %}</td>
+                <td class="table__cell--vertically-middle {% if include.highlightEnterprise == true %}table__cell--highlight{% endif %}">{% include molecule-hasFeature.html hasFeature=feature.enterprise %}</td>
             </tr>
             {% endfor %}
             </tbody>

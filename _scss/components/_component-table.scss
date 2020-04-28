@@ -53,15 +53,30 @@ td {
     }
 }
 
-.table-usage {
+.table-prices {
     width: 100%;
     td, th {
         font-size: 1rem;
-        padding: 0.375rem;
+        padding: 0.5rem;
     }
     @media screen and (min-width: 48em) {
         td, th {
-            padding: 1rem 1.5rem;
+            font-size: 1rem;
+            padding: 0.5rem;
+        }
+    }
+}
+
+.table-features {
+    width: 100%;
+    td, th {
+        font-size: 0.65rem;
+        padding: 0.025rem;
+    }
+    @media screen and (min-width: 48em) {
+        td, th {
+            font-size: 0.65rem;
+            padding: 0.025rem;
         }
     }
 }
@@ -78,7 +93,7 @@ td {
 
 .table-features th:not(:first-child) {
     text-align: center;
-    min-width: 130px;
+    min-width: 90px;
 }
 
 .table-zebra {

@@ -14,10 +14,16 @@
   .quote__author-title {
     clear:left;
   }
+  
+}
+
+.quote__img {
+  border-radius: 50%;
+  width: 5rem;
 }
 
 .quote__content {
-  font-size: 3rem;
+  font-size: 2rem;
   font-family: 'Alegreya', serif;
   font-style: italic;
   text-align: center;

@@ -1,10 +1,12 @@
 ---
 layout: layout-documentation
+bodyclass: ["page--guides", " "]
 product: weaviate-cli
+sub-menu: index
 product-order: 3
-title: Introduction
-description: Weaviate CLI tool
-tags: ['weaviate-cli', 'introduction']
+title: About
+description: About
+tags: ['index', 'Weaviate-cli']
 menu-order: 1
 open-graph-type: article
 og-img: documentation.jpg
@@ -63,6 +65,6 @@ optional arguments:
   -h, --help            show this help message and exit
 ```
 
-## Frequently Asked Questions
+## More Resources
 
 {% include support-links.html %}

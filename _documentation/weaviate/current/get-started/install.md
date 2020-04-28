@@ -4,7 +4,7 @@ product: weaviate
 sub-menu: Get started
 product-order: 1
 title: Installation
-description: How to install a weaviate setup.
+description: How to install a Weaviate or Weaviate Kubernetes cluster.
 tags: ['Installation', 'Running', 'Kubernetes']
 menu-order: 2
 open-graph-type: article
@@ -19,25 +19,17 @@ Weaviate is completely containerized, you can use Docker Compose and/or Kubernet
 
 ## Index
 
-- [Video tutorial](#video-tutorial)
 - [Basics](#basics)
-- [Weaviate Cluster Service (WCS)](#weaviate-cluster-service-wcs)
 - [Docker Compose](#docker-compose)
 - [Kubernetes](#kubernetes)
   - [K8s configuration](#k8s-configuration)
   - [Get the Helm Chart](#get-the-helm-chart)
   - [Deploy](#deploy)
-  - [Additional configuration](#additional-configuration)
+  - [Additional configuration](#additional-configuration-help)
   - [Etcd Disaster Recovery](#etcd-disaster-recovery)
 - [Weaviate Configuration](#weaviate-configuration-file)
 - [OpenID (OICD) Authentication](#openid-authentication)
-- [FAQ](#frequently-asked-questions)
-
-## Video Tutorial
-
-This guide in video format.
-
-<p><iframe width="560" height="315" src="https://www.youtube.com/embed/ye-dmGBsxf4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></p>
+- [More resources](#more-resources)
 
 ## Basics
 
@@ -45,39 +37,32 @@ This guide in video format.
 - If your Weaviate is available over the internet or locally, you can use the [Weaviate Playground](http://playground.semi.technology) to interact with it.
 - All environments run out of the box.
 
-## Weaviate Cluster Service (WCS)
-
-Weaviate Clusters are managed instances hosted on the SeMI network. Weaviate Clusters are ideal to quickly setup and run or test out Weaviate's capabilities. You can request a free Weaviate Cluster:
-
-- [Through the weaviate-cli](/documentation/weaviate-cli/current/cluster-create.html).
-
 ## Docker Compose
 
 You can run a Weaviate instance with [Docker Compose](https://docs.docker.com/compose/) as follows on Linux and MacOS:
 
-Want another language? Make sure to let us know [here](https://github.com/semi-technologies/weaviate/issues).
+Want another natural language? Make sure to let us know [here](https://github.com/semi-technologies/weaviate/issues).
 
-### Weaviate with an English contextionary
+{% for c11y in site.data.c11y %}
 
-```bash
-# Download the Weaviate configuration file
-$ curl -O https://raw.githubusercontent.com/semi-technologies/weaviate/{{ site.weaviate_version }}/docker-compose/runtime/en/config.yaml
-# Download the Weaviate docker-compose file
-$ curl -O https://raw.githubusercontent.com/semi-technologies/weaviate/{{ site.weaviate_version }}/docker-compose/runtime/en/docker-compose.yml
-# Run Docker compose
-$ docker-compose up
-```
-
-### Weaviate with a Dutch contextionary
+### Weaviate with {{ c11y.title }} Contextionary
 
 ```bash
 # Download the Weaviate configuration file
-$ curl -O https://raw.githubusercontent.com/semi-technologies/weaviate/{{ site.weaviate_version }}/docker-compose/runtime/nl/config.yaml
+$ curl -O https://raw.githubusercontent.com/semi-technologies/weaviate/{{ site.weaviate_version }}/docker-compose/runtime/{{ c11y.short }}/config.yaml
 # Download the Weaviate docker-compose file
-$ curl -O https://raw.githubusercontent.com/semi-technologies/weaviate/{{ site.weaviate_version }}/docker-compose/runtime/nl/docker-compose.yml
-# Run Docker compose
+$ curl -O https://raw.githubusercontent.com/semi-technologies/weaviate/{{ site.weaviate_version }}/docker-compose/runtime/{{ c11y.short }}/docker-compose.yml
+# Run Docker Compose
 $ docker-compose up
 ```
+
+{% if c11y.experimental == true %}
+
+_Note: The {{ c11y.name }} version is an experimental contextionary. Any feedback? Please share it with us on [Github](https://github.com/semi-technologies/weaviate/issues) or [Stackoverflow](https://stackoverflow.com/tags/weaviate/)._
+
+{% endif %}
+
+{% endfor %}
 
 Warning: The output is quite verbose, for an alternative see [attaching to only
 the log output of weaviate](#attaching-to-the-log-output-of-only-weaviate).
@@ -92,7 +77,7 @@ up` like so:
 - Instead of running `docker-compose up` run the following command:
 
 ```bash
-# Run Docker compose
+# Run Docker Compose
 $ docker-compose up -d && docker-compose logs -f weaviate
 ```
 
@@ -112,6 +97,12 @@ The output of the above setup is quite verbose, you can also run the above comma
 
 ## Kubernetes
 
+_Note I: the Kubernetes setup is only for large scale deployments of Weaviate. In case you want to work with smaller deployments, you can always user Docker Compose or the Weaviate Cluster Service._
+
+_Note II: tested until Kubernetes 1.14.x_
+
+_Note III: In case your are running a very small setup. We would advice to use Docker Compose, but you can also this [minimal configuration](https://github.com/semi-technologies/weaviate-helm/blob/v{{ site.helm_version }}/weaviate/values-minimal.yaml)._
+
 To run Weaviate with Kubernetes take the following steps.
 
 ```bash
@@ -127,7 +118,7 @@ Get the Helm chart and configuration files.
 
 ```bash
 # Set the Weaviate chart version
-export CHART_VERSION="v8.0.0"
+export CHART_VERSION="v{{ site.helm_version }}"
 # Download Helm charts
 wget https://github.com/semi-technologies/weaviate-helm/releases/download/$CHART_VERSION/weaviate.tgz
 # Download configuration values
@@ -155,24 +146,90 @@ As a rule of thumb, you can:
 You can deploy the helm charts as follows:
 
 ```bash
-# Init helm (if you haven't done this already)
-$ helm init
+# Init helm (if you use Helm 2)
+$ helm init --upgrade
+# Create a Weaviate namespace
+$ kubectl create namespace weaviate
 # Deploy
 $ helm upgrade \
   --values ./values.yaml \
   --install \
+  --wait \
   --namespace "weaviate" \
   "weaviate" \
   weaviate.tgz
   ```
 
-### Additional Configuration
+### Additional Configuration Help
 
 - [Cannot list resource “configmaps” in API group when deploying Weaviate k8s setup on GCP](https://stackoverflow.com/questions/58501558/cannot-list-resource-configmaps-in-api-group-when-deploying-weaviate-k8s-setup)
+- [Error: UPGRADE FAILED: configmaps is forbidden](https://stackoverflow.com/questions/58501558/cannot-list-resource-configmaps-in-api-group-when-deploying-weaviate-k8s-setup)
 
 ### etcd Disaster Recovery
 
-_coming soon_
+The weaviate chart depends on the bitnami `etcd` chart to provision `etcd` in
+the namespace. `etcd` is a vital component to Weaviate as it provides
+abilites for distributed RW locking as well as consistent configuration for
+critical areas.
+
+Unfortunately, without *disaster recovery* enabled, the `etcd` cluster can end
+up in a deadlock situation without a possiblity to recover. If a majority of
+`etcd` pods become unavailable, it's impossible for new members to join. So
+especially with small cluster sizes, such as three pods, it only takes the
+simultaneous death of two pods for the cluster to be unrecoverable.
+
+As a mitigation for this disaster scenario, the `etcd` chart (>= `v3.0.0`)
+provides a *disaster recovery* option, where the etcd cluster can be resurected
+without a minimum number of pods. For this a snapshot is created at a regular
+interval, which can then be read back to bootstrap a "new" cluster.
+
+#### When should this feature be enabled?
+
+We recommend this feature to be enabled in any scenario where Weaviate should
+be able to survive cluster node upgrades,  cluster auto-scaling or random node
+deaths (as they are quite common on Kubernetes).
+
+#### Why is not enabled by default if it's so important?
+
+This snapshotting process requires an nfs volume. This in turn requires an nfs
+provisioner, such as `@stable/nfs-server-provisioner`. Since we cannot assume
+that the provisioner is present on a random cluster, the chart has to default
+to `etcd.disasterRecovery.enabled: false` (see `values.yaml`). Nevertheless, we
+recommend turning this on in most cases.
+
+Unfortunately bundling an nfs provisioner with Weaviate is impossible because
+of the different lifecycles. The provisioner should be deployed before weaviate
+is deployed and only removed after Weaviate is removed. Otherwise - if the
+provisioner were to be torn down with weaviate - it would be impossible to
+destroy the volumes it created when deploying Weaviate.
+
+#### How can I turn it on?
+
+**Step 1: Make sure the cluster supports nfs volumes**
+
+The easiest way to do so is to deploy `@stable/nfs-server-provisioner` into
+the `default` namespace. For example, run:
+
+```bash
+NFS_VERSION="0.3.0"
+helm upgrade \
+  --install \
+  --namespace default \
+  --version "$NFS_VERSION" \
+  nfs-server-provisioner \
+  stable/nfs-server-provisioner \
+  --set persistence.enabled=true \
+  --set persistence.size=10Gi
+```
+
+**Step 2: Turn on disaster recovery**
+
+In your `values.yaml` set `etcd.disasterRecovery.enabled` to `true`, then
+deploy Weaviate normally with your `values.yaml`.
+
+Alternatively, if you don't want to use a `values.yaml`, include `--set
+etcd.disasterRecover.enabled=true` in your `helm install` or `helm upgrade`
+command.
 
 ## Weaviate Configuration File
 
@@ -184,15 +241,15 @@ _Note: in principle Weaviate runs out of the box and the configuration should on
 
 In the configuration YAML file, you can specify the desired mode of authentication, such as OpenID Connect.
 
-Currently [Anonymous Access](authenticate.html#anonymous-access) and [OpenID
-Connect](authenticate.html#openid-connect-oidc) are supported. Other Authentication schemes
+Currently [Anonymous Access](../setup/../setup/authenticate.html#anonymous-access) and [OpenID
+Connect](../setup/../setup/authenticate.html#openid-connect-oidc) are supported. Other Authentication schemes
 might become available in the near future.
 
-You can read more about how to setup (OpenID) authentication [here](authenticate.html#openid-details).
+You can read more about how to setup (OpenID) authentication [here](../setup/../setup/authenticate.html#openid-details).
 
 If all authentication schemes - including anonymous access - are disabled,
 Weaviate will fail to start up and ask you to configure at least one.
 
-## Frequently Asked Questions
+## More Resources
 
 {% include support-links.html %}

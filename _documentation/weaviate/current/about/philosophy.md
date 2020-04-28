@@ -5,22 +5,21 @@ product: weaviate
 sub-menu: About
 product-order: 1
 title: Philosophy
-description: Learn more about Weaviate
+description: Learn more about the philosophy behind Weaviate.
 tags: ['introduction', 'Weaviate', 'Contextionary', 'Philosohpy']
 menu-order: 1
 open-graph-type: article
 og-img: documentation.jpg
 ---
 
-# Introduction to Weaviate
+# Philosophy behind Weaviate
 
 {% include badges.html %}
 
-Weaviate is an open-source, GraphQL and RESTful API-enabled, knowledge graph based on a word vector storage mechanism called the Contextionary.
+Weaviate is an open-source, GraphQL and RESTful API-enabled, smart graph based on a word vector storage mechanism called the Contextionary.
 
 ## Index
 
-- [Video tutorial](#video-tutorial)
 - [Why Weaviate?](#why-weaviate)
 - [Features](#features)
   - [Core features](#core-features)
@@ -30,29 +29,29 @@ Weaviate is an open-source, GraphQL and RESTful API-enabled, knowledge graph bas
 - [About Classification](#about-classification)
 - [About Weaviate Knowledge Networks](#about-weaviate-knowledge-networks)
 - [Miscellaneous](#miscellaneous)
-- [FAQ](#frequently-asked-questions)
+- [More resources](#more-resources)
 
-## Video Tutorial
+## Demo and Overview
 
-This guide in video format.
+Concept and demo presented at FOSDEM 2020;
 
-<p><iframe width="560" height="315" src="https://www.youtube.com/embed/ImuofO5V0Cc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></p>
+<p><iframe width="560" height="315" src="https://www.youtube.com/embed/3NfcAF4qm2k" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></p>
 
 ## Why Weaviate?
 
-> We aim to allow anyone, anywhere, any time to create their own knowledge graph or knowledge network.
+> We aim to allow anyone, anywhere, any time to create their own smart graph or knowledge network.
 
 In almost any situation where you work with data, you store information related to something in the real world. This can be data about transactions, cars, airplanes, products; you name it. The challenge with current databases is that it is difficult for the software to grasp the context of the entity you refer to in your datasets. Do the characters "Apple" refer to the company or the fruit?
 
 ![real world entities](/img/guides/entities.jpg "real world entities")
 
-The Weaviate knowledge graph aims to solve this problem. Every time you store data to the knowledge graph, Weaviate indexes the data based on the linguistical context through a feature called The Contextionary. For example, when you store data about a _Company called Apple_, Weaviate automatically contextualizes the data related to an iPhone.
+The Weaviate smart graph aims to solve this problem. Every time you store data to the smart graph, Weaviate indexes the data based on the linguistical context through a feature called The Contextionary. For example, when you store data about a _Company called Apple_, Weaviate automatically contextualizes the data related to an iPhone.
 
 If you want to learn how the Contextionary does this, you can read more about our [Contextionary](#about-the-contextionary) here. We don't just want to store the data, but also the information and its context so that **knowledge** can be derived from it.
 
 Because most data is related to something (e.g., Amsterdam _is the capital of_ The Netherlands) we store not only the concept itself but also the relation to other concepts (e.g., "the city Amsterdam" to "the country The Netherlands"). This means that the data you add to a Weaviate instance creates a network of knowledge, better known as a **graph**.
 
-![why Weaviate is a knowledge graph](/img/guides/knowledge-graph.jpg "why Weaviate is a knowledge graph")
+![why Weaviate is a smart graph](/img/guides/knowledge-graph.jpg "why Weaviate is a smart graph")
 
 ## Features
 
@@ -62,7 +61,7 @@ Weaviate has four core features and a variety of additional features.
 
 Weaviate consists of four core features;
 
-![weaviate knowledge graph USPs](/img/guides/USPs.png "weaviate knowledge graph USPs")
+![weaviate smart graph USPs](/img/guides/USPs.png "weaviate smart graph USPs")
 
 1. The contextionary (c11y) is a vector index which stores _all_ data object based on their semantic meaning. This allows users to now only directly search and retrieve data, but also to search for its concepts.
 2. We believe that [GraphQL](https://graphql.org/) combined with a RESTful API, provides the best user experience to query Weaviate.
@@ -137,12 +136,12 @@ When creating automatic classification tasks, the user is able to define how cer
 
 _Coming soon! Sign up for our [newsletter](/newsletter) to be informed about release dates._
 
-Because Weaviate allows for fuzzy schema definitions (e.g., a "Company with the name Apple" is seen as semantically similar to a "Business with the identifier Apple Incorporated.") you can find beacons not only in your local Weaviate but also over a network of Weaviates. Allow creating a completely decentralized network of knowledge graphs, aka the knowledge network.
+Because Weaviate allows for fuzzy schema definitions (e.g., a "Company with the name Apple" is seen as semantically similar to a "Business with the identifier Apple Incorporated.") you can find beacons not only in your local Weaviate but also over a network of Weaviates. Allow creating a completely decentralized network of smart graphs, aka the knowledge network.
 
 ## Miscellaneous
 
 - The Contextionary is limited to a single language per Weaviate instance (i.e., English Contextionary, Spanish Contextionary, etcetera).
 
-## Frequently Asked Questions
+## More Resources
 
 {% include support-links.html %}

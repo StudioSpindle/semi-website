@@ -15,28 +15,29 @@ og-img: documentation.jpg
 
 {% include badges.html %}
 
-You can directly query the Weaviate knowledge graph. Finding concepts in the knowledge graph based on the Contextionary can be done through [exploring](explore.html).
-
-_Note: You can mix [explore](explore.html) functions with regular query functions._
+The `Get{}` function is Weaviate's bread and butter. The most direct way to access data.
 
 ## Index
 
 - [Basics](#basics)
 - [Introduction](#introduction)
-- [Weaviate's GraphQL function structure](#weaviates-graphql-function-structure)
+  - [Define a query](#define-a-query)
+  - [Work with graph beacons](#work-with-graph-beacons)
 - [Get{} Function](#get-function)
-    - [Get{} query structure and syntax](#get-query-structure-and-syntax)
-- [Filters](#filters)
-- [FAQ](#frequently-asked-questions)
-
+- [More resources](#more-resources)
 
 ## Basics
 
 - Weaviate's query language is [GraphQL](https://graphql.org/).
 - You can query a Weaviate after you've created a [schema](../add-data/define_schema.html) and [populated it](../add-data/add_and_modify.html) with data.
 - You can easily query a Weaviate by using the GraphQL interface inside a [Weaviate Playground](http://playground.semi.technology).
+- Some functions have (semantic) [filters](./filters.html) available.
 
 ## Introduction
+
+The `Get{}` function is the most straight-ahead function Weaviate has. It is the most direct wat to collect data from a weaviate. Especially when you combine them with [filters](./filters.html), you can easily browse your Weaviate.
+
+### Define a query
 
 You can query Weaviate for semantic kinds based on standard GraphQL queries. The examples below only contain the GraphQL query. You can POST a GraphQL query to Weaviate as follows:
 
@@ -44,19 +45,13 @@ You can query Weaviate for semantic kinds based on standard GraphQL queries. The
 $ curl http://localhost/v1/graphql -X POST -H 'Content-type: application/json' -d '{GraphQL query}'
 ```
 
-## Weaviate's GraphQL function structure
+A GraphQL JSON object is defined as:
 
-The basic function structure of a Weaviate is as follows:
-
-```graphql
+```json
 {
-  Get       # Gets concepts from Weaviate
-  Explore   # Explores concepts within Weaviate
-  Aggregate # Aggregates data from a Weaviate
+    "query": "{ # GRAPHQL QUERY }"
 }
 ```
-
-- _Note: This page describes the `Get{}` function. Learn more about `Explore{}` [here](./explore.html), and about `Aggregate{}` [here](./aggregate.html)._
 
 # Get{} Function
 
@@ -80,20 +75,22 @@ The `Get{}` function is always defined based on the following principle:
 }
 ```
 
-A `Get{}` function is always based on the schema. For example, if you've created a schema with a class `Company` which has the properties `name` and `foundedIn`, you can query it as follows:
+A `Get{}` function is always based on the schema. For example, if you've created a schema with a class `Articles` which has the properties `name` and `publicationDate`, you can query it as follows:
 
 ```graphql
 {
   Get {
     Things {
-      Company {
-        name
-        foundedIn
+      Article {
+        title
+        url
+        wordCount
       }
     }
   }
 }
 ```
+{% include molecule-gql-demo.html encoded_query='%7B%0D%0A++Get+%7B%0D%0A++++Things+%7B%0D%0A++++++Article+%7B%0D%0A++++++++title%0D%0A++++++++url%0D%0A++++++++wordCount%0D%0A++++++%7D%0D%0A++++%7D%0D%0A++%7D%0D%0A%7D' %}
 
 The above query will result in something like the following:
 
@@ -102,15 +99,10 @@ The above query will result in something like the following:
   "data": {
     "Get": {
       "Things": {
-        "Company": [{
-          "name": "Apple Inc.",
-          "foundedIn": "1976"
-        }, {
-          "name": "Google LLC",
-          "foundedIn": "1998"
-        }, {
-          "name": "Microsoft",
-          "foundedIn": "1975"
+        "Article": [{
+          "title": "“Joker” Is a Viewing Experience of Rare, Numbing Emptiness",
+          "url": "https://www.newyorker.com/culture/the-front-row/joker-is-a-viewing-experience-of-rare-numbing-emptiness",
+          "wordCount": 1794
         }]
       }
     }
@@ -118,18 +110,21 @@ The above query will result in something like the following:
 }
 ```
 
-If you've set a cross-reference (aka [beacon](../about/philosophy#basic-terminology)) in the schema, you can query it as follows:
+### Work with graph beacons
+
+If you've set a [beacon reference](../about/philosophy.html#basic-terminology) in the schema, you can query it as follows:
 
 ```graphql
 {
   Get {
     Things {
-      Company {
-        name
-        foundedIn
-        inCountry {        # the reference
-          ... on Country { # you always set the destination class
-            name           # the property related to target class
+      Article {
+        title
+        url
+        wordCount
+        InPublication {           # the reference
+          ... on Publication {    # you always set the destination class
+            name                  # the property related to target class
           }
         }
       }
@@ -137,6 +132,7 @@ If you've set a cross-reference (aka [beacon](../about/philosophy#basic-terminol
   }
 }
 ```
+{% include molecule-gql-demo.html encoded_query='%7B%0D%0A++Get+%7B%0D%0A++++Things+%7B%0D%0A++++++Article+%7B%0D%0A++++++++title%0D%0A++++++++url%0D%0A++++++++wordCount%0D%0A++++++++InPublication+%7B+++++++++++%23+the+reference%0D%0A++++++++++...+on+Publication+%7B++++%23+you+always+set+the+destination+class%0D%0A++++++++++++name++++++++++++++++++%23+the+property+related+to+target+class%0D%0A++++++++++%7D%0D%0A++++++++%7D%0D%0A++++++%7D%0D%0A++++%7D%0D%0A++%7D%0D%0A%7D' %}
 
 Note that if you've set the [cardinality](../add-data/define_schema.html#property-object) to `many`, you might have multiple data types. For example:
 
@@ -144,14 +140,15 @@ Note that if you've set the [cardinality](../add-data/define_schema.html#propert
 {
   Get {
     Things {
-      Company {
-        name
-        foundedIn
-        sells {
-          ... on Products {
+      Article {
+        title
+        url
+        wordCount
+        HasAuthors {
+          ... on Author {
             name
           }
-          ... on Services {
+          ... on Publication {
             name
           }
         }
@@ -160,10 +157,8 @@ Note that if you've set the [cardinality](../add-data/define_schema.html#propert
   }
 }
 ```
+{% include molecule-gql-demo.html encoded_query='%7B%0D%0A++Get+%7B%0D%0A++++Things+%7B%0D%0A++++++Article+%7B%0D%0A++++++++title%0D%0A++++++++url%0D%0A++++++++wordCount%0D%0A++++++++HasAuthors+%7B%0D%0A++++++++++...+on+Author+%7B%0D%0A++++++++++++name%0D%0A++++++++++%7D%0D%0A++++++++++...+on+Publication+%7B%0D%0A++++++++++++name%0D%0A++++++++++%7D%0D%0A++++++++%7D%0D%0A++++++%7D%0D%0A++++%7D%0D%0A++%7D%0D%0A%7D' %}
 
-## Filters
-Click [here](./filter.html) for more information about the filter queries.
-
-## Frequently Asked Questions
+## More Resources
 
 {% include support-links.html %}

@@ -1,7 +1,7 @@
 const nav = document.getElementById('js-site-nav');
 const trigger = document.getElementById('header-main-menu-trigger');
 /** same as $screen-width-medium in ./_scss/mixins/_mixin-breakpoints */
-const toMediumQuerySize = '767px';
+const toMediumQuerySize = '814px';
 
 /**
  * @desc Debounce method for window resize (source: https://davidwalsh.name/javascript-debounce-function)
@@ -10,7 +10,7 @@ const toMediumQuerySize = '767px';
  */
 function debounce(func) {
   var timer;
-  return function(event) {
+  return function (event) {
     if (timer) clearTimeout(timer);
     timer = setTimeout(func, 250, event);
   };
@@ -30,7 +30,7 @@ function createHorizontal() {
   nav.classList.remove('nav-vertical');
 }
 
-export default function() {
+export default function () {
   /** initial navigation setting for small to medium screensizes */
   if (window.matchMedia(`(max-width: ${toMediumQuerySize})`).matches) {
     createVerticalNav();
@@ -39,7 +39,7 @@ export default function() {
   /** when browser window is resized */
   window.addEventListener(
     'resize',
-    debounce(function() {
+    debounce(function () {
       /** reset to vertical if window size is lower than medium screensize */
       if (window.matchMedia(`(max-width: ${toMediumQuerySize})`).matches) {
         createVerticalNav();
@@ -52,7 +52,7 @@ export default function() {
   );
 
   /** the show hide for the navigation */
-  trigger.addEventListener('click', function() {
+  trigger.addEventListener('click', function () {
     const [menuIcon] = this.getElementsByTagName('img');
     menuIcon.classList.toggle('svg-icon-hamburger--active');
     nav.classList.toggle('nav-vertical--active');

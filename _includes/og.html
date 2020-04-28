@@ -1,9 +1,11 @@
-<meta property="og:title" content="SeMI Technologies // {{ page.title }}" />
-<meta property="og:type" content="{{ page.open-graph-type }}" />
-<meta name="twitter:card" content="{{ page.open-graph-type }}">
+<meta property="og:title" content="{{ page.title }}" />
+{% if page.open-graph-type %}
+	<meta property="og:type" content="{{ page.open-graph-type }}" />
+	<meta name="twitter:card" content="{{ page.open-graph-type }}">
+{% endif %}
 <meta property="og:url" content="{{ site.baseurl }}" />
 <meta property="og:description" content="{{ page.description }}" />
-<meta property="og:site_name" content="SeMI // knowledge graph services" />
+<meta property="og:site_name" content="SeMI Technologies" />
 <meta name="twitter:site" content="@SeMI_tech">
 <meta name="twitter:title" content="{{ page.title }}">
 <meta name="twitter:description" content="{{ page.description }}">

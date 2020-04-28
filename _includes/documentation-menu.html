@@ -8,19 +8,24 @@
             {% for guides in sorted_documentation %}
                 {% if guides.name == page.product %}
                     <h3>{{ guides.name }}</h3>
+                    <li class="sub-menu-item">
+                        <a href="{% if page.title == 'About' %}./{% else %}../{% endif %}index.html" class="{% if guide.title == page.title %}current{% endif %}">About</a>
+                    </li>
                     {% for menuItem in site.docs[guides.name] %}
                         {% assign sorted_menus = site.documentation | group_by: 'sub-menu' %}
                         {% for menu in sorted_menus %}
-                            {% if menuItem == menu.name %}
+                            {% if menuItem == menu.name && guides.name == page.product  %}
                                 <li class="sub-menu">
                                     {{ menu.name }}
                                 </li>
                                 {% assign sorted_sub_menus = site.documentation | sort: 'menu-order' %}
                                 {% for guide in sorted_sub_menus %}
                                     {% if menu.name == guide.sub-menu %}
-                                    <li class="sub-menu-item">
-                                        <a href="{{ guide.url }}.html" class="{% if guide.title == page.title %}current{% endif %}">{{guide.title}}</a>
-                                    </li>
+                                        {% if page.product == guide.product %}
+                                            <li class="sub-menu-item">
+                                                <a href="{{ guide.url }}.html" class="{% if guide.title == page.title %}current{% endif %}">{{guide.title}}</a>
+                                            </li>
+                                        {% endif %}
                                     {% endif %}
                                 {% endfor %}
                             {% endif %}

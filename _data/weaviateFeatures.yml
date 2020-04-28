@@ -1,54 +1,105 @@
 
-- title: "Scalable knowledge graph (click <a href='#'>here</a> for tech features)"
+- title: "Weaviate smart graph (<a href='/documentation/weaviate/current/'>tech features</a>)"
   note: ""
-  opensource: true
+  startup: true
+  scaleup: true
+  prof: true
   enterprise: true
-  whitelabel: true
 
-- title: "Helm and Kubernetes charts to run on cloud providers an on premise"
+- title: "Weaviate Cluster Service"
   note: ""
-  opensource: true
+  startup: true
+  scaleup: true
+  prof: true
   enterprise: true
-  whitelabel: true
 
-- title: "Access to our community solution engineers for guidance"
+- title: "Community support"
   note: ""
-  opensource: true
+  startup: true
+  scaleup: true
+  prof: true
   enterprise: true
-  whitelabel: true
 
-- title: "Open Source 3-Clause BSD License (BSD-3) license"
+- title: "Email support"
   note: ""
-  opensource: true
-  enterprise: false
-  whitelabel: false
+  startup: true
+  scaleup: true
+  prof: true
+  enterprise: true
+
+- title: "Slack support"
+  note: ""
+  startup: false
+  scaleup: true
+  prof: true
+  enterprise: true
+
+- title: "Account manager support (SPOC)"
+  note: ""
+  startup: false
+  scaleup: true
+  prof: true
+  enterprise: true
+
+- title: "Last-come-first-served Silver (<a href='#asterisk'>*</a>)"
+  note: ""
+  startup: false
+  scaleup: true
+  prof: true
+  enterprise: true
+
+- title: "Access to our solution engineers (<a href='#dagger'>†</a>)"
+  note: ""
+  startup: false
+  scaleup: true
+  prof: true
+  enterprise: true
+
+- title: "Private cloud or on premise"
+  note: ""
+  startup: false
+  scaleup: false
+  prof: false
+  enterprise: true
 
 - title: "Enterprise service-level agreement (SLA)"
   note: ""
-  opensource: false
+  startup: false
+  scaleup: false
+  prof: false
   enterprise: true
-  whitelabel: true
 
 - title: "Enterprise Terms of Service (ToS)"
   note: ""
-  opensource: false
+  startup: false
+  scaleup: false
+  prof: false
   enterprise: true
-  whitelabel: true
 
 - title: "Enterprise End-User Licence Agreement (EULA)"
   note: ""
-  opensource: false
+  startup: false
+  scaleup: false
+  prof: false
   enterprise: true
-  whitelabel: true
 
-- title: "Access to our solution engineers to help you implement your use cases"
+- title: "Access to our core engineers (<a href='#dagger'>†</a>)"
   note: ""
-  opensource: false
+  startup: false
+  scaleup: false
+  prof: false
   enterprise: true
-  whitelabel: true
 
-- title: "Have SeMI run Weaviate for you in a datacenter of choice"
+- title: "Last-come-first-served Gold (<a href='#double-dagger'>‡</a>)"
   note: ""
-  opensource: false
+  startup: false
+  scaleup: false
+  prof: true
   enterprise: true
-  whitelabel: true
+
+- title: "Dedicated implementation support"
+  note: ""
+  startup: false
+  scaleup: false
+  prof: false
+  enterprise: true

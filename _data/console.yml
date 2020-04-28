@@ -1,0 +1,10 @@
+- cluster_name: cluster001.semi.network
+  cluster_type: startup
+  network_name: weaviate://localhost
+  plugins:
+- cluster_name: cluster002.semi.network
+  cluster_type: professional
+  network_name: weaviate://localhost
+  plugins:
+    - SAP connector
+    - WikiData

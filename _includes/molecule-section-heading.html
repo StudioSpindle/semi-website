@@ -1,3 +1,3 @@
 <div class="section-standout__text--centered space-layout--top">
-    <h2 class="title-section header--centered">{{include.title}}</h2>
+    <h2 class="title-section header--centered" id="{{ include.title | downcase | replace: ' ', '-' }}">{{include.title}}</h2>
 </div>
