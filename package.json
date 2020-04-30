@@ -51,7 +51,7 @@
   },
   "homepage": "https://github.com/semi-technologies/semi-website#readme",
   "dependencies": {
-    "jquery": "^3.4.1"
+    "jquery": "^3.5.0"
   },
   "browserslist": [
     "defaults"
