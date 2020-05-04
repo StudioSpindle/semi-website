@@ -21,7 +21,12 @@ Perform contextual classifications through the RESTapi to enhance your dataset.
 
 - [Basics](#basics)
 - [Introduction](#introduction)
+<<<<<<< HEAD
     - [Requirements](#requirements)
+=======
+- [When to use](#when-to-use)
+  - [Example use case](#example-use-case)
+>>>>>>> gh-000: update to latest version
 - [How to use](#how-to-use)
     - [Start a Classification](#start-a-classification)
     - [See the Status of a Classification](#see-the-status-of-a-classification)
@@ -37,15 +42,28 @@ Perform contextual classifications through the RESTapi to enhance your dataset.
 - Reference properties of data objects can be classified with a kNN approach.
 - Use the RESTful api queries `v1/classification/` for classification.
 - Classification meta information of data objects can be requested by setting `?meta=true` in `GET /things/{kinds}/{id}` requests for things and actions.
+- No labeled data (training data) is needed
 
 ## Introduction
 
+<<<<<<< HEAD
 Weaviate's classification features allows you to classify data objects. Cross-references will be predicted, after a model has been trained on your own data with existing references. You need to have at least two schema classes and one cross-reference between both classes in your schema. This is done kNN-based.
 
 ### Requirements
 
 - A schema with at least two classes and a cross-reference between both classes.
 - Some training data, which are data objects in the class with a reference (you want to predict for other objects) to another class already made.
+=======
+Weaviate's classification features allows you to classify data objects by predicting cross-references based on the semantic meaning of the data objects. Make sure to check the "[when to use](#when-to-use)" section on this page or check out the [other](knn-classification.html) algorithm.
+
+## When to use
+
+If you don't have any training data and want to classify how similar a source item is to a potential target item, contextual classification is the right pick. Especially when there is a strong semantic relation in your data (e.g., `The Landmark Eifel Tower` and `The City Paris`)
+
+### Example use case
+
+Imagine you have a dataset comprised of Magazine Articles (sources). You don’t know what each article is about, but you know that each article falls into one of three categories (targets): “politics,” “fashion,” or “technology.” There are no additional business rules involved, and you don’t have any training data. This is a good fit for a “contextual” classification. In such a classification, each Article will be analyzed, and the most important words will be extracted. These words are then compared - using their vector space distance - to one of the three targets. For example, in an article about “technology,” Weaviate has found the words “computer, “macintosh,” and “hardware” to be the most important words. These three words are closer in the vector space to “technology” than they are to “fashion” or “politics.” Weaviate will thus put them in the “technology” category. Each article is treated independently. How many articles have already been categorized into a specific category does not influence future articles.
+>>>>>>> gh-000: update to latest version
 
 ## How to use
 

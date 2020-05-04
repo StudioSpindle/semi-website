@@ -17,6 +17,7 @@ og-img: documentation.jpg
 
 Aha, you have a question! We hope that you can find the answer here, but if you don't, you can reach us via [Stackoverflow](https://stackoverflow.com/tags/weaviate/) (make sure to tag your question with weaviate), [Github](https://github.com/semi-technologies/weaviate/issues), or [Twitter](https://twitter.com/SeMI_tech). If your question serves a general-purpose, we will add it to this page.
 
+<<<<<<< HEAD
 <<<<<<< HEAD:_documentation/weaviate/current/more-resources/FAQ.md
 ### Q: Why would I use Weaviate as my search graph engine?
 
@@ -26,6 +27,11 @@ A: Our goal is three-folded. Firstly, we want to make it as easy as possible for
 
 A: Our goal is three-folded. Firstly, we want to make it as easy as possible for others to create their own semantic systems or smart graphs (hence, we are API based). Secondly, we have a strong focus on the semantic element (the "knowledge" in "smart graph," if you will). Our ultimate goal is to have Weaviate help you manage, index, and "understand" your data so that you can build newer, better, and faster applications. And thirdly, we want you to be able to run it everywhere. This is the reason why Weaviate comes containerized.
 >>>>>>> gh-423: updates to product pages:_documentation/weaviate/current/faq/FAQ.md
+=======
+### Q: Why would I use Weaviate as my search graph engine?
+
+A: Our goal is three-folded. Firstly, we want to make it as easy as possible for others to create their own semantic systems or search graphs (hence, we are API based). Secondly, we have a strong focus on the semantic element (the "knowledge" in "search graph," if you will). Our ultimate goal is to have Weaviate help you manage, index, and "understand" your data so that you can build newer, better, and faster applications. And thirdly, we want you to be able to run it everywhere. This is the reason why Weaviate comes containerized.
+>>>>>>> gh-000: update to latest version
 
 ### Q: Do you offer Weaviate as a managed service?
 
@@ -43,6 +49,7 @@ A: There are many natural language processing vectorization models available. Th
 
 A: We use a schema because it focusses on the representation of your data (in our case in the GraphQL API) but you can use a Weaviate schema to express an ontology. One of Weaviate's core features is that it semantically interprets your schema (and with that your ontology) so that you can search for concepts rather than formally defined entities.
 
+<<<<<<< HEAD
 <<<<<<< HEAD:_documentation/weaviate/current/more-resources/FAQ.md
 ### Q: Can I use Weaviate to create a traditional search graph.
 
@@ -52,6 +59,11 @@ A: Yes, you can! Weaviate support ontology, RDF like definitions in its schema, 
 
 A: Yes, you can! Weaviate support ontology, RDF like definitions in its schema, and it runs out of the box. It is scalable, and the GraphQL API will allow you to query through your smart graph easily. But now you are here. We like to suggest you really try its semantic features. After all, you are creating a _knowledge_ graph 😉.
 >>>>>>> gh-423: updates to product pages:_documentation/weaviate/current/faq/FAQ.md
+=======
+### Q: Can I use Weaviate to create a traditional search graph.
+
+A: Yes, you can! Weaviate support ontology, RDF like definitions in its schema, and it runs out of the box. It is scalable, and the GraphQL API will allow you to query through your search graph easily. But now you are here. We like to suggest you really try its semantic features. After all, you are creating a _knowledge_ graph 😉.
+>>>>>>> gh-000: update to latest version
 
 ### Q: Why isn't there a contextionary in my language?
 

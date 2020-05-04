@@ -1,9 +1,13 @@
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 - title: "Weaviate search graph (<a href='/documentation/weaviate/current/'>tech features</a>)"
 =======
 - title: "Scalable smart graph (<a href='/documentation/weaviate/current/'>tech features</a>)"
 >>>>>>> gh-423: updates to product pages
+=======
+- title: "Weaviate search graph (<a href='/documentation/weaviate/current/'>tech features</a>)"
+>>>>>>> gh-000: update to latest version
   note: ""
 <<<<<<< HEAD
   startup: true

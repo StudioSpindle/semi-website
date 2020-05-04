@@ -1,10 +1,17 @@
 ---
 published: true
 bodyclass: page--use-cases
+<<<<<<< HEAD:_use_cases/energy-and-utility.html.md
 layout: layout-use-case
 title: Cost saving through predictive maintenance
 description: Enhance customer satisfaction and lowering cost by replacing parts, maintaining assets preemptively and optimizing maintenance schedules
 tags: ['energy & utility']
+=======
+layout: layout-marketplace
+title: AllegroGraph Sematic Search
+description: Bacon ipsum dolor amet turkey frankfurter ham venison kielbasa bacon alcatra fatback filet mignon rump cupim. Doner frankfurter tenderloin capicola cow. Shank swine bacon, strip steak pork loin drumstick.
+tags: ['plugin', 'third party']
+>>>>>>> gh-000: update to latest version:_marketplace/allegrograph.html.md
 order: 1
 image: /img/illustrations/EnergyUtility.svg
 imageCard: /img/decoration/use-case-energy@2x.jpg

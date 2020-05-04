@@ -1,6 +1,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 weaviate_version: 0.22.9
 helm_version: 10.0.0
 =======
@@ -14,6 +15,10 @@ weaviate_version: 0.22.0
 >>>>>>> gh-423: general updates
 helm_version: 8.2.1
 >>>>>>> gh-423: product page updates
+=======
+weaviate_version: 0.22.7
+helm_version: 9.1.0
+>>>>>>> gh-000: update to latest version
 markdown: kramdown
 kramdown:
     parse_block_html: false

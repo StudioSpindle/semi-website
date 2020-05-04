@@ -10,10 +10,14 @@ open-graph-type: article
 ## About the podcast
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 Laura details what search graphs are and how they can be useful for both small and large projects. Explaining that ontology is the meaning of words, she tells us how Weaviate is able to use this concept to make more specific data entries and links, allowing users to perform better and more informative searches. Weaviate is able to do this with the help of Kubernetes. Later, Laura tells Gabi and Jon the ways Weaviate helps developers and users with thorough documentation, assistance with troubleshooting, and support from solution engineers.
 =======
 Laura details what smart graphs are and how they can be useful for both small and large projects. Explaining that ontology is the meaning of words, she tells us how Weaviate is able to use this concept to make more specific data entries and links, allowing users to perform better and more informative searches. Weaviate is able to do this with the help of Kubernetes. Later, Laura tells Gabi and Jon the ways Weaviate helps developers and users with thorough documentation, assistance with troubleshooting, and support from solution engineers.
 >>>>>>> gh-423: updates to product pages
+=======
+Laura details what search graphs are and how they can be useful for both small and large projects. Explaining that ontology is the meaning of words, she tells us how Weaviate is able to use this concept to make more specific data entries and links, allowing users to perform better and more informative searches. Weaviate is able to do this with the help of Kubernetes. Later, Laura tells Gabi and Jon the ways Weaviate helps developers and users with thorough documentation, assistance with troubleshooting, and support from solution engineers.
+>>>>>>> gh-000: update to latest version
 
 ## Links
 

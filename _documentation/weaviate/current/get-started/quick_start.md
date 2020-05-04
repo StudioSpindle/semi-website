@@ -484,6 +484,7 @@ $ curl -k https://{YOUR WEAVIATE HOST}/v1/things/{CLASSIFICATION ID}?meta=true |
 This was a sneak peek of Weaviate. In the documentation, you can find more videos and guides on how to work with Weaviate in depth.
 
 Have fun building your own search graph with Weaviate!
+<<<<<<< HEAD
 =======
 When querying Weaviate, you will always be using the GraphQL API. Weaviate has a publicly available graphical user interface (GUI) called the playground, which you can use to query.
 
@@ -783,6 +784,8 @@ Have fun building your own smart graph or knowledge graph with Weaviate!
 =======
 Have fun building your own smart graph or smart graph with Weaviate!
 >>>>>>> gh-423: updates to product pages
+=======
+>>>>>>> gh-000: update to latest version
 
 ## More Resources
 

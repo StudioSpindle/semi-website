@@ -61,10 +61,14 @@ A Weaviate schema is used to define what kind of [semantic kinds](../about/philo
 ## Introduction
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 When you startup an empty Weaviate, you need to define a schema to explain what kind of data you will add. Because Weaviate is a search graph, the linguistic element plays an important role. When creating concepts, Weaviate will validate if it can understand the schema concepts you want to add based on the [contextionary](../about/philosophy.html#about-the-contextionary). You might notice that a lot of definitions are related to the everyday language we use. And this is the first best practice to bear in mind. When defining the schema, you should do this in the form like you would explain it to another person, not like tables and columns you would add to a traditional data solution.
 =======
 When you startup an empty Weaviate, you need to define a schema to explain what kind of data you will add. Because Weaviate is a smart graph, the linguistic element plays an important role. When creating concepts, Weaviate will validate if it can understand the schema concepts you want to add based on the [contextionary](../about/philosophy#about-the-contextionary). You might notice that a lot of definitions are related to the everyday language we use. And this is the first best practice to bear in mind. When defining the schema, you should do this in the form like you would explain it to another person, not like tables and columns you would add to a traditional data solution.
 >>>>>>> gh-423: updates to product pages
+=======
+When you startup an empty Weaviate, you need to define a schema to explain what kind of data you will add. Because Weaviate is a search graph, the linguistic element plays an important role. When creating concepts, Weaviate will validate if it can understand the schema concepts you want to add based on the [contextionary](../about/philosophy.html#about-the-contextionary). You might notice that a lot of definitions are related to the everyday language we use. And this is the first best practice to bear in mind. When defining the schema, you should do this in the form like you would explain it to another person, not like tables and columns you would add to a traditional data solution.
+>>>>>>> gh-000: update to latest version
 
 ### Concepts and their Structures
 

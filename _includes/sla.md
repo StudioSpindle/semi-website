@@ -16,6 +16,7 @@ This agreement begins on [date] and will run for a period of [number] months. It
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 This SLA covers only those services provided by Vendor to the client for the purpose of data analysis. Vendor provides Weaviate - a search graph. This SLA contemplates only those above-named services and makes no guarantees or representations as to the provision or availability of any other service that may be provided by Vendor as an ancillary benefit to its clients. 
 =======
 This SLA covers only those services provided by Vendor to the client for the purpose of data analysis. Vendor provides Weaviate - a knowledge graph. This SLA contemplates only those above-named services and makes no guarantees or representations as to the provision or availability of any other service that may be provided by Vendor as an ancillary benefit to its clients. 
@@ -23,6 +24,9 @@ This SLA covers only those services provided by Vendor to the client for the pur
 =======
 This SLA covers only those services provided by Vendor to the client for the purpose of data analysis. Vendor provides Weaviate - a smart graph. This SLA contemplates only those above-named services and makes no guarantees or representations as to the provision or availability of any other service that may be provided by Vendor as an ancillary benefit to its clients. 
 >>>>>>> gh-423: updates to product pages
+=======
+This SLA covers only those services provided by Vendor to the client for the purpose of data analysis. Vendor provides Weaviate - a search graph. This SLA contemplates only those above-named services and makes no guarantees or representations as to the provision or availability of any other service that may be provided by Vendor as an ancillary benefit to its clients. 
+>>>>>>> gh-000: update to latest version
 
 Exclusions 
 This SLA is written in good faith. Vendor will always do everything possible to rectify every issue in a timely manner. However, there are exclusions. This SLA does not apply to: 
