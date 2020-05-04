@@ -6,7 +6,7 @@ layout: none
     <channel>
         <title>SeMI Technolgies News Feed</title>
         <link>https://www.semi.technology/news/</link>
-        <description>Weaviate open source smart graph</description>
+        <description>Weaviate open source search graph</description>
         {% for page in site.news %}
             {% if page.url != "/news/index" %}
             <item>

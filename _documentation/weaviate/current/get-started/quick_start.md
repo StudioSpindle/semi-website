@@ -294,7 +294,7 @@ Do you want to know how many articles, authors and publications there are? This 
 ```
 {% include molecule-gql-demo.html encoded_query='%7B%0D%0A++Aggregate%7B%0D%0A++++Things%7B%0D%0A++++++Publication%7B%0D%0A++++++++meta%7B%0D%0A++++++++++count%0D%0A++++++++%7D%0D%0A++++++%7D%0D%0A++++++Author%7B%0D%0A++++++++meta%7B%0D%0A++++++++++count%0D%0A++++++++%7D%0D%0A++++++%7D%0D%0A++++++Article%7B%0D%0A++++++++meta%7B%0D%0A++++++++++count%0D%0A++++++++%7D%0D%0A++++++++wordCount+%7B%0D%0A++++++++++count%0D%0A++++++++++maximum%0D%0A++++++++++mean%0D%0A++++++++++median%0D%0A++++++++++minimum%0D%0A++++++++++mode%0D%0A++++++++++sum%0D%0A++++++++++type%0D%0A++++++++%7D%0D%0A++++++%7D%0D%0A++++%7D%0D%0A++%7D%0D%0A%7D' %}
 
-### Explore the smart graph
+### Explore the search graph
 
 In Weaviate, you can also semantically explore your datasets. Let's search for articles related to money.
 
@@ -446,7 +446,7 @@ $ curl -k https://{YOUR WEAVIATE HOST}/v1/things/{CLASSIFICATION ID}?meta=true |
 
 This was a sneak peek of Weaviate. In the documentation, you can find more videos and guides on how to work with Weaviate in depth.
 
-Have fun building your own smart graph with Weaviate!
+Have fun building your own search graph with Weaviate!
 
 ## More Resources
 
