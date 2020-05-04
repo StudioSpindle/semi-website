@@ -22,6 +22,8 @@ Perform [k-nearest neighbors](https://en.wikipedia.org/wiki/K-nearest_neighbors_
 - [Basics](#basics)
 - [Introduction](#introduction)
     - [Requirements](#requirements)
+- [When to use](#when-to-use)
+  - [Example use case](#example-use-case)
 - [How to use](#how-to-use)
     - [Start a Classification](#start-a-classification)
     - [See the Status of a Classification](#see-the-status-of-a-classification)
@@ -37,10 +39,21 @@ Perform [k-nearest neighbors](https://en.wikipedia.org/wiki/K-nearest_neighbors_
 - Reference properties of data objects can be classified with a kNN approach.
 - Use the RESTful api queries `v1/classification/` for classification.
 - Classification meta information of data objects can be requested by setting `?meta=true` in `GET /things/{kinds}/{id}` requests for things and actions.
+- Needs to have at least two schema classes and one cross-reference between both classes in your schema.
+- [K-nearest neighbors algorithm (kNN)](https://en.wikipedia.org/wiki/K-nearest_neighbors_algorithm).
+- A classification which requires training data. 
 
 ## Introduction
 
-Weaviate's classification features allows you to classify data objects. Cross-references will be predicted, after a model has been trained on your own data with existing references. You need to have at least two schema classes and one cross-reference between both classes in your schema. This is done kNN-based.
+Weaviate’s classification features allows you to classify data objects by predicting cross-references based on the semantic meaning of the data objects. Make sure to check the "[when to use](#when-to-use)" section on this page or check out the [other](contextual-classification.html) algorithm.
+
+## When to use
+
+Weaviate finds similar objects and checks how they were labeled in the past. The more objects added and correctly labeled over time, the better a future classification becomes. Especially when there isn't a logical semantic relationship in the objects that need to be classified, the kNN algorithm is helpful.
+
+### Example use case
+
+Imagine you have a data set of emails. Some of those emails are useful, others are spam. The decision between whether an email is spam follows a set of business rules which you may not know about. For example. it could be likely that if email mentions certain words, such as brand names for a specific medication, an email is more likely to be spam. You can let Weaviate learn based on the training data you provide it with. Next to the “Email” class (source), you also introduce an “Importance” class of which adds three data objects: “Spam”, “Neutral”, “Important”. With “kNN” Weaviate never compares source objects to target objects. Instead, it compares source objects to similar source objects and “inherits” their labeling. In turn, it also improves in quality the more (correctly) labeled data you add. For example, if Weaviate finds an email object with the text “Buy the best stamina drugs for cheap prices at very-questionable-shop.com”, it will now scan the training data set for a close match. Imagine it finds the email with “Buy cheap pills online” and similar emails. Because these pre-labeled objects were marked as spam, Weaviate will make the decision to label the unseen data object as spam as well. The same will happen for “neutral” and “important” emails respectively.
 
 ### Requirements
 

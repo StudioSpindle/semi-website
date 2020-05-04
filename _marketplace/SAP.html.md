@@ -3,7 +3,7 @@ published: true
 bodyclass: page--use-cases
 layout: layout-marketplace
 title: SAP Classification
-description: Enable financial institutions to create new and enhanced products for their business customers by enriching transactional datasets with supplementary data and by discovering new relations in those sets.
+description: Bacon ipsum dolor amet turkey frankfurter ham venison kielbasa bacon alcatra fatback filet mignon rump cupim. Doner frankfurter tenderloin capicola cow. Shank swine bacon, strip steak pork loin drumstick.
 tags: ['plugin']
 order: 8
 image: /img/illustrations/BankingFinanceII.svg

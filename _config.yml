@@ -1,4 +1,4 @@
-weaviate_version: 0.22.5
+weaviate_version: 0.22.7
 helm_version: 9.1.0
 markdown: kramdown
 kramdown:

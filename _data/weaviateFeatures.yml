@@ -1,5 +1,5 @@
 
-- title: "Weaviate smart graph (<a href='/documentation/weaviate/current/'>tech features</a>)"
+- title: "Weaviate search graph (<a href='/documentation/weaviate/current/'>tech features</a>)"
   note: ""
   startup: true
   scaleup: true

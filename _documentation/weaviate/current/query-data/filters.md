@@ -26,6 +26,7 @@ Filters can be set to order or sort your dataset or to find specific data object
   - [Multiple operator filters](#multiple-operator-filters)
   - [Like operator](#like-operator)
   - [Beacon filters operator](#like-operator)
+  - [Filter by count](#filter-by-count)
 - [GeoCoordinates filter](#geocoordinates-filter)
 - [Limit filter](#limit-filter)
 - [Explore filter](#explore-filter)
@@ -174,7 +175,36 @@ Using the `Like` operator allows you to do string searches based on partial matc
 
 {% include molecule-gql-demo.html encoded_query='%7B%0D%0A++Get+%7B%0D%0A++++Things+%7B%0D%0A++++++Publication%28where%3A+%7B%0D%0A++++++++++++path%3A+%5B%22name%22%5D%2C%0D%0A++++++++++++operator%3A+Like%2C%0D%0A++++++++++++valueString%3A+%22New+%2A%22%0D%0A++++++++%7D%29+%7B%0D%0A++++++++name%0D%0A++++++%7D%0D%0A++++%7D%0D%0A++%7D%0D%0A%7D' %}
 
-This query would return both the publications with the name `New Yorker`, `New York Times` and `New Scientist` if they are present in the Weaviate instance.
+This query should return both the publications with the name `New Yorker`, `New York Times` and `New Scientist` if they are present in the Weaviate instance.
+
+### Filter by count
+
+If a value is an `integer` or `float` you can now filter them based on the existing compare operators (`Equal`, `LessThan`, `LessThanEqual`, `GreaterThan`, `GreaterThanEqual`)
+
+``` graphql
+{
+ Get {
+   Things {
+     Author(
+       where:{
+         valueInt: 2
+         operator:GreaterThanEqual
+         path: ["WroteArticles"]
+       }
+     ) {
+       name
+       WroteArticles {
+         ... on Article {
+           title
+         }
+       }
+     }
+   }
+ }
+}
+```
+
+{% include molecule-gql-demo.html encoded_query='%7B%0D%0A+Get+%7B%0D%0A+++Things+%7B%0D%0A+++++Author%28%0D%0A+++++++where%3A%7B%0D%0A+++++++++valueInt%3A+2%0D%0A+++++++++operator%3AGreaterThanEqual%0D%0A+++++++++path%3A+%5B%22WroteArticles%22%5D%0D%0A+++++++%7D%0D%0A+++++%29+%7B%0D%0A+++++++name%0D%0A+++++++WroteArticles+%7B%0D%0A+++++++++...+on+Article+%7B%0D%0A+++++++++++title%0D%0A+++++++++%7D%0D%0A+++++++%7D%0D%0A+++++%7D%0D%0A+++%7D%0D%0A+%7D%0D%0A%7D' %}
 
 ### Beacon filters
 

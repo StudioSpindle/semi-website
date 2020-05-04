@@ -3,7 +3,7 @@ published: true
 bodyclass: page--use-cases
 layout: layout-marketplace
 title: Cybersecurity SIEM
-description: Cybersecurity infrastructures are complex graphs of relations of software, tools, threads, and routes. A knowledge graph is ideal for mapping out these infrastructures.
+description: Bacon ipsum dolor amet turkey frankfurter ham venison kielbasa bacon alcatra fatback filet mignon rump cupim. Doner frankfurter tenderloin capicola cow. Shank swine bacon, strip steak pork loin drumstick.
 tags: ['Weaviate Console Module']
 order: 4
 image: /img/illustrations/CyberSecurity.svg
