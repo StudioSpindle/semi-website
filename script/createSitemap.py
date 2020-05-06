@@ -25,6 +25,7 @@ def getLinks(i):
         LOADEDLINKS.append(url)
        
         try:
+            print('REQUEST', 'https://www.semi.technology' + url)
             request = urlopen('https://www.semi.technology' + url)
         except:
             return
