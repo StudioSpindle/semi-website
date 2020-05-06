@@ -81,7 +81,7 @@ script:
       # Invalidate the CDN
       gcloud compute url-maps invalidate-cdn-cache semi-technology --host www.semi.technology --path "/*" --async
       # sleep for invalidation to kick in
-      sleep 60
+      sleep 120
       # generate the sitemap and push to the wayback machine
       cd .. && cd script
       pip3 install -r requirements.txt
