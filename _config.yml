@@ -8,6 +8,9 @@ collections:
     news:
         output: true
         permalink: /news/:path
+    use_cases:
+        output: true
+        permalink: /use-cases/:path
     documentation:
         output: true
         permalink: /documentation/:path
