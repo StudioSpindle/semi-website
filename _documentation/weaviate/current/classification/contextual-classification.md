@@ -1,7 +1,7 @@
 ---
 layout: layout-documentation
 product: weaviate
-sub-menu: Features
+sub-menu: Classification
 product-order: 1
 title: Contextual Classification
 description: How to perform Contextual classification for properties of data objects.
