@@ -31,7 +31,7 @@ og-img: documentation.jpg
 
 ## Introduction
 
-It might be the case that your use case contains particular words or abbreviations that Weaviate's contextionary might not know. With the "extensions" endpoint, you can teach Weaviate the concepts in real-time.
+If you have a use case which contains particular words or abbreviations that Weaviate's contextionary does not know, you can use the "extensions" endpoint to teach Weaviate the concepts in real-time.
 
 Note that you need to learn Weaviate the new concepts before adding data.
 
