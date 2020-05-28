@@ -39,6 +39,8 @@ docs:
         - Setup
         - Add data
         - Query data
+        - Classification
+        - Transfer learning
         - Features
         - Datasets
         - Client libs

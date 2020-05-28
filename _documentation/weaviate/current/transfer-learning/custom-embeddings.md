@@ -1,9 +1,9 @@
 ---
 layout: layout-documentation
 product: weaviate
-sub-menu: Features
+sub-menu: Transfer learning
 product-order: 1
-title: Adding synonyms
+title: Custom embeddings
 description: How to add custom synonyms to the contextionary.
 tags: ['Contextionary', 'Synonyms']
 menu-order: 3
@@ -11,7 +11,7 @@ open-graph-type: article
 og-img: documentation.jpg
 ---
 
-# Adding Synonyms Guide
+# Custom embeddings
 
 {% include badges.html %}
 
@@ -24,13 +24,16 @@ og-img: documentation.jpg
 
 ## Basics
 
-- Concepts in the Contextionary can be overwritten and new concepts can be added to the Contextionary.
+- Custom words or abbreviations (i.e., "concepts") can be added to Weaviate directly by extending the contextionary.
+- [Transfer learning](https://en.wikipedia.org/wiki/Transfer_learning) allows you to extend Weaviate in real-time.
 - A `POST` request to the RESTful endpoint `/c11y/extensions` is for extending the contextionary with custom concepts.
 - a `GET` request to the RESTful endpoint `/c11y/concepts/{}` returns if a concept is part of the Contextionary. 
 
 ## Introduction
 
-Concepts in the Contextionary can be overwritten and new concepts can be added to the Contextionary. 
+It might be the case that your use case contains particular words or abbreviations that Weaviate's contextionary might not know. With the "extensions" endpoint, you can teach Weaviate the concepts in real-time.
+
+Note that you need to learn Weaviate the new concepts before adding data.
 
 ## Usage
 

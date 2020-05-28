@@ -1,7 +1,7 @@
 ---
 layout: layout-documentation
 product: weaviate
-sub-menu: Features
+sub-menu: Classification
 product-order: 1
 title: KNN Classification
 description: How to perform KNN classification for properties of data objects.
