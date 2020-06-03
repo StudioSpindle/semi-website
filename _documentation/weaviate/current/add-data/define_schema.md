@@ -267,9 +267,15 @@ When creating a property, Weaviate needs to know what type of data you will give
 
 #### Date Type
 
-Weaviate accepts dates formatted in following the [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) standard.
+Weaviate requires an [RFC 3339](https://tools.ietf.org/html/rfc3339) formatted date that includes the time and the offset.
 
-For example: `2019-08-24T14:25:57Z`.
+For example:
+
+- `1985-04-12T23:20:50.52Z`.
+- `1996-12-19T16:39:57-08:00`
+- `1990-12-31T23:59:60Z`
+- `1990-12-31T15:59:60-08:00`
+- `1937-01-01T12:00:27.87+00:20`
 
 #### Geo Coordinates Type
 
