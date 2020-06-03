@@ -281,9 +281,15 @@ When creating a property, Weaviate needs to know what type of data you will give
 #### Date Type
 
 Weaviate requires an [RFC 3339](https://tools.ietf.org/html/rfc3339) formatted date that includes the time and the offset.
+<<<<<<< HEAD
 
 For example:
 
+=======
+
+For example:
+
+>>>>>>> HOTFIX: set correct date type. Closes #503
 - `1985-04-12T23:20:50.52Z`.
 - `1996-12-19T16:39:57-08:00`
 - `1990-12-31T23:59:60Z`
