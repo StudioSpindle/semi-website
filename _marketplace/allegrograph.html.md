@@ -3,7 +3,7 @@ published: true
 bodyclass: page--use-cases
 layout: layout-marketplace
 title: AllegroGraph Sematic Search
-description: Enhance customer satisfaction and lowering cost by replacing parts, maintaining assets preemptively and optimizing maintenance schedules
+description: Bacon ipsum dolor amet turkey frankfurter ham venison kielbasa bacon alcatra fatback filet mignon rump cupim. Doner frankfurter tenderloin capicola cow. Shank swine bacon, strip steak pork loin drumstick.
 tags: ['plugin', 'third party']
 order: 1
 image: /img/illustrations/EnergyUtility.svg

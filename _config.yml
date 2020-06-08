@@ -1,5 +1,5 @@
-weaviate_version: 0.22.5
-helm_version: 9.1.0
+weaviate_version: 0.22.7
+helm_version: 10.0.0
 markdown: kramdown
 kramdown:
     parse_block_html: false
@@ -8,6 +8,9 @@ collections:
     news:
         output: true
         permalink: /news/:path
+    use_cases:
+        output: true
+        permalink: /use-cases/:path
     documentation:
         output: true
         permalink: /documentation/:path
@@ -36,6 +39,8 @@ docs:
         - Setup
         - Add data
         - Query data
+        - Classification
+        - Transfer learning
         - Features
         - Datasets
         - Client libs
