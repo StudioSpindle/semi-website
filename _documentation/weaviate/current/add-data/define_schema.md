@@ -56,6 +56,7 @@ A Weaviate schema is used to define what kind of [semantic kinds](../about/philo
 - Words used in the schema must be part of the [contextionary](../about/philosophy.html#about-the-contextionary).
 - The schema can be modified through the RESTful API.
 - You can import and export complete schemas with the [weaviate-cli](/documentation/weaviate-cli/current/schema/schema-import.html) tool.
+- A class or property in Weaviate becomes immutable, but you can always be extend.
 
 ## Introduction
 
