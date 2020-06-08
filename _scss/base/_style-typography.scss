@@ -40,11 +40,11 @@ h6 {
 	color: $color-black;
 	font-family: $typeface-body;
 }
-
+p {
+	margin-top: 1rem;
+}
 p, li {
 	font-size: $font-size-body;
-	margin-top: 1rem;
-	// padding-bottom: 1rem;
 	max-width: 32em;
 }
 
@@ -80,17 +80,15 @@ hr {
 	h6:not([class*="title-"]) {
 		font-size: 1.25rem;
 	}
-	p, li {
+	p {
 		margin-top: 1rem;
+	}
+	p, li {
 		font-size: 1.25rem;
 	}
 	p.intro {
 		font-size: 1.35rem;
 	}
-}
-
-li {
-	margin: $scale--1;
 }
 
 a {
