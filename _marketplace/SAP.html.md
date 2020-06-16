@@ -3,17 +3,13 @@ published: true
 bodyclass: page--use-cases
 layout: layout-marketplace
 title: SAP Classification
-description: Bacon ipsum dolor amet turkey frankfurter ham venison kielbasa bacon alcatra fatback filet mignon rump cupim. Doner frankfurter tenderloin capicola cow. Shank swine bacon, strip steak pork loin drumstick.
-tags: ['plugin']
-order: 8
-image: /img/illustrations/BankingFinanceII.svg
-imageCard: /img/decoration/use-case-finance-1@2x.jpg
-imageMobile: /img/decoration/use-case-1.jpg
-imageAlt: Enrich transactional information to discover insights for customers
-inRnD: false
-og-img: banking-and-finance.jpg
-thirdParty: false
-linkText: Get this plugin now
+description: Bacon ipsum dolor amet turkey frankfurter
+# image: /img/illustrations/BankingFinanceII.svg
+imageCard: /img/marketplace/SAP.png
+# imageMobile: /img/decoration/use-case-1.jpg
+imageAlt: SAP is ...
+inRnD: true
+og-img: /img/marketplace/SAP.png
 ---
 
 ## The challenge
