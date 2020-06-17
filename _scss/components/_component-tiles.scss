@@ -1,0 +1,29 @@
+
+.tile {
+  max-width: 230px;
+  display: flex;
+  flex-direction: column;
+  padding: $scale-0;
+  background-color: white;
+}
+
+.tile__image {
+  width: 4rem;
+  height: 4rem;
+  display: flex;
+}
+
+.tile__top {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.tile__image-container {
+  display: flex;
+}
+
+.tile__badge {
+  display: flex;
+  align-self: center;
+}

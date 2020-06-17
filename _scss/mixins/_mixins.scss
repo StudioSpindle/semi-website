@@ -3,6 +3,8 @@ $transition-speed-out: .256s;
 $transition-easing-in: ease-out;
 $transition-easing-out: ease-out;
 
+$box-shadow-1: rgba(0, 0, 0, 0.2) 0px 2px 1px -1px, rgba(0, 0, 0, 0.14) 0px 1px 1px 0px, rgba(0, 0, 0, 0.12) 0px 1px 3px 0px;
+$box-shadow-3: 0 1px 3px 0 rgba(1,67,163,.05), 0 4px 8px 3px rgba(1,67,163,.15);
 
 @mixin transition-in {
 	transition: background $transition-speed-in $transition-easing-in,
@@ -35,6 +37,15 @@ $transition-easing-out: ease-out;
 	box-shadow: 0 0 0 2px $color-semi-accent inset;
 	outline: none;
 }
+
+@mixin elevation($level: '') {
+	@if $level == foreground {
+		box-shadow: $box-shadow-3;
+	} @else {
+		box-shadow: $box-shadow-1;
+	}
+}
+
 
 @mixin background-opacity($color, $opacity: .5) {
     background: $color; //  Fallback to solid color
