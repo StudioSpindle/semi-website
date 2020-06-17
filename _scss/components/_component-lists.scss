@@ -11,6 +11,12 @@
   vertical-align: middle;
 }
 
+ul, ol {
+    li {
+        margin-bottom: .75rem;
+    }
+}
+
 .list-bullet {
 	li {
       list-style: none;
