@@ -48,7 +48,7 @@ before_install:
     gcloud auth activate-service-account --key-file key.master.json
   fi
 # download the deprication file
-- pip3 install yq
+- pip install yq
 - rm -f _data/deprecations.yml
 - wget -O _data/deprecations.yml https://raw.githubusercontent.com/semi-technologies/weaviate/$(cat _config.yml | yq -r .weaviate_version)/deprecations/deprecations.yml
 before_script:
