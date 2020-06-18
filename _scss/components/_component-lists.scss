@@ -11,6 +11,12 @@
   vertical-align: middle;
 }
 
+ul, ol {
+    li {
+        margin-bottom: .75rem;
+    }
+}
+
 .list-bullet {
 	li {
       list-style: none;
@@ -139,4 +145,18 @@ dd {
   li {
     list-style: none;
   }
+}
+
+.tags__tag-list {
+    display: flex;
+    li {
+        display: flex;
+        margin-left: 0;
+        &:not(:first-child) {
+            margin-right: .125rem;
+        }
+        a {
+            margin-right: 0;
+        }
+    }
 }

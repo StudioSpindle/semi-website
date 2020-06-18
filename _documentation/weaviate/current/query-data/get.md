@@ -15,7 +15,7 @@ og-img: documentation.jpg
 
 {% include badges.html %}
 
-The `Get{}` function is Weaviate's bread and butter. The most direct way to access data.
+The `Get{}` function is Weaviate's bread and butter. It is the most direct way to access data.
 
 ## Index
 
@@ -24,6 +24,10 @@ The `Get{}` function is Weaviate's bread and butter. The most direct way to acce
   - [Define a query](#define-a-query)
   - [Work with graph beacons](#work-with-graph-beacons)
 - [Get{} Function](#get-function)
+- [Meta properties](#meta-properties)
+  - [Classification](#classification)
+  - [Vectorization](#vectorization)
+- [Get RESTful Function](#get-restful-function)
 - [More resources](#more-resources)
 
 ## Basics
@@ -32,6 +36,7 @@ The `Get{}` function is Weaviate's bread and butter. The most direct way to acce
 - You can query a Weaviate after you've created a [schema](../add-data/define_schema.html) and [populated it](../add-data/add_and_modify.html) with data.
 - You can easily query a Weaviate by using the GraphQL interface inside a [Weaviate Playground](http://playground.semi.technology).
 - Some functions have (semantic) [filters](./filters.html) available.
+- An individual semantic kind (i.e., data object) can be collected through the [RESTful API]() as well.
 
 ## Introduction
 
@@ -68,6 +73,7 @@ The `Get{}` function is always defined based on the following principle:
         <PropertyWithReference>
           ... on <ClassOfBeacon> {
             <property>
+            _<meta-property>
           }
       }
     }
@@ -158,6 +164,22 @@ Note that if you've set the [cardinality](../add-data/define_schema.html#propert
 }
 ```
 {% include molecule-gql-demo.html encoded_query='%7B%0D%0A++Get+%7B%0D%0A++++Things+%7B%0D%0A++++++Article+%7B%0D%0A++++++++title%0D%0A++++++++url%0D%0A++++++++wordCount%0D%0A++++++++HasAuthors+%7B%0D%0A++++++++++...+on+Author+%7B%0D%0A++++++++++++name%0D%0A++++++++++%7D%0D%0A++++++++++...+on+Publication+%7B%0D%0A++++++++++++name%0D%0A++++++++++%7D%0D%0A++++++++%7D%0D%0A++++++%7D%0D%0A++++%7D%0D%0A++%7D%0D%0A%7D' %}
+
+## Meta Properties
+
+For every Get{} request you can get meta-information about the returned data object(s). These meta-properties are recognizable because they are prefixed with an underscore and can be added to any GraphQL request.
+
+### Classification
+
+...
+
+### Vectorization
+
+...
+
+## Get RESTful Function
+
+...
 
 ## More Resources
 

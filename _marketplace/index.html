@@ -22,20 +22,22 @@ exclude: true
             <ul class="cards cards--load-fade-in">
                 {% for item in sorted_plugins %}
                     {% unless item.published != true %}
-                        {% include components/card/card.html
-                            title=item.title
-                            themeClass="theme--use-cases"
-                            inverted=true
-                            imgUrl=""
-                            imgAlt=""
-                            backgroundImgUrl=item.imageCard
-                            linkUrl=item.url
-                            linkExternal=item.thirdParty
-                            ctaText=item.linkText
-                            bodycopy=item.description
-                            inRnD=item.inRnD
-                            tags=item.tags
-                        %}
+                        <li>
+                            <a href="{{ item.url }}" class="tile link-container">
+                                <div class="tile__top">
+                                    <div class="tile__image-container">
+                                        <img src="{{ item.imageCard }}" alt="{{ item.imageAlt }}" class="tile__image" />
+                                    </div>
+                                    {%- if item.inRnD == true %}
+                                    <div class="tile__badge">
+                                        {%- include components/card/card__badge.html %}
+                                    </div>
+                                    {%- endif %}
+                                </div>
+                                <h2 class="title-column">{{ item.title }}</h2>
+                                <p>{{ item.description }}</p>
+                            </a>
+                        </li>
                     {% endunless %}
                 {% endfor %}
             </ul>

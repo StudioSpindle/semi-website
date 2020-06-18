@@ -2,7 +2,7 @@
 published: true
 bodyclass: page--use-cases
 layout: layout-marketplace
-title: SAP Classification
+title: Graphileon Integration
 description: Bacon ipsum dolor amet turkey frankfurter
 # image: /img/illustrations/BankingFinanceII.svg
 imageCard: /img/marketplace/SAP.png

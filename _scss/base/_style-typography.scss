@@ -40,11 +40,11 @@ h6 {
 	color: $color-black;
 	font-family: $typeface-body;
 }
-
+p {
+	margin-top: 1rem;
+}
 p, li {
 	font-size: $font-size-body;
-	margin-top: 1rem;
-	// padding-bottom: 1rem;
 	max-width: 32em;
 }
 
@@ -80,8 +80,10 @@ hr {
 	h6:not([class*="title-"]) {
 		font-size: 1.25rem;
 	}
-	p, li {
+	p {
 		margin-top: 1rem;
+	}
+	p, li {
 		font-size: 1.25rem;
 	}
 	p.intro {
@@ -89,16 +91,15 @@ hr {
 	}
 }
 
-li {
-	margin: $scale--1;
-}
-
 a {
 	@include transition-out;
-	border-bottom: 2px solid $color-support;
 	color: $color-interactive;
 	outline: none;
 	text-decoration: none;
+}
+
+a:not(&.link-container) {
+	border-bottom: 2px solid $color-support;
 	&:hover, &:focus, &:active {
 		@include transition-in;
 		background: $color-semi;
@@ -111,6 +112,15 @@ a {
 		outline: 3px solid $color-semi-accent;
 	}
 }
+
+.link-container {
+	@include elevation();
+	&:hover {
+		transition: box-shadow .3s ease-in-out;
+		@include elevation(foreground);
+	}
+}
+
 .image-link {
     border-bottom-width: 0;
     &:hover, &:focus, &:active {

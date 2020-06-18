@@ -1,4 +1,4 @@
-weaviate_version: 0.22.7
+weaviate_version: 0.22.9
 helm_version: 10.0.0
 markdown: kramdown
 kramdown:
@@ -41,7 +41,7 @@ docs:
         - Query data
         - Classification
         - Transfer learning
-        - Features
+        - Additional Features
         - Datasets
         - Client libs
         - Weaviate Cluster Service
