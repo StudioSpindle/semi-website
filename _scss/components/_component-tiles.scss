@@ -1,10 +1,15 @@
 
 .tile {
+  @include elevation();
   max-width: 230px;
   display: flex;
   flex-direction: column;
   padding: $scale-0;
   background-color: white;
+  &:hover {
+		transition: box-shadow .3s ease-in-out;
+		@include elevation(foreground);
+	}
 }
 
 .tile__image {
