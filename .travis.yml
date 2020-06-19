@@ -87,11 +87,11 @@ script:
       # sleep for invalidation to kick in
       sleep 120
       # generate the sitemap and push to the wayback machine
-      cd .. && cd script
-      pip3 install -r requirements.txt
-      pip3 install lxml
-      travis_wait 90 python3 createSitemap.py
-      gsutil -m cp ./sitemap.xml gs://$BUCKET/sitemap.xml
+      # cd .. && cd script
+      # pip3 install -r requirements.txt
+      # pip3 install lxml
+      # travis_wait 90 python3 createSitemap.py
+      # gsutil -m cp ./sitemap.xml gs://$BUCKET/sitemap.xml
     fi
   fi
 - |
