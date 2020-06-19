@@ -8,7 +8,7 @@ button:not(.button-icon),
 [type='submit'] {
   @include transition-out;
   background: $color-semi;
-  border: 0 !important;
+  border: 0px !important;
   border-radius: $border-radius-1;
   color: $color-white;
   display: inline-block;
@@ -20,7 +20,7 @@ button:not(.button-icon),
   &:hover, &:focus, &:active {
     @include transition-in;
     border-radius: $border-radius-2;
-    outline: none;
+    outline: none !important;
   }
 
   &:focus, &:active {
