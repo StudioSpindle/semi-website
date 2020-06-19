@@ -11,7 +11,7 @@ open-graph-type: article
 og-img: documentation.jpg
 ---
 
-# frequently Asked Questions
+# Frequently Asked Questions
 
 {% include badges.html %}
 

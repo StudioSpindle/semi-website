@@ -15,7 +15,7 @@ og-img: documentation.jpg
 
 {% include badges.html %}
 
-The `Get{}` function is Weaviate's bread and butter. The most direct way to access data.
+The `Get{}` function is Weaviate's bread and butter. It is the most direct way to access data.
 
 ## Index
 
@@ -24,6 +24,10 @@ The `Get{}` function is Weaviate's bread and butter. The most direct way to acce
   - [Define a query](#define-a-query)
   - [Work with graph beacons](#work-with-graph-beacons)
 - [Get{} Function](#get-function)
+- [Underscore Properties](#underscore-properties)
+  - [Classification](#classification)
+  - [Interpretation](#interpretation)
+- [Get RESTful Function](#get-restful-function)
 - [More resources](#more-resources)
 
 ## Basics
@@ -32,6 +36,7 @@ The `Get{}` function is Weaviate's bread and butter. The most direct way to acce
 - You can query a Weaviate after you've created a [schema](../add-data/define_schema.html) and [populated it](../add-data/add_and_modify.html) with data.
 - You can easily query a Weaviate by using the GraphQL interface inside a [Weaviate Playground](http://playground.semi.technology).
 - Some functions have (semantic) [filters](./filters.html) available.
+- An individual semantic kind (i.e., data object) can be collected through the [RESTful API]() as well.
 
 ## Introduction
 
@@ -68,6 +73,7 @@ The `Get{}` function is always defined based on the following principle:
         <PropertyWithReference>
           ... on <ClassOfBeacon> {
             <property>
+            _<meta-property>
           }
       }
     }
@@ -158,6 +164,68 @@ Note that if you've set the [cardinality](../add-data/define_schema.html#propert
 }
 ```
 {% include molecule-gql-demo.html encoded_query='%7B%0D%0A++Get+%7B%0D%0A++++Things+%7B%0D%0A++++++Article+%7B%0D%0A++++++++title%0D%0A++++++++url%0D%0A++++++++wordCount%0D%0A++++++++HasAuthors+%7B%0D%0A++++++++++...+on+Author+%7B%0D%0A++++++++++++name%0D%0A++++++++++%7D%0D%0A++++++++++...+on+Publication+%7B%0D%0A++++++++++++name%0D%0A++++++++++%7D%0D%0A++++++++%7D%0D%0A++++++%7D%0D%0A++++%7D%0D%0A++%7D%0D%0A%7D' %}
+
+## Underscore Properties
+
+For every Get{} request you can get additional information about the returned data object(s) by using underscore-properties. You can recognize these properties because they are prefixed with an underscore and can be added to any GraphQL request.
+
+Below you find an overview of available underscore-properties.
+
+### Classification
+
+When a data-object has been subjected to classification, you can get additional information about how the object was classified by running the following command:
+
+```graphql
+{
+  Get {
+    Things {
+      Article {
+        _classification {
+          basedOn
+          classifiedFields
+          completed
+          id
+          scope
+        }
+      }
+    }
+  }
+}
+```
+{% include molecule-gql-demo.html encoded_query='%7B%0D%0A++Get+%7B%0D%0A++++Things+%7B%0D%0A++++++Article+%7B%0D%0A++++++++_classification+%7B%0D%0A++++++++++basedOn%0D%0A++++++++++classifiedFields%0D%0A++++++++++completed%0D%0A++++++++++id%0D%0A++++++++++scope%0D%0A++++++++%7D%0D%0A++++++%7D%0D%0A++++%7D%0D%0A++%7D%0D%0A%7D' %}
+
+### Interpretation
+
+When Weaviate vectorizes your data-object, it normalizes the data so that the contextionary can interpret it. With the `_interpretation` underscore property you can request how Weaviate indexed your data-object.
+
+```graphql
+{
+  Get {
+    Things {
+      Article {
+        _interpretation {
+          source {
+            concept
+            occurrence
+            weight
+          }
+        }
+        summary
+      }
+    }
+  }
+}
+```
+{% include molecule-gql-demo.html encoded_query='%7B%0D%0A++Get+%7B%0D%0A++++Things+%7B%0D%0A++++++Article+%7B%0D%0A++++++++_interpretation+%7B%0D%0A++++++++++source+%7B%0D%0A++++++++++++concept%0D%0A++++++++++++occurrence%0D%0A++++++++++++weight%0D%0A++++++++++%7D%0D%0A++++++++%7D%0D%0A++++++++summary%0D%0A++++++%7D%0D%0A++++%7D%0D%0A++%7D%0D%0A%7D' %}
+
+## Get RESTful Function
+
+Underscore properties also have RESTful equivalents that can be retrieved by setting the `_include=` argument.
+
+| underscore property | returns |
+| ------------------- | ------- |
+| `_include=_classification` | Classification information |
+| `_include=_vector` | The vector how the dataobject is vectorized information |
 
 ## More Resources
 

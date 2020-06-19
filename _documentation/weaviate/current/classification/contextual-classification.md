@@ -26,7 +26,7 @@ Perform contextual classifications through the RESTapi to enhance your dataset.
 - [How to use](#how-to-use)
     - [Start a Classification](#start-a-classification)
     - [See the Status of a Classification](#see-the-status-of-a-classification)
-    - [Get Classification Meta Information of Data Objects](#get-classification-meta-information-of-data-objects)
+    - [Get Classification Information of Data Objects](#get-classification-information-of-data-objects)
 - [Example](#example)
 - [More resources](#more-resources)
 
@@ -35,7 +35,7 @@ Perform contextual classifications through the RESTapi to enhance your dataset.
 - Reference properties of data objects can be classified with contextual classification.
 - There is no training data in contextual classification.
 - Use the RESTful api queries `v1/classifications` for classification.
-- Classification meta information of data objects can be requested by setting `?meta=true` in `GET /things/{kinds}/{id}` requests for things and actions.
+- Classification information of data objects can be requested by setting `?include=_classification` in `GET /things/{kinds}/{id}` requests for things and actions.
 - No labeled data (training data) is needed
 
 ## Introduction
@@ -121,12 +121,12 @@ GET /v1/classifications/<classificationID>
 }
 ```
 
-### Get Classification Meta Information of Data Objects 
+### Get Classification Information of Data Objects
 
-After the classification is completed, the concerning reference properties data objects in the Weaviate instance are updated according to the classification. These data objects will be represented similarly to other data objects. When you perform a `GET` request to a specific `Thing` or `Action`, no additional information about classifiction will be shown, unless you specifically add a parameter `meta=true` to the request:
+After the classification is completed, the concerning reference properties data objects in the Weaviate instance are updated according to the classification. These data objects will be represented similarly to other data objects. When you perform a `GET` request to a specific `Thing` or `Action`, no additional information about classifiction will be shown, unless you specifically add a parameter `include=_classification` to the request:
  
 ```json
-GET /v1/things/<id>/?meta=true
+GET /v1/things/<id>/?include=_classification
 
 {
   "class": "<className>",
@@ -135,43 +135,39 @@ GET /v1/things/<id>/?meta=true
     "<property1>": [
       {
          "beacon": "...",
-         "meta": null  <----- indicates this has not been classified, but set by a user
+         "_classification": null  <----- indicates this has not been classified, but set by a user
       }
     ],
     "<property2>": [
       {
-         "beacon": "...",
-         "meta": {
-            "classification": {
-              "winningDistance": float
-            },
-          },
+          "beacon": "...",
+          "_classification": {
+            "winningDistance": float
+          }
       }
     ],
     "<property3>": [
       {
          "beacon": "...",
-         "meta": null  <----- indicates this has not been classified, but set by a user
+         "_classification": null  <----- indicates this has not been classified, but set by a user
       }
     ],
   },
-  "meta": {
-    "classification": {
-      "id": "<classificationId>",
-      "completed": "<timestamp>",
-      "classifiedFields": ["<property2>"],
-      "scope": ["<property1>", "<property2>"]  <----- note that the scope was to classify both fields, but since the user had already set <property1> the actual classified Fields (see one row up) is only a single field (<property2>),
-      "basedOn": ["<property3>"],
-    }
+  "classification": {
+    "id": "<classificationId>",
+    "completed": "<timestamp>",
+    "classifiedFields": ["<property2>"],
+    "scope": ["<property1>", "<property2>"]  <----- note that the scope was to classify both fields, but since the user had already set <property1> the actual classified Fields (see one row up) is only a single field (<property2>),
+    "basedOn": ["<property3>"],
   }
 }
 ```
 
-This returned information does not only show the values of the properties of the requested `Thing`, but also `meta` information about how the property values are obtained. If a property value is obtained by user input, not by classification, then the `meta` fields in the property schema will be `null`. This is the case for `<property1>` and `<property3>`. 
+This returned information does not only show the values of the properties of the requested `Thing`, but also classification information about how the property values are obtained. If a property value is obtained by user input, not by classification, then the `_classification` fields in the property schema will be `null`. This is the case for `<property1>` and `<property3>`. 
 
-When a property value of a reference property is filled by classification, then `classification` information will appear in the `meta` field of this property. It contains information about `distanceWinning`, which gives information about how the reference has been classified. The float number are a normalized distance (between 0 and 1), where 0 means equal and 1 would mean a perfect opposite.
+When a property value of a reference property is filled by classification, then `classification` information will appear. It contains information about `distanceWinning`, which gives information about how the reference has been classified. The float number are a normalized distance (between 0 and 1), where 0 means equal and 1 would mean a perfect opposite.
 
-Then, additional meta information about the classication of this data object is shown in the last `meta` field on a higher level.
+Then, additional _classification information about the classication of this data object is shown in the last `_classification` field on a higher level.
 
 ## Example
 
@@ -236,25 +232,23 @@ If we later check the status by performing a GET request to `v1/classifications/
 }
 ```
 
-If we later want to know to which `Category` the `Article` refers to, we can send the following `GET` request to `/v1/things/c370fd85-c2d8-4321-80c4-ae6744abe671/?meta=true`, which will return:
+If we later want to know to which `Category` the `Article` refers to, we can send the following `GET` request to `/v1/things/c370fd85-c2d8-4321-80c4-ae6744abe671/?include=_classification`, which will return:
 
 ```json
 {
     "class": "Article",
     "creationTimeUnix": 1580044437155,
     "id": "c9094d69-d45b-3508-85e5-23445cfb5f9f",
-    "meta": {
-        "classification": {
-            "basedOn": null,
-            "classifiedFields": [
-                "ofCategory"
-            ],
-            "completed": "2020-01-26T13:25:34.230Z",
-            "id": "853c5eb4-6785-4a95-9a30-9cc70ea21fd8",
-            "scope": [
-                "ofCategory"
-            ]
-        }
+    "_classification": {
+        "basedOn": null,
+        "classifiedFields": [
+            "ofCategory"
+        ],
+        "completed": "2020-01-26T13:25:34.230Z",
+        "id": "853c5eb4-6785-4a95-9a30-9cc70ea21fd8",
+        "scope": [
+            "ofCategory"
+        ]
     },
     "schema": {
         "hasAuthors": [
@@ -276,10 +270,8 @@ If we later want to know to which `Category` the `Article` refers to, we can sen
         "ofCategory": [
             {
                 "beacon": "weaviate://localhost/things/8fe49280-5d2e-3d73-9b0f-7b76e2f23c65",
-                "meta": {
-                    "classification": {
-                        "winningDistance": 0.20993641018867493
-                    }
+                "_classification": {
+                    "winningDistance": 0.20993641018867493
                 }
             }
         ],

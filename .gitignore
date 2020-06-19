@@ -12,3 +12,4 @@ Gemfile.lock
 # exclude build files (CSS files are built by webpack)
 css/*
 .jekyll-cache
+_data/deprecations.yml

@@ -1,0 +1,34 @@
+
+.tile {
+  @include elevation();
+  max-width: 230px;
+  display: flex;
+  flex-direction: column;
+  padding: $scale-0;
+  background-color: white;
+  &:hover {
+		transition: box-shadow .3s ease-in-out;
+		@include elevation(foreground);
+	}
+}
+
+.tile__image {
+  width: 4rem;
+  height: 4rem;
+  display: flex;
+}
+
+.tile__top {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.tile__image-container {
+  display: flex;
+}
+
+.tile__badge {
+  display: flex;
+  align-self: center;
+}

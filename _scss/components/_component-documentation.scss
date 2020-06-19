@@ -1,0 +1,26 @@
+.documentation-link {
+    margin-left: -20px;
+    cursor: pointer;
+}
+
+a.documentation-link:link,
+a.documentation-link:visited,
+a.documentation-link:active {
+    border-bottom: 0px !important;
+}
+
+a.documentation-link:hover {
+    color: $color-semi;
+    background-color: unset;
+    border-bottom: 2px solid $color-support;
+    border: none !important;
+}
+
+.documentation-link img {
+    width: 20px;
+    height: 20px;
+    visibility: hidden;
+}
+a.documentation-link:hover > img {
+    visibility: visible;
+}

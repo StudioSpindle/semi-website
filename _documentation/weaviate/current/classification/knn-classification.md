@@ -27,7 +27,7 @@ Perform [k-nearest neighbors](https://en.wikipedia.org/wiki/K-nearest_neighbors_
 - [How to use](#how-to-use)
     - [Start a Classification](#start-a-classification)
     - [See the Status of a Classification](#see-the-status-of-a-classification)
-    - [Get Classification Meta Information of Data Objects](#get-classification-meta-information-of-data-objects)
+    - [Get Classification Information of Data Objects](#get-classification-information-of-data-objects)
 - [Example](#example)
 - [Tips and Best Practices](#tips-and-best-practices)
     - [Training Data](#training-data)
@@ -38,7 +38,7 @@ Perform [k-nearest neighbors](https://en.wikipedia.org/wiki/K-nearest_neighbors_
 
 - Reference properties of data objects can be classified with a kNN approach.
 - Use the RESTful api queries `v1/classification/` for classification.
-- Classification meta information of data objects can be requested by setting `?meta=true` in `GET /things/{kinds}/{id}` requests for things and actions.
+- Classification information of data objects can be requested by setting `?include=_classification` in `GET /things/{kinds}/{id}` requests for things and actions.
 - Needs to have at least two schema classes and one cross-reference between both classes in your schema.
 - [K-nearest neighbors algorithm (kNN)](https://en.wikipedia.org/wiki/K-nearest_neighbors_algorithm).
 - A classification which requires training data. 
@@ -136,12 +136,12 @@ GET /v1/classifications/<classificationID>
 }
 ```
 
-### Get Classification Meta Information of Data Objects 
+### Get Classification Information of Data Objects
 
-After the classification is completed, the concerning reference properties data objects in the Weaviate instance are updated according to the classification. These data objects will be represented similarly to other data objects. When you perform a `GET` request to a specific `Thing` or `Action`, no additional information about classifiction will be shown, unless you specifically add a parameter `meta=true` to the request:
+After the classification is completed, the concerning reference properties data objects in the Weaviate instance are updated according to the classification. These data objects will be represented similarly to other data objects. When you perform a `GET` request to a specific `Thing` or `Action`, no additional information about classifiction will be shown, unless you specifically add a parameter `include=_classification` to the request:
  
 ```json
-GET /v1/things/<id>/?meta=true
+GET /v1/things/<id>/?include=_classification
 
 {
   "class": "<className>",
@@ -156,42 +156,38 @@ GET /v1/things/<id>/?meta=true
     "<property2>": [
       {
          "beacon": "...",
-         "meta": {
-            "classification": {
-              "distanceWinning": float,
-              "distanceLosing": float,
-            },
-          },
+          "_classification": {
+            "distanceWinning": float,
+            "distanceLosing": float,
+          }
       }
     ],
     "<property3>": [
       {
          "beacon": "...",
-         "meta": null  <----- indicates this has not been classified, but set by a user
+         "_classification": null  <----- indicates this has not been classified, but set by a user
       }
     ],
   },
-  "meta": {
-    "classification": {
-      "id": "<classificationId>",
-      "completed": "<timestamp>",
-      "classifiedFields": ["<property2>"],
-      "scope": ["<property1>", "<property2>"]  <----- note that the scope was to classify both fields, but since the user had already set <property1> the actual classified Fields (see one row up) is only a single field (<property2>),
-      "basedOn": ["<property3>"],
-    }
+  "_classification": {
+    "id": "<classificationId>",
+    "completed": "<timestamp>",
+    "classifiedFields": ["<property2>"],
+    "scope": ["<property1>", "<property2>"]  <----- note that the scope was to classify both fields, but since the user had already set <property1> the actual classified Fields (see one row up) is only a single field (<property2>),
+    "basedOn": ["<property3>"],
   }
 }
 ```
 
-This returned information does not only show the values of the properties of the requested `Thing`, but also `meta` information about how the property values are obtained. If a property value is obtained by user input, not by classification, then the `meta` fields in the property schema will be `null`. This is the case for `<property1>` and `<property3>`. 
+This returned information does not only show the values of the properties of the requested `Thing`, but also `_classification` information about how the property values are obtained. If a property value is obtained by user input, not by classification, then the `_classification` fields in the property schema will be `null`. This is the case for `<property1>` and `<property3>`. 
 
-When a property value of a reference property is filled by classification, then `classification` information will appear in the `meta` field of this property. It contains information about `distanceWinning` and `distanceLosing`, which gives information about how the reference has been classified. The float numbers are a normalized distance (between 0 and 1), where 0 means equal and 1 would mean a perfect opposite. In kNN classification, the classification decision is based on vectors of the classes around a guessed vector. 
+When a property value of a reference property is filled by classification, then `_classification` information will appear in the `_classification` field of this property. It contains information about `distanceWinning` and `distanceLosing`, which gives information about how the reference has been classified. The float numbers are a normalized distance (between 0 and 1), where 0 means equal and 1 would mean a perfect opposite. In kNN classification, the classification decision is based on vectors of the classes around a guessed vector. 
 
 For example, if the kNN is set to 3, the closest 3 objects to the computed vector are taken into consideration. Let's say these 3 objects are of 2 different classes, then we classify the data object as the class of the majority. These two objects are "winning", and the other 1 object is "losing" in the classification. The distance of the winning data objects to the computed vector of the 'to be classified' data object is averaged and normalized. The same will be done to the losing data objects (in this case only 1). 
 
 `distanceWinning` and `distanceLosing` are a good indicators if you set the amount of k nearest neighbours right. For example if the `distanceLosing` is way smaller than the `distanceWinning`, than the set k values was too high because many their where many classifications to the same, but far group, and only one or a few classifications to a near group. Less abstract, this means that the 'to be classified' property is classified as a class that many other -not so similar- data objects have (winning but far away), and not as class of, losing, more similar data objects because they were in minority. In this case, the kNN was perhaps set too high, and a lower amount of kNN might lead to better classification.
 
-Then, additional meta information about the classication of this data object is shown in the last `meta` field on a higher level.
+Then, additional classification information about the classication of this data object is shown in the last `_classification` field on a higher level.
 
 ## Example
 
@@ -264,7 +260,7 @@ If we later check the status by performing a GET request to `v1/classification/e
 }
 ```
 
-If we later want to know to which `Country` the `Company(name:YLE)` refers to, we can send the following `GET` request to `/v1/things/c370fd85-c2d8-4321-80c4-ae6744abe671/?meta=true`, which will return:
+If we later want to know to which `Country` the `Company(name:YLE)` refers to, we can send the following `GET` request to `/v1/things/c370fd85-c2d8-4321-80c4-ae6744abe671/?include=_classification`, which will return:
 
 ```json
 {
@@ -275,24 +271,20 @@ If we later want to know to which `Country` the `Company(name:YLE)` refers to, w
     "description": "Finnish broadcasting company.",
     "inCountry": [
       {
-         "beacon": "<beaconToCountryWithNameFinland>",
-         "meta": {
-            "classification": {
-              "distanceWinning": 0.5,
-              "distanceLosing": 0.6,
-            },
+          "beacon": "<beaconToCountryWithNameFinland>",
+          "_classification": {
+            "distanceWinning": 0.5,
+            "distanceLosing": 0.6,
           }
       }
     ]
   },
-  "meta": {
-    "classification": {
-      "id": "ee722219-b8ec-4db1-8f8d-5150bb1a9e0c",
-      "completed": "2017-07-21T17:56:23Z",
-      "classifiedFields": ["inCountry"],
-      "scope": ["inCountry"],
-      "basedOn": ["name", "description"]
-    }
+  "_classification": {
+    "id": "ee722219-b8ec-4db1-8f8d-5150bb1a9e0c",
+    "completed": "2017-07-21T17:56:23Z",
+    "classifiedFields": ["inCountry"],
+    "scope": ["inCountry"],
+    "basedOn": ["name", "description"]
   }
 }
 ```
