@@ -26,7 +26,7 @@ The `Get{}` function is Weaviate's bread and butter. It is the most direct way t
 - [Get{} Function](#get-function)
 - [Underscore Properties](#underscore-properties)
   - [Classification](#classification)
-  - [Vectorization](#vectorization)
+  - [Interpretation](#interpretation)
 - [Get RESTful Function](#get-restful-function)
 - [More resources](#more-resources)
 
