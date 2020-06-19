@@ -48,19 +48,19 @@ Weaviate will be available and preloaded with the newsarticle demo dataset on:
 If you have your own version of Weaviate running on an **external** host or localhost **without** Docker Compose;
 
 ```bash
-# WEAVIATE HOST (e.g., https://foobar.semi.network), note paragraph basics for setting the local IP
-$ export WEAVIATE_ORIGIN=WEAVIATE ORIGIN
-# Make sure to replace YOUR_HOST with the Weaviate host as mentioned in the basics above
+# WEAVIATE ORIGIN (e.g., https://foobar.semi.network), note paragraph basics for setting the local IP
+$ export WEAVIATE_ORIGIN=WEAVIATE_ORIGIN
+# Make sure to replace WEAVIATE_ORIGIN with the Weaviate origin as mentioned in the basics above
 $ docker run -i -e weaviate_host=$WEAVIATE_ORIGIN semitechnologies/weaviate-demo-newspublications:latest
 ```
 
-Usage with Docker on **local** host **with** Docker Compose;
+Usage with Docker on **local with** Docker Compose;
 
 _Note: run this from the same directory where the Weaviate Docker Compose files are located_
 
 {% raw %}
 ```bash
-# WEAVIATE HOST (e.g., http://localhost:8080), note the paragraph "basics" for setting the local IP
+# WEAVIATE ORIGIN (e.g., http://localhost:8080), note the paragraph "basics" for setting the local IP
 $ export WEAVIATE_ORIGIN="http://$(docker inspect -f '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' ${PWD##*/}_weaviate_1):8080"
 # WEAVIATE NETWORK (see paragraph: Running on the localhost)
 $ export WEAVIATE_NETWORK=$(docker inspect -f '{{range .NetworkSettings.Networks}}{{.NetworkID}}{{end}}' ${PWD##*/}_weaviate_1)
