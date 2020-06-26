@@ -40,27 +40,17 @@ To install the dependencies (used for jekyll page generation) run:
 
 ```bash
 $ bundle install
-```
-
-Also install npm dependencies:
-
-```bash
 $ npm install
 ```
-
-To build and start the **local development** website:
-
-```bash
-$ npm run local
-```
-
-This builds the latest version of the JS and CSS.
-
-To edit CSS and/or JS, run webpack separately and let it watch for changes:
+# Local development
 
 ```bash
-$ npm run build:watch
+$ npm run dev
 ```
+
+This builds the latest version of jekyll and compiles JS and CSS. It also runs in watch mode. 
+
+# Linting
 
 Run eslint and prettier to see code formatting errors
 
