@@ -1,6 +1,5 @@
 
 .tile {
-  max-width: 230px;
   display: flex;
   flex-direction: column;
   padding: $scale-0;
@@ -26,4 +25,11 @@
 .tile__badge {
   display: flex;
   align-self: center;
+}
+
+@include breakpoint(mediumUp) {
+  .tile {
+    max-width: 230px;
+    height: 100%;
+  }
 }
