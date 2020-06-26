@@ -1,0 +1,1 @@
+!function () { for (var n = document.querySelectorAll("h1, h2, h3, h4, h5, h6"), e = 0; e < n.length; e++) { var i = n[e].innerHTML; n[e].innerHTML = '<a href="#' + n[e].id + '" class="documentation-link"><img src="/img/link.svg"> ' + i + "</a>" } }();

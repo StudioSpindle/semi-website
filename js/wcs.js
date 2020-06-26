@@ -96,7 +96,7 @@ function createCluster(){
 }
 
 window.onload = function(){
-    loadJSON(WCSURL + '/demodatasets', 'GET', {}, function(result){
+    loadJSON(WCSURL + '/datasets', 'GET', {}, function(result){
         var datasets = result['dataSets'];
         for (i = 0; i < datasets.length; i++) {
             var select = document.getElementById("demo-dataset");
