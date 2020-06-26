@@ -9,9 +9,14 @@
 <main>
     <article class="container">
         <div class="wrapper">
-            <div class="article__top-content">
-                <div class="article-intro"><!-- space-header-page -->
-                    {% include article-intro.html %}
+            <div class="article__top-content grid">
+                <div class="grid-8">
+                    <div class="article-intro"><!-- space-header-page -->
+                        {% include article-intro.html %}
+                    </div>
+                </div>
+                <div class="grid-4">
+                    <img src="{{ page.imageCard }}" alt="{{ page.imageAlt }}" />
                 </div>
             </div>
             <section itemscope itemtype="http://schema.org/articleBody">
