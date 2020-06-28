@@ -294,7 +294,7 @@ An example with default settings:
 
 The above result can be plotted as follows (where the result in red is the first result):
 
-![Weaviate T-SNE example](/img/plot-noSettings.png "Weaviate T-SNE example")
+![Weaviate T-SNE example](/img/plot-noSettings.png?i=1 "Weaviate T-SNE example")
 
 The same example with the `dimensions` property for a 3D visualisation:
 
