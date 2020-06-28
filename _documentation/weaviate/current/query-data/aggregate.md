@@ -23,6 +23,7 @@ You can use Weaviate's `Aggregation{}` function to obtain meta information about
 - [Introduction](#introduction)
   - [Define a query](#define-a-query)
 - [Aggregate{} Function](#aggregate-function)
+- [Filters](#filters)
 - [More resources](#more-resources)
 
 ## Basics
@@ -139,6 +140,10 @@ An example query to obtain meta information about the data in the class `City` c
 }
 ```
 {% include molecule-gql-demo.html encoded_query='%7B%0D%0A++Aggregate+%7B%0D%0A++++Things+%7B%0D%0A++++++Article+%7B%0D%0A++++++++meta+%7B%0D%0A++++++++++count%0D%0A++++++++%7D%0D%0A++++++++InPublication+%7B%0D%0A++++++++++pointingTo%0D%0A++++++++++type%0D%0A++++++++%7D%0D%0A++++++++wordCount+%7B%0D%0A++++++++++count%0D%0A++++++++++maximum%0D%0A++++++++++mean%0D%0A++++++++++median%0D%0A++++++++++minimum%0D%0A++++++++++mode%0D%0A++++++++++sum%0D%0A++++++++++type%0D%0A++++++++%7D%0D%0A++++++%7D%0D%0A++++%7D%0D%0A++%7D%0D%0A%7D' %}
+
+## Filters
+
+`Aggregate{}` functions can be extended with search filters (both semantic filters as traditional filters). Because the filters work on multiple core functions (like `Get{}`) there is a [specific documentation page dedicated to filters](filters.html).
 
 ## More Resources
 

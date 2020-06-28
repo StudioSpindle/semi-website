@@ -24,6 +24,7 @@ The `Get{}` function is Weaviate's bread and butter. It is the most direct way t
   - [Define a query](#define-a-query)
   - [Work with graph beacons](#work-with-graph-beacons)
 - [Get{} Function](#get-function)
+- [Filters](#filters)
 - [Underscore Properties](#underscore-properties)
   - [Classification](#classification)
   - [Interpretation](#interpretation)
@@ -75,7 +76,7 @@ The `Get{}` function is always defined based on the following principle:
         <PropertyWithReference>
           ... on <ClassOfBeacon> {
             <property>
-            _<meta-property>
+            _<underscore-property>
           }
       }
     }
@@ -166,6 +167,10 @@ Note that if you've set the [cardinality](../add-data/define_schema.html#propert
 }
 ```
 {% include molecule-gql-demo.html encoded_query='%7B%0D%0A++Get+%7B%0D%0A++++Things+%7B%0D%0A++++++Article+%7B%0D%0A++++++++title%0D%0A++++++++url%0D%0A++++++++wordCount%0D%0A++++++++HasAuthors+%7B%0D%0A++++++++++...+on+Author+%7B%0D%0A++++++++++++name%0D%0A++++++++++%7D%0D%0A++++++++++...+on+Publication+%7B%0D%0A++++++++++++name%0D%0A++++++++++%7D%0D%0A++++++++%7D%0D%0A++++++%7D%0D%0A++++%7D%0D%0A++%7D%0D%0A%7D' %}
+
+## Filters
+
+`Get{}` functions can be extended with search filters (both semantic filters as traditional filters). Because the filters work on multiple core functions (like `Aggregate{}`) there is a [specific documentation page dedicated to filters](filters.html).
 
 ## Underscore Properties
 
