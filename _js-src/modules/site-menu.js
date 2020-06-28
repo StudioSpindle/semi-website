@@ -1,7 +1,7 @@
 const nav = document.getElementById('js-site-nav');
 const trigger = document.getElementById('header-main-menu-trigger');
 /** same as $screen-width-medium in ./_scss/mixins/_mixin-breakpoints */
-const toMediumQuerySize = '814px';
+const toMediumQuerySize = '747px';
 
 /**
  * @desc Debounce method for window resize (source: https://davidwalsh.name/javascript-debounce-function)
