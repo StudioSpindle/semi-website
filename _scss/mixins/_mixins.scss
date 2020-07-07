@@ -46,7 +46,6 @@ $box-shadow-3: 0 1px 3px 0 rgba(1,67,163,.05), 0 4px 8px 3px rgba(1,67,163,.15);
 	}
 }
 
-
 @mixin background-opacity($color, $opacity: .5) {
     background: $color; //  Fallback to solid color
     background: rgba($color, $opacity);
@@ -54,4 +53,8 @@ $box-shadow-3: 0 1px 3px 0 rgba(1,67,163,.05), 0 4px 8px 3px rgba(1,67,163,.15);
 
 @function data-uri-color($color) {
     @return '%23' + str-slice('#{$color}', 2, -1)
+}
+
+@mixin transitionWidth {
+	transition: width .2s;
 }

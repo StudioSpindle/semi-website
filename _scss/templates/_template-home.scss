@@ -39,11 +39,14 @@
         color: $color-white;
         font-size: 3.75rem;
         font-style: italic;
-        padding: 1em 0 1em;
         em {
             color: $color-semi-tint-2;
             color: $color-almostblack;
         }
+    }
+    h2 {
+        font-size: 2rem;
+        margin: 0;
     }
     .button--cta {
         margin-bottom: 3em;
