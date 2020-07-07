@@ -13,7 +13,3 @@ imageAlt: Weaviate Search Graph
 ## This a h2
 
 Foobar text
-
-<div class="container">
-  <h2>But also HTML is possible</h2>
-</div>
