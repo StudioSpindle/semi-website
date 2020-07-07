@@ -178,7 +178,7 @@ Currently the floowing grand types are currently supported:
 
 ## Query
 
-The client allows to send simple GraphQL queries in the for of strings. Lets create a simple class `Person` and some add some people.
+The client allows to send simple GraphQL queries in the form of strings. Lets create a simple class `Person` and some add some people.
 
 ```python
 import weaviate

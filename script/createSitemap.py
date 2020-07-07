@@ -21,8 +21,6 @@ def getLinks(i):
 
         if ('.jpg' in url) or ('.zip' in url) or ('.svg' in url):
             return
-        
-        LOADEDLINKS.append(url)
        
         try:
             print('REQUEST', 'https://www.semi.technology' + url)
@@ -30,12 +28,14 @@ def getLinks(i):
         except:
             return
 
+        LOADEDLINKS.append(url)
+
         if request.status is 200:
             soup = BeautifulSoup(request.read(), "lxml")
             for link in soup.findAll('a'):
                 link = link.get('href')
                 if link is not None:
-                    if ('https://' not in link) and ('http://' not in link) and ('mailto:' not in link) and ('javascript:' not in link):
+                    if ('https://' not in link) and ('http://' not in link) and ('mailto:' not in link) and ('javascript:' not in link):   
                         link = link.split('#')[0]
                         if link.startswith('/'):
                             getLinks(link)
@@ -58,9 +58,9 @@ for link in LOADEDLINKS:
 sitemap.write('</urlset>')
 
 # post links to the wayback machine
-for link in LOADEDLINKS:
-    url = 'https://www.semi.technology' + link
-    request = requests.post(url = 'https://pragma.archivelab.org', json = { 'url': url })
-    print(request.status_code, url)
+# for link in LOADEDLINKS:
+#     url = 'https://www.semi.technology' + link
+#     request = requests.post(url = 'https://pragma.archivelab.org', json = { 'url': url })
+#     print(request.status_code, url)
 
 print('DONE')

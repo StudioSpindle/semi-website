@@ -5,12 +5,14 @@
 @import '../mixins/mixins-animations';
 
 .nav-main {
-    margin-bottom: 1em;
-    ul {
-        display: flex;
-        list-style: none;
-    }
+	margin-bottom: 1em;
+	ul {
+			display: flex;
+			list-style: none;
+	}
 	li {
+		display:flex;
+		vertical-align: center;
 		a {
 			@include transition-out;
 			border-bottom: 0;
@@ -86,4 +88,12 @@
 	.main-nav__item-right {
 		margin-left: auto;
 	}
+}
+
+.nav-main--github {
+	padding-top: 10px;
+}
+
+nav:not(.nav-vertical) .nav-main--github {
+	margin-left: 1rem;
 }
