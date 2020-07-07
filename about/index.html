@@ -138,47 +138,5 @@ description: An overview of the SeMI team.
                 
             </ul>
         </section>
-
-        <section class="wrapper--wide">
-            <h1 class="header--centered">Sales Partners</h1>
-            <ul class="cards cards--load-fade-in">
-                {% capture carOneContent %}
-                <div class="card__intro">
-                    <p>Sales Partner USA</p>
-                    <p>New York, USA</p>
-                </div>
-                {% endcapture %}
-        
-                {% include components/card/card.html
-                                    title="Oliver Christie"
-                                    themeClass="card-white card--pilar card--theme-weaviate-oss"
-                                    imgUrl="/img/people/oliver.jpg"
-                                    imgAlt="Oliver Christie"
-                                    linkUrl='https://www.linkedin.com/in/oliverchristie/'
-                                    linkExternal=true
-                                    ctaText="Contact me on LinkedIn"
-                                    content=carOneContent
-                                %}
-        
-                {% capture carOneContent %}
-                <div class="card__intro">
-                    <p>Sales Partner Europe</p>
-                    <p>Amsterdam, The Netherlands</p>
-                </div>
-                {% endcapture %}
-        
-                {% include components/card/card.html
-                                    title="David van Damme"
-                                    themeClass="card-white card--pilar card--theme-weaviate-oss"
-                                    imgUrl="/img/people/david.jpg"
-                                    imgAlt="David van Damme"
-                                    linkUrl='https://www.linkedin.com/in/davidvandamme/'
-                                    linkExternal=true
-                                    ctaText="Contact me on LinkedIn"
-                                    content=carOneContent
-                                %}
-        
-            </ul>
-        </section>
     </div>
 </article>

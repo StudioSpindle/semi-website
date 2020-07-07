@@ -98,7 +98,7 @@ a {
 	text-decoration: none;
 }
 
-a:not(&.link-container) {
+a:not(.link-container) {
 	border-bottom: 2px solid $color-support;
 	&:hover, &:focus, &:active {
 		@include transition-in;
@@ -110,14 +110,6 @@ a:not(&.link-container) {
 	&:active {
 		background: $color-semi-accent;
 		outline: 3px solid $color-semi-accent;
-	}
-}
-
-.link-container {
-	@include elevation();
-	&:hover {
-		transition: box-shadow .3s ease-in-out;
-		@include elevation(foreground);
 	}
 }
 
