@@ -1,0 +1,12 @@
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+}
+
+.grid-4 {
+  grid-column: span 4;
+}
+
+.grid-8 {
+  grid-column: span 8;
+}
