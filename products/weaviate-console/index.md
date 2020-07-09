@@ -1,13 +1,13 @@
 ---
 bodyclass: ["page--products", " ", "page--products-index"]
 layout: layout-product
-title: Discover our Example
-description: Weaviate products and knowledge network offerings
+title: Weaviate Console
+description: A modulair graphical user interface on top of Weaviate.
 og-img: products.jpg
-image: /img/illustrations/HealthCareLifeSciences.svg
-imageCard: /img/decoration/use-case-healthcare@2x.jpg
-imageMobile: /img/decoration/use-case-1.jpg
-imageAlt: Knowledge graph to find new biologically active materials
+image: /img/weaviate-console.svg
+imageCard: /img/weaviate-console.svg
+imageMobile: /img/weaviate-console.svg
+imageAlt: Weaviate Console image
 ---
 
 ## This a h2

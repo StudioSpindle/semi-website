@@ -2,7 +2,7 @@
 bodyclass: ["page--products", " ", "page--products-index"]
 layout: layout-product
 title: Weaviate Search Graph
-description: Weaviate is a powerful search engine based on a machine learning model
+description: A powerful semantic search engine build on top of state-of-the-art machine learning models
 og-img: products.jpg
 image: /img/weaviate.svg
 imageCard: /img/weaviate.svg
