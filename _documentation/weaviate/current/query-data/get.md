@@ -26,6 +26,7 @@ The `Get{}` function is Weaviate's bread and butter. It is the most direct way t
 - [Get{} Function](#get-function)
 - [Filters](#filters)
 - [Underscore Properties](#underscore-properties)
+  - [Semantic Path](#semantic-path)
   - [Classification](#classification)
   - [Interpretation](#interpretation)
   - [Nearest Neighbors](#nearest-neighbors)
@@ -177,6 +178,56 @@ Note that if you've set the [cardinality](../add-data/define_schema.html#propert
 For every Get{} request you can get additional information about the returned data object(s) by using underscore-properties. You can recognize these properties because they are prefixed with an underscore and can be added to any GraphQL request.
 
 Below you find an overview of available underscore-properties.
+
+### Semantic Path
+
+The semantic path returns an array of concepts from the query to the data object. This allows you to see which steps Weaviate took and how the query and data object are interpreted.
+
+| Property | Description |
+| `concept` | the concept that is found in this step. |
+| `distanceToNext` | the distance to the next step (null for the last step). |
+| `distanceToPrevious` | this distance to the previous step (null for the first step). |
+| `distanceToQuery` | the distance of this step to the query. |
+| `distanceToResult` | the distance of the step to this result. |
+
+_Note: Building a semantic path is only possible if an [explore: {} parameter](./filters.html#explore-filter) is set. As the explore term represents the beginning of the path and each search result represents the end of the path. Since explore:{} queries are currently exclusively possible in GraphQL, the _semanticPath is therefore not available in the REST API._
+
+Example: showing a semantic path without edges.
+
+```graphql
+{
+  Get{
+    Things{
+      Publication(
+        explore: {
+          concepts: ["fashion"],
+          certainty: 0.7,
+          moveAwayFrom: {
+            concepts: ["finance"],
+            force: 0.45
+          },
+          moveTo: {
+            concepts: ["haute couture"],
+            force: 0.85
+          }
+        }
+      ){
+        name
+        _semanticPath{
+          path {
+            concept
+            distanceToNext
+            distanceToPrevious
+            distanceToQuery
+            distanceToResult
+          }
+        }
+      }
+    }
+  }
+}
+```
+{% include molecule-gql-demo.html encoded_query='%7B%0D%0A++Get%7B%0D%0A++++Things%7B%0D%0A++++++Publication%28%0D%0A++++++++explore%3A+%7B%0D%0A++++++++++concepts%3A+%5B%22fashion%22%5D%2C%0D%0A++++++++++certainty%3A+0.7%2C%0D%0A++++++++++moveAwayFrom%3A+%7B%0D%0A++++++++++++concepts%3A+%5B%22finance%22%5D%2C%0D%0A++++++++++++force%3A+0.45%0D%0A++++++++++%7D%2C%0D%0A++++++++++moveTo%3A+%7B%0D%0A++++++++++++concepts%3A+%5B%22haute+couture%22%5D%2C%0D%0A++++++++++++force%3A+0.85%0D%0A++++++++++%7D%0D%0A++++++++%7D%0D%0A++++++%29%7B%0D%0A++++++++name%0D%0A++++++++_semanticPath%7B%0D%0A++++++++++path+%7B%0D%0A++++++++++++concept%0D%0A++++++++++++distanceToNext%0D%0A++++++++++++distanceToPrevious%0D%0A++++++++++++distanceToQuery%0D%0A++++++++++++distanceToResult%0D%0A++++++++++%7D%0D%0A++++++++%7D%0D%0A++++++%7D%0D%0A++++%7D%0D%0A++%7D%0D%0A%7D' %}
 
 ### Classification
 
