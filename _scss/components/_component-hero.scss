@@ -32,58 +32,8 @@
   }
 }
 
-@include breakpoint(mediumUp) {
-  .hero__content {
-    margin-top: 8vh;
-  
-    &--row {
-      flex-direction: row;
-      justify-content: stretch;
-    }
-  
-    &--column {
-      flex-direction: column;
-    }
-  }
-}
-
-@include breakpoint(toMedium) {
-  .hero__text {
-    padding-top: 3rem;
-    padding-bottom: 3rem;
-  }
-}
-
-.hero__text {
-  // margin-left: auto;
-  // margin-right: auto;
-  
-  @include animateFadeIn();
-
-  &.hero__text--centered {
-    text-align: center;
-
-    // honor maximum width of paragraphs
-    p {
-      margin-left: auto;
-      margin-right: auto;
-    }
-  }
-  // @include breakpoint(mediumUp) {
-  //   max-width: 60vw;
-  // }
-  // @include breakpoint(largeUp) {
-  //   max-width: 72vw;
-  // }
-
-  .button {
-    margin-top: 2rem;
-  }
-}
-
 .hero__links {
   align-items: center;
-  min-width: 35rem;
 }
 
 .hero__link {
@@ -93,7 +43,6 @@
   padding: $scale-0;
   background-color: white;
   margin-bottom: 1rem;
-  width: 25rem;
   @include transitionWidth; 
 
   &:hover, &:focus {
@@ -112,6 +61,58 @@
 
   &:focus {
     background-color: $color-semi-accent
+  }
+}
+
+@include breakpoint(toLarge) {
+  .hero__text {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+  }
+  .hero__link  {
+    width: 100%;
+  }
+}
+
+@include breakpoint(largeUp) {
+  .hero__content {
+    margin-top: 8vh;
+  
+    &--row {
+      flex-direction: row;
+      justify-content: stretch;
+    }
+  
+    &--column {
+      flex-direction: column;
+    }
+  }
+  .hero__links {
+    min-width: 35rem;
+  }
+  .hero__link  {
+    width: 25rem;
+  }
+}
+
+.hero__text {
+  // margin-left: auto;
+  // margin-right: auto;
+  
+  @include animateFadeIn();
+
+  &.hero__text--centered {
+    text-align: center;
+
+    // honor maximum width of paragraphs
+    p {
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+
+  .button {
+    margin-top: 2rem;
   }
 }
 

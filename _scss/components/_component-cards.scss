@@ -3,8 +3,6 @@
 @import '../mixins/mixins-breakpoints';
 @import '../mixins/mixins-animations';
 
-$c-card-border: 1px solid $color-gray-5;
-
 .cards {
     list-style: none;
     margin: 0 -1em;
@@ -14,7 +12,7 @@ $c-card-border: 1px solid $color-gray-5;
         flex-direction: row;
         flex-wrap: wrap;
     }
-    > li {
+    > li:not(.cards-grid__card) {
         margin: 0 1em 2em;
     }
 }
@@ -168,4 +166,12 @@ $c-card-border: 1px solid $color-gray-5;
     .card:nth-child(6) {
         @include animateFadeInFromBottom(.65s);
     }
+}
+
+.cards-grid {
+    display: grid;
+    grid-auto-rows: 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    column-gap: 2em;
+    row-gap: 1.5em;
 }
