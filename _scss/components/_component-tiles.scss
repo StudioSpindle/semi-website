@@ -4,6 +4,7 @@
   flex-direction: column;
   padding: $scale-0;
   background-color: white;
+  border: $c-card-border;
 }
 
 .tile__image {
@@ -29,7 +30,6 @@
 
 @include breakpoint(mediumUp) {
   .tile {
-    max-width: 230px;
     height: 100%;
   }
 }

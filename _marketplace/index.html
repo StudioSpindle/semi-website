@@ -9,7 +9,7 @@ exclude: true
 {% assign sorted_plugins = site.marketplace | sort:"order" %}
 
 <article>
-    <div class="container background-hexagon">
+    <div class="container background-hexagon" style="margin-bottom: 5rem;">
         <section class="layout layout--single section-page-intro">
             <div class="section-standout__text--centered space-header-page">
                 <h1 class="title-page header--centered">{{page.title}}</h1>
@@ -19,10 +19,10 @@ exclude: true
             </div>
         </section>
         <section class="wrapper--wide">
-            <ul class="cards cards--load-fade-in">
+            <ul class="cards cards-grid cards--load-fade-in">
                 {% for item in sorted_plugins %}
                     {% unless item.published != true %}
-                        <li>
+                        <li class="cards-grid__card">
                             <a href="{{ item.url }}" class="tile link-container">
                                 <div class="tile__top">
                                     <div class="tile__image-container">

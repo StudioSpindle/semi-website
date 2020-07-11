@@ -7,7 +7,7 @@ og-img: products.jpg
 ---
 
 <article>
-    <div class="container background-hexagon">
+    <div class="container background-hexagon" style="margin-bottom: 5rem;">
         <section class="layout layout--single section-page-intro">
             <div class="section-standout__text--centered space-header-page">
                 <!-- <h1 class="title-page header--centered">Core products</h1> -->
@@ -18,61 +18,57 @@ og-img: products.jpg
             </div>
         </section>
         <section class="wrapper--wide">
-            <ul class="cards">
-                <li class="cards cards--load-fade-in">
-                    {% capture carOneContent %}
-                        <div class="card__intro">
-                            <p><b>Learn more about our offerings of the Weaviate Search Graph from open source to enterprise.</b></p>
-                        </div>
-                    {% endcapture %}
+            <ul class="cards cards--load-fade-in">
+                {% capture carOneContent %}
+                    <div class="card__intro">
+                        <p><b>Learn more about our offerings of the Weaviate Search Graph from open source to enterprise.</b></p>
+                    </div>
+                {% endcapture %}
 
-                    {% include components/card/card.html
-                        title="Weaviate"
-                        themeClass="card-white card--pilar card--theme-weaviate"
-                        imgUrl="/img/logo-icon-weaviate-oss.svg"
-                        imgAlt="Weaviate logo"
-                        linkUrl="/products/weaviate/"
-                        linkExternal=false
-                        ctaText="Learn more"
-                        content=carOneContent
-                    %}  
-                </li>
-                <li class="cards cards--load-fade-in">
-                    {% capture carOneContent %}
-                    <div class="card__intro">
-                        <p><b>Learn more about our offerings of the Weaviate Search Graph from open source to enterprise.</b></p>
-                    </div>
-                    {% endcapture %}
-                
-                    {% include components/card/card.html
-                        title="Weaviate Cloud Service"
-                        themeClass="card-white card--pilar card--theme-weaviate"
-                        imgUrl="/img/logo-weaviate-cloud-emblem-color.svg"
-                        imgAlt="Weaviate Cloud Service"
-                        linkUrl="/products/weaviate-cloud-service/"
-                        linkExternal=false
-                        ctaText="Learn more"
-                        content=carOneContent
-                    %}
-                </li>
-                <li class="cards cards--load-fade-in">
-                    {% capture carOneContent %}
-                    <div class="card__intro">
-                        <p><b>Learn more about our offerings of the Weaviate Search Graph from open source to enterprise.</b></p>
-                    </div>
-                    {% endcapture %}
-                
-                    {% include components/card/card.html
-                        title="Weaviate Console"
-                        themeClass="card-white card--pilar card--theme-weaviate"
-                        imgUrl="/img/logo-weaviate-console-emblem-color.svg"
-                        imgAlt="Weaviate Console"
-                        linkUrl="/products/weaviate-console/"
-                        linkExternal=false
-                        ctaText="Learn more"
-                        content=carOneContent
-                    %}
-                </li>
+                {% include components/card/card.html
+                    title="Weaviate"
+                    themeClass="card-white card--pilar card--theme-weaviate"
+                    imgUrl="/img/logo-icon-weaviate-oss.svg"
+                    imgAlt="Weaviate logo"
+                    linkUrl="/products/weaviate/"
+                    linkExternal=false
+                    ctaText="Learn more"
+                    content=carOneContent
+                %}  
+
+                {% capture carOneContent %}
+                <div class="card__intro">
+                    <p><b>Learn more about our offerings of the Weaviate Search Graph from open source to enterprise.</b></p>
+                </div>
+                {% endcapture %}
+            
+                {% include components/card/card.html
+                    title="Weaviate Cloud Service"
+                    themeClass="card-white card--pilar card--theme-weaviate"
+                    imgUrl="/img/logo-weaviate-cloud-emblem-color.svg"
+                    imgAlt="Weaviate Cloud Service"
+                    linkUrl="/products/weaviate-cloud-service/"
+                    linkExternal=false
+                    ctaText="Learn more"
+                    content=carOneContent
+                %}
+
+                {% capture carOneContent %}
+                <div class="card__intro">
+                    <p><b>Learn more about our offerings of the Weaviate Search Graph from open source to enterprise.</b></p>
+                </div>
+                {% endcapture %}
+            
+                {% include components/card/card.html
+                    title="Weaviate Console"
+                    themeClass="card-white card--pilar card--theme-weaviate"
+                    imgUrl="/img/logo-weaviate-console-emblem-color.svg"
+                    imgAlt="Weaviate Console"
+                    linkUrl="/products/weaviate-console/"
+                    linkExternal=false
+                    ctaText="Learn more"
+                    content=carOneContent
+                %}
             </ul>
         </section>
     </div>
