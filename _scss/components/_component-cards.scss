@@ -171,7 +171,12 @@
 .cards-grid {
     display: grid;
     grid-auto-rows: 1fr;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
     column-gap: 2em;
     row-gap: 1.5em;
+    @include breakpoint(mediumUp) {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+    @include breakpoint(largeUp) {
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
 }
