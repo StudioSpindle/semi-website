@@ -18,7 +18,7 @@ collections:
         output: true
         permalink: /documentation/:path
     marketplace:
-        output: false
+        output: true
         permalink: /marketplace/:path
     authors:
         output: true
