@@ -1,0 +1,28 @@
+{% assign sorted_plugins = site.marketplace | sort:"order" %}
+
+{% include head.html %}
+
+<body class="{{page.bodyclass}}">
+
+{% include organism-header.html %}
+
+<main>
+    <article class="article container">
+        <div class="wrapper">
+            <div class="article__top-content grid">
+                <div class="grid-8">
+                    <div class="article-intro"><!-- space-header-page -->
+                        {% include article-intro.html %}
+                    </div>
+                </div>
+            </div>
+            <section itemscope itemtype="http://schema.org/articleBody">
+                <div class="article">
+                    {{ content }}
+                </div>
+            </section>
+        </div>
+    </article>
+</main>
+
+{% include organism-footer.html %}

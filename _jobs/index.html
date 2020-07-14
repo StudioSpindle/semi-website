@@ -1,0 +1,46 @@
+---
+bodyclass: page--use-cases
+layout: layout-default
+title: Jobs
+description: Work with us.
+exclude: true
+---
+
+{% assign sorted_plugins = site.jobs | sort:"order" %}
+
+<article>
+    <div class="container background-hexagon" style="margin-bottom: 5rem;">
+        <section class="layout layout--single section-page-intro">
+            <div class="section-standout__text--centered space-header-page">
+                <h1 class="title-page header--centered">{{page.title}}</h1>
+                <div class="section-standout__text--centered">
+                    <p>{{page.description}}</p>
+                </div>
+            </div>
+        </section>
+        <section class="wrapper--wide">
+            <ul class="cards cards-grid cards--load-fade-in">
+                {% for item in sorted_plugins %}
+                    {% unless item.published != true %}
+                        <li class="cards-grid__card">
+                            <a href="{{ item.url }}" class="tile link-container">
+                                <div class="tile__top">
+                                    <div class="tile__image-container">
+                                        <img src="{{ item.imageCard }}" alt="{{ item.imageAlt }}" class="tile__image" />
+                                    </div>
+                                    {%- if item.inRnD == true %}
+                                    <div class="tile__badge">
+                                        {%- include components/card/card__badge.html %}
+                                    </div>
+                                    {%- endif %}
+                                </div>
+                                <h2 class="title-column">{{ item.title }}</h2>
+                                <p>{{ item.description }}</p>
+                            </a>
+                        </li>
+                    {% endunless %}
+                {% endfor %}
+            </ul>
+        </section>
+    </div>
+</article>

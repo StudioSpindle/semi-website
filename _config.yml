@@ -8,6 +8,9 @@ collections:
     news:
         output: true
         permalink: /news/:path
+    jobs:
+        output: true
+        permalink: /jobs/:path
     use_cases:
         output: true
         permalink: /use-cases/:path
@@ -15,7 +18,7 @@ collections:
         output: true
         permalink: /documentation/:path
     marketplace:
-        output: true
+        output: false
         permalink: /marketplace/:path
     authors:
         output: true
