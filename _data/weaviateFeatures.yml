@@ -1,105 +1,54 @@
-
-- title: "Weaviate search graph (<a href='/documentation/weaviate/current/'>tech features</a>)"
+- title: "Weaviate Search Graph"
   note: ""
-  startup: true
-  scaleup: true
+  open_source: true
+  premium: true
   prof: true
   enterprise: true
-
-- title: "Weaviate Cluster Service"
+- title: "Kubernetes Charts"
   note: ""
-  startup: true
-  scaleup: true
+  open_source: true
+  premium: true
   prof: true
   enterprise: true
-
-- title: "Community support"
+- title: "Multilingual Contextionaries"
   note: ""
-  startup: true
-  scaleup: true
+  open_source: true
+  premium: true
   prof: true
   enterprise: true
-
-- title: "Email support"
+- title: "Next business day support"
   note: ""
-  startup: true
-  scaleup: true
+  open_source: false
+  premium: true
   prof: true
   enterprise: true
-
-- title: "Slack support"
+- title: "Premium Support"
   note: ""
-  startup: false
-  scaleup: true
+  open_source: false
+  premium: false
   prof: true
   enterprise: true
-
-- title: "Account manager support (SPOC)"
+- title: "Installation Support"
   note: ""
-  startup: false
-  scaleup: true
+  open_source: false
+  premium: false
   prof: true
   enterprise: true
-
-- title: "Last-come-first-served Silver (<a href='#asterisk'>*</a>)"
+- title: "Upgrade Support"
   note: ""
-  startup: false
-  scaleup: true
-  prof: true
-  enterprise: true
-
-- title: "Access to our solution engineers (<a href='#dagger'>†</a>)"
-  note: ""
-  startup: false
-  scaleup: true
-  prof: true
-  enterprise: true
-
-- title: "Private cloud or on premise"
-  note: ""
-  startup: false
-  scaleup: false
+  open_source: false
+  premium: false
   prof: false
   enterprise: true
-
-- title: "Enterprise service-level agreement (SLA)"
+- title: "In Application Support"
   note: ""
-  startup: false
-  scaleup: false
+  open_source: false
+  premium: false
   prof: false
   enterprise: true
-
-- title: "Enterprise Terms of Service (ToS)"
+- title: "Training"
   note: ""
-  startup: false
-  scaleup: false
-  prof: false
-  enterprise: true
-
-- title: "Enterprise End-User Licence Agreement (EULA)"
-  note: ""
-  startup: false
-  scaleup: false
-  prof: false
-  enterprise: true
-
-- title: "Access to our core engineers (<a href='#dagger'>†</a>)"
-  note: ""
-  startup: false
-  scaleup: false
-  prof: false
-  enterprise: true
-
-- title: "Last-come-first-served Gold (<a href='#double-dagger'>‡</a>)"
-  note: ""
-  startup: false
-  scaleup: false
-  prof: true
-  enterprise: true
-
-- title: "Dedicated implementation support"
-  note: ""
-  startup: false
-  scaleup: false
+  open_source: false
+  premium: false
   prof: false
   enterprise: true
