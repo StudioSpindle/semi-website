@@ -58,22 +58,27 @@ A schema can be provided as a URL, file or a dict.
 Things can be created like this:
 
 ```python
-client.create_thing({"name": "John von Neumann"}, "Person", "b36268d4-a6b5-5274-985f-45f13ce0c642")
-client.create_thing({"name": "Alan Turing"}, "Person", "1c9cd584-88fe-5010-83d0-017cb3fcb446")
-client.create_thing({"name": "Legends"}, "Group", "2db436b5-0557-5016-9c5f-531412adf9c6")
+client.create({"name": "John von Neumann"}, "Person", "b36268d4-a6b5-5274-985f-45f13ce0c642")
+client.create({"name": "Alan Turing"}, "Person", "1c9cd584-88fe-5010-83d0-017cb3fcb446")
+client.create({"name": "Legends"}, "Group", "2db436b5-0557-5016-9c5f-531412adf9c6")
 ```
 
 Actions can be created in a similar fashion like this:
 
 ```python
-client.create_action({"description": "John von Neumann's book"}, "Buy")
+client.create({"description": "John von Neumann's book"}, "Buy", semantic_type=weaviate.SEMANTIC_TYPE_ACTIONS)
 ```
 
 You can add cross-references through:
 
 ```python
-client.add_reference_to_thing("2db436b5-0557-5016-9c5f-531412adf9c6", "members", "b36268d4-a6b5-5274-985f-45f13ce0c642")
-client.add_reference_to_thing("2db436b5-0557-5016-9c5f-531412adf9c6", "members", "1c9cd584-88fe-5010-83d0-017cb3fcb446")
+client.add_reference("2db436b5-0557-5016-9c5f-531412adf9c6", "members", "b36268d4-a6b5-5274-985f-45f13ce0c642")
+client.add_reference("2db436b5-0557-5016-9c5f-531412adf9c6", "members", "1c9cd584-88fe-5010-83d0-017cb3fcb446")
+# From action to thing
+from weaviate import SEMANTIC_TYPE_ACTIONS, SEMANTIC_TYPE_THINGS
+client.add_reference("2db436b5-0557-5016-9c5f-531412adf9c6", "members", "1c9cd584-88fe-5010-83d0-017cb3fcb446", 
+                     from_semantic_type=SEMANTIC_TYPE_ACTIONS, to_semantic_type=SEMANTIC_TYPE_THINGS)
+
 ```
 
 *Note: Weaviate might need a short time to update its index after a new thing has been created.*
