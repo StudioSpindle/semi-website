@@ -20,17 +20,14 @@ We enable our customers and open source community users to understand their data
 
 ## What We Are Looking For
 
-We are looking for engineers who are motivated to lead, work independent, learn and grow. Applicants must have experience with programming and be comfortable with speaking English. Some of the following additional skills are needed as well:
-
-1. Collaborative development (Git)
-2. Javascript and HTML
+We are looking for engineers who are able to work independently, take ownership of a topic and are motivated to lead, learn and grow. Applicants must have significant programming experience and be comfortable communicating in English. Experience with Python, Javascript / HTML, and with collaborative development such as Git, are a plus for this role.
 
 ## What You Will Be Working On
 
-The work of a solution engineer exists of two main topics
+The work of a solution engineer is twofold:
 
-1. Supporting our customers while using Weaviate with frontend needs.
-2. Maintaining and owning the Weaviate Console, the HTML, and the Javascript interface on top of Weaviate.
+1. Support our customers with their application and frontend development on Weaviate.
+2. Take ownership of the tools built around Weaviate, such as for example the Weaviate Console.
 
 ## How We Work
 
