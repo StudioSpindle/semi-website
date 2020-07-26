@@ -20,7 +20,8 @@ We enable our customers and open source community users to understand their data
 
 ## What We Are Looking For
 
-We are looking for interns who are motivated to learn and grow. Projects are based on the applicant's profile and interests, and we are more than open to mentor a project on new ideas and initiatives.
+We are looking for bachelor/master students who are motivated to learn and grow. Projects are based on the applicant's profile and interests, and we are more than open to mentor a project on new ideas and initiatives.
+We offer both regular internships and bachelor/master thesis projects.
 Applicants must have experience with programming and be comfortable with speaking English. Some of the following additional skills may be helpful:
 
 1. Collaborative development (Git)
