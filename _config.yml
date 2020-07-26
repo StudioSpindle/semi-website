@@ -41,10 +41,11 @@ docs:
         - Query data
         - Classification
         - Transfer learning
-        - Additional Features
+        - Additional features
         - Datasets
         - Client libs
         - Weaviate Cluster Service
+        - Contributor guide
         - More resources
         - About
     weaviate-cli:
