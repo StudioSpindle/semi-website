@@ -15,10 +15,6 @@ env:
   global:
     - TRAVIS_BRANCH=${TRAVIS_BRANCH} # define for usage in projects bash scripts
     - NOKOGIRI_USE_SYSTEM_LIBRARIES=true # speeds up installation of html-proofer
-branches:
-  only:
-  - master
-  - develop
 addons:
   apt:
     packages:
@@ -92,29 +88,6 @@ script:
       # pip3 install lxml
       # travis_wait 90 python3 createSitemap.py
       # gsutil -m cp ./sitemap.xml gs://$BUCKET/sitemap.xml
-    fi
-  fi
-- |
-  if [ "${TRAVIS_PULL_REQUEST}" = "false" ]; then
-    if [ $TRAVIS_BRANCH = "develop" ]; then
-      # set project
-      gcloud config set project $PROJECTDEV
-      # set website details for the correct bucket
-      gsutil web set -m index.html -e 404.html gs://$BUCKETDEV
-      # empty bucket (website stays alive on the CDN)
-      gsutil -m rm -r gs://$BUCKETDEV/**
-      # cd into website dir
-      cd _site
-      # rename and remove robots.txt
-      rm robots.txt
-      mv robots.dev.txt robots.txt
-      # Upload data to bucket, GZIP (-Z) and set Cache Control for CDN
-      gsutil -m -h "Cache-Control:public,max-age=900" cp -Z -r ./ gs://$BUCKETDEV
-      # upload videos with gzip
-      gsutil -m -h "Cache-Control:public,max-age=900" cp ./assets/header.mp4 gs://$BUCKETDEV/assets/header.mp4
-      gsutil -m -h "Cache-Control:public,max-age=900" cp ./assets/header.webm gs://$BUCKETDEV/assets/header.webm
-      # Allow viewing of files (for website purposes)
-      gsutil iam ch allUsers:objectViewer gs://$BUCKETDEV
     fi
   fi
 notifications:

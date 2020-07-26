@@ -42,21 +42,33 @@ To install the dependencies (used for jekyll page generation) run:
 $ bundle install
 $ npm install
 ```
-# Local development
+
+To build the **local development** website:
 
 ```bash
-$ npm run dev
+$ npm run build
 ```
 
-This builds the latest version of jekyll and compiles JS and CSS. It also runs in watch mode. 
+Build and watch the website
 
-# Linting
+```bash
+$ bundle exec jekyll serve
+```
+
+# Tests
 
 Run eslint and prettier to see code formatting errors
 
 ```bash
 $ npm run eslint
 $ npm run prettier
+```
+
+Test the links
+
+```bash
+$ bundle exec jekyll build
+$ bundle exec rake test
 ```
 
 To rewrite prettier errors automatically run:
