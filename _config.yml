@@ -45,7 +45,6 @@ docs:
         - Datasets
         - Client libs
         - Weaviate Cluster Service
-        - Contributor guide
         - More resources
         - About
     weaviate-cli:
