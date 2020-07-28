@@ -11,6 +11,7 @@ import tagmanager from './modules/tagmanager';
 import tawk from './modules/tawk';
 import tableOfContents from './modules/tableOfContents';
 import prism from './modules/prism';
+import documentation from './modules/documentation';
 
 // utilities
 import inputTypeRangeExists from './utilities/inputTypeRangeExists';
@@ -22,6 +23,11 @@ cookie('cookie-notification');
 
 // prism
 prism();
+
+/**
+ * Documentation tools
+ */
+documentation();
 
 /**
  * Progressive enhanced mobile hamburger menu
