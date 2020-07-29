@@ -71,7 +71,7 @@ $ bundle exec jekyll serve
 
 ### Documentation
 
-- menu structure is set in [config.yml](config.yml).
+- menu structure is set in `./config.yml`.
 
 # Tests
 
