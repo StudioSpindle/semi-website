@@ -12,22 +12,11 @@ open-graph-type: article
 og-img: documentation.jpg
 ---
 
-# About
+# Contributor Resources
 
 {% include badges.html %}
 
-## Index
-
-- [Basics](#basics)
-- [Index item](#index-item)
-
-## Basics
-
-- LIST WITH BASICS
-
-## Index item
-
-...
+This guide provides you with all the resources you need to develop on Weaviate and it's related offerings.
 
 ## More Resources
 
