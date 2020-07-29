@@ -47,8 +47,5 @@ docs:
         - Weaviate Cluster Service
         - More resources
         - About
-    weaviate-cli:
-        - Get started
-        - Cluster
-        - Schema
-        - Misc
+    contributor-guide:
+        - Submenu

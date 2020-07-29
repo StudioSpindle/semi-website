@@ -60,6 +60,10 @@ Build and watch the website
 $ bundle exec jekyll serve
 ```
 
+### Documentation
+
+- menu structure is set in [config.yml](config.yml).
+
 # Tests
 
 Run eslint and prettier to see code formatting errors
