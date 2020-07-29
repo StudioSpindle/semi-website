@@ -113,10 +113,11 @@ lower the coverage.
 ### Cross-repository dependencies
 
 There are various ways to interact with the Weaviate API. You can send HTTP
-requests directly or you could use a client, such as the [python client]() to
-interact with Weaviate. In the weaviate core repository we have chosen not to
-use any of our own clients. This has the goal to minimize dependencies and
-allow indepednent development by different teams.
+requests directly or you could use a client, such as the [python
+client](../../../weaviate/current/client-libs/python.html) to interact with
+Weaviate. In the weaviate core repository we have chosen not to use any of our
+own clients. This has the goal to minimize dependencies and allow indepednent
+development by different teams.
 
 As a result all journey tests in Weaviate core either use the go client (which
 is auto-generated from swagger) or plain HTTP.
