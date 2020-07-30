@@ -4,35 +4,13 @@ product: weaviate
 sub-menu: Query data
 product-order: 1
 title: Get
+intro: The Get{} function is Weaviate's bread and butter. It is the most direct way to access data.
 description: How to query weaviate.
 tags: ['Query', 'GraphQL']
 menu-order: 1
 open-graph-type: article
 og-img: documentation.jpg
 ---
-
-# Get Guide
-
-{% include badges.html %}
-
-The `Get{}` function is Weaviate's bread and butter. It is the most direct way to access data.
-
-## Index
-
-- [Basics](#basics)
-- [Introduction](#introduction)
-  - [Define a query](#define-a-query)
-  - [Work with graph beacons](#work-with-graph-beacons)
-- [Get{} Function](#get-function)
-- [Filters](#filters)
-- [Underscore Properties](#underscore-properties)
-  - [Semantic Path](#semantic-path)
-  - [Classification](#classification)
-  - [Interpretation](#interpretation)
-  - [Nearest Neighbors](#nearest-neighbors)
-  - [Feature Projection](#feature-projection)
-- [Get RESTful Function](#get-restful-function)
-- [More resources](#more-resources)
 
 ## Basics
 

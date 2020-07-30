@@ -4,23 +4,14 @@ product: weaviate
 sub-menu: Client libs
 product-order: 1
 title: Javascript (beta)
+intro: A Javascript library
 description: Weaviate Javascript client library.
 tags: ['Javascript', 'Library']
 menu-order: 1
 open-graph-type: article
 og-img: documentation.jpg
+toc: true
 ---
-
-# Javascript Client Library Guide
-
-{% include badges.html %}
-
-## Index
-
-- [Basics](#basics)
-  - [Install](#install)
-  - [Query](#query)
-- [More resources](#more-resources)
 
 # Basics
 

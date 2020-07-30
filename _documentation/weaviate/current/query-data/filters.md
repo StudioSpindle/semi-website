@@ -4,37 +4,14 @@ product: weaviate
 sub-menu: Query data
 product-order: 1
 title: Filters
+intro: Filters can be set to order or sort your dataset or to find specific data objects. Some filters are available in multiple functions where others are only available in specific ones.
 description: How to filter queries to weaviate.
 tags: ['Query', 'GraphQL', 'Filter']
 menu-order: 6
 open-graph-type: article
 og-img: documentation.jpg
+toc: true
 ---
-
-# Filter
-
-{% include badges.html %}
-
-Filters can be set to order or sort your dataset or to find specific data objects. Some filters are available in multiple functions where others are only available in specific ones.
-
-## Index
-
-- [Basics](#basics)
-- [Introduction](#introduction)
-- [Where filter](#where-filter)
-  - [Operator filter](#operator-filter)
-  - [Multiple operator filters](#multiple-operator-filters)
-  - [Like operator](#like-operator)
-  - [Beacon filters operator](#like-operator)
-  - [Filter by count](#filter-by-count)
-- [GeoCoordinates filter](#geocoordinates-filter)
-- [Limit filter](#limit-filter)
-- [Explore filter](#explore-filter)
-  - [Get function](#get-function)
-- [Group filter](#group-filter)
-  - [Grouping Best Practices](#grouping-best-practices)
-- [GroupBy filter](#groupby-filter)
-- [More resources](#more-resources)
 
 ## Basics
 

@@ -4,25 +4,14 @@ product: weaviate
 sub-menu: Additional Features
 product-order: 1
 title: Inspect a Weaviate
+intro: Get information about a Weaviate
 description: How to inspect a Weaviate.
 tags: ['Contextionary', 'Inspect']
 menu-order: 4
 open-graph-type: article
 og-img: documentation.jpg
+toc: true
 ---
-
-# Inspect a Weaviate
-
-{% include badges.html %}
-
-## Index
-
-- [Basics](#basics)
-- [Introduction](#introduction)
-- [Weaviate Structure](#weaviate-structure)
-- [Get Metadata](#get-metadata)
-  - [Weaviate Schema Metadata](#weaviate-schema-metadata)
-- [More resources](#more-resources)
 
 ## Basics
 

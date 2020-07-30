@@ -4,18 +4,14 @@ product: contributor-guide
 sub-menu: Custom DB
 product-order: 1
 title: Status
+intro: Custom DB is the working title of an ongoing migration away from third-party databases to an integrated database solution into Weaviate. This page lists the current status of which features are already available, as well as limitations.
 description: Custom DB Migration Status, Features and Limitations
 tags: ['contributor-guide', 'item']
 menu-order: 1
 open-graph-type: article
 og-img: documentation.jpg
+toc: true
 ---
-
-# Custom DB Status
-
-{% include badges.html %}
-
-"Custom DB" is the working title of an ongoing migration away from third-party databases to an integrated database solution into Weaviate. This page lists the current status of which features are already available, as well as limitations.
 
 ## Global Limits
 

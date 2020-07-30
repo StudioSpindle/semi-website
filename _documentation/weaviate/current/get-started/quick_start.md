@@ -10,6 +10,7 @@ tags: ['introduction', 'Weaviate', 'Contextionary']
 menu-order: 1
 open-graph-type: article
 og-img: documentation.jpg
+toc: false
 ---
 
 # Quick start guide

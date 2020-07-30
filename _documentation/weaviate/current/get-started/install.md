@@ -4,32 +4,13 @@ product: weaviate
 sub-menu: Get started
 product-order: 1
 title: Installation
+intro: Weaviate is completely containerized, you can use Docker Compose and/or Kubernetes to run it.
 description: How to install a Weaviate or Weaviate Kubernetes cluster.
 tags: ['Installation', 'Running', 'Kubernetes']
 menu-order: 2
 open-graph-type: article
 og-img: documentation.jpg
 ---
-
-# Installation Guide
-
-{% include badges.html %}
-
-Weaviate is completely containerized, you can use Docker Compose and/or Kubernetes to run it.
-
-## Index
-
-- [Basics](#basics)
-- [Docker Compose](#docker-compose)
-- [Kubernetes](#kubernetes)
-  - [K8s configuration](#k8s-configuration)
-  - [Get the Helm Chart](#get-the-helm-chart)
-  - [Deploy](#deploy)
-  - [Additional configuration](#additional-configuration-help)
-  - [Etcd Disaster Recovery](#etcd-disaster-recovery)
-- [Weaviate Configuration](#weaviate-configuration-file)
-- [OpenID (OICD) Authentication](#openid-authentication)
-- [More resources](#more-resources)
 
 ## Basics
 

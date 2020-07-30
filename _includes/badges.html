@@ -1,4 +1,4 @@
-{% if page.product == "weaviate" %}
+{% if page.product == "weaviate" or page.product == "contributor-guide" %}
 
 <img src="https://img.shields.io/badge/stackoverflow-%23weaviate-informational" onclick="loadBadgeLink('https://stackoverflow.com/tags/weaviate/')" style="cursor:pointer">
 <img src="https://img.shields.io/badge/github-issues-informational" onclick="loadBadgeLink('https://github.com/semi-technologies/weaviate/issues')" style="cursor:pointer">
@@ -18,12 +18,6 @@ req.onreadystatechange = function() {
 req.open('GET', 'https://europe-west1-semi-production.cloudfunctions.net/docker-hub-pulls');
 req.send(null);
 </script>
-
-{% elsif page.product == "contributor-guide" %}
-
-<img src="https://img.shields.io/badge/stackoverflow-tag:weaviate-informational" onclick="loadBadgeLink('https://stackoverflow.com/tags/weaviate/')" style="cursor:pointer">
-<img src="https://img.shields.io/badge/github-weaviate--cli-yellow" onclick="loadBadgeLink('https://github.com/semi-technologies/weaviate-cli/issues')" style="cursor:pointer">
-<img src="https://img.shields.io/badge/newsletter-signup-ff69b4" onclick="loadBadgeLink('/newsletter')" style="cursor:pointer">
 
 {% elsif page.product == "weaviate playground" %}
 

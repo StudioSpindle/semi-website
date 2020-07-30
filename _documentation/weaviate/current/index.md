@@ -10,6 +10,7 @@ tags: ['Weaviate', 'introduction']
 menu-order: 1
 open-graph-type: article
 og-img: documentation.jpg
+toc: false
 ---
 
 # Welcome to Weaviate!

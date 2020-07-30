@@ -4,18 +4,13 @@ product: weaviate
 sub-menu: More resources
 product-order: 1
 title: FAQ
+intro: Aha, you have a question! We hope that you can find the answer here, but if you don't, you can reach us via Stackoverflow (make sure to tag your question with weaviate), Github, or Slack. If your question serves a general-purpose, we will add it to this page.
 description: Frequently Asked Questions.
 tags: ['FAQ', 'Help']
 menu-order: 1
 open-graph-type: article
 og-img: documentation.jpg
 ---
-
-# Frequently Asked Questions
-
-{% include badges.html %}
-
-Aha, you have a question! We hope that you can find the answer here, but if you don't, you can reach us via [Stackoverflow](https://stackoverflow.com/tags/weaviate/) (make sure to tag your question with weaviate), [Github](https://github.com/semi-technologies/weaviate/issues), or [Twitter](https://twitter.com/SeMI_tech). If your question serves a general-purpose, we will add it to this page.
 
 ### Q: Why would I use Weaviate as my search graph engine?
 
