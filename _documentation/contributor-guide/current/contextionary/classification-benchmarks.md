@@ -76,7 +76,7 @@ each version are contained here:
 ### 20 Newsgroups
 
 * Size: 60 per category
-* Source Repo [semi-technologies/20news-classification](https://github.com/semi-technologies/20news-classification)
+* Source Repo: `semi-technologies/20news-classification`
 * *Warning: Take these results (20-news **contextual**) with a grain of salt,
   they are not currently testing the best possible hyper-parameters, but just a
   specific configuration that worked well in the past. TODO: Improve benchmark
