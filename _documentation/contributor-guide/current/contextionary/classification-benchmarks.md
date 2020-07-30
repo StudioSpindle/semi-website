@@ -31,7 +31,7 @@ each version are contained here:
 
 ### Enron Emails (Subset `kaminski-v`)
 
-* Source Repo: [semi-technologies/enron-email-classification](https://github.com/semi-technologies/enron-email-classification)
+* Source Repo: `semi-technologies/enron-email-classification`
 * Current best: `en0.14.0` at `k=1`
 
 | contextionary | dimensions | k=1 | k=3 | k=5 | k=8 | k=13 | k=21 |
@@ -45,7 +45,7 @@ each version are contained here:
 ### 20 Newsgroups
 
 * Size: 60 per category
-* Source Repo [semi-technologies/20news-classification](https://github.com/semi-technologies/20news-classification)
+* Source Repo `semi-technologies/20news-classification`
 
 #### Main Category (6 Categories)
 
