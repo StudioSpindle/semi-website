@@ -33,8 +33,8 @@ each version are contained here:
 | en0.16.0 | GloVe | Wiki, CommonCrawl | `~1000G` | 300 | 15 | **released** |
 | en0.17.0 | fasttext | Wiki | `~14G` | 300 | 15 | *not released (yet)* |
 | en0.17.1 | fasttext | Wiki | `~14G` | 300 | 5 | *not released (yet)* |
-| en0.17.2 | fasttext | Wiki | `~1000G` | 300 | 15 | training aborted! |
-| en0.17.3 | fasttext | Wiki | `~100G` | 300 | 15 | *not released (yet)* |
+| en0.17.2 | fasttext | Wiki, CommonCrawl | `~1000G` | 300 | 15 | training aborted! |
+| en0.17.3 | fasttext | Wiki, CommonCrawl | `~100G` | 300 | 15 | *not released (yet)* |
 
 ## Benchmarks (KNN)
 
