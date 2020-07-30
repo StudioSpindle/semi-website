@@ -17,7 +17,7 @@ toc: true
 
 Objects are parsed twice:
 
-* Once closest to disk, immediately after reading in the byte blob, all
+* First, closest to disk, immediately after reading-in the byte blob, all
   non-reference props are parsed and their respective Golang types (e.g.
   `*models.GeoCoordinates` or `*models.PhoneNumber`) are returned.
 
@@ -29,10 +29,10 @@ Objects are parsed twice:
 
 ## Motivation behind split-parsing
 
-Generally shards (and also indices) are self-contained units. It is thus
+Generally, shards (and also indices) are self-contained units. It is thus
 natural that they return objects which work in isolation and can be interpreted
 by the rest of the application (usually in the form of a `search.Result` or
-`search.Results`)
+`search.Results`, both definied as `entities`)
 
 However, cross-references aren't predictable. They could point to an item in
 another shard or even to an item of another index (because they are a different
@@ -42,8 +42,8 @@ distributed on any node in the cluster.
 
 Furthermore it is more effecient (see cached resolver) to resolve references
 for a list of objects as opposed to a single object. At shard-level we do not
-know if a specific object is part of a list and if this list spans shards or
-indices.
+know if a specific object is part of a list and if this list spans across
+shards or indices.
 
 Thus the second parsing - to enrich the desired cross-references - happens at
 the outermost layer of the persistence package in the `db.DB` **after**
@@ -51,7 +51,7 @@ assembling the index/shards parts.
 
 ## Cached Resolver Logic
 
-The cached resolver is a helper struct with a two two step process:
+The cached resolver is a helper struct with a two-step process:
 
 1. **Cacher**: The input object list is (in form of a `search.Results`) is analyzed for
    references. This is a recursive process, as each resolved references might
@@ -65,7 +65,7 @@ The cached resolver is a helper struct with a two two step process:
    reference pointer (in the form of a `*models.SingleRef` containing a
    `Beacon` string) is replaced with the resolved reference content (in the
    form of a `search.LocalRef`). If the result again contains such reference
-   pointers to another object, this is resolved in the same fashion -
+   pointers to other objects, these are resolved in the same fashion -
    recursively until everything that the user requested is resolved.
 
 ## Relevant Code 
