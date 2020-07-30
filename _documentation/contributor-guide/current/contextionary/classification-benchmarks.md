@@ -85,6 +85,10 @@ each version are contained here:
 
 * Size: 60 per category
 * Source Repo [semi-technologies/20news-classification](https://github.com/semi-technologies/20news-classification)
+* *Warning: Take these results (20-news **contextual**) with a grain of salt,
+  they are not currently testing the best possible hyper-parameters, but just a
+  specific configuration that worked well in the past. TODO: Improve benchmark
+  to test various hyper-parameters*
 
 #### Main Category (6 Categories)
 
@@ -96,6 +100,7 @@ each version are contained here:
 | en0.16.0-v0.4.15 | 300 | 50% |
 | en0.17.0-v0.4.15 | 300 | 50% |
 | en0.17.1-v0.4.15 | 300 | 50% |
+| en0.17.3-v0.4.15 | 300 | 50% |
 
 #### Fine Category (20 Categories)
 
@@ -107,6 +112,7 @@ each version are contained here:
 | en0.16.0-v0.4.15 | 300 | **56%** |
 | en0.17.0-v0.4.15 | 300 | 44% |
 | en0.17.0-v0.4.15 | 300 | 43% |
+| en0.17.3-v0.4.15 | 300 | 50% |
 
 
 ## More Resources
