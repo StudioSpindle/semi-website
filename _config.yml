@@ -49,4 +49,6 @@ docs:
         - More resources
         - About
     contributor-guide:
-        - Submenu
+        - Build, Run, Test
+        - Custom DB
+        - Contextionary
