@@ -31,6 +31,7 @@ exclude:
     - webpack.config.js
 plugins:
     - jekyll-redirect-from
+    - jekyll-toc
 whitelist:
     - jekyll-redirect-from
 docs:

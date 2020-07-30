@@ -4,21 +4,13 @@ product: weaviate-cli
 sub-menu: Misc
 product-order: 3
 title: Ping
+intro: Ping a Weaviate
 description: Ping a Weaviate
 tags: ['weaviate-cli', 'ping']
 menu-order: 5
 open-graph-type: article
 og-img: documentation.jpg
 ---
-
-# Ping Guide
-
-{% include badges.html %}
-
-## Index
-
-- [Basics](#basics)
-- [Initiation](#initiation)
 
 ## Basics
 

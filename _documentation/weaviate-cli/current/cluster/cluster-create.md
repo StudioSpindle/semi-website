@@ -4,22 +4,13 @@ product: weaviate-cli
 sub-menu: Cluster
 product-order: 3
 title: Create a cluster
+intro: Create a Weaviate cluster with the CLI tool
 description: Weaviate cluster create
 tags: ['weaviate-cli', 'cluster', 'create']
 menu-order: 5
 open-graph-type: article
 og-img: documentation.jpg
 ---
-
-# Create a Weaviate Cluster
-
-{% include badges.html %}
-
-## Index
-
-- [Basics](#basics)
-- [Create cluster](#create-cluster)
-- [List all clusters](#list-all-clusters)
 
 ## Basics
 

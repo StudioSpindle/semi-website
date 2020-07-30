@@ -4,21 +4,14 @@ product: weaviate-cli
 sub-menu: Get started
 product-order: 3
 title: Install
+intro: Install the CLI tool
 description: Weaviate-cli Install
 tags: ['weaviate-cli', 'install']
 menu-order: 1
 open-graph-type: article
 og-img: documentation.jpg
+toc: true
 ---
-
-# Installation Guide
-
-{% include badges.html %}
-
-## Index
-
-- [Basics](#basics)
-- [Installation](#installation)
 
 ## Basics
 

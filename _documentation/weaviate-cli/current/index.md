@@ -5,21 +5,14 @@ product: weaviate-cli
 sub-menu: index
 product-order: 3
 title: About
+intro: About the Weaviate CLI tool
 description: About
 tags: ['index', 'Weaviate-cli']
 menu-order: 1
 open-graph-type: article
 og-img: documentation.jpg
+toc: true
 ---
-
-# Introduction to Weaviate-CLI
-
-{% include badges.html %}
-
-## Index
-
-- [Basics](#basics)
-- [Initiation](#initiation)
 
 ## Basics
 

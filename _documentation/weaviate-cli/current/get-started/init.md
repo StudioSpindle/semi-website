@@ -4,21 +4,14 @@ product: weaviate-cli
 sub-menu: Get started
 product-order: 3
 title: Initiate
+intro: Initiate the CLI tool
 description: Weaviate-cli initiate
 tags: ['weaviate-cli', 'initiate']
 menu-order: 2
 open-graph-type: article
 og-img: documentation.jpg
+toc: true
 ---
-
-# Initiation Guide
-
-{% include badges.html %}
-
-## Index
-
-- [Basics](#basics)
-- [Initiation](#initiation)
 
 ## Basics
 

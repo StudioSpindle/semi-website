@@ -5,31 +5,14 @@ product: weaviate
 sub-menu: About
 product-order: 1
 title: Philosophy
+intro: Weaviate is an open-source, GraphQL and RESTful API-enabled, search graph based on a word vector storage mechanism called the Contextionary.
 description: Learn more about the philosophy behind Weaviate.
 tags: ['introduction', 'Weaviate', 'Contextionary', 'Philosohpy']
 menu-order: 1
 open-graph-type: article
 og-img: documentation.jpg
+toc: true
 ---
-
-# Philosophy behind Weaviate
-
-{% include badges.html %}
-
-Weaviate is an open-source, GraphQL and RESTful API-enabled, search graph based on a word vector storage mechanism called the Contextionary.
-
-## Index
-
-- [Why Weaviate?](#why-weaviate)
-- [Features](#features)
-  - [Core features](#core-features)
-  - [Additional features](#additional-features)
-- [Basic Terminology](#basic-terminology)
-- [Contextionary](#about-the-contextionary)
-- [About Classification](#about-classification)
-- [About Weaviate Knowledge Networks](#about-weaviate-knowledge-networks)
-- [Miscellaneous](#miscellaneous)
-- [More resources](#more-resources)
 
 ## Demo and Overview
 

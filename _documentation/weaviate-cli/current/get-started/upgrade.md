@@ -4,21 +4,14 @@ product: weaviate-cli
 sub-menu: Get started
 product-order: 3
 title: Upgrade
+intro: Upgrade the CLI
 description: Weaviate-cli Upgrade
 tags: ['weaviate-cli', 'upgrade']
 menu-order: 3
 open-graph-type: article
 og-img: documentation.jpg
+toc: true
 ---
-
-# Upgrade Guide
-
-{% include badges.html %}
-
-## Index
-
-- [Basics](#basics)
-- [Initiation](#initiation)
 
 ## Basics
 

@@ -4,22 +4,13 @@ product: weaviate-cli
 sub-menu: Cluster
 product-order: 3
 title: Remove a cluster
+intro: Remove a Weaviate cluster
 description: Weaviate cluster create
 tags: ['weaviate-cli', 'cluster', 'remove']
 menu-order: 5
 open-graph-type: article
 og-img: documentation.jpg
 ---
-
-# Remove a Weaviate Cluster
-
-{% include badges.html %}
-
-## Index
-
-- [Basics](#basics)
-- [Remove a single cluster](#remove-a-single-cluster)
-- [Remove all clusters](#remove-all-clusters)
 
 ## Basics
 

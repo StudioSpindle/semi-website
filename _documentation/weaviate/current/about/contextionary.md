@@ -4,24 +4,14 @@ product: weaviate
 sub-menu: About
 product-order: 1
 title: Contextionary
+intro: Weaviate has a contextionary endpoint which you can call to see how it indexed words and concepts.
 description: How to work with Weaviate's Contextionary.
 tags: ['Explore', 'Contextionary', 'C11y']
 menu-order: 2
 open-graph-type: article
 og-img: documentation.jpg
+toc: true
 ---
-
-# Contextionary Guide
-
-{% include badges.html %}
-
-Weaviate has a contextionary endpoint which you can call to see how it indexed words and concepts.
-
-## Index
-
-- [Basics](#basics)
-- [Find concepts](#find-concepts)
-- [FAQ](#faq)
 
 ## Basics
 

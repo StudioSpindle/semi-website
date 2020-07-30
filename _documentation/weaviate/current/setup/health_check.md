@@ -4,23 +4,14 @@ product: weaviate
 sub-menu: Setup
 product-order: 1
 title: Health checks 
+intro: With calling the health check endpoints, the Weaviate instance will let you know if it is alive and/or ready for data exchange.
 description: Live and readiness checks endpoints.
 tags: ['Health Check', 'Endpoint']
 menu-order: 6
 open-graph-type: article
 og-img: documentation.jpg
+toc: true
 ---
-
-# Health checks
-
-{% include badges.html %}
-
-With calling the health check endpoints, the Weaviate instance will let you know if it is alive and/or ready for data exchange.
-
-## Index
-
-- [Live and Readiness Endpoints](#live-and-readiness-endpoints)
-- [More resources](#more-resources)
 
 ## Live and Readiness Endpoints
 

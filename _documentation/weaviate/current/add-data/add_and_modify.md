@@ -4,34 +4,14 @@ product: weaviate
 sub-menu: Add data
 product-order: 1
 title: Add and modify data
+intro: When a Weaviate schema is created, you can populate this Weaviate with data.
 description: How to fill a weaviate with data.
 tags: ['Add', 'Data']
 menu-order: 2
 open-graph-type: article
 og-img: documentation.jpg
+toc: true
 ---
-
-# Adding Data Guide
-
-{% include badges.html %}
-
-When a Weaviate [schema](./define_schema.html) is created, you can populate this Weaviate with data.
-
-## Index
-
-- [Basics](#basics)
-- [Introduction](#introduction)
-- [Data Object](#data-object)
-  - [Add a data object](#add-a-data-object)
-    - [Influence Vector Weights](#influence-vector-weights)
-  - [Update a data object](#update-a-data-object)
-  - [Get a data object](#get-a-data-object)
-  - [Delete a data object](#delete-a-data-object)
-- [References guide](#references-guide)
-  - [Add individual references](#add-individual-references)
-  - [Replace all references](#replace-all-references)
-  - [Delete individual references](#delete-individual-references)
-- [More resources](#more-resources)
 
 ## Basics
 

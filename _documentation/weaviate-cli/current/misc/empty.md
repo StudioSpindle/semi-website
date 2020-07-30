@@ -4,21 +4,14 @@ product: weaviate-cli
 sub-menu: Misc
 product-order: 3
 title: Empty
+intro: Empty a Weaviate
 description: Empty a Weaviate
 tags: ['weaviate-cli', 'empty']
 menu-order: 5
 open-graph-type: article
 og-img: documentation.jpg
+toc: true
 ---
-
-# Empty Concepts Guide
-
-{% include badges.html %}
-
-## Index
-
-- [Basics](#basics)
-- [Empty Concepts](#empty-concepts)
 
 ## Basics
 

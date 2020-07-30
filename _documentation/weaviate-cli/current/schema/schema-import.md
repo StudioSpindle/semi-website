@@ -4,23 +4,13 @@ product: weaviate-cli
 sub-menu: Schema
 product-order: 3
 title: Import
+intro: Import using the CLI tool
 description: Import a schema
 tags: ['weaviate-cli', 'schema', 'import']
 menu-order: 5
 open-graph-type: article
 og-img: documentation.jpg
 ---
-
-# Schema Import Guide
-
-{% include badges.html %}
-
-## Index
-
-- [Basics](#basics)
-- [Schema Import](#schema-import)
-- [Getting a schema](#getting-a-schema)
-- [Simple schema example](#simple-schema-example)
 
 ## Basics
 
