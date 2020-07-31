@@ -10,15 +10,8 @@ tags: ['Datasets', 'News publications', 'Help']
 menu-order: 1
 open-graph-type: article
 og-img: documentation.jpg
+toc: true
 ---
-
-### Basics
-
-This dataset can be used to easily demo all Weaviate's features.
-
-- [Run with Docker Compose](#run-with-docker-compose)
-- [Run manually](#run-manually)
-- [More resources](#more-resources)
 
 ### Run with Docker Compose
 

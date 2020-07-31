@@ -17,10 +17,12 @@
                     <p>
                         {{ page.intro }}
                     </p>
+                    {% if page.toc == true %}
                     <div id="table-of-contents">
                         <h1>Index</h1>
                         {{ content | toc_only }}
                     </div>
+                    {% endif %}
                     <div>
                         {{ content }}
                     </div>

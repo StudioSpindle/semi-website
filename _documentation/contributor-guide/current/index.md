@@ -11,7 +11,7 @@ tags: ['index', 'contributor-guide']
 menu-order: 1
 open-graph-type: article
 og-img: documentation.jpg
-toc: true
+toc: false
 ---
 
 ## More Resources

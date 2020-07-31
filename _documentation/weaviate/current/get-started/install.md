@@ -10,6 +10,7 @@ tags: ['Installation', 'Running', 'Kubernetes']
 menu-order: 2
 open-graph-type: article
 og-img: documentation.jpg
+toc: true
 ---
 
 ## Basics

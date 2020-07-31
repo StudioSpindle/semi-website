@@ -10,12 +10,8 @@ tags: ['Deprecation messages']
 menu-order: 1
 open-graph-type: article
 og-img: documentation.jpg
-toc: true
+toc: false
 ---
-
-# Deprecation Messages
-
-{% include badges.html %}
 
 The list below contains deprecation messages:
 

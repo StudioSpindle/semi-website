@@ -10,6 +10,7 @@ tags: ['Python', 'Library']
 menu-order: 1
 open-graph-type: article
 og-img: documentation.jpg
+toc: true
 ---
 
 # Basics
@@ -34,7 +35,7 @@ Before we can load data we need to create a client and load a schema. You can le
 ```python
 import weaviate
 client = weaviate.Client("http://localhost:8080")
-client.create_schema("https://raw.githubusercontent.com/semi-technologies/weaviate-python-client/master/documentation/getting_started/people_schema.json")
+client.create_schema("https://raw.githubusercontent.com/semi-technologies/weaviate-python-client/master/documentation/getting_started/news-publications.json")
 ```
 
 A schema can be provided as a URL, file or a dict.
@@ -44,52 +45,138 @@ A schema can be provided as a URL, file or a dict.
 Things can be created like this:
 
 ```python
-client.create({"name": "John von Neumann"}, "Person", "b36268d4-a6b5-5274-985f-45f13ce0c642")
-client.create({"name": "Alan Turing"}, "Person", "1c9cd584-88fe-5010-83d0-017cb3fcb446")
-client.create({"name": "Legends"}, "Group", "2db436b5-0557-5016-9c5f-531412adf9c6")
+# Create an entity from the Publication class
+hq = {
+    "name": "The New York Times",
+    "headquartersGeoLocation": {
+        "latitude": 40.7561454,
+        "longitude": -73.9903298
+    }
+}
+client.create(hq, "Publication", "2db436b5-0557-5016-9c5f-531412adf9c6")
+
+# Create an Author
+client.create({"name": "Jason Bailey"}, "Author", "b36268d4-a6b5-5274-985f-45f13ce0c642")
+client.create({"name": "Alexander Burns"}, "Author", "1c9cd584-88fe-5010-83d0-017cb3fcb446")
+# Let weaviate create the uuid
+matt_id = client.create({"name": "Matt Flegenheimer"}, "Author")
+print(f"UUID of Matt Flegenheimer: {matt_id}")
 ```
 
 Actions can be created in a similar fashion like this:
 
 ```python
-client.create({"description": "John von Neumann's book"}, "Buy", semantic_type=weaviate.SEMANTIC_TYPE_ACTIONS)
+client.create({}, "Cite", semantic_type=weaviate.SEMANTIC_TYPE_ACTIONS)
 ```
 
-You can add cross-references through:
+You can add cross-references directly by using a beacon:
 
 ```python
-client.add_reference("2db436b5-0557-5016-9c5f-531412adf9c6", "members", "b36268d4-a6b5-5274-985f-45f13ce0c642")
-client.add_reference("2db436b5-0557-5016-9c5f-531412adf9c6", "members", "1c9cd584-88fe-5010-83d0-017cb3fcb446")
-# From action to thing
-from weaviate import SEMANTIC_TYPE_ACTIONS, SEMANTIC_TYPE_THINGS
-client.add_reference("2db436b5-0557-5016-9c5f-531412adf9c6", "members", "1c9cd584-88fe-5010-83d0-017cb3fcb446", 
-                     from_semantic_type=SEMANTIC_TYPE_ACTIONS, to_semantic_type=SEMANTIC_TYPE_THINGS)
+# Create an Article
+article = {
+    "title": "Who’s Running for President in 2020?",
+    "url": "https://www.nytimes.com/interactive/2019/us/politics/2020-presidential-candidates.html",
+    "summary": "Former Vice President Joseph R. Biden Jr. is the presumptive Democratic nominee ...",
+    # Reference the publication on creation
+    "inPublication": [weaviate.util.generate_local_beacon("2db436b5-0557-5016-9c5f-531412adf9c6")]
+}
+client.create(article, "Article", "d412133d-75fc-4ad5-aaae-46465522f1c2")
+article = {
+    "title": "The 50 Best Movies on Netflix Right Now",
+    "url": "https://www.nytimes.com/interactive/2020/arts/television/best-movies-on-netflix.html",
+    "summary": "The sheer volume of films on Netflix — and the site’s less than ...",
+    # Reference the publication on creation
+    "inPublication": [weaviate.util.generate_local_beacon("2db436b5-0557-5016-9c5f-531412adf9c6")]
+}
+client.create(article, "Article", "23b9e00c-884c-4543-b68a-abf875c950c4")
+```
 
+Or add to an already existing entity:
+
+```python
+# Add a reference from the article to the authors
+client.add_reference("d412133d-75fc-4ad5-aaae-46465522f1c2", "hasAuthors", "1c9cd584-88fe-5010-83d0-017cb3fcb446")
+client.add_reference("d412133d-75fc-4ad5-aaae-46465522f1c2", "hasAuthors", matt_id)
+client.add_reference("23b9e00c-884c-4543-b68a-abf875c950c4", "hasAuthors", "b36268d4-a6b5-5274-985f-45f13ce0c642")
+# Add a reference from an action type to a thing type
+client.add_reference(cite_id, "citation", "23b9e00c-884c-4543-b68a-abf875c950c4", from_semantic_type=weaviate.SEMANTIC_TYPE_ACTIONS)
 ```
 
 *Note: Weaviate might need a short time to update its index after a new thing has been created.*
 
+## Query
+
 Look at the data using the simple query on the GraphQL endpoint:
 
 ```bash
-curl http://localhost/v1/graphql -X POST -H 'Content-type: application/json' -d '
+curl http://localhost:8080/v1/graphql -X POST -H 'Content-type: application/json' -d '{"query": "{ Get { Things { Article { title HasAuthors { ... on Author { name } } InPublication { ... on Publication { name } } OfCategory { ... on Category { name } } } } }}"}' | jq .
+```
+
+Or query directly in python:
+
+```python
+gql_get_articles = """
 {
   Get {
     Things {
-      Group {
-        name
-        uuid
-        Members {
-          ... on Person {
+      Article {
+        title
+        HasAuthors {
+          ... on Author {
             name
-            uuid
+          }
+        }
+        InPublication {
+          ... on Publication {
+            name
+          }
+        }
+        OfCategory {
+          ... on Category {
+            name
           }
         }
       }
     }
   }
-}'
+}
+"""
+query_result = client.query(gql_get_articles)
+print("\nQuery results for articles:")
+print(json.dumps(query_result, indent=4, sort_keys=True))
 ```
+
+To create complex GraphQL query please consider a GraphQL python client. 
+Be cautios of query injections when generating string based queries.
+
+## Classification
+
+Lets create two categories and classify the articles with them:
+
+```python
+client.create({"name": "entertainment"}, "Category")
+client.create({"name": "politics"}, "Category")
+
+client.create({"name": "entertainment"}, "Category")
+client.create({"name": "politics"}, "Category")
+
+# Give weaviate 2 seconds to update the index with the newly added categories
+time.sleep(2.0)
+
+classification_cfg = client.classification.get_contextual_config("Article", "summary", "ofCategory")
+classification_status = client.classification.start_and_wait(classification_cfg)
+print("\nClassification status:")
+print(json.dumps(classification_status, indent=4, sort_keys=True))
+```
+
+You can query the articles again to see the newly added categories:
+```python
+query_result = client.query(gql_get_articles)
+print("\nQuery results for articles after classification:")
+print(json.dumps(query_result, indent=4, sort_keys=True))
+```
+
+
 
 ## Batching
 
@@ -167,70 +254,10 @@ Currently the floowing grand types are currently supported:
  - client credentials \
  `weaviate.AuthClientCredentials(<token>)`
 
-## Query
 
-The client allows to send simple GraphQL queries in the form of strings. Lets create a simple class `Person` and some add some people.
-
-```python
-import weaviate
-
-w = weaviate.Client("http://localhost:8080")
-
-schema = {
-    "actions": {"classes": [],"type": "action"},
-    "things": {"classes": [{
-        "class": "Person",
-        "description": "A person such as humans or personality known through culture",
-        "properties": [
-            {
-                "cardinality": "atMostOne",
-                "dataType": ["text"],
-                "description": "The name of this person",
-                "name": "name"
-            }
-        ]}],
-        "type": "thing"
-    }
-}
-w.create_schema(schema)
-
-w.create_thing({"name": "Andrew S. Tanenbaum"}, "Person")
-w.create_thing({"name": "Alan Turing"}, "Person")
-w.create_thing({"name": "John von Neumann"}, "Person")
-w.create_thing({"name": "Tim Berners-Lee"}, "Person")
-```
-
-Now we define a query for all `Person` objects.
-```python
-query = """
-{
-  Get {
-    Things {
-      Person {
-        name
-      }
-    }
-  }
-}
-"""
-```
-
-Finally we can run the query unsing the clients query function.
-
-```python
-import json
-
-query_result = w.query(query)
-# Pretty print the result of the query
-print(json.dumps(query_result, indent=4, sort_keys=True))
-```
-
-When creating new things it can take up to 2 seconds until weaviate has indexed the newley added data. Therefore the query might not return all the previously added things during that time frame. 
-
-To create complex GraphQL query please consider a GraphQL python client. 
-Be cautios of query injections when generating string based queries.
 
 Please find the [full client documentation here](https://semi-technologies.github.io/weaviate-python-client/html/index.html).
+The full [example as a script](https://raw.githubusercontent.com/semi-technologies/weaviate-python-client/master/documentation/examples/news.py).
 
 ## More Resources
 

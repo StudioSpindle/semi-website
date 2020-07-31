@@ -19,7 +19,7 @@ toc: true
 - Things are distinguished from Actions in schema classes.
 - Words used in the schema must be part of the [contextionary](../about/philosophy.html#about-the-contextionary).
 - The schema can be modified through the RESTful API.
-- You can import and export complete schemas with the [weaviate-cli](/documentation/weaviate-cli/current/schema/schema-import.html) tool.
+- You can import and export complete schemas with the [weaviate-cli](../client-libs/weaviate-cli.html) tool.
 - A class or property in Weaviate becomes immutable, but you can always be extend.
 
 ## Introduction
@@ -515,7 +515,7 @@ The current schema can be viewed as follows:
 GET /v1/schema
 ```
 
-A download of the schema can be used in the [weaviate-cli](/documentation/weaviate-cli/current/) client or [python client](../client-libs/python.html) library to import a schema.
+A download of the schema can be used in the [weaviate-cli](../client-libs/weaviate-cli.html) client or [python client](../client-libs/python.html) library to import a schema.
 
 ## Delete a schema item
 

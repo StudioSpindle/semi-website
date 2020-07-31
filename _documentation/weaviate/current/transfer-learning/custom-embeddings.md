@@ -10,6 +10,7 @@ tags: ['Contextionary', 'Synonyms']
 menu-order: 3
 open-graph-type: article
 og-img: documentation.jpg
+toc: true
 ---
 
 ## Basics
@@ -17,6 +18,7 @@ og-img: documentation.jpg
 - [Transfer learning](https://en.wikipedia.org/wiki/Transfer_learning) allows you to extend Weaviate in real-time.
 - A `POST` request to the RESTful endpoint `/c11y/extensions` is for extending the contextionary with custom concepts.
 - a `GET` request to the RESTful endpoint `/c11y/concepts/{}` returns if a concept is part of the Contextionary. 
+- Learn more about creating a custom contextionary [here](../more-resources/FAQ.html#q-can-i-train-my-own-contextionary).
 
 ## Introduction
 
