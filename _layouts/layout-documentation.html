@@ -10,8 +10,22 @@
             {% include documentation-menu.html %}
             <section itemscope itemtype="http://schema.org/articleBody">
                 <!-- include article-breadcrumb.html -->
+                
                 <section class="guide page-fadein--first">
-                    {{ content }}
+                    <h1>{{ page.title }}</h1>
+                    {% include badges.html %}
+                    <p>
+                        {{ page.intro }}
+                    </p>
+                    {% if page.toc == true %}
+                    <div id="table-of-contents">
+                        <h1>Index</h1>
+                        {{ content | toc_only }}
+                    </div>
+                    {% endif %}
+                    <div>
+                        {{ content }}
+                    </div>
                 </section>
                 <dl class="tags tags-in-page">
                     {% include molecule-list-tags.html

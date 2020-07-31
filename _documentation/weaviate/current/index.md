@@ -5,18 +5,14 @@ product: weaviate
 sub-menu: index
 product-order: 1
 title: About
+intro: Weaviate is an open-source, GraphQL and RESTful API-enabled, search graph based on a graph embedding mechanism called the Contextionary.
 description: About
 tags: ['Weaviate', 'introduction']
 menu-order: 1
 open-graph-type: article
 og-img: documentation.jpg
+toc: false
 ---
-
-# Welcome to Weaviate!
-
-{% include badges.html %}
-
-Weaviate is an open-source, GraphQL and RESTful API-enabled, search graph based on a graph embedding mechanism called the Contextionary.
 
 ## Core use cases
 

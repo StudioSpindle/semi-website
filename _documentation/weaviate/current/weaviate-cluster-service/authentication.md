@@ -4,26 +4,14 @@ product: weaviate
 sub-menu: Weaviate Cluster Service
 product-order: 1
 title: Authentication
+intro: Authenticate the CLI tool
 description: How to use authentication with WCS
 tags: ['Installation', 'Authentication', 'WCS', 'WCS Auth']
 menu-order: 7
 open-graph-type: article
 og-img: documentation.jpg
+toc: true
 ---
-
-# Authentication with WCS Auth Service
-
-{% include badges.html %}
-
-If you are using the Weaviate Cluster Service (WCS) you can protect your cluster with [OpenID Connect](https://openid.net/connect/) (OIDC) Authentication.
-
-## Index
-
-- [Basics](#basics)
-- [OIDC details](#oidc-details)
-- [Obtain a token with the password grant](#obtain-a-token-with-the-password-grant)
-- [Login to the playground](#login-to-the-playground)
-- [More resources](#more-resources)
 
 ## Basics
 

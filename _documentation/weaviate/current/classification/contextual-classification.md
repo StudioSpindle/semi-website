@@ -4,31 +4,14 @@ product: weaviate
 sub-menu: Classification
 product-order: 1
 title: Contextual Classification
+intro: Perform contextual classifications through the RESTapi to enhance your dataset. 
 description: How to perform Contextual classification for properties of data objects.
 tags: ['Contextual Classification', 'Data', 'Modify']
 menu-order: 1
 open-graph-type: article
 og-img: documentation.jpg
+toc: true
 ---
-
-# Contextual Classification Guide
-
-{% include badges.html %}
-
-Perform contextual classifications through the RESTapi to enhance your dataset. 
-
-## Index
-
-- [Basics](#basics)
-- [Introduction](#introduction)
-- [When to use](#when-to-use)
-  - [Example use case](#example-use-case)
-- [How to use](#how-to-use)
-    - [Start a Classification](#start-a-classification)
-    - [See the Status of a Classification](#see-the-status-of-a-classification)
-    - [Get Classification Information of Data Objects](#get-classification-information-of-data-objects)
-- [Example](#example)
-- [More resources](#more-resources)
 
 ## Basics
 

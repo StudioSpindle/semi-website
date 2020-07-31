@@ -5,30 +5,14 @@ product: weaviate
 sub-menu: Get started
 product-order: 1
 title: Quick start
+intro: "This quick start guide will give you a 10-minute tour of Weaviate. You will: Set up your Weaviate with Docker, add a example dataset with news articles, and Browse through the dataset with the Weaviate Console."
 description: Getting started with Weaviate.
 tags: ['introduction', 'Weaviate', 'Contextionary']
 menu-order: 1
 open-graph-type: article
 og-img: documentation.jpg
+toc: true
 ---
-
-# Quick start guide
-
-{% include badges.html %}
-
-This quick start guide will give you a 10-minute tour of Weaviate. You will:
-- Set up your Weaviate with Docker.
-- Add a example dataset with news articles.
-- Browse through the dataset with the Weaviate Playground.
-
-## Index
-
-- [Run Weaviate with a demo dataset](#run-weaviate-with-a-demo-dataset)
-  - [Docker Compose setup](#docker-compose-setup)
-- [Validate via the RESTful API](#validate-via-the-restful-api)
-- [Query the dataset with GraphQL](#query-the-dataset-with-graphql)
-- [Automatic Classification](#automatic-classification)
-- [More resources](#more-resources)
 
 ## Run Weaviate with a demo dataset
 

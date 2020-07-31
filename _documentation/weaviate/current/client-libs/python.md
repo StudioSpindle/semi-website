@@ -4,27 +4,14 @@ product: weaviate
 sub-menu: Client libs
 product-order: 1
 title: Python
+intro: Python library
 description: Weaviate Python client library.
 tags: ['Python', 'Library']
 menu-order: 1
 open-graph-type: article
 og-img: documentation.jpg
+toc: true
 ---
-
-# Python Client Library Guide
-
-{% include badges.html %}
-
-## Index
-
-- [Basics](#basics)
-  - [Install](#install)
-  - [Create schema](#create-schema)
-  - [Create things or actions](#create-things-or-actions)
-  - [Batching](#batching)
-  - [Authentication](#authentication)
-  - [Query](#query)
-- [More resources](#more-resources)
 
 # Basics
 

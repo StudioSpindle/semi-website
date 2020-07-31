@@ -4,30 +4,21 @@ product: weaviate
 sub-menu: Transfer learning
 product-order: 1
 title: Custom embeddings
+intro: Custom words or abbreviations (i.e., "concepts") can be added to Weaviate directly by extending the contextionary.
 description: How to add custom synonyms to the contextionary.
 tags: ['Contextionary', 'Synonyms']
 menu-order: 3
 open-graph-type: article
 og-img: documentation.jpg
+toc: true
 ---
-
-# Custom embeddings
-
-{% include badges.html %}
-
-## Index
-
-- [Basics](#basics)
-- [Introduction](#introduction)
-- [Usage](#usage)
-- [More resources](#more-resources)
 
 ## Basics
 
-- Custom words or abbreviations (i.e., "concepts") can be added to Weaviate directly by extending the contextionary.
 - [Transfer learning](https://en.wikipedia.org/wiki/Transfer_learning) allows you to extend Weaviate in real-time.
 - A `POST` request to the RESTful endpoint `/c11y/extensions` is for extending the contextionary with custom concepts.
 - a `GET` request to the RESTful endpoint `/c11y/concepts/{}` returns if a concept is part of the Contextionary. 
+- Learn more about creating a custom contextionary [here](../more-resources/FAQ.html#q-can-i-train-my-own-contextionary).
 
 ## Introduction
 

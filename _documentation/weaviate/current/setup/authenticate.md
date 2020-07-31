@@ -4,27 +4,14 @@ product: weaviate
 sub-menu: Setup
 product-order: 1
 title: Authenticate
+intro: If you run Weaviate with an OpenID authentication scheme, you need to send the correct credentials in a request.
 description: How to setup weaviate authentication.
 tags: ['Installation', 'Authentication']
 menu-order: 4
 open-graph-type: article
 og-img: documentation.jpg
+toc: true
 ---
-
-# Authentication Guide
-
-{% include badges.html %}
-
-If you run Weaviate with an [OpenID authentication scheme](../get-started/install.html#openid-authentication), you need to send the correct credentials in a request.
-
-## Index
-
-- [Basics](#basics)
-- [Philosophy](#philosophy)
-- [OpenID details](#openid-details)
-- [Add a Bearer to a request](#add-a-bearer-to-a-request)
-- [More resources](#more-resources)
-
 
 ## Basics
 

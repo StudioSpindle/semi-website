@@ -4,18 +4,14 @@ product: weaviate
 sub-menu: More resources
 product-order: 1
 title: FAQ
+intro: Aha, you have a question! We hope that you can find the answer here, but if you don't, you can reach us via Stackoverflow (make sure to tag your question with weaviate), Github, or Slack. If your question serves a general-purpose, we will add it to this page.
 description: Frequently Asked Questions.
 tags: ['FAQ', 'Help']
 menu-order: 1
 open-graph-type: article
 og-img: documentation.jpg
+toc: true
 ---
-
-# Frequently Asked Questions
-
-{% include badges.html %}
-
-Aha, you have a question! We hope that you can find the answer here, but if you don't, you can reach us via [Stackoverflow](https://stackoverflow.com/tags/weaviate/) (make sure to tag your question with weaviate), [Github](https://github.com/semi-technologies/weaviate/issues), or [Twitter](https://twitter.com/SeMI_tech). If your question serves a general-purpose, we will add it to this page.
 
 ### Q: Why would I use Weaviate as my search graph engine?
 
@@ -27,7 +23,7 @@ A: Yes, soon, we will release the Weaviate Cluster Service! [Sign up for our new
 
 ### Q: Can I train my own contextionary?
 
-A: No, but the good news is. You don't have to. The [function of the contextionary](../about/philosophy.html#about-the-contextionary) within a Weaviate is that it allows a Weaviate to interpret your data semantically. By adding data through the RESTful API endpoints, a Weaviate already has enough context based on your data. You just have to [run the Weaviate containers](../get-started/install.html) in a language of choice, and you are good to go!
+A: Not yet (but soon), you can currently use the [available contextionaries](../get-started/install.html#docker-compose) in a variety of languages and use the transfer learning feature to add custom concepts if needed. Sign up to our [newsletter](/newsletter/) or [Slack channel]({{ site.slack_signup_url }}) to keep updated about the release of custom contextionary training
 
 ### Q: Why is the contextionary created using GloVe?
 

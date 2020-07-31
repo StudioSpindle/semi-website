@@ -4,50 +4,14 @@ product: weaviate
 sub-menu: Add data
 product-order: 1
 title: Define schema
+intro: A Weaviate schema is used to define what kind of semantic kinds you will be adding to a Weaviate. It will function as the overall data model.
 description: How to define a weaviate schema.
 tags: ['Schema']
 menu-order: 1
 open-graph-type: article
 og-img: documentation.jpg
+toc: true
 ---
-
-# Schema Guide
-
-{% include badges.html %}
-
-A Weaviate schema is used to define what kind of [semantic kinds](../about/philosophy.html#basic-terminology) you will be adding to a Weaviate. It will function as the overall data model.
-
-## Index
-
-- [Basics](#basics)
-- [Introduction](#introduction)
-  - [Concepts and their Structures](#concepts-and-their-structures)
-  - [Classes](#classes)
-  - [Properties](#properties)
-  - [Keywords](#keywords)
-  - [Weaviate Schema versus Ontology](#weaviate-schema-versus-ontology)
-- [Defining Objects](#defining-objects)
-  - [Schema Object](#schema-object)
-  - [Property Object](#property-object)
-  - [Concatenate Classes and Properties](#concatenate-classes-and-properties)
-  - [Stopwords](#stopwords)
-    - [What stopwords are and why they matter](#what-stopwords-are-and-why-they-matter)
-    - [Behavior around stop words](#behavior-around-stop-words)
-    - [How does weaviate decide wether a word is a stop word or not?](#how-does-weaviate-decide-wether-a-word-is-a-stop-word-or-not)
-  - [Property Types](#property-types)
-    - [Date Type](#date-type)
-    - [Geo Coordinates Type](#geo-coordinates-type)
-    - [Cross Reference Type](#cross-reference-type)
-    - [Cardinality](#cardinality)
-- [Using the Schema API](#using-the-schema-api)
-  - [Create a schema item](#create-a-schema-item)
-    - [Regulate Indexing](#regulate-indexing)
-  - [Get the schema](#get-the-schema)
-  - [Delete a schema item](#delete-a-schema-item)
-  - [Add a property to a schema item](#add-a-property-to-a-schema-item)
-  - [Delete a property from a schema item](#delete-a-property-from-a-schema-item)
-- [Full schema example](#full-schema-example)
-- [More resources](#more-resources)
 
 ## Basics
 
@@ -55,7 +19,7 @@ A Weaviate schema is used to define what kind of [semantic kinds](../about/philo
 - Things are distinguished from Actions in schema classes.
 - Words used in the schema must be part of the [contextionary](../about/philosophy.html#about-the-contextionary).
 - The schema can be modified through the RESTful API.
-- You can import and export complete schemas with the [weaviate-cli](/documentation/weaviate-cli/current/schema/schema-import.html) tool.
+- You can import and export complete schemas with the [weaviate-cli](../client-libs/weaviate-cli.html) tool.
 - A class or property in Weaviate becomes immutable, but you can always be extend.
 
 ## Introduction
@@ -551,7 +515,7 @@ The current schema can be viewed as follows:
 GET /v1/schema
 ```
 
-A download of the schema can be used in the [weaviate-cli](/documentation/weaviate-cli/current/) client or [python client](../client-libs/python.html) library to import a schema.
+A download of the schema can be used in the [weaviate-cli](../client-libs/weaviate-cli.html) client or [python client](../client-libs/python.html) library to import a schema.
 
 ## Delete a schema item
 
