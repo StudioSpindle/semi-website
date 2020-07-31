@@ -4,28 +4,14 @@ product: weaviate
 sub-menu: Add data
 product-order: 1
 title: Batching
+intro: Add many data objects with one API call.
 description: How to add large datasets.
 tags: ['Batching']
 menu-order: 3
 open-graph-type: article
 og-img: documentation.jpg
+toc: true
 ---
-
-# Batching
-
-{% include badges.html %}
-
-Add many data objects in one API call.
-
-## Index
-
-- [Basics](#basics)
-- [Introduction](#introduction)
-- [RESTful API](#restful-api)
-  - [Add Things](#add-things)
-  - [Add Actions](#add-actions)
-  - [Add references](#add-references)
-- [More resources](#more-resources)
 
 ## Basics
 

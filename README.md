@@ -21,10 +21,19 @@ good before deployment, you can use the supplied Dockerfile. Simply run
 docker build -t semi-website . && docker run -p 4000:4000 semi-website
 ```
 
-from the root. You can then access the site at localhost:4000. There is no
-live-reloading included. If you make changes you have to rebuild (and run) the
-container. The layer caching is quite optimized though, so rebuilding should be
-quite fast.
+from the root. You can then access the site at localhost:4000. By default there
+is no live-reloading included. If you make changes you have to rebuild (and
+run) the container. The layer caching is quite optimized though, so rebuilding
+should be quite fast.
+
+You can also mount specific directories as volumes to enable live reloading.
+For example to add live reloading to the documentation (located in the
+`_documentation` subfolder), simply run
+
+```
+docker run -p 4000:4000 -v "$(pwd)/_documentation:/website/_documentation" semi-website
+```
+You can add multiple volumes like this, if you require other folders as well.
 
 **Warning**: The docker image above is only meant for aiding with devleopment,
 it uses `jekyll serve` and is therefore not suited for production use.
@@ -54,6 +63,10 @@ Build and watch the website
 ```bash
 $ bundle exec jekyll serve
 ```
+
+### Documentation
+
+- menu structure is set in `./config.yml`.
 
 # Tests
 

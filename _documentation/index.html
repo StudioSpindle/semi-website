@@ -18,12 +18,13 @@ og-img: documentation.jpg
         </section>
         <section class="wrapper--wide">
             <ul class="cards cards--load-fade-in">
+
+                <!-- CARD 1 -->
                 {% capture carOneContent %}
                 <div class="card__intro">
                     <p>Learn how to work with the Weaviate search graph.</p>
                 </div>
                 {% endcapture %}
-
                 {% include components/card/card.html
                     title="Weaviate"
                     themeClass="card-white card--pilar card--theme-weaviate-oss"
@@ -34,30 +35,13 @@ og-img: documentation.jpg
                     ctaText="Documentation"
                     content=carOneContent
                 %}
+
+                <!-- CARD 2 -->
                 {% capture carTwoContent %}
                 <div class="card__intro">
-                    <p>CLI tool to interact with individual Weaviates.</p>
+                    <p>Graphical user interface (GUI) to interact with an individual Weaviate and the Kubernetes nodes on the Weaviate Network.</p>
                 </div>
                 {% endcapture %}
-
-                {% include components/card/card.html
-                    title="Weaviate CLI"
-                    themeClass="card-white card--pilar card--theme-weaviate-oss"
-                    inverted=false
-                    imgUrl="/img/logo-icon-weaviate-enterprise.svg"
-                    imgAlt="Weaviate CLI logo"
-                    linkUrl='/documentation/weaviate-cli/current/'
-                    linkExternal=false
-                    ctaText="Documentation"
-                    content=carTwoContent
-                %}
-
-                {% capture carThreeContent %}
-                <div class="card__intro">
-                    <p>Graphical user interface (GUI) to interact with an individual Weaviate.</p>
-                </div>
-                {% endcapture %}
-
                 {% include components/card/card.html
                     title="Weaviate Console"
                     themeClass="card-white card--pilar card--theme-weaviate-oss"
@@ -67,6 +51,24 @@ og-img: documentation.jpg
                     linkUrl='/newsletter'
                     linkExternal=false
                     ctaText="coming soon"
+                    content=carTwoContent
+                %}
+
+                <!-- CARD 3 -->
+                {% capture carThreeContent %}
+                <div class="card__intro">
+                    <p>Guide for contributors.</p>
+                </div>
+                {% endcapture %}
+                {% include components/card/card.html
+                    title="Contributor Guide"
+                    themeClass="card-white card--pilar card--theme-weaviate-oss"
+                    inverted=false
+                    imgUrl="/img/logo-icon-weaviate-enterprise.svg"
+                    imgAlt="Weaviate contributor guide"
+                    linkUrl='/documentation/contributor-guide/current/'
+                    linkExternal=false
+                    ctaText="Guide"
                     content=carThreeContent
                 %}
             </ul>

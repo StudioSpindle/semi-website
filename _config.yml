@@ -1,4 +1,5 @@
 weaviate_version: 0.22.14
+slack_signup_url: "https://join.slack.com/t/weaviate/shared_invite/zt-fzeu4jif-kmpysQ8BUBt5qyE0PWhvAA"
 helm_version: 10.0.0
 markdown: kramdown
 kramdown:
@@ -34,6 +35,7 @@ exclude:
     - webpack.config.js
 plugins:
     - jekyll-redirect-from
+    - jekyll-toc
 whitelist:
     - jekyll-redirect-from
 docs:
@@ -44,14 +46,13 @@ docs:
         - Query data
         - Classification
         - Transfer learning
-        - Additional Features
+        - Additional features
         - Datasets
         - Client libs
         - Weaviate Cluster Service
         - More resources
         - About
-    weaviate-cli:
-        - Get started
-        - Cluster
-        - Schema
-        - Misc
+    contributor-guide:
+        - Build, Run, Test
+        - Custom DB
+        - Contextionary

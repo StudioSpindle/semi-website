@@ -4,24 +4,14 @@ product: weaviate
 sub-menu: Datasets
 product-order: 1
 title: News publications
+intro: This dataset contains +/- 1000 random news articles from; Financial Times, New York Times, Guardian, Wallstreet Journal, CNN, Fox News, The Economist, New Yorker, Wired, Vogue, Game Informer.
 description: Weaviate dataset with news publications.
 tags: ['Datasets', 'News publications', 'Help']
 menu-order: 1
 open-graph-type: article
 og-img: documentation.jpg
+toc: true
 ---
-
-# Dataset News Publications
-
-{% include badges.html %}
-
-This dataset contains +/- 1000 random news articles from; Financial Times, New York Times, Guardian, Wallstreet Journal, CNN, Fox News, The Economist, New Yorker, Wired, Vogue, Game Informer.
-
-This dataset can be used to easily demo all Weaviate's features.
-
-- [Run with Docker Compose](#run-with-docker-compose)
-- [Run manually](#run-manually)
-- [More resources](#more-resources)
 
 ### Run with Docker Compose
 

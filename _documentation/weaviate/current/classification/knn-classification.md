@@ -4,35 +4,14 @@ product: weaviate
 sub-menu: Classification
 product-order: 1
 title: KNN Classification
+intro: Perform k-nearest neighbors classifications through the RESTapi to enhance your dataset. 
 description: How to perform KNN classification for properties of data objects.
 tags: ['KNN Classification', 'Data', 'Modify']
 menu-order: 2
 open-graph-type: article
 og-img: documentation.jpg
+toc: true
 ---
-
-# KNN Classification Guide
-
-{% include badges.html %}
-
-Perform [k-nearest neighbors](https://en.wikipedia.org/wiki/K-nearest_neighbors_algorithm) classifications through the RESTapi to enhance your dataset. 
-
-## Index
-
-- [Basics](#basics)
-- [Introduction](#introduction)
-    - [Requirements](#requirements)
-- [When to use](#when-to-use)
-  - [Example use case](#example-use-case)
-- [How to use](#how-to-use)
-    - [Start a Classification](#start-a-classification)
-    - [See the Status of a Classification](#see-the-status-of-a-classification)
-    - [Get Classification Information of Data Objects](#get-classification-information-of-data-objects)
-- [Example](#example)
-- [Tips and Best Practices](#tips-and-best-practices)
-    - [Training Data](#training-data)
-    - [Optimal Value for kNN](#optimal-value-for-knn)
-- [More resources](#more-resources)
 
 ## Basics
 

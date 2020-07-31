@@ -1,35 +1,22 @@
-{% if page.product == "weaviate" %}
+{% if page.product == "weaviate" or page.product == "contributor-guide" %}
 
-<img src="https://img.shields.io/badge/stackoverflow-%23weaviate-informational" onclick="loadBadgeLink('https://stackoverflow.com/tags/weaviate/')" style="cursor:pointer">
-<img src="https://img.shields.io/badge/github-issues-informational" onclick="loadBadgeLink('https://github.com/semi-technologies/weaviate/issues')" style="cursor:pointer">
-<img src="https://img.shields.io/badge/version-{{ site.weaviate_version }}-brightgreen" onclick="loadBadgeLink('https://github.com/semi-technologies/weaviate/releases/tag/{{ site.weaviate_version }}')" style="cursor:pointer">
-<img src="https://img.shields.io/badge/api--specs-{{ site.weaviate_version }}-brightgreen" onclick="loadBadgeLink('https://app.swaggerhub.com/apis/semi-technologies/weaviate/{{ site.weaviate_version }}')" style="cursor:pointer">
-<img id="totalpulls" src="https://img.shields.io/badge/total--pulls-loading...-yellow">
-
-<script>
-// set the totalpulls
-var req = new XMLHttpRequest();
-req.onreadystatechange = function() {
-    if (req.readyState === 4) {
-        document.getElementById('totalpulls').src = 'https://img.shields.io/badge/total--pulls-'+req.responseText+'-yellow'
-    }
-};
-
-req.open('GET', 'https://europe-west1-semi-production.cloudfunctions.net/docker-hub-pulls');
-req.send(null);
-</script>
+<img src="https://img.shields.io/badge/stackoverflow-%23weaviate-informational?style=flat-square" onclick="loadBadgeLink('https://stackoverflow.com/tags/weaviate/')" style="cursor:pointer">
+<img src="https://img.shields.io/badge/github-issues-informational?style=flat-square" onclick="loadBadgeLink('https://github.com/semi-technologies/weaviate/issues')" style="cursor:pointer">
+<img src="https://img.shields.io/badge/version-{{ site.weaviate_version }}-brightgreen?style=flat-square" onclick="loadBadgeLink('https://github.com/semi-technologies/weaviate/releases/tag/{{ site.weaviate_version }}')" style="cursor:pointer">
+<img src="https://img.shields.io/badge/api--specs-{{ site.weaviate_version }}-brightgreen?style=flat-square" onclick="loadBadgeLink('https://app.swaggerhub.com/apis/semi-technologies/weaviate/{{ site.weaviate_version }}')" style="cursor:pointer">
+<img id="totalpulls" src="https://img.shields.io/badge/total--pulls-loading...-yellow?style=flat-square">
 
 {% elsif page.product == "weaviate-cli" %}
 
-<img src="https://img.shields.io/badge/stackoverflow-tag:weaviate-informational" onclick="loadBadgeLink('https://stackoverflow.com/tags/weaviate/')" style="cursor:pointer">
-<img src="https://img.shields.io/badge/github-weaviate--cli-yellow" onclick="loadBadgeLink('https://github.com/semi-technologies/weaviate-cli/issues')" style="cursor:pointer">
-<img src="https://img.shields.io/badge/newsletter-signup-ff69b4" onclick="loadBadgeLink('/newsletter')" style="cursor:pointer">
+<img src="https://img.shields.io/badge/stackoverflow-tag:weaviate-informational?style=flat-square" onclick="loadBadgeLink('https://stackoverflow.com/tags/weaviate/')" style="cursor:pointer">
+<img src="https://img.shields.io/badge/github-weaviate--cli-yellow?style=flat-square" onclick="loadBadgeLink('https://github.com/semi-technologies/weaviate-cli/issues')" style="cursor:pointer">
+<img src="https://img.shields.io/badge/newsletter-signup-ff69b4?style=flat-square" onclick="loadBadgeLink('/newsletter')" style="cursor:pointer">
 
 {% elsif page.product == "weaviate playground" %}
 
-<img src="https://img.shields.io/badge/stackoverflow-tag:weaviate-informational" onclick="loadBadgeLink('https://stackoverflow.com/tags/weaviate/')" style="cursor:pointer">
-<img src="https://img.shields.io/badge/github-weaviate--playground-yellow" onclick="loadBadgeLink('https://github.com/semi-technologies/weaviate-playground/issues')" style="cursor:pointer">
-<img src="https://img.shields.io/badge/newsletter-signup-ff69b4" onclick="loadBadgeLink('/newsletter')" style="cursor:pointer">
+<img src="https://img.shields.io/badge/stackoverflow-tag:weaviate-informational?style=flat-square" onclick="loadBadgeLink('https://stackoverflow.com/tags/weaviate/')" style="cursor:pointer">
+<img src="https://img.shields.io/badge/github-weaviate--playground-yellow?style=flat-square" onclick="loadBadgeLink('https://github.com/semi-technologies/weaviate-playground/issues')" style="cursor:pointer">
+<img src="https://img.shields.io/badge/newsletter-signup-ff69b4?style=flat-square" onclick="loadBadgeLink('/newsletter')" style="cursor:pointer">
 
 {% endif %}
 

@@ -11,6 +11,8 @@ import tagmanager from './modules/tagmanager';
 import tawk from './modules/tawk';
 import tableOfContents from './modules/tableOfContents';
 import prism from './modules/prism';
+import documentation from './modules/documentation';
+import collectStatsData from './modules/collectStatsData'
 
 // utilities
 import inputTypeRangeExists from './utilities/inputTypeRangeExists';
@@ -22,6 +24,14 @@ cookie('cookie-notification');
 
 // prism
 prism();
+
+// Collect Github and Docker data
+collectStatsData();
+
+/**
+ * Documentation tools
+ */
+documentation();
 
 /**
  * Progressive enhanced mobile hamburger menu

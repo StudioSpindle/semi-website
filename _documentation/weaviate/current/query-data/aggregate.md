@@ -4,27 +4,14 @@ product: weaviate
 sub-menu: Query data
 product-order: 1
 title: Aggregate
+intro: You can use Weaviate's Aggregation{} function to obtain meta information about collections of data.
 description: How to work with Weaviate's Aggregate function.
 tags: ['Aggregate', 'GraphQL']
 menu-order: 3
 open-graph-type: article
 og-img: documentation.jpg
+toc: true
 ---
-
-# Aggregation Guide
-
-{% include badges.html %}
-
-You can use Weaviate's `Aggregation{}` function to obtain meta information about collections of data.
-
-## Index
-
-- [Basics](#basics)
-- [Introduction](#introduction)
-  - [Define a query](#define-a-query)
-- [Aggregate{} Function](#aggregate-function)
-- [Filters](#filters)
-- [More resources](#more-resources)
 
 ## Basics
 

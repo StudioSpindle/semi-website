@@ -4,16 +4,14 @@ product: weaviate
 sub-menu: More resources
 product-order: 1
 title: Deprecation messages
+intro: An overview op deprecation messages
 description: List of deprecation messages
 tags: ['Deprecation messages']
 menu-order: 1
 open-graph-type: article
 og-img: documentation.jpg
+toc: false
 ---
-
-# Deprecation Messages
-
-{% include badges.html %}
 
 The list below contains deprecation messages:
 

@@ -4,30 +4,14 @@ product: weaviate
 sub-menu: Query data
 product-order: 1
 title: Explore
+intro: You can explore the search graph based on the semantic meaning of the data concepts in a Weaviate using the GraphQL Explore{} function.
 description: How to explore weaviate.
 tags: ['Explore', 'GraphQL', 'Contextionary']
 menu-order: 2
 open-graph-type: article
 og-img: documentation.jpg
+toc: true
 ---
-
-# Explore Guide
-
-{% include badges.html %}
-
-You can explore the search graph based on the semantic meaning of the data concepts in a Weaviate using the GraphQL `Explore{}` function.
-
-## Index
-
-- [Basics](#basics)
-- [Introduction](#introduction)
-  - [Define a query](#define-a-query)
-  - [Calculation](#calculation)
-  - [CamelCase interpretation](#camelcase-interpretation)
-  - [Moving](#moving)
-- [Explore{} Function](#explore-function)
-  - [Concepts array function](#concepts-array-function)
-- [More resources](#more-resources)
 
 ## Basics
 
