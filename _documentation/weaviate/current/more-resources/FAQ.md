@@ -13,9 +13,9 @@ og-img: documentation.jpg
 toc: true
 ---
 
-### Q: Why would I use Weaviate as my search graph engine?
+### Q: Why would I use Weaviate as my vector search engine engine?
 
-A: Our goal is three-folded. Firstly, we want to make it as easy as possible for others to create their own semantic systems or search graphs (hence, we are API based). Secondly, we have a strong focus on the semantic element (the "knowledge" in "search graph," if you will). Our ultimate goal is to have Weaviate help you manage, index, and "understand" your data so that you can build newer, better, and faster applications. And thirdly, we want you to be able to run it everywhere. This is the reason why Weaviate comes containerized.
+A: Our goal is three-folded. Firstly, we want to make it as easy as possible for others to create their own semantic systems or vector search engines (hence, we are API based). Secondly, we have a strong focus on the semantic element (the "knowledge" in "vector search engine," if you will). Our ultimate goal is to have Weaviate help you manage, index, and "understand" your data so that you can build newer, better, and faster applications. And thirdly, we want you to be able to run it everywhere. This is the reason why Weaviate comes containerized.
 
 ### Q: Do you offer Weaviate as a managed service?
 
@@ -33,9 +33,9 @@ A: There are many natural language processing vectorization models available. Th
 
 A: We use a schema because it focusses on the representation of your data (in our case in the GraphQL API) but you can use a Weaviate schema to express an ontology. One of Weaviate's core features is that it semantically interprets your schema (and with that your ontology) so that you can search for concepts rather than formally defined entities.
 
-### Q: Can I use Weaviate to create a traditional search graph.
+### Q: Can I use Weaviate to create a traditional vector search engine.
 
-A: Yes, you can! Weaviate support ontology, RDF like definitions in its schema, and it runs out of the box. It is scalable, and the GraphQL API will allow you to query through your search graph easily. But now you are here. We like to suggest you really try its semantic features. After all, you are creating a _knowledge_ graph 😉.
+A: Yes, you can! Weaviate support ontology, RDF like definitions in its schema, and it runs out of the box. It is scalable, and the GraphQL API will allow you to query through your vector search engine easily. But now you are here. We like to suggest you really try its semantic features. After all, you are creating a _knowledge_ graph 😉.
 
 ### Q: Why isn't there a contextionary in my language?
 

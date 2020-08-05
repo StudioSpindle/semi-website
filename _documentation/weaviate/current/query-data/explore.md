@@ -4,7 +4,7 @@ product: weaviate
 sub-menu: Query data
 product-order: 1
 title: Explore
-intro: You can explore the search graph based on the semantic meaning of the data concepts in a Weaviate using the GraphQL Explore{} function.
+intro: You can explore the vector search engine based on the semantic meaning of the data concepts in a Weaviate using the GraphQL Explore{} function.
 description: How to explore weaviate.
 tags: ['Explore', 'GraphQL', 'Contextionary']
 menu-order: 2
@@ -21,7 +21,7 @@ toc: true
 
 ## Introduction
 
-You can explore (i.e., fuzzy) through the data in the Weaviate search graph using the GraphQL `Explore{}` function. Using arguments in the filters you are able to direct what concepts you are looking for. Classnames, [beacons](../about/philosophy.html#basic-terminology) and certainty levels of the results can be returned. Exploration can be done in your own local Weaviate, or in a network of Weaviate instances. Weaviate computes certainty levels of matching objects to your search results based on the `Contextionary`. It moves through the vector space of Weaviate, which is enriched with data objects. The data objects are positioned based on the available meta-information of these objects, like `className`, `keywords`, `properties`, `property values`, etc. Note that this function is for fuzzy search to data objects in Weaviate instances. When you know what you are looking for and want to retrieve exact data objects, try out the [`explore filter`](./filters.html#explore-filter) in the `Get{}` function.
+You can explore (i.e., fuzzy) through the data in the Weaviate vector search engine using the GraphQL `Explore{}` function. Using arguments in the filters you are able to direct what concepts you are looking for. Classnames, [beacons](../about/philosophy.html#basic-terminology) and certainty levels of the results can be returned. Exploration can be done in your own local Weaviate, or in a network of Weaviate instances. Weaviate computes certainty levels of matching objects to your search results based on the `Contextionary`. It moves through the vector space of Weaviate, which is enriched with data objects. The data objects are positioned based on the available meta-information of these objects, like `className`, `keywords`, `properties`, `property values`, etc. Note that this function is for fuzzy search to data objects in Weaviate instances. When you know what you are looking for and want to retrieve exact data objects, try out the [`explore filter`](./filters.html#explore-filter) in the `Get{}` function.
 
 ### Define a query
 

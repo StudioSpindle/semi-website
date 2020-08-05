@@ -5,7 +5,7 @@ product: weaviate
 sub-menu: About
 product-order: 1
 title: Philosophy
-intro: Weaviate is an open-source, GraphQL and RESTful API-enabled, search graph based on a word vector storage mechanism called the Contextionary.
+intro: Weaviate is an open-source, GraphQL and RESTful API-enabled, vector search engine based on a word vector storage mechanism called the Contextionary.
 description: Learn more about the philosophy behind Weaviate.
 tags: ['introduction', 'Weaviate', 'Contextionary', 'Philosohpy']
 menu-order: 1
@@ -22,19 +22,19 @@ Concept and demo presented at FOSDEM 2020;
 
 ## Why Weaviate?
 
-> We aim to allow anyone, anywhere, any time to create their own search graph or knowledge network.
+> We aim to allow anyone, anywhere, any time to create their own vector search engine or knowledge network.
 
 In almost any situation where you work with data, you store information related to something in the real world. This can be data about transactions, cars, airplanes, products; you name it. The challenge with current databases is that it is difficult for the software to grasp the context of the entity you refer to in your datasets. Do the characters "Apple" refer to the company or the fruit?
 
 ![real world entities](/img/guides/entities.jpg "real world entities")
 
-The Weaviate search graph aims to solve this problem. Every time you store data to the search graph, Weaviate indexes the data based on the linguistical context through a feature called The Contextionary. For example, when you store data about a _Company called Apple_, Weaviate automatically contextualizes the data related to an iPhone.
+The Weaviate vector search engine aims to solve this problem. Every time you store data to the vector search engine, Weaviate indexes the data based on the linguistical context through a feature called The Contextionary. For example, when you store data about a _Company called Apple_, Weaviate automatically contextualizes the data related to an iPhone.
 
 If you want to learn how the Contextionary does this, you can read more about our [Contextionary](#about-the-contextionary) here. We don't just want to store the data, but also the information and its context so that **knowledge** can be derived from it.
 
 Because most data is related to something (e.g., Amsterdam _is the capital of_ The Netherlands) we store not only the concept itself but also the relation to other concepts (e.g., "the city Amsterdam" to "the country The Netherlands"). This means that the data you add to a Weaviate instance creates a network of knowledge, better known as a **graph**.
 
-![why Weaviate is a search graph](/img/guides/knowledge-graph.jpg "why Weaviate is a search graph")
+![why Weaviate is a vector search engine](/img/guides/knowledge-graph.jpg "why Weaviate is a vector search engine")
 
 ## Features
 
@@ -44,7 +44,7 @@ Weaviate has four core features and a variety of additional features.
 
 Weaviate consists of four core features;
 
-![weaviate search graph USPs](/img/guides/USPs.png "weaviate search graph USPs")
+![weaviate vector search engine USPs](/img/guides/USPs.png "weaviate vector search engine USPs")
 
 1. The contextionary (c11y) is a vector index which stores _all_ data object based on their semantic meaning. This allows users to now only directly search and retrieve data, but also to search for its concepts.
 2. We believe that [GraphQL](https://graphql.org/) combined with a RESTful API, provides the best user experience to query Weaviate.
@@ -119,7 +119,7 @@ When creating automatic classification tasks, the user is able to define how cer
 
 _Coming soon! Sign up for our [newsletter](/newsletter) to be informed about release dates._
 
-Because Weaviate allows for fuzzy schema definitions (e.g., a "Company with the name Apple" is seen as semantically similar to a "Business with the identifier Apple Incorporated.") you can find beacons not only in your local Weaviate but also over a network of Weaviates. Allow creating a completely decentralized network of search graphs, aka the knowledge network.
+Because Weaviate allows for fuzzy schema definitions (e.g., a "Company with the name Apple" is seen as semantically similar to a "Business with the identifier Apple Incorporated.") you can find beacons not only in your local Weaviate but also over a network of Weaviates. Allow creating a completely decentralized network of vector search engines, aka the knowledge network.
 
 ## Miscellaneous
 

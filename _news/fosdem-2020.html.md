@@ -1,7 +1,7 @@
 ---
 layout: layout-blog-article
 title: FOSDEM 2020 video
-description: Introduction and demo by Bob van Luijt during FOSDEM 2020 about the Weaviate Search Graph.
+description: Introduction and demo by Bob van Luijt during FOSDEM 2020 about the Weaviate vector search engine.
 tags: ['Bob van Luijt', 'video', 'FOSDEM']
 pubdate: 2020-02-08T00:00:00Z
 open-graph-type: article
