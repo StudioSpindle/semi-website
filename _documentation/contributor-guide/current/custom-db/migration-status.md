@@ -24,7 +24,7 @@ toc: true
 
 * **CRUD objects**
   * {% include white-check-mark.html %} Post Object
-  * {% include white-check-.html %} Batch Add Objects
+  * {% include white-check-mark.html %} Batch Add Objects
   * {% include cross-mark.html %} Batch Add references
   * {% include cross-mark.html %} Update (put) Object (Object itself will get updated, but neither inverted indices, nor hnsw index will get updated at the moment)
   * {% include cross-mark.html %} Merge Objects 
