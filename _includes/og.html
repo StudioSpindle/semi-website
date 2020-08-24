@@ -4,11 +4,18 @@
 	<meta name="twitter:card" content="{{ page.open-graph-type }}">
 {% endif %}
 <meta property="og:url" content="{{ site.baseurl }}" />
-<meta property="og:description" content="{{ page.description }}" />
+
+{% if SEOdescription != '' %}
+	<meta name="twitter:description" content="{{ page.SEOdescription }}">
+	<meta property="og:description" content="{{ page.SEOdescription }}" />
+{% else %}
+	<meta name="twitter:description" content="{{ page.description }}">
+	<meta property="og:description" content="{{ page.description }}" />
+{% endif %}
+
 <meta property="og:site_name" content="SeMI Technologies" />
 <meta name="twitter:site" content="@SeMI_tech">
 <meta name="twitter:title" content="{{ page.title }}">
-<meta name="twitter:description" content="{{ page.description }}">
 <meta name="twitter:creator" content="@SeMI_tech">
 {% if page.og-img %}
 	<meta name="twitter:image" content="https://semi.technology/img/og/{{ page.og-img }}">

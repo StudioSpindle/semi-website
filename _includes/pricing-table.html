@@ -1,0 +1,89 @@
+<div class="table-container">
+    <table>
+        <tbody>
+            <tr>
+                <td>
+                    <span style="font-size:2rem;">Open Source</span>
+                </td>
+                <td>
+                    <span style="font-size:2rem;">Premium</span>
+                </td>
+                <td>
+                    <span style="font-size:2rem;">Professional</span>
+                </td>
+                <td>
+                    <span style="font-size:2rem;">Enterprise</span>
+                </td>
+            </tr>
+            <!-- pricing -->
+            <tr>
+                <td>
+                    <div style="font-size:3rem;">$0</div>
+                </td>
+                <td>
+                    <div style="font-size:3rem;">$199</div>
+                    <div>per month</div>
+                </td>
+                <td>
+                    <div style="font-size:3rem;">$1,999</div>
+                    <div>per month</div>
+                </td>
+                <td>
+                    <div style="font-size:3rem;">$6,999</div>
+                    <div>per month</div>
+                </td>
+            </tr>
+            <!-- links -->
+            {% if include.type == 'cloud' %}
+            <tr>
+                <td colspan="4">
+                    <p>
+                        <center>
+                            <a class="button--cta" type="submit" style="width:100%" href="https://console.semi.technology/">Get started</a>
+                        </center>
+                    </p>
+                </td>
+            </tr>
+            {% else %}
+            <tr>
+                <td>
+                    <p>
+                        <a class="button--cta" type="submit" href="/documentation/weaviate/current">Get started</a>
+                    </p>
+                </td>
+                <td colspan="3">
+                    <p>
+                        <a class="button--cta" type="submit" style="width:100%" href="mailto:hello@semi.technology">Get
+                            in touch with us</a>
+                    </p>
+                </td>
+            </tr>
+            {% endif %}
+            <!-- info boxes -->
+            <tr>
+                <td>
+                </td>
+                <td>
+                    <ul>
+                        <li>next business day support</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li>premium support</li>
+                        <li>installation support</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li>premium support</li>
+                        <li>installation support</li>
+                        <li>upgrade support</li>
+                        <li>in application support</li>
+                        <li>training</li>
+                    </ul>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

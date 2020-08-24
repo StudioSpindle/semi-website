@@ -8,7 +8,13 @@
     <meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<meta name="author" content="SeMI Technologies" />
-	<meta name="description" content="{{ page.description }}" />
+
+	{% if SEOdescription != '' %}
+		<meta name="description" content="{{ page.SEOdescription }}" />
+	{% else %}
+		<meta name="description" content="{{ page.description }}" />
+	{% endif %}
+	
 	{% include og.html %}
 
 	{% if page.layout == 'layout-blog-article' %}

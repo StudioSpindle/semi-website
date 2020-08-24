@@ -11,6 +11,6 @@ open-graph-type: article
 
 DB-Engines is an initiative to collect and present information on database management systems (DBMS). In addition to established relational DBMS, systems and concepts of the growing NoSQL area are emphasized. The DB-Engines Ranking is a list of DBMS ranked by their current popularity.
 
-SeMI's [Weaviate](/products/weaviate/) is now part of the index.
+SeMI's [Weaviate](/solutions/weaviate/) is now part of the index.
 
 - [Link to Weaviate on DB-Engines](https://db-engines.com/en/system/Weaviate)
