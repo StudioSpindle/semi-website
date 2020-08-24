@@ -79,7 +79,7 @@ const handleForm = (e, formElements, formTitle) => {
   sendData(formFields, () => {
     // sad but true, timeout to guarantee a success
     setTimeout(() => {
-      window.location.href = `/thank-you/?response-type=${formTitle}&product=${getVal('PRODUCT')}`;
+      window.location.href = `/thank-you/?response-type=${formTitle}&solution=${getVal('PRODUCT')}`;
     }, 1250);
   });
 };

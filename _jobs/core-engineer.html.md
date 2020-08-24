@@ -14,7 +14,7 @@ og-img:  /img/SeMI-graphic-medium__creative-collaboration-light-bg.svg
 
 ## About SeMI Technologies
 
-At SeMI technologies we are all about knowledge. With our open-source vector search engine [Weaviate](/solutions/weaviate/), we work at the forefront of data and knowledge representation. With a state of the art language model at the core of our product, we put modern NLP into practice.
+At SeMI technologies we are all about knowledge. With our open-source vector search engine [Weaviate](/solutions/weaviate/), we work at the forefront of data and knowledge representation. With a state of the art language model at the core of our solution, we put modern NLP into practice.
 
 We enable our customers and open source community users to understand their data and drive business decisions using an AI-first approach.
 
@@ -26,7 +26,7 @@ Weaviate is the basis to how we provide value to our customers. This means Weavi
 1. Have a desire to write high-quality code with great test coverage (preferably TDD)
 1. Are great communicators and team-players
 1. Aim for short feedback cycles, efficient communication and take ownership of their work 
-1. Know what it means to run and maintain applications in production
+1. Know what it means to run and maintain applications in solutionion
 1. Show a cloud-native mindset (preferably experience with Docker & Kubernetes)
 1. Have experience with developing and using distributed systems and the trade-offs involved
 
@@ -42,7 +42,7 @@ We believe in autonomy, creativity, and flexibility. Our [international team](/a
 
 ## Learn While You Work
 
-We offer the opportunity to gain insights into the development of modern data products including cloud computing, data analysis, machine learning, front-end, and back-end programming.
+We offer the opportunity to gain insights into the development of modern data solutions including cloud computing, data analysis, machine learning, front-end, and back-end programming.
 
 ## Apply Now
 

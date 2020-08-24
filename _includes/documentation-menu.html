@@ -4,9 +4,9 @@
         <dd>
             <ul class="list-ui guide-toc__list-pages">
             <!-- IMPORTANT: NOTE THAT THE SUBMENU ORDER IS SET IN CONFIG.YML -->
-            {% assign sorted_documentation = site.documentation | sort: 'menu-order' | group_by: 'product' %}
+            {% assign sorted_documentation = site.documentation | sort: 'menu-order' | group_by: 'solution' %}
             {% for guides in sorted_documentation %}
-                {% if guides.name == page.product %}
+                {% if guides.name == page.solution %}
                     <h3>{{ guides.name }}</h3>
                     <li class="sub-menu-item">
                         <a href="{% if page.title == 'About' %}./{% else %}../{% endif %}index.html" class="{% if guide.title == page.title %}current{% endif %}">About</a>
@@ -14,14 +14,14 @@
                     {% for menuItem in site.docs[guides.name] %}
                         {% assign sorted_menus = site.documentation | group_by: 'sub-menu' %}
                         {% for menu in sorted_menus %}
-                            {% if menuItem == menu.name && guides.name == page.product  %}
+                            {% if menuItem == menu.name && guides.name == page.solution  %}
                                 <li class="sub-menu">
                                     {{ menu.name }}
                                 </li>
                                 {% assign sorted_sub_menus = site.documentation | sort: 'menu-order' %}
                                 {% for guide in sorted_sub_menus %}
                                     {% if menu.name == guide.sub-menu %}
-                                        {% if page.product == guide.product %}
+                                        {% if page.solution == guide.solution %}
                                             <li class="sub-menu-item">
                                                 <a href="{{ guide.url }}.html" class="{% if guide.title == page.title %}current{% endif %}">{{guide.title}}</a>
                                             </li>

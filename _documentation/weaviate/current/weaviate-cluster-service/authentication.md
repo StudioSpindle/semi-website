@@ -1,8 +1,8 @@
 ---
 layout: layout-documentation
-product: weaviate
+solution: weaviate
 sub-menu: Weaviate Cluster Service
-product-order: 1
+solution-order: 1
 title: Authentication
 intro: Authenticate the CLI tool
 description: How to use authentication with WCS

@@ -1,9 +1,9 @@
 ---
 layout: layout-documentation
 bodyclass: ["page--guides", " "]
-product: weaviate
+solution: weaviate
 sub-menu: index
-product-order: 1
+solution-order: 1
 title: About
 intro: Weaviate is an open-source, GraphQL and RESTful API-enabled, vector search engine based on a graph embedding mechanism called the Contextionary.
 description: About

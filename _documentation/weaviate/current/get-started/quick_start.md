@@ -1,9 +1,9 @@
 ---
 layout: layout-documentation
 bodyclass: ["page--guides", " "]
-product: weaviate
+solution: weaviate
 sub-menu: Get started
-product-order: 1
+solution-order: 1
 title: Quick start
 intro: "This quick start guide will give you a 10-minute tour of Weaviate. You will: Set up your Weaviate with Docker, add a example dataset with news articles, and Browse through the dataset with the Weaviate Console."
 description: Getting started with Weaviate.

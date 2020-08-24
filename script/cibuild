@@ -10,7 +10,7 @@ if [ "${TRAVIS_BRANCH}" = "master" ]; then
     bundle exec jekyll build --config _config.yml, _config_development.yml
 else
     npm run build:dev
-    bundle exec jekyll build --config _config.yml, _config_production.yml
+    bundle exec jekyll build --config _config.yml, _config_solutionion.yml
 fi
 
 echo "...test the HTML:"

@@ -1,8 +1,8 @@
 ---
 layout: layout-documentation
-product: weaviate
+solution: weaviate
 sub-menu: Classification
-product-order: 1
+solution-order: 1
 title: Contextual Classification
 intro: Perform contextual classifications through the RESTapi to enhance your dataset. 
 description: How to perform Contextual classification for properties of data objects.

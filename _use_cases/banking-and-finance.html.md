@@ -3,7 +3,7 @@ published: true
 bodyclass: page--use-cases
 layout: layout-use-case
 title: Enrich transactional information to discover insights for customers
-description: Enable financial institutions to create new and enhanced products for their business customers by enriching transactional datasets with supplementary data and by discovering new relations in those sets.
+description: Enable financial institutions to create new and enhanced solutions for their business customers by enriching transactional datasets with supplementary data and by discovering new relations in those sets.
 tags: ['banking & finance']
 order: 8
 image: /img/illustrations/BankingFinanceII.svg

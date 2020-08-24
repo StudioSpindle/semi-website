@@ -8,7 +8,7 @@ Make sure both (Bundler and npm) are installed on your system before you proceed
 
 ## :rocket: Deployment
 
-Google cloud sdk with nginx is used for production.
+Google cloud sdk with nginx is used for solutionion.
 
 ## :construction: Local development
 
@@ -36,7 +36,7 @@ docker run -p 4000:4000 -v "$(pwd)/_documentation:/website/_documentation" semi-
 You can add multiple volumes like this, if you require other folders as well.
 
 **Warning**: The docker image above is only meant for aiding with devleopment,
-it uses `jekyll serve` and is therefore not suited for production use.
+it uses `jekyll serve` and is therefore not suited for solutionion use.
 
 ### Running everything locally
 

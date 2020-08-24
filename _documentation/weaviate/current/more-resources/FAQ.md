@@ -1,8 +1,8 @@
 ---
 layout: layout-documentation
-product: weaviate
+solution: weaviate
 sub-menu: More resources
-product-order: 1
+solution-order: 1
 title: FAQ
 intro: Aha, you have a question! We hope that you can find the answer here, but if you don't, you can reach us via Stackoverflow (make sure to tag your question with weaviate), Github, or Slack. If your question serves a general-purpose, we will add it to this page.
 description: Frequently Asked Questions.
@@ -63,4 +63,4 @@ A: Sure (also, feel free to [issue a pull request](https://github.com/semi-techn
 
 ### Q: Does Weaviate require NFS volumes on Kubernetes?
 
-A: By default, no NFS volumes are active. In a production setting, we recommend turning etcd disaster recovery on which requires an NFS volume. However, [the helm docs](https://www.semi.technology/documentation/weaviate/current/get-started/install.html#how-can-i-turn-it-on) contain instructions on how to deploy an nfs-provisioner. For more details, see also this [stack overflow answer](https://stackoverflow.com/a/60505796/5322199).
+A: By default, no NFS volumes are active. In a solutionion setting, we recommend turning etcd disaster recovery on which requires an NFS volume. However, [the helm docs](https://www.semi.technology/documentation/weaviate/current/get-started/install.html#how-can-i-turn-it-on) contain instructions on how to deploy an nfs-provisioner. For more details, see also this [stack overflow answer](https://stackoverflow.com/a/60505796/5322199).

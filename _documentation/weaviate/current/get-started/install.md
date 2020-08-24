@@ -1,8 +1,8 @@
 ---
 layout: layout-documentation
-product: weaviate
+solution: weaviate
 sub-menu: Get started
-product-order: 1
+solution-order: 1
 title: Installation
 intro: Weaviate is completely containerized, you can use Docker Compose and/or Kubernetes to run it.
 description: How to install a Weaviate or Weaviate Kubernetes cluster.

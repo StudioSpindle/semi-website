@@ -1,8 +1,8 @@
 ---
 layout: layout-documentation
-product: weaviate
+solution: weaviate
 sub-menu: Additional Features
-product-order: 1
+solution-order: 1
 title: Inspect a Weaviate
 intro: Get information about a Weaviate
 description: How to inspect a Weaviate.

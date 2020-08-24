@@ -10,23 +10,23 @@ window.onload = function(){
         return decodeURIComponent(results[2].replace(/\+/g, ' '));
     }
 
-    document.getElementById('product-input').value = getParameterByName('product');
+    document.getElementById('solution-input').value = getParameterByName('solution');
 }
 
 function sendDetails(){
-    var product = document.getElementById('product-input');
+    var solution = document.getElementById('solution-input');
     var contact = document.getElementById('contact-pref');
     var obj = {
         "name": document.getElementById('input-name').value,
         "email": document.getElementById('input-email').value,
         "company": document.getElementById('input-org').value,
         "phone": document.getElementById('input-tel').value,
-        "product": product.options[product.selectedIndex].text,
+        "solution": solution.options[solution.selectedIndex].text,
         "contact": contact.options[contact.selectedIndex].text,
     }
 
     var xhr = new XMLHttpRequest();
-    xhr.open('POST', 'https://us-central1-semi-production.cloudfunctions.net/email-product-request', true);
+    xhr.open('POST', 'https://us-central1-semi-solutionion.cloudfunctions.net/email-solution-request', true);
     xhr.setRequestHeader('Content-Type', 'application/json; charset=UTF-8');
     xhr.send(JSON.stringify(obj));
     xhr.onloadend = function () {

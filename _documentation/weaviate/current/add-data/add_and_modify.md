@@ -1,8 +1,8 @@
 ---
 layout: layout-documentation
-product: weaviate
+solution: weaviate
 sub-menu: Add data
-product-order: 1
+solution-order: 1
 title: Add and modify data
 intro: When a Weaviate schema is created, you can populate this Weaviate with data.
 description: How to fill a weaviate with data.

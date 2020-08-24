@@ -1,8 +1,8 @@
 ---
 layout: layout-documentation
-product: weaviate
+solution: weaviate
 sub-menu: Query data
-product-order: 1
+solution-order: 1
 title: Aggregate
 intro: You can use Weaviate's Aggregation{} function to obtain meta information about collections of data.
 description: How to work with Weaviate's Aggregate function.

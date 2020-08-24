@@ -9,8 +9,8 @@
   background-color: $color-white;
 }
 
-.page--products--weaviate,
-.page--products--semi-consulting {
+.page--solutions--weaviate,
+.page--solutions--semi-consulting {
   .page--background__first {
     @include background-pattern-semi-hexagon($color-white, -3rem 9rem);
   }

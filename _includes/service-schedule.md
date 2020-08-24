@@ -69,7 +69,7 @@ These terms and conditions (Terms) apply to the order by you and supply of Servi
  
 (b)  process your payment for the Services; and
  
-(c)  inform you about similar products or services that we provide, but you may stop receiving these at any time by contacting us.
+(c)  inform you about similar solutions or services that we provide, but you may stop receiving these at any time by contacting us.
 
 ## 7. EVENTS OUTSIDE OUR CONTROL  
  

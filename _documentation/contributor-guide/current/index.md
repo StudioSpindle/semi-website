@@ -1,9 +1,9 @@
 ---
 layout: layout-documentation
 bodyclass: ["page--guides", " "]
-product: contributor-guide
+solution: contributor-guide
 sub-menu: index
-product-order: 3
+solution-order: 3
 title: About
 intro: This guide provides you with all the resources you need to develop on Weaviate and it's related offerings.
 description: About

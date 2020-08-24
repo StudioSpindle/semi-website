@@ -9,7 +9,7 @@ export default function() {
         document.getElementById('totalpulls').src = 'https://img.shields.io/badge/total--pulls-' + req.responseText + '-yellow?style=flat-square'
       }
     };
-    req.open('GET', 'https://europe-west1-semi-production.cloudfunctions.net/docker-hub-pulls');
+    req.open('GET', 'https://europe-west1-semi-solutionion.cloudfunctions.net/docker-hub-pulls');
     req.send(null);
   }
   

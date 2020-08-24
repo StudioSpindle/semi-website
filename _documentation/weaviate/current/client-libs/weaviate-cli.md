@@ -1,8 +1,8 @@
 ---
 layout: layout-documentation
-product: weaviate
+solution: weaviate
 sub-menu: Client libs
-product-order: 1
+solution-order: 1
 title: CLI tool
 intro: A CLI tool to interact with an individual Weaviate
 description: A CLI tool to interact with an individual Weaviate

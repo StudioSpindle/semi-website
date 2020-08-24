@@ -1,8 +1,8 @@
 ---
 layout: layout-documentation
-product: weaviate
+solution: weaviate
 sub-menu: Add data
-product-order: 1
+solution-order: 1
 title: Define schema
 intro: A Weaviate schema is used to define what kind of semantic kinds you will be adding to a Weaviate. It will function as the overall data model.
 description: How to define a weaviate schema.
@@ -32,7 +32,7 @@ Within Weaviate you will work with **concepts**. A concept refers to something w
 
 ### Classes
 
-A concept definition is what we call a **class** and a class is always written with a **capital first character**. A class for a thing describes what it is in the form of a noun (e.g., *Person*, *Product*, *Timezone*, etcetera). For actions, this would be a verb (e.g., *Move*, *Buy*, *Eat*, etcetera). Bear in mind that Weaviate always validates if it contextually understands the words. If you add a thing or action that it can't recognize, it will not accept the schema.
+A concept definition is what we call a **class** and a class is always written with a **capital first character**. A class for a thing describes what it is in the form of a noun (e.g., *Person*, *Solution*, *Timezone*, etcetera). For actions, this would be a verb (e.g., *Move*, *Buy*, *Eat*, etcetera). Bear in mind that Weaviate always validates if it contextually understands the words. If you add a thing or action that it can't recognize, it will not accept the schema.
 
 Examples expressed in YAML might look like this:
 
@@ -109,7 +109,7 @@ A schema object is defined as follows;
           "weight": 0.0           // The importance of the keyword. Min 0.0 and max 1.0
         }
       ],
-      "cardinality": "atMostOne OR many", // Only used with cross references. Will there only be one refference made (e.g., "bornIn") or multiple ones (e.g., "hasProducts")
+      "cardinality": "atMostOne OR many", // Only used with cross references. Will there only be one refference made (e.g., "bornIn") or multiple ones (e.g., "hasSolutions")
       "description": "string",            // A description for your reference
       "index": true                       // Optional, default is true. By default each property is fully indexed both for full-text, as well as vector-search. You can ignore properties in searches by explicitly setting index to false.
     }
@@ -134,7 +134,7 @@ A property object is defined as follows;
       "weight": 0.0        // The importance of the keyword. Min 0.0 and max 1.0
     }
   ],
-  "cardinality": "atMostOne OR many", // Only used with cross references. Will there only be one refference made (e.g., "bornIn") or multiple ones (e.g., "hasProducts")
+  "cardinality": "atMostOne OR many", // Only used with cross references. Will there only be one refference made (e.g., "bornIn") or multiple ones (e.g., "hasSolutions")
   "description": "string"             // A description for your reference
   "index": true                       // Optional, default is true. By default each property is fully indexed both for full-text, as well as vector-search. You can ignore properties in searches by explicitly setting index to false.
 }

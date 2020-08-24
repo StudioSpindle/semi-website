@@ -1,8 +1,8 @@
 ---
 layout: layout-documentation
-product: weaviate
+solution: weaviate
 sub-menu: Transfer learning
-product-order: 1
+solution-order: 1
 title: Custom embeddings
 intro: Custom words or abbreviations (i.e., "concepts") can be added to Weaviate directly by extending the contextionary.
 description: How to add custom synonyms to the contextionary.

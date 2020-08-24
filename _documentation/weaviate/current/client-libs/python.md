@@ -1,8 +1,8 @@
 ---
 layout: layout-documentation
-product: weaviate
+solution: weaviate
 sub-menu: Client libs
-product-order: 1
+solution-order: 1
 title: Python
 intro: Python library
 description: Weaviate Python client library.

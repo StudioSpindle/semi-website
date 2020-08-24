@@ -1,14 +1,17 @@
 ---
-bodyclass: ["page--products", " ", "page--products-index"]
-layout: layout-product
+bodyclass: ["page--solutions", " ", "page--solutions-index"]
+layout: layout-solution
 title: Weaviate Cloud Service
 description: "SeMI now offers a fully managed Weaviate service in beta. You can create Weaviate instances on the SeMI network and integrate them directly into your software stack.<p><a class=\"button--cta\" type=\"submit\" href=\"https://console.semi.technology/\">Create a free Weaviate Cluster</a></p>"
 SEOdescription: SeMI now offers a fully managed Weaviate service in beta. You can create Weaviate instances on the SeMI network and integrate them directly into your software stack.
-og-img: products.jpg
+og-img: solutions.jpg
 image: /img/cloud-service.svg
 imageCard: /img/cloud-service.svg
 imageMobile: /img/cloud-service.svg
 imageAlt: Weaviate Cloud Service
+redirect_from:
+    - /products/weaviate-cloud-service
+    - /products/weaviate-cloud-service/index.html
 ---
 
 {% include molecule-section-heading.html

@@ -1,8 +1,8 @@
 ---
 layout: layout-documentation
-product: weaviate
+solution: weaviate
 sub-menu: About
-product-order: 1
+solution-order: 1
 title: Contextionary
 intro: Weaviate has a contextionary endpoint which you can call to see how it indexed words and concepts.
 description: How to work with Weaviate's Contextionary.

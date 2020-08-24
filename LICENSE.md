@@ -13,7 +13,7 @@ modification, are permitted provided that the following conditions are met:
   and/or other materials provided with the distribution.
 
 * Neither the name of Weaviate nor the names of its
-  contributors may be used to endorse or promote products derived from
+  contributors may be used to endorse or promote solutions derived from
   this software without specific prior written permission.
   
 * The SeMI Playbook is published under the Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0) copyright.

@@ -1,9 +1,9 @@
 
-.page--products-index {
+.page--solutions-index {
     background-image: linear-gradient($color-gray-7, $color-white);
 }
 
-.product  {
+.solution  {
     h2 {
         padding: .5em 0;
         img {
@@ -18,14 +18,14 @@
     }
 }
 
-.product-banner {
+.solution-banner {
     text-align: center;
     img {
         margin-right: 1rem;
     }
 }
 
-.product-semi--local { // RtP specs
+.solution-semi--local { // RtP specs
     background: $color-white;
     border: 2px solid #40d42c;
     border-radius: $border-radius-3;
@@ -34,7 +34,7 @@
     }
 }
 
-.product-semi--world { // RtP specs
+.solution-semi--world { // RtP specs
     background: $color-white;
     border: 2px solid #af9f22;
     border-radius: $border-radius-3;
@@ -43,7 +43,7 @@
     }
 }
 
-.page--products {
+.page--solutions {
     .pilar {
         h2 {
             font-size: 2.185rem;

@@ -1,8 +1,8 @@
 ---
 layout: layout-documentation
-product: weaviate
+solution: weaviate
 sub-menu: Client libs
-product-order: 1
+solution-order: 1
 title: Javascript (beta)
 intro: A Javascript library
 description: Weaviate Javascript client library.

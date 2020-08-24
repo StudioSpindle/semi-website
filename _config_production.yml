@@ -1,4 +1,4 @@
 url: https://www.semi.technology
-environment: production
+environment: solutionion
 exclude:
   - "console/*"

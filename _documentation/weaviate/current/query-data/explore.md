@@ -1,8 +1,8 @@
 ---
 layout: layout-documentation
-product: weaviate
+solution: weaviate
 sub-menu: Query data
-product-order: 1
+solution-order: 1
 title: Explore
 intro: You can explore the vector search engine based on the semantic meaning of the data concepts in a Weaviate using the GraphQL Explore{} function.
 description: How to explore weaviate.

@@ -1,8 +1,8 @@
 ---
 layout: layout-documentation
-product: contributor-guide
+solution: contributor-guide
 sub-menu: Custom DB
-product-order: 1
+solution-order: 1
 title: Parsing Objects & Resolving References
 intro: This page outlines the process of how objects are returned to the user (in more detail to the usecase requesting data from the db) and how and and what level cross-references are resolved.
 description: Custom DB Migration Status, Features and Limitations

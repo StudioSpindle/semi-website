@@ -15,6 +15,7 @@ gem 'wdm', '>= 0.1.0' if Gem.win_platform?
 gem 'bundle'
 gem 'rake'
 gem 'concurrent-ruby', '~> 1.1.5'
+gem 'jekyll-redirect-from'
 
 # This is the default theme for new Jekyll sites. You may change this to anything you like.
 # gem "minima", "~> 2.0"

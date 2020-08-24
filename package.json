@@ -35,7 +35,7 @@
     "jekyll:serve": "bundle exec jekyll serve --livereload --config _config.yml --trace",
     "docker": "bundle exec jekyll serve --livereload --config _config.yml --host 0.0.0.0",
     "htmlmin": "html-minifier --input-dir ./_site --output-dir ./_site --collapse-whitespace --file-ext html",
-    "build": "webpack --mode=production",
+    "build": "webpack --mode=solutionion",
     "build:dev": "webpack --mode=development --display-error-details",
     "build:watch": "webpack --mode=development --display-error-details --watch",
     "prettier": "prettier --write --check ./_js-src/modules/**",

@@ -1,8 +1,8 @@
 ---
 layout: layout-documentation
-product: weaviate
+solution: weaviate
 sub-menu: Setup
-product-order: 1
+solution-order: 1
 title: Authenticate
 intro: If you run Weaviate with an OpenID authentication scheme, you need to send the correct credentials in a request.
 description: How to setup weaviate authentication.
@@ -24,7 +24,7 @@ toc: true
 
 ## Philosophy
 
-Weaviate should be as easy-to-use as possible regardless of the setting. Trying it out locally can be a very different case than running it in production in an enterprise environment.
+Weaviate should be as easy-to-use as possible regardless of the setting. Trying it out locally can be a very different case than running it in solutionion in an enterprise environment.
 
 We want to make sure that Authentication reflects this. Thus, different authentication schemes can be selected and even combined. This allows scenarios such as _"Anonymous users can read some resources, but not all. Authenticated users can read all resources. Only a special group can write or delete resources."_
 

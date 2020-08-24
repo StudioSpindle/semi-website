@@ -1,14 +1,17 @@
 ---
-bodyclass: ["page--products", " ", "page--products-index"]
-layout: layout-product
+bodyclass: ["page--solutions", " ", "page--solutions-index"]
+layout: layout-solution
 title: Weaviate
 description: "Did you know that at least <a href='https://www.forbes.com/sites/forbestechcouncil/2019/01/29/the-80-blind-spot-are-you-ignoring-unstructured-organizational-data'>80% of your data is unstructured text</a>? Thanks to Weaviate's AI-based storage mechanism you can now search through these datasets with ease and on an enterprise worthy scale.<p><a class=\"button--cta\" type=\"submit\" href=\"mailto:hello@semi.technology\">Request a demo</a></p>"
 SEOdescription: Did you know that at least 80% of your data is unstructured text? Thanks to Weaviate's AI-based storage mechanism you can now search through these datasets with ease and on an enterprise worthy scale.
-og-img: products.jpg
+og-img: solutions.jpg
 image: /img/weaviate.svg
 imageCard: /img/weaviate.svg
 imageMobile: /img/weaviate.svg
 imageAlt: Weaviate vector search engine
+redirect_from:
+    - /products/weaviate
+    - /products/weaviate/index.html
 ---
 
 {% include molecule-section-heading.html

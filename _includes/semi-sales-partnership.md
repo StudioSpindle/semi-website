@@ -13,8 +13,8 @@ The following document contains the guiding principles for a SeMI Reseller Partn
 - An SRP can represent multiple countries.
 - SeMI has the full right to publish SRP’s name, territory, and branch(es) on their website or in other publications.
 
-SRP product scope and business scope
-An SRP partnership consists of all products except Weaviate open source.
+SRP solution scope and business scope
+An SRP partnership consists of all solutions except Weaviate open source.
 An SRP is not allowed to offer a secondary managed Weaviate service.
 An SRP offers implementation, consultancy and a sales channel in the agreed territory and branches.
 An SRP invoices customers in their territory and branch directly.

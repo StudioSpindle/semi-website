@@ -1,9 +1,9 @@
 ---
 layout: layout-documentation
 bodyclass: ["page--guides", " "]
-product: weaviate
+solution: weaviate
 sub-menu: About
-product-order: 1
+solution-order: 1
 title: Philosophy
 intro: Weaviate is an open-source, GraphQL and RESTful API-enabled, vector search engine based on a word vector storage mechanism called the Contextionary.
 description: Learn more about the philosophy behind Weaviate.
@@ -24,7 +24,7 @@ Concept and demo presented at FOSDEM 2020;
 
 > We aim to allow anyone, anywhere, any time to create their own vector search engine or knowledge network.
 
-In almost any situation where you work with data, you store information related to something in the real world. This can be data about transactions, cars, airplanes, products; you name it. The challenge with current databases is that it is difficult for the software to grasp the context of the entity you refer to in your datasets. Do the characters "Apple" refer to the company or the fruit?
+In almost any situation where you work with data, you store information related to something in the real world. This can be data about transactions, cars, airplanes, solutions; you name it. The challenge with current databases is that it is difficult for the software to grasp the context of the entity you refer to in your datasets. Do the characters "Apple" refer to the company or the fruit?
 
 ![real world entities](/img/guides/entities.jpg "real world entities")
 
@@ -63,11 +63,11 @@ Weaviate consists of four core features;
 | --- | --- |
 | **Schema** | In Weaviate, a schema is used to define the types of data you will be adding and querying. You can learn more about it [here](../add-data/define_schema.html). |
 | **Semantic Kinds** | Because of Weaviates semantic nature, we make a distinction in _semantic kinds_. Weaviate distinct two different kinds: *Things* and *Actions*. When creating a Weaviate Schema, you need to explain what Semantic Kind a data object entails. |
-| **Thing** | A thing is a **semantic kind**, referring to an object (e.g., car, rocketship, product). The easiest way to think about Things is in the form of nouns. |
+| **Thing** | A thing is a **semantic kind**, referring to an object (e.g., car, rocketship, solution). The easiest way to think about Things is in the form of nouns. |
 | **Action** | An action is a **semantic kind**, referring to an action (e.g., walking, dancing, buying). The easiest way to think about Things is in the form of verbs. |
 | **Class** | A class is a definition of a semantic kind. E.g., the Class Company or the Class Move. In Weaviate, classes can be recognized because they always have a capitalized first character. You can set as many classes with a naming you choose. |
 | **Property** | All classes have properties. E.g., the class Company might have the property _name_. In Weaviate, properties can be recognized because they always have a lowercase first character. |
-| **Entity** | An entity refers to something -often- in the world around us. E.g., _a Company with the name Apple_ refers to an entity with a relation to _a Product with the name iPhone_. Weaviate's Contextionary tries to find as many entities in your data as possible. |
+| **Entity** | An entity refers to something -often- in the world around us. E.g., _a Company with the name Apple_ refers to an entity with a relation to _a Solution with the name iPhone_. Weaviate's Contextionary tries to find as many entities in your data as possible. |
 | **Concept** | Concepts are related to entities. Often you will use concepts to search in your datasets. If your dataset has data about _An Actor with the name Arnold Schwarzenegger_ and _an Actor with the name Al Pacino_, the concepts _Movie_ and _Terminator_ will find a closer relation to the first actor rather than the latter. |
 | **Beacon** | A beacon is a reference to a particular data object in Weaviate or inside the knowledge network, this data object in turn has a position in the contextionary. Often defined as follows: `weaviate://{peerName}/{semanticKind}/{UUID}`
 | **Knowledge Network** | A peer to peer (P2P) network of Weaviates |

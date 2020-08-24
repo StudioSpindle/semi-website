@@ -1,8 +1,8 @@
 ---
 layout: layout-documentation
-product: weaviate
+solution: weaviate
 sub-menu: Query data
-product-order: 1
+solution-order: 1
 title: Get
 intro: The Get{} function is Weaviate's bread and butter. It is the most direct way to access data.
 description: How to query weaviate.

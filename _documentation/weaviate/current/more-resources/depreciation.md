@@ -1,8 +1,8 @@
 ---
 layout: layout-documentation
-product: weaviate
+solution: weaviate
 sub-menu: More resources
-product-order: 1
+solution-order: 1
 title: Deprecation messages
 intro: An overview op deprecation messages
 description: List of deprecation messages

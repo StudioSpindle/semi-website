@@ -1,8 +1,8 @@
 ---
 layout: layout-documentation
-product: weaviate
+solution: weaviate
 sub-menu: Classification
-product-order: 1
+solution-order: 1
 title: KNN Classification
 intro: Perform k-nearest neighbors classifications through the RESTapi to enhance your dataset. 
 description: How to perform KNN classification for properties of data objects.

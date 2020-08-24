@@ -1,8 +1,8 @@
 ---
 layout: layout-documentation
-product: contributor-guide
+solution: contributor-guide
 sub-menu: Submenu
-product-order: 1
+solution-order: 1
 title: Item
 intro: Foobar
 description: Item in submenu

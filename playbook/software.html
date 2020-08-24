@@ -42,7 +42,7 @@ title: 'Software Engineering: Development and Architecture at SeMI'
       </li>
       <li>
         <strong>Piece of mind when Refactoring</strong><br />
-        In production software, requirements change and code is rarely perfect from the get-go.
+        In solutionion software, requirements change and code is rarely perfect from the get-go.
         A green test suite provides us with the confidence that a new or improved feature is done and that our users should not worry about problems introduced after updating the software.
       </li>
     </ul>
@@ -147,15 +147,15 @@ title: 'Software Engineering: Development and Architecture at SeMI'
     <p>
       With docker-compose we can run our entire application stack - even if it has the most obscure
       backing dependencies - locally. And not just that, but it is very, very similar to an actual
-      production environment, too. Additionally, we can comfortably run
+      solutionion environment, too. Additionally, we can comfortably run
       <a href="#test-pyramid">integration and end2end</a> tests with containerized backing
       databases.
     </p>
     <p>
       For our runtimes, we bet on <strong>Kubernetes</strong>, because we see Kubernetes as the
       logical extension of Docker. Docker is really good for isolation and delievering
-      production-quality artifacts as a a result of our development process. But - even with
-      docker-compose - it lacks the capabilites to run application at actual production quality.
+      solutionion-quality artifacts as a a result of our development process. But - even with
+      docker-compose - it lacks the capabilites to run application at actual solutionion quality.
     </p>
     <p>
       Kubernetes provides our runtime environments with many elements completely for free that would
@@ -191,18 +191,18 @@ title: 'Software Engineering: Development and Architecture at SeMI'
     <p>
       We like the principle of "you build it, you run it". It takes a more complete approach to
       development, because it accepts that running an application is part of the development
-      process. And debugging software that you wrote yourself in production is considerably easier
+      process. And debugging software that you wrote yourself in solutionion is considerably easier
       than having someone else do it for you.
     </p>
-    <h3>The difference between a solution and an (open source) product</h3>
-    <!-- <h3>Running a webshop vs. building an open-source product</h3> -->
+    <h3>The difference between a solution and an (open source) solution</h3>
+    <!-- <h3>Running a webshop vs. building an open-source solution</h3> -->
     <!-- <p>
       However, we must also accept the fact, that at SeMI our development &amp; operations situation
       is sometimes a bit different from other companies. Let's say you were part of a company that
       runs an e-commerce solution, like an online web shop for buying groceries. Your team might own
       one specific part of that solution, such as the search feature. As part of that team you would
       own this feature end-to-end from development through testing &amp; QA all the way to
-      production. If the search for a shop is down, the business obviosuly loses money. So, a large
+      solutionion. If the search for a shop is down, the business obviosuly loses money. So, a large
       part of the development team's responsibility is to make sure the search stays available.
       Since developers can't take care of that 24/7, an SRE-approach is often used to combine the
       operations ownership that a DevOps strategy contains with 24/7 support capabilities.
@@ -211,13 +211,13 @@ title: 'Software Engineering: Development and Architecture at SeMI'
     <!-- <p>
       At SeMI we believe in the exact same principles, but we must also accept that our situation is
       a bit different: We don't build a service that is then scaled to a very large user base.
-      Instead we build an open-source product, that can then be idendepently deployed many times
+      Instead we build an open-source solution, that can then be idendepently deployed many times
       over. For example, a customer might want to deploy Weaviate on premise. Another customer might
       want us to host Weaviate for them. Someone using the free version of weaviate might simply
       download a docker image and run it for themselves.
     </p> -->
     <p>
-      At SeMI, we don't build a one-off service but we build an open-source product, that can then be idendepently deployed many times
+      At SeMI, we don't build a one-off service but we build an open-source solution, that can then be idendepently deployed many times
       over. For example, a customer might want to deploy Weaviate on premise. Another customer might
       want us to host Weaviate for them. Someone using the free version of weaviate might simply
       download a docker image and run it for themselves.
@@ -233,8 +233,8 @@ title: 'Software Engineering: Development and Architecture at SeMI'
     <h3>A DevOps middleground at SeMI</h3>
     <p>
       Even when it's impossible for every developer to know about every single deployment, it is
-      still in the responsibility of our developers to keep the path to production as clear and as
-      fast as possible. Our releases are still continously deployed to a production-like
+      still in the responsibility of our developers to keep the path to solutionion as clear and as
+      fast as possible. Our releases are still continously deployed to a solutionion-like
       environment. Developers still need to think about how to mitigate breaking changes.
       Development still only finishes when a feature is successfully deployed.
     </p>
@@ -252,7 +252,7 @@ title: 'Software Engineering: Development and Architecture at SeMI'
       and reproducible way. We like to use Terraform to manage cloud infrastructure and Helm to
       manage Kubernetes deployments. Using a GitOps approach, we commit changes into version control
       and let a build pipeline execute them. We never manually configure infrastructure. This helps
-      us to change live environments with confidence, test environments before breaking production
+      us to change live environments with confidence, test environments before breaking solutionion
       and provides an audit log for free.
     </p>
 
@@ -273,7 +273,7 @@ title: 'Software Engineering: Development and Architecture at SeMI'
     <p>
       We always aim to make releases as frequent as possible. Sometimes this leads to tiny releases
       that have only a small noticable effect to the user. This is good. Those tiny changes really
-      add up over time and a product develops.
+      add up over time and a solution develops.
       <a href="https://semver.org/" target="_blank">Semantic Versioning</a> helps conveying the severity of a change
       at a glance. The high frequency of releases helps us to gather important feedback quickly.
       Sometimes the feedback for a specific release immediately affects the following release.

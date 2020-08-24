@@ -1,8 +1,8 @@
 ---
 layout: layout-documentation
-product: weaviate
+solution: weaviate
 sub-menu: Add data
-product-order: 1
+solution-order: 1
 title: Batching
 intro: Add many data objects with one API call.
 description: How to add large datasets.

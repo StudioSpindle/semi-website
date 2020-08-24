@@ -1,8 +1,8 @@
 ---
 layout: layout-documentation
-product: contributor-guide
+solution: contributor-guide
 sub-menu: Build, Run, Test
-product-order: 1
+solution-order: 1
 title: Tests
 intro: This page introduces the test philosophy of Weaviate. It provides guidance on how we differentiate between test levels and how to make sure we achieve the most gain from our tests.
 description: Test philosophy and instructions on how to run tests
