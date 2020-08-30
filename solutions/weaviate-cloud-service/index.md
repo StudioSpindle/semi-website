@@ -10,7 +10,6 @@ imageCard: /img/cloud-service.svg
 imageMobile: /img/cloud-service.svg
 imageAlt: Weaviate Cloud Service
 redirect_from:
-    - /products/weaviate-cloud-service
     - /products/weaviate-cloud-service/index.html
 ---
 

@@ -10,7 +10,6 @@ imageCard: /img/weaviate.svg
 imageMobile: /img/weaviate.svg
 imageAlt: Weaviate vector search engine
 redirect_from:
-    - /products/weaviate
     - /products/weaviate/index.html
 ---
 
@@ -62,7 +61,7 @@ redirect_from:
         <img src="/img/david.jpeg" alt="image of David Toborek" class="quote__img">
     </div>
     <div class="footer">— <cite><strong><a href="https://www.linkedin.com/in/david-toborek/" target="_blank">David
-                    Toborek</a></strong> from <a href="https://www.metronom.com/" target="_blank">METRONOM
+                    Toborek</a></strong> from <a href="https://www.linkedin.com/company/metronom-gmbh" target="_blank">METRONOM
                 GmbH</a></cite></div>
 </section>
 

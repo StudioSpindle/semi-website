@@ -21,6 +21,9 @@ collections:
     marketplace:
         output: true
         permalink: /marketplace/:path
+    playbook:
+        output: true
+        permalink: /playbook/:path
     authors:
         output: true
 exclude:

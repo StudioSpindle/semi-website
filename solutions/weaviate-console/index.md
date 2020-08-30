@@ -9,7 +9,6 @@ imageCard: /img/weaviate-console.svg
 imageMobile: /img/weaviate-console.svg
 imageAlt: Weaviate Console image
 redirect_from:
-    - /products/weaviate-console
     - /products/weaviate-console/index.html
 ---
 
