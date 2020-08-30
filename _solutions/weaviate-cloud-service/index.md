@@ -9,8 +9,6 @@ image: /img/cloud-service.svg
 imageCard: /img/cloud-service.svg
 imageMobile: /img/cloud-service.svg
 imageAlt: Weaviate Cloud Service
-redirect_from:
-    - /products/weaviate-cloud-service/index.html
 ---
 
 {% include molecule-section-heading.html

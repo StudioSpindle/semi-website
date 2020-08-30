@@ -9,8 +9,6 @@ image: /img/weaviate.svg
 imageCard: /img/weaviate.svg
 imageMobile: /img/weaviate.svg
 imageAlt: Weaviate vector search engine
-redirect_from:
-    - /products/weaviate/index.html
 ---
 
 {% include molecule-section-heading.html

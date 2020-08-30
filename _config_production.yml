@@ -1,4 +1,0 @@
-url: https://www.semi.technology
-environment: solutionion
-exclude:
-  - "console/*"

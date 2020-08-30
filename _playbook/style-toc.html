@@ -6,38 +6,43 @@ title:  our style; a table of contents
 <article class="style-sm container">
     <div class="wrapper">
         <h2>Table of contents</h2>
-        {% capture block1 %}
-<dl class="article-toc">
-    <dt data-group="Learn">Category name</dt>
-    <dd>
-        <ul class="list-ui">
-            <li><a href="#">Link</a></li>
-            <li><a href="#">Link</a></li>
-            <li><a href="#">Link</a></li>
-            <li><a href="#">Link</a></li>
-            <li><a href="#">Link</a></li>
-        </ul>
-    </dd>
-    <dt data-group="Start">Category name</dt>
-    <dd>
-        <ul class="list-ui">
-            <li><a href="#">Link</a></li>
-            <li><a href="#">Link</a></li>
-            <li><a href="#">Link</a></li>
-        </ul>
-    </dd>
 
-    <dt data-group="Implement">Category name</dt>
-    <dd>
-        <ul class="list-ui">
-            <li><a href="#">Link</a></li>
-            <li><a href="#">Link</a></li>
-            <li><a href="#">Link</a></li>
-        </ul>
-    </dd>
-</dl>
+        {% capture block1 %}
+
+        <dl class="article-toc">
+            <dt data-group="Learn">Category name</dt>
+            <dd>
+                <ul class="list-ui">
+                    <li><a href="#">Link</a></li>
+                    <li><a href="#">Link</a></li>
+                    <li><a href="#">Link</a></li>
+                    <li><a href="#">Link</a></li>
+                    <li><a href="#">Link</a></li>
+                </ul>
+            </dd>
+            <dt data-group="Start">Category name</dt>
+            <dd>
+                <ul class="list-ui">
+                    <li><a href="#">Link</a></li>
+                    <li><a href="#">Link</a></li>
+                    <li><a href="#">Link</a></li>
+                </ul>
+            </dd>
+
+            <dt data-group="Implement">Category name</dt>
+            <dd>
+                <ul class="list-ui">
+                    <li><a href="#">Link</a></li>
+                    <li><a href="#">Link</a></li>
+                    <li><a href="#">Link</a></li>
+                </ul>
+            </dd>
+        </dl>
+
         {% endcapture %}
-        {{block1}}
+
+        {{ block1 }}
+        
         {% include molecule-codeblock.html content=block1 %}
 
         <p>The <code>data-group</code> attribute sets the category, which in turn can be used to style by using the <code>[data-group='category name']</code> CSS hook.</p>

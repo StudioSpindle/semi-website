@@ -4,8 +4,6 @@ layout: layout-default
 title: Discover the Weaviate solution stack
 description: Weaviate solutions and knowledge network offerings
 og-img: solutions.jpg
-redirect_from:
-    - /products/index.html
 ---
 
 <article>

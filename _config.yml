@@ -1,3 +1,4 @@
+# url: https://www.semi.technology
 weaviate_version: 0.22.14
 slack_signup_url: "https://join.slack.com/t/weaviate/shared_invite/zt-goaoifjr-o8FuVz9b1HLzhlUfyfddhw"
 helm_version: 10.0.0
@@ -26,6 +27,18 @@ collections:
         permalink: /playbook/:path
     authors:
         output: true
+    solutions:
+        output: true
+        permalink: /solutions/:path
+    thank-you:
+        output: true
+        permalink: /thank-you/:path
+    newsletter:
+        output: true
+        permalink: /newsletter/:path
+    about:
+        output: true
+        permalink: /about/:path
 exclude:
     - "*.json"
     - "Gemfile*"
