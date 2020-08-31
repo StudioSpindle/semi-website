@@ -9,6 +9,10 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<meta name="author" content="SeMI Technologies" />
 
+	{% if page.layout == 'service-manual' %}
+		<meta name="robots" content="noindex,follow" />
+	{% endif %}
+
 	{% if SEOdescription != '' %}
 		<meta name="description" content="{{ page.SEOdescription }}" />
 	{% else %}
