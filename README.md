@@ -64,6 +64,17 @@ Build and watch the website
 $ bundle exec jekyll serve
 ```
 
+### Deploy to dev
+
+- Trigger a custom build in the Travis GUI.
+- Select the desired branch
+- Add the following custom config:
+
+```yaml
+env:
+  - DEPLOY_ON_DEV=true
+```
+
 ### Documentation
 
 - menu structure is set in `./config.yml`.
