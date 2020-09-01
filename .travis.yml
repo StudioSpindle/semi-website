@@ -90,6 +90,29 @@ script:
       # gsutil -m cp ./sitemap.xml gs://$BUCKET/sitemap.xml
     fi
   fi
+- |
+  if [ "${TRAVIS_PULL_REQUEST}" = "false" ]; then
+    if [ $DEPLOY_ON_DEV = "true" ]; then
+      # set project
+      gcloud config set project $PROJECTDEV
+      # set website details for the correct bucket
+      gsutil web set -m index.html -e 404.html gs://$BUCKETDEV
+      # empty bucket (website stays alive on the CDN)
+      gsutil -m rm -r gs://$BUCKETDEV/**
+      # cd into website dir
+      cd _site
+      # rename and remove robots.txt
+      rm robots.txt
+      mv robots.dev.txt robots.txt
+      # Upload data to bucket, GZIP (-Z) and set Cache Control for CDN
+      gsutil -m -h "Cache-Control:public,max-age=900" cp -Z -r ./ gs://$BUCKETDEV
+      # upload videos with gzip
+      gsutil -m -h "Cache-Control:public,max-age=900" cp ./assets/header.mp4 gs://$BUCKETDEV/assets/header.mp4
+      gsutil -m -h "Cache-Control:public,max-age=900" cp ./assets/header.webm gs://$BUCKETDEV/assets/header.webm
+      # Allow viewing of files (for website purposes)
+      gsutil iam ch allUsers:objectViewer gs://$BUCKETDEV
+    fi
+  fi
 notifications:
   slack:
     secure: DOpQAFFKSgONCUnAfdo9lkny4iyagwRbCl5KaV6sF8FU292LQkPncLdhD5lb7LjafKUxZricNBDTQXZxN2BxdgTprVbQPuiuMjn13WGS96ecHnzLL8lsGMk04WTG5OElytgRFwcaRvr/rS2rickmR6WQ8IRjCCBUNdKnMKFvaInCB5UjtADDhS/HWKysHl+4dA//LIJwibbnThl8peCO/45AboLMyJb0BwTAyzozpDQOj0NiPUsB4l+7ly7D3gffXqZHFwcbUcSHRVq1EDihhhITjDgF6k/3HkWH3xBt2ArAh5t4FwK0R0bacsrWNr7OlpoGju0Oefx1/9zEnqSwa5A5Q2UgGH3CdS1IZtSFNiDqN+E0LqKeckfZVwWGhLFRniEW/3GaUx+AuV+1jcEzxb2CHO9P8PTki6OycTidef3YwPxV9eH7rqtF3aEBN5DfoJbLE05AGKswmMKR1FDa1dShhrYisWTytvL+bWBKmzLcYUtY+PFgUghaotLXyNbWFSl9yTqJYBg2R8U7YR3cbbitTIBwXyLDH7fk/eZPlavTL/Dmdlyo7VviQEQ4c04QjLvPstwGLsJKVsrSN74uZy0g+DEnLA0yAT4pKQMFs9jv8YOZ1U8XWRGScqhqm1E8thal4sCblDqjMgWQTXuQ8U2nem1J5inhJXtswdnM324=
