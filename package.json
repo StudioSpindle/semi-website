@@ -21,7 +21,7 @@
     "postcss": "^7.0.32",
     "postcss-loader": "^3.0.0",
     "prettier": "1.19.1",
-    "sass-loader": "^7.3.1",
+    "sass-loader": "^8.0.2",
     "scriptjs": "2.5.9",
     "style-loader": "^0.23.1",
     "webpack": "^4.43.0",
