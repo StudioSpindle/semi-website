@@ -35,7 +35,6 @@ const jsConfig = Object.assign({}, config, {
 
 const scssConfig = Object.assign({}, config, {
   entry: {
-    style: './_scss/style.scss',
     styleSm: './_scss/style-sm.scss',
   },
   output: {

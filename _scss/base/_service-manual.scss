@@ -80,6 +80,15 @@
     @include transition-in;
     opacity: 1;
   }
+  .code-toolbar {
+    display: flex;
+    width: 100%;
+  }
+  pre[class*=language-]>code {
+    max-width: 100%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
 }
 
 @include breakpoint(smallToMedium) {

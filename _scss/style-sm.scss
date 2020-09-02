@@ -65,7 +65,6 @@
 @import 'components/component-spacing';
 @import 'components/component-site-header';
 @import 'components/component-table';
-@import 'components/component-tags';
 @import 'components/component-titles';
 @import 'components/component-toc';
 @import 'components/component-tiles';
@@ -87,3 +86,5 @@
 
 // IE 10+ bug fixes
 @import 'base/ie-bugfix';
+
+@import 'prism';
