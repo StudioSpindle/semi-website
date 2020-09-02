@@ -3,16 +3,18 @@ const $script = require('scriptjs');
 
 // modules
 import cookie from './modules/cookie';
-import mailChimp from './modules/mailChimp';
+// import mailChimp from './modules/mailChimp';
 import video from './modules/video';
 import siteMenu from './modules/site-menu';
-import toggle from './modules/toggle';
 import tagmanager from './modules/tagmanager';
 import tawk from './modules/tawk';
 import tableOfContents from './modules/tableOfContents';
 import prism from './modules/prism';
 import documentation from './modules/documentation';
-import collectStatsData from './modules/collectStatsData'
+import collectStatsData from './modules/collectStatsData';
+
+import toggle from './components/toggle';
+import tabs from './components/tabs';
 
 // utilities
 import inputTypeRangeExists from './utilities/inputTypeRangeExists';
@@ -50,11 +52,6 @@ tawk();
 video('js-video-homepage');
 
 /**
- * Make elements on the page collapse
- */
-toggle('data-toggle');
-
-/**
  * Initialize the tagmanager
  */
 tagmanager('GTM-K6DMN8N');
@@ -63,6 +60,14 @@ tagmanager('GTM-K6DMN8N');
  * Initialize  the table of contents
  */
 tableOfContents('toc');
+
+/**
+ * Components
+ */
+window.addEventListener("DOMContentLoaded", () => {
+  toggle('data-toggle');
+  tabs();
+});
 
 /**
  * asynchronous load of multirange script when a input type of type range exists on the page

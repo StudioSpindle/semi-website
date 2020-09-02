@@ -1,0 +1,66 @@
+---
+layout: service-manual
+title:  our style; aural and visual media
+---
+
+{% capture block1 %}
+  <div class="tabs">
+    <nav class="tabs__nav" role="tablist">
+      <!-- aria-controls="x" correspondents with the id of the tabpanel and *must* be unique -->
+      <button class="tabs__tab" aria-controls="panel-1-1" role="tab" tabindex="0" aria-selected="true">Tab 1</button>
+      <button class="tabs__tab" aria-controls="panel-1-2" role="tab" tabindex="-1">Tab 2</button>
+      <button class="tabs__tab" aria-controls="panel-1-3" role="tab" tabindex="-1">Tab 3</button>
+    </nav>
+    <div class="tabs__panel" id="panel-1-1" tabindex="0" role="tabpanel">
+      <p>This is content in the first tab.</p>
+    </div>
+    <div class="tabs__panel" id="panel-1-2" tabindex="0" role="tabpanel" hidden>
+      <p>This is content in the second tab.</p>
+    </div>
+    <div class="tabs__panel" id="panel-1-3" tabindex="0" role="tabpanel" hidden>
+      <p>This is content in the third tab.</p>
+    </div>
+  </div>
+{% endcapture %}
+
+{% capture block2 %}
+  <nav role="tablist">
+    <button aria-controls="panel-2-1" role="tab" tabindex="0" aria-selected="true">Tab 1</button>
+    <button aria-controls="panel-2-2" role="tab" tabindex="-1">Tab 2</button>
+    <button aria-controls="panel-2-3" role="tab" tabindex="-1">Tab 3</button>
+  </nav>
+  <div id="panel-2-1" tabindex="0" role="tabpanel">
+    <p>This is content in the first tab.</p>
+  </div>
+  <div id="panel-2-2" tabindex="0" role="tabpanel" hidden>
+    <p>This is content in the second tab.</p>
+  </div>
+  <div id="panel-2-3" tabindex="0" role="tabpanel" hidden>
+    <p>This is content in the third tab.</p>
+  </div>
+{% endcapture %}
+
+<article class="style-sm container">
+    <div class="wrapper">
+        <h2>Tabs</h2>
+        <p>A tab is a hidden section of content activated by a menu item.</p>
+        <section class="style-sm-section">
+            <h3>Example</h3>
+            {{block1}}
+            {% include molecule-codeblock.html content=block1 %}
+        </section>
+
+        <section class="style-sm-section">
+          <h2>Accessibility</h2>
+          <p>These tabs are accessible and can for example be navigate using the keyboard. To test this tab through the website until the first tab is active indicated by the green color. Then pres the right arrow key once, and press enter. This will select the second tab and show it's content in the <em>tabpanel</em>.</p>
+        </section>
+
+        <section class="style-sm-section">
+          <h2>Markup</h2>
+          <p>The tab component can alsob be used without the tab styling. This enables you to use it as an additional scaffolding element.</p>
+          <h3>Example</h3>
+          {{block2}}
+          {% include molecule-codeblock.html content=block2 %}
+        </section>
+    </div>
+</article>

@@ -2,7 +2,7 @@
 
 .button,
 .button--small,
-button:not(.button-icon),
+button:not(.button-icon):not(.tabs__tab),
 [type='button'],
 [type='reset'],
 [type='submit'] {
@@ -17,7 +17,7 @@ button:not(.button-icon),
   padding: $scale-0 $scale-2;
   text-align: center;
 
-  &:hover, &:focus, &:active {
+  &:hover, &:focus, &:active, &[aria-selected="true"] {
     @include transition-in;
     border-radius: $border-radius-2;
     outline: none !important;
@@ -25,6 +25,10 @@ button:not(.button-icon),
 
   &:focus, &:active {
     background: $color-semi-accent;
+  }
+
+  &[aria-selected="true"]:not(:focus) {
+    background: $color-black;  
   }
 }
 
@@ -86,7 +90,6 @@ button:not(.button-icon),
 .button--link {
   appearance: hyperlink;
 }
-
 
 .button-center-container {
   width: 100%;

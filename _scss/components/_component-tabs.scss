@@ -1,0 +1,56 @@
+.tabs {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.tabs__panel {
+  background-color: $color-gray-6;
+  padding: 1rem;
+  width: 100%;
+}
+
+.tabs__nav {
+  align-self: flex-start;
+  border-radius: $scale-1 0;
+  background: $color-black;
+  display: flex;
+  flex-direction: row;
+}
+
+.tabs__tab {
+  @include transition-in;
+  background-color: transparent;
+  border: 0px;
+  color: $color-white;
+  display: flex;
+  font-family: $typeface-body;
+  font-size: 1rem;
+  padding: $scale-0 $scale-2;
+  text-align: center;
+
+  &:first-child {
+    border-top-left-radius: $scale-1; 
+  }
+  &:last-child {
+    border-bottom-right-radius: $scale-1; 
+  }
+
+  &[aria-selected="true"] {
+    background-color: $color-semi;
+  }
+  
+  &:focus {
+    &:not([aria-selected="true"]) {
+      background-color: $color-semi-accent;
+      outline: none !important; // remove default focus state, color contrast is prominent enough
+    }
+  }
+
+  &:hover  {
+    &:not([aria-selected="true"]) {
+      background-color: $color-semi;
+      outline: none !important; // remove default focus state, color contrast is prominent enough 
+    }
+  }
+}
